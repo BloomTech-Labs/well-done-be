@@ -22,7 +22,7 @@ function authenticate(req, res, next) {
     res.status(400).json({ message: "no credentials provided" });
   }
 }
-
+//hahahaha
 function generateToken(user) {
   const payload = {
     subject: user.email_address
