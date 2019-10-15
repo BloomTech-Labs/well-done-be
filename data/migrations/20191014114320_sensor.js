@@ -40,7 +40,7 @@ exports.up = function(knex) {
 
     column
       .integer("date_id")
-      .unsigned()
+      .unsigned() 
       .references("id")
       .inTable("dates")
       .onDelete("CASCADE")
