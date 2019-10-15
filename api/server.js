@@ -9,6 +9,12 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
+//routes
+const authRouter = require("./auth/auth.js");
+
+
+server.use("/auth", authRouter);
+
 
 server.get('/', (req, res) => {
     res.send(`
