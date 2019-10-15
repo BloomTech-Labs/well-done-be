@@ -15,9 +15,15 @@ exports.up = function(knex) {
       .inTable("organization")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
+    column
+      .integer("historical_id")
+      .unsigned()
+      .references("id")
+      .inTable("historical")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
 
-      column.integer("sensor_ID");
-    column.integer("count");
+    column.integer("sensor_ID");
     column.string("kind");
     column.string("type");
     column.integer("cellular");
@@ -28,8 +34,8 @@ exports.up = function(knex) {
     column.integer("depth");
     column.integer("yield");
     column.integer("static");
-    column.integer("dynamic");
     column.string("quality");
+    column.integer("level_dynamic");
 
 
     column

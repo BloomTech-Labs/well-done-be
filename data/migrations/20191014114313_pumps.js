@@ -15,10 +15,10 @@ exports.up = function(knex) {
     column.string("district_name");
     column.integer("latitude");
     column.integer("longitude");
-    column.integer("status");
   });
 };
 
 exports.down = function(knex) {
   return knex.schema.dropTableIfExists("pumps");
 };
+
