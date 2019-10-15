@@ -9,13 +9,12 @@ exports.up = function(knex) {
       .inTable("organization")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-    column
-      .integer("address_id")
-      .unsigned()
-      .references("id")
-      .inTable("address")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+    column.string("country_name");
+    column.string("province_name");
+    column.string("commune_name");
+    column.string("district_name");
+    column.integer("latitude");
+    column.integer("longitude");
     column.integer("status");
   });
 };
