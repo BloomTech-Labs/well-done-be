@@ -4,16 +4,18 @@ const cors = require('cors')
 
 const server = express();
 
-// middleware
+
+
+//routes
+const authRouter = require("../api/auth/auth.router.js");
+
+
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
+server.use("/api/accounts", authRouter);
 
-//routes
-const authRouter = require("./auth/auth.js");
-
-
-server.use("/auth", authRouter);
+// middleware
 
 
 server.get('/', (req, res) => {
@@ -23,3 +25,4 @@ server.get('/', (req, res) => {
 });
 
 module.exports = server;
+
