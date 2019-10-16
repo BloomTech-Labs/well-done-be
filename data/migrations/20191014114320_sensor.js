@@ -1,22 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("sensor", column => {
     column.increments();
-
-    column.integer("count");
-    column.string("kind");
-    column.string("type");
-    column.integer("cellular");
-    column.integer("bluetooth");
-    column.integer("sensor_ID");
-    column.string("training");
-    column.string("remark");
-    column.date("data_finished");
-    column.integer("depth");
-    column.integer("yield");
-    column.integer("static");
-    column.integer("dynamic");
-    column.string("quality");
-
     column
       .integer("pump_id")
       .unsigned()
@@ -24,19 +8,41 @@ exports.up = function(knex) {
       .inTable("pumps")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-
-    column
-      .integer("date_id")
-      .unsigned()
-      .references("id")
-      .inTable("dates")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
     column
       .integer("organization_id")
       .unsigned()
       .references("id")
       .inTable("organization")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
+    column
+      .integer("historical_id")
+      .unsigned()
+      .references("id")
+      .inTable("historical")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
+
+    column.integer("sensor_ID");
+    column.string("kind");
+    column.string("type");
+    column.integer("cellular");
+    column.integer("bluetooth");
+    column.string("training");
+    column.string("remark");
+    column.date("data_finished");
+    column.integer("depth");
+    column.integer("yield");
+    column.integer("static");
+    column.string("quality");
+    column.integer("level_dynamic");
+
+
+    column
+      .integer("date_id")
+      .unsigned() 
+      .references("id")
+      .inTable("dates")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
   });
