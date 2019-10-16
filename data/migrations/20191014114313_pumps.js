@@ -9,17 +9,16 @@ exports.up = function(knex) {
       .inTable("organization")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-    column
-      .integer("address_id")
-      .unsigned()
-      .references("id")
-      .inTable("address")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-    column.integer("status");
+    column.string("country_name");
+    column.string("province_name");
+    column.string("commune_name");
+    column.string("district_name");
+    column.integer("latitude");
+    column.integer("longitude");
   });
 };
 
 exports.down = function(knex) {
   return knex.schema.dropTableIfExists("pumps");
 };
+
