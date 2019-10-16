@@ -39,7 +39,7 @@ const insert = async account => {
 // update account
 const update = async (id, changes) => {
     try {
-        changes ? await db('schemes').where({id}).update(changes) : null;
+        changes ? await db('accounts').where({id}).update(changes) : null;
     } catch (err) {
         console.log(err);
     }
