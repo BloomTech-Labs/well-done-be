@@ -4,16 +4,18 @@ const cors = require('cors')
 
 const server = express();
 
-// middleware
+//haahhahahh
+
+//routes
+const authRouter = require("../api/auth/auth.router.js");
+
+
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
+server.use("/api/accounts", authRouter);
 
-//routes
-const authRouter = require("./auth/auth.js");
-
-
-server.use("/auth", authRouter);
+// middleware
 
 
 server.get('/', (req, res) => {
@@ -22,8 +24,5 @@ server.get('/', (req, res) => {
     `)
 });
 
-server.listen(5000, () =>
-  console.log('Server running on http://localhost:5000')
-);
-
 module.exports = server;
+
