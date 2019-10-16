@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Accounts = require('./accounts.model.js');
+const Accounts = require('./pumps.model');
 
 
 // get all accounts
@@ -9,3 +9,4 @@ const Accounts = require('./accounts.model.js');
 // get account by id
 
 // create 
+
