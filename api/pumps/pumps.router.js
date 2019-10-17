@@ -3,30 +3,6 @@ const router = require('express').Router();
 
 const Pumps = require('./pumps.model');
 
-//POST an Org
-router.post('/org', (req,res) => {
-    const orgData = req.body;
-    console.log('orgData', orgData)
-    Pumps.addOrg(orgData)
-        .then(org => {
-            res.status(201).json(org)
-        })
-        .catch(err => {
-            res.status(500).json(err)
-        })
-} )
-
-//GET orgs
-router.get('/org', (req,res) => {
-    Pumps.getOrgs()
-        .then(orgs => {
-            console.log('orgs', orgs)
-            res.status(200).json(orgs)
-        })
-        .catch(err => {
-            res.status(500).json({message: "Fail to retrieve orgs"})
-        })
-})
 
 //POST a pump
 router.post('/', (req,res) => {
@@ -49,8 +25,8 @@ router.get('/', (req,res) => {
             pumps.map(eachPump => {
                 // console.log('eachPump', eachPump)
                 const pumpsInfo = {
-                    pumps: {
-                        pumps_id: eachPump.id,
+                    pump: {
+                        pump_id: eachPump.id,
                         country_name: eachPump.country_name,
                         province_name: eachPump.province_name,
                         commune_name: eachPump.commune_name,
@@ -85,17 +61,75 @@ router.get('/', (req,res) => {
         })
 })
 
-//POST account
-router.post('/acc', (req,res) => {
-    const accData = req.body;
-    console.log('accData', accData)
-    Pumps.addAccount(accData)
-        .then(acc => {
-            res.status(201).json(acc)
+//GET a pump by id
+router.get('/:id', (req,res) => {
+    const {id} = req.params;
+    Pumps.getPumpById(id)
+        .then(pump => {
+            res.status(200).json(pump)
         })
-        .catch(err => {
-            res.status(500).json(err)
+        .catch(err => res.json(err))
+})
+
+//UPDATE a pumps
+router.patch('/:id', (req,res) => {
+    const change = req.body;
+    const {id} = req.params;
+    Pumps.updatePump(id, change)
+        .then(count => {
+            res.status(200).json({message: `updated ${count} pump`})
         })
-} )
+        .catch(err => res.json(err))
+})
+
+//DELETE a pumps
+router.delete('/:id', (req,res) => {
+    const {id} = req.params;
+    Pumps.deletePump(id)
+        .then(count => {
+            res.status(200).json({message: `deleted ${count} pump`})
+        })
+        .catch(err => res.json(err))
+    
+})
+
+// //These routes are to test get pumps
+// //POST an Org
+// router.post('/org', (req,res) => {
+//     const orgData = req.body;
+//     console.log('orgData', orgData)
+//     Pumps.addOrg(orgData)
+//         .then(org => {
+//             res.status(201).json(org)
+//         })
+//         .catch(err => {
+//             res.status(500).json(err)
+//         })
+// } )
+
+// //GET orgs
+// router.get('/org', (req,res) => {
+//     Pumps.getOrgs()
+//         .then(orgs => {
+//             console.log('orgs', orgs)
+//             res.status(200).json(orgs)
+//         })
+//         .catch(err => {
+//             res.status(500).json({message: "Fail to retrieve orgs"})
+//         })
+// })
+
+// //POST account
+// router.post('/acc', (req,res) => {
+//     const accData = req.body;
+//     console.log('accData', accData)
+//     Pumps.addAccount(accData)
+//         .then(acc => {
+//             res.status(201).json(acc)
+//         })
+//         .catch(err => {
+//             res.status(500).json(err)
+//         })
+// } )
 
 module.exports = router;

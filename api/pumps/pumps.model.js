@@ -3,37 +3,19 @@ const config = require("../../knexfile");
 const db = knex(config.development);
 
 module.exports = {
-    addOrg,
-    getOrgs,
-    addAccount,
+    // addOrg,
+    // getOrgs,
+    // addAccount,
+    // getAccounts,
+    // getOrgs,
     addPump,
     getPumps,
-    getOrgs,
-    getAccounts,
-    getAccountType,
-    getPumpsAll,
-    findPumpById,
+    // getPumpsAll,
     getPumpById,
     deletePump,
     updatePump
 }
 
-function addOrg(org) {
-    return db('organization')
-            .insert(org)
-            .then(ids => ({id: ids[0]}))
-
-}
-
-function addAccount(acc) {
-    return db('accounts')
-            .insert(acc)
-            .then(ids => ({id: ids[0]}))
-}
-
-function getOrgs(){
-    return db('organization')
-}
 
 function addPump(pump) {
     return db('pumps')
@@ -51,34 +33,40 @@ function getPumps() {
 
 }
 
-function getOrgs() {
-    return db('organization')
+function getPumpById(id) {
+    return db('pumps')
+            .where({id})
+            .then(pumps =>(pumps[0]))
+            // .first
 }
 
-function getAccounts(){
-    return db('accounts')
+
+function deletePump(id) {
+    return db('pumps')
+        .where(id)
+        .del()
 }
 
-function getAccountType(){
-    return db('account_types')
+function updatePump(id, change) {
+    return db('pumps')
+        .where({id})
+        .update(change)
 }
 
-function getPumpsAll(){
-    const pumpQuery = getPumps();
-    const orgQuery = getOrgs();
-    const accQuery = getAccounts();
-    const accTypeQuery = getAccountType()
+// function addOrg(org) {
+//     return db('organization')
+//             .insert(org)
+//             .then(ids => ({id: ids[0]}))
 
-    return Promise.all([pumpQuery, orgQuery, accQuery, accTypeQuery])
-            .then(
-                ([pump, organization, account, accountType]) => {
-                    pump.pump = pump;
-                    pump.organization = organization;
-                    organization.account = account;
-                    account.accountType = accountType
-                }
-            )
-}
+// }
+
+// function addAccount(acc) {
+//     return db('accounts')
+//             .insert(acc)
+//             .then(ids => ({id: ids[0]}))
+// }
+
+
 // function getUserAndStory(id) {
 //     const userQuery = getUser(id);
 //     const storiesQuery = getUserStories(id);
@@ -92,18 +80,4 @@ function getPumpsAll(){
 //     );
 //   }
 
-function findPumpById() {
 
-}
-
-function getPumpById() {
-
-}
-
-function deletePump() {
-
-}
-
-function updatePump() {
-
-}
