@@ -10,20 +10,27 @@ exports.up = function(knex) {
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     column
-      .integer("organization_id")
+      .integer("org_id")
       .unsigned()
-      .references("id")
-      .inTable("organization")
+      .references("org_id")
+      .inTable("accounts")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     column
       .integer("sensor_id")
       .unsigned()
       .references("id")
-      .inTable("sensor")
+      .inTable("sensors")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     column.integer("status");
+    column
+      .integer("account_id")
+      .unsigned()
+      .references("id")
+      .inTable("accounts")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
   });
 };
 

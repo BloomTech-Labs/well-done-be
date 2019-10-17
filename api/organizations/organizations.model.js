@@ -3,19 +3,8 @@ const config = require("../../knexfile");
 
 const db = require("../../data/dbConfig.js");
 
-module.exports = {
-  find,
-  findById,
-  findOrgsAndData,
-  findByOrgName,
-  updateOrg,
-  remove,
-  add
-};
-
 // get ALL orgs (for superUsers)
-
-function find() {
+function findAll() {
   return db("organizations");
 }
 // all account info by org id
@@ -23,11 +12,11 @@ function find() {
 // all sensors by org id
 // all pumps by org id
 // all sms by org id
-function findOrgsAndData() {
+function findAllAndData() {
   return db("organizations as o")
-    .join("accounts as a", "a.id", "o.organization_id")
-    .join("pumps as p", "o.id", "p.organization_id")
-    .join("sensor as s", "o.id", "s.organization_id");
+    .join("accounts as a", "a.id", "o.org_id")
+    .join("pumps as p", "o.id", "p.org_id")
+    .join("sensors as s", "o.id", "s.org_id");
 }
 
 // get organization by org_name
@@ -37,19 +26,19 @@ function findOrgsAndData() {
 // all pumps by org id
 // all sms by org id
 
-function findByOrgName(organization_name) {
+function findByOrgName(org_name) {
   return db("organizations as o")
-    .where({ organization_name })
-    .join("accounts as a", "a.id", "o.organization_id")
-    .join("pumps as p", "o.id", "p.organization_id")
-    .join("sensor as s", "o.id", "s.organization_id");
+    .where({ org_name })
+    .join("accounts as a", "a.id", "o.org_id")
+    .join("pumps as p", "o.id", "p.org_id")
+    .join("sensors as s", "o.id", "s.org_id");
 }
 
 // update organization
 // name/city
 // adding pumps
 // adding sensors
-async function updateOrg(id, changes) {
+async function update(id, changes) {
   try {
     changes
       ? await db("organizations")
@@ -69,7 +58,7 @@ function findById(id) {
 
 // create/post an organization
 // name/city
-async function add(organizations) {
+async function insert(organizations) {
   const [id] = await db("organizations")
     .insert(organizations)
     .returning("id");
@@ -94,3 +83,13 @@ const remove = id =>
 //       }
 //     );
 //   }
+
+module.exports = {
+  findAll,
+  findById,
+  findAllAndData,
+  findByOrgName,
+  update,
+  remove,
+  insert
+};
