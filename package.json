@@ -30,6 +30,7 @@
     "knex": "^0.19.5",
     "knex-cleaner": "^1.3.0",
     "pg": "^7.12.1",
+    "sequelize": "^5.19.8",
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
