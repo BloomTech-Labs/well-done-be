@@ -11,6 +11,16 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   accounts.associate = function(models) {
     // associations can be defined here
+    accounts.hasMany(models.account_types, {
+      foreignkey: 'account_types_id',
+      as: 'account_types',
+      onDelete: 'CASCADE'
+    })
+    accounts.hasMany(models.organization, {
+      foreignkey: 'organization_id',
+      as: 'organization',
+      onDelete: 'CASCADE'
+    })
   };
   return accounts;
 };

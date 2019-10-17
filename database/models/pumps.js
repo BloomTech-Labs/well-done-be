@@ -11,6 +11,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   pumps.associate = function(models) {
     // associations can be defined here
+    accounts.hasMany(models.organization, {
+      foreignkey: 'organization_id',
+      as: 'organization',
+      onDelete: 'CASCADE'
+    })
   };
   return pumps;
 };

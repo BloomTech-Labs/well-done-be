@@ -20,6 +20,26 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   sensor.associate = function(models) {
     // associations can be defined here
+    accounts.hasMany(models.pumps, {
+      foreignkey: 'pumps_id',
+      as: 'pumps',
+      onDelete: 'CASCADE'
+    })
+    accounts.hasMany(models.organization, {
+      foreignkey: 'organization_id',
+      as: 'organization',
+      onDelete: 'CASCADE'
+    })
+    accounts.hasMany(models.historical, {
+      foreignkey: 'historical_id',
+      as: 'historical',
+      onDelete: 'CASCADE'
+    })
+    accounts.hasMany(models.dates, {
+      foreignkey: 'dates_id',
+      as: 'dates',
+      onDelete: 'CASCADE'
+    })
   };
   return sensor;
 };

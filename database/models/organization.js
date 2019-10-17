@@ -7,6 +7,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   organization.associate = function(models) {
     // associations can be defined here
+    accounts.hasMany(models.accounts, {
+      foreignkey: 'accounts_id',
+      as: 'accounts',
+      onDelete: 'CASCADE'
+    })
   };
   return organization;
 };
