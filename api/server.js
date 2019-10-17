@@ -4,18 +4,25 @@ const cors = require('cors')
 
 const server = express();
 
-//haahhahahh
+const { Client } = require('pg')
+const client = new Client({
+  host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
+  user: "lambda",
+  password: "password",
+  database: "welldone"
+})
+client.connect()
 
-//routes
-const authRouter = require("../api/auth/auth.router.js");
-
-
+// middleware
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
-server.use("/api/accounts", authRouter);
 
-// middleware
+//routes
+// const authRouter = require("./auth/auth.js");
+
+
+// server.use("/auth", authRouter);
 
 
 server.get('/', (req, res) => {
@@ -25,4 +32,3 @@ server.get('/', (req, res) => {
 });
 
 module.exports = server;
-
