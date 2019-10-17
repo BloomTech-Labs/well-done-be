@@ -3,6 +3,9 @@ const config = require("../../knexfile");
 const db = knex(config.development);
 
 module.exports = {
+    addOrg,
+    getOrgs,
+    addAccount,
     addPump,
     getPumps,
     getOrgs,
@@ -15,6 +18,23 @@ module.exports = {
     updatePump
 }
 
+function addOrg(org) {
+    return db('organization')
+            .insert(org)
+            .then(ids => ({id: ids[0]}))
+
+}
+
+function addAccount(acc) {
+    return db('accounts')
+            .insert(acc)
+            .then(ids => ({id: ids[0]}))
+}
+
+function getOrgs(){
+    return db('organization')
+}
+
 function addPump(pump) {
     return db('pumps')
             .insert(pump)
@@ -24,9 +44,10 @@ function addPump(pump) {
 function getPumps() {
     return db('pumps')
             .join('organization', 'organization.id', 'pumps.organization_id')
-            .join('accounts', 'accounts.id', 'organization.accounts_id')
-            .join('account_types', 'account_types.id', 'accounts.account_types_id')
-            .select('pumps.country_name', 'organization.organization_name', 'accounts.id', 'account_types.id')
+            .join('accounts', 'pumps.organization_id', 'accounts.organization_id')
+            .select('pumps.id','pumps.country_name','pumps.province_name', 'pumps.commune_name','pumps.district_name', 'pumps.latitude', 'pumps.longitude', 
+                    'organization.id as organization_id', 'organization.organization_name', 'organization.headquarter_city', 
+                    'accounts.id as accounts_id', 'accounts.first_name', 'accounts.last_name', 'accounts.email_address', 'accounts.mobile_number')
 
 }
 
