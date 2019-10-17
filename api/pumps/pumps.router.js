@@ -66,30 +66,58 @@ router.get('/:id', (req,res) => {
     const {id} = req.params;
     Pumps.getPumpById(id)
         .then(pump => {
-            res.status(200).json(pump)
+            if(pump){
+                res.status(200).json(pump)
+            }
+            else res.status(404).json({message: 'pump does not exist'})
+            
         })
-        .catch(err => res.json(err))
+        .catch(err => res.status(500).json(err))
 })
 
 //UPDATE a pumps
 router.patch('/:id', (req,res) => {
     const change = req.body;
     const {id} = req.params;
-    Pumps.updatePump(id, change)
-        .then(count => {
-            res.status(200).json({message: `updated ${count} pump`})
-        })
+    Pumps.getPumpById(id)
+        .then(pump => {
+            if (pump){
+                Pumps.updatePump(id, change)
+                    .then(count => {
+                        res.status(200).json({message: `updated ${count} pump`})
+                    })
+                    .catch(err => res.status(500).json(err))
+                }
+            else {res.status(404).json({message: 'pump does not exist'})}
+            })
         .catch(err => res.json(err))
+    
 })
 
 //DELETE a pumps
 router.delete('/:id', (req,res) => {
     const {id} = req.params;
-    Pumps.deletePump(id)
-        .then(count => {
-            res.status(200).json({message: `deleted ${count} pump`})
-        })
-        .catch(err => res.json(err))
+    console.log('id',id)
+    Pumps.getPumpById(id)
+        .then(pump => {
+            console.log(pump)
+            if (pump){
+                Pumps.deletePump(id)
+                    .then(count => {
+                        console.log('fired')
+                        res.status(200).json({message: `deleted ${count} pump`})
+                    })
+                    .catch(err => res.status(500).json(err))
+                }
+            else {res.status(404).json({message: 'pump does not exist'})}
+            })
+        .catch(err => res.status(500).json(err))
+    // Pumps.deletePump(id)
+    //     .then(count => {
+    //         console.log('count', count)
+    //         res.status(200).json({message: `deleted ${count} pump`})
+    //     })
+    //     .catch(err => res.status(500).json({message: 'something wrong'}))
     
 })
 

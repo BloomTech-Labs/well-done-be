@@ -43,8 +43,8 @@ function getPumpById(id) {
 
 function deletePump(id) {
     return db('pumps')
-        .where(id)
-        .del()
+        .where({id})
+        .delete()
 }
 
 function updatePump(id, change) {
