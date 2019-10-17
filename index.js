@@ -7,19 +7,19 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
-app.use(bodyParser.json())
-app.use(
+server.use(bodyParser.json())
+server.use(
   bodyParser.urlencoded({
     extended: true,
   })
 )
-app.get('/', (request, response) => {
+server.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
 })
 
-app.listen(port, () => {
-  console.log(`App running on port ${port}.`)
-})
+// app.listen(port, () => {
+//   console.log(`App running on port ${port}.`)
+// })
 
 server.listen(defaults.port, () => {
   console.log(`\n*** Server Running on http://localhost:${defaults.port} ***\n`);
