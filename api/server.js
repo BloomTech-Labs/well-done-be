@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const server = express();
 
+<<<<<<< HEAD
 // const { Client } = require('pg')
 // const client = new Client({
 //   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
@@ -78,11 +79,25 @@ sequelize.authenticate().then(() => {
 }).catch((err) => {
   console.log(err);
 });
+=======
+
+//routes
+const authRouter = require("../api/auth/auth.router");
+const orgRouter = require("./organizations/organizations.router");
+const pumpsRouter = require("../api/pumps/pumps.router")
+>>>>>>> ad9171ceba85fa73a765d2dfa1f44211d7e774ca
 
 // middleware
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
+<<<<<<< HEAD
+=======
+server.use("/api/accounts", authRouter);
+server.use("/api/orgs", orgRouter);
+server.use("/api/pumps", pumpsRouter)
+
+>>>>>>> ad9171ceba85fa73a765d2dfa1f44211d7e774ca
 
 //routes
 // const authRouter = require("./auth/auth.js");
