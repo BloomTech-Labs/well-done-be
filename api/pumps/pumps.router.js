@@ -75,7 +75,7 @@ router.get('/:id', (req,res) => {
         .catch(err => res.status(500).json(err))
 })
 
-//UPDATE a pumps
+//UPDATE a pump
 router.patch('/:id', (req,res) => {
     const change = req.body;
     const {id} = req.params;

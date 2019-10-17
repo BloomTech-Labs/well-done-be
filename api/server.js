@@ -8,12 +8,14 @@ const server = express();
 //routes
 const authRouter = require("../api/auth/auth.router.js");
 const pumpsRouter = require("../api/pumps/pumps.router")
+const sensorsRouter = require("../api/sensors/sensor.router")
 
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
 server.use("/api/accounts", authRouter);
-server.use("/api/pumps", pumpsRouter)
+server.use("/api/pumps", pumpsRouter);
+server.use("/api/sensors", sensorsRouter)
 
 
 // middleware
