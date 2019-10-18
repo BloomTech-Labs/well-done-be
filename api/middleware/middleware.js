@@ -1,11 +1,7 @@
 const jwt = require("jsonwebtoken");
-const secrets = require("../config/secrets");
+const secrets = require("../../config/secrets");
 
-module.exports = {
-  authenticate,
-  generateToken
-};
-
+// authenticate middleware
 function authenticate(req, res, next) {
   const token = req.get("Authorization");
 
@@ -23,12 +19,10 @@ function authenticate(req, res, next) {
   }
 }
 
-function generateToken(user) {
-  const payload = {
-    subject: user.email_address
-  };
-  const options = {
-    expiresIn: "2d"
-  };
-  return jwt.sign(payload, secrets.jwtSecret, options);
-}
+// TODO: superuser middleware
+
+// TODO: orgAdmin middlware
+
+module.exports = {
+  authenticate
+};
