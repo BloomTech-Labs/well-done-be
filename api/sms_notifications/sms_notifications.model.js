@@ -2,19 +2,19 @@ const knex = require("knex");
 const config = require("../../knexfile");
 const db = knex(config.development);
 
-//* get all accounts - DONE
+// TODO: get all sms notifications
 const find = () => {
   try {
-    return db("accounts");
+    return db("sms_notifications");
   } catch (err) {
     console.log(err.message);
   }
 };
 
-//* get account by id
+// TODO: get sms notification by id
 const findById = id => {
   try {
-    return db("accounts")
+    return db("sms_notifications")
       .where({ id })
       .first();
   } catch (err) {
@@ -22,22 +22,22 @@ const findById = id => {
   }
 };
 
-//* create account
-const insert = async account => {
+// TODO: create sms notification
+const insert = async sms_notification => {
   try {
-    await db("accounts").insert(account);
+    await db("sms_notifications").insert(sms_notification);
+    console.log("SMS notification successfully created!");
   } catch (err) {
     console.log(err);
   }
 };
 
-//* update account
+// TODO: update sms notification
 const update = async (id, changes) => {
   try {
     changes
-      ? await db("accounts")
+      ? await db("sms_notifications")
           .where({ id })
-          .first()
           .update(changes)
       : null;
   } catch (err) {
@@ -45,13 +45,19 @@ const update = async (id, changes) => {
   }
 };
 
-//* remove account
+// TODO: remove sms notification
 const remove = async id => {
   try {
-    await db("accounts")
-      .where({ id })
-      .first()
-      .del();
+    const sms_notification = findById(id);
+    if (sms_notification) {
+      await db("sms_notifications")
+        .where({ id })
+        .del();
+    } else {
+      console.log(
+        "There was an error finding an sms notifications with the provided id."
+      );
+    }
   } catch (err) {
     console.log(err.message);
   }

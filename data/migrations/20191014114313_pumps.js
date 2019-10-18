@@ -1,22 +1,25 @@
 exports.up = function(knex) {
   return knex.schema.createTable("pumps", column => {
     column.increments();
-
     column
-      .integer("organization_id")
+      .integer("org_id")
       .unsigned()
       .references("id")
-      .inTable("organization")
+      .inTable("organizations")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
+    column.string("country_name");
+    column.string("province_name");
+    column.string("commune_name");
+    column.string("district_name");
     column
-      .integer("address_id")
-      .unsigned()
-      .references("id")
-      .inTable("address")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-    column.integer("status");
+      .float("latitude")
+      .unique()
+      .notNullable();
+    column
+      .float("longitude")
+      .unique()
+      .notNullable();
   });
 };
 

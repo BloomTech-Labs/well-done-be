@@ -7,22 +7,22 @@ exports.up = function(knex) {
       .unsigned()
       .references("id")
       .inTable("pumps")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .onUpdate("RESTRICT")
+      .onDelete("RESTRICT");
     column
-      .integer("organization_id")
+      .integer("org_id")
       .unsigned()
-      .references("id")
-      .inTable("organization")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .references("org_id")
+      .inTable("accounts")
+      .onUpdate("RESTRICT")
+      .onDelete("RESTRICT");
     column
       .integer("sensor_id")
       .unsigned()
       .references("id")
-      .inTable("sensor")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .inTable("sensors")
+      .onUpdate("RESTRICT")
+      .onDelete("RESTRICT");
     column.integer("status");
   });
 };
