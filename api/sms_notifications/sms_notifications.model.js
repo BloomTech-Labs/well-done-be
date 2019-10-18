@@ -1,6 +1,6 @@
 const knex = require("knex");
 const config = require("../../knexfile");
-const db = knex(config.development);
+const db = require("../../data/dbConfig.js");
 
 // TODO: get all sms notifications
 const find = () => {

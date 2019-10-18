@@ -20,7 +20,6 @@ exports.up = function(knex) {
     column.integer("yield");
     column.integer("static");
     column.string("quality");
-    column.integer("level_dynamic");
   });
 };
 
