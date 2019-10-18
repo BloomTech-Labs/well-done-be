@@ -12,6 +12,11 @@ exports.up = function(knex) {
       .inTable("sensors")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
+    
+    column.integer("pad_seconds");
+    column.integer("pad_counts");
+    column.integer("reported_percent");
+
   });
 };
 

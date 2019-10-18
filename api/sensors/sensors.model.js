@@ -1,13 +1,55 @@
 const knex = require("knex");
 const config = require("../../knexfile");
-// const db = knex(config.development);
+const db = require("../../data/dbConfig.js");
 
-const db = require("../data/dbConfig.js");
+// const db = require("../data/dbConfig.js");
 
-function findAll() {
-  return db("sensors");
+function addSensor(sensor){
+    return db('sensors')
+            .insert(sensor)
+            .then(ids => ({id: ids[0]}))
+}
+
+
+function getSensors(){
+    return db('sensors')
+            .join('pumps', 'pumps.id', 'sensors.pump_id')
+            .join('organizations', 'pumps.org_id', 'organizations.id')
+            .select('sensors.*', 'pumps.*', 'organizations.*')
+
+}
+
+function getSensorById(id){
+    return db('sensors')
+            .where({id})
+            .then(sensors => (sensors[0]))
+
+}
+
+function getSensorByOrgId(org_id){
+    return db('sensors')
+            .join('pumps', 'sensors.pump_id', 'pumps.id')
+            .where('pumps.org_id', org_id)
+            .then(sensors => (sensors[0]))
+}
+
+function updateSensor(id, change){
+    return db('sensors')
+            .where({id})
+            .update(change)
+}
+
+function deleteSensor(id){
+    return db('sensors')
+            .where({id})
+            .del()
 }
 
 module.exports = {
-  findAll
-};
+  addSensor,
+  getSensors,
+  getSensorById,
+  updateSensor,
+  deleteSensor,
+  getSensorByOrgId
+}
