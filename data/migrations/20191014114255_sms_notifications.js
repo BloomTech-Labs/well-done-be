@@ -12,8 +12,8 @@ exports.up = function(knex) {
     column
       .integer("org_id")
       .unsigned()
-      .references("org_id")
-      .inTable("accounts")
+      .references("id")
+      .inTable("organizations")
       .onUpdate("RESTRICT")
       .onDelete("RESTRICT");
     column
