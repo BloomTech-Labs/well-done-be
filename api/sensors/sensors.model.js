@@ -1,18 +1,8 @@
 const knex = require("knex");
 const config = require("../../knexfile");
-const db = knex(config.development);
+const db = require("../../data/dbConfig.js");
 
 // const db = require("../data/dbConfig.js");
-
-<<<<<<< HEAD:api/sensors/sensor.model.js
-module.exports = {
-    addSensor,
-    getSensors,
-    getSensorById,
-    updateSensor,
-    deleteSensor,
-    getSensorByOrgName
-}
 
 function addSensor(sensor){
     return db('sensors')
@@ -36,12 +26,10 @@ function getSensorById(id){
 
 }
 
-function getSensorByOrgName(filter){
+function getSensorByOrgId(org_id){
     return db('sensors')
             .join('pumps', 'sensors.pump_id', 'pumps.id')
-            .join('organizations', 'pumps.org_id', 'organizations.id')
-            .where('organizations.org_name', filter)
-            .select('sensors.*s')
+            .where('pumps.org_id', org_id)
             .then(sensors => (sensors[0]))
 }
 
@@ -57,12 +45,11 @@ function deleteSensor(id){
             .del()
 }
 
-=======
-function findAll() {
-  return db("sensors");
-}
-
 module.exports = {
-  findAll
-};
->>>>>>> 1878a7f0af80023950bf70c0a648cc595b6ab9ad:api/sensors/sensors.model.js
+  addSensor,
+  getSensors,
+  getSensorById,
+  updateSensor,
+  deleteSensor,
+  getSensorByOrgId
+}

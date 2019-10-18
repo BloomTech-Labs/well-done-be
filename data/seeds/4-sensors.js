@@ -1,0 +1,57 @@
+
+exports.seed = function(knex) {
+  // Deletes ALL existing entries
+  return knex('sensors').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('sensors').insert([
+        {
+          pump_id: 1,
+          physical_id: 12345,
+          kind: "A",
+          type: "B",
+          cellular: "C",
+          bluetooth: "D",
+          training: "need more training",
+          remark: "cool model",
+          data_finished: "2019-11-02",
+          depth: 223,
+          yield: 22,
+          static: 11,
+          quality: "good"
+      },
+      {
+        pump_id: 1,
+        physical_id: 45678,
+        kind: "C",
+        type: "D",
+        cellular: "E",
+        bluetooth: "F",
+        training: "need more training, seriously",
+        remark: "ok model",
+        data_finished: "2019-11-03",
+        depth: 2234,
+        yield: 223,
+        static: 112,
+        quality: "premium"
+       
+    },
+    {
+      pump_id: 2,
+      physical_id: 1234578,
+      kind: "E",
+      type: "F",
+      cellular: "G",
+      bluetooth: "H",
+      training: "no need training",
+      remark: "perfect model",
+      data_finished: "2019-11-04",
+      depth: 22344,
+      yield: 2244,
+      static: 1122,
+      quality: "first class"
+  }
+
+      ]);
+    });
+};

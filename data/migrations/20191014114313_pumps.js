@@ -10,8 +10,8 @@ exports.up = function(knex) {
       .onUpdate("CASCADE");
     column.string("country_name");
     column.string("province_name");
-    column.string("commune_name");
     column.string("district_name");
+    column.string("commune_name");
     column
       .float("latitude")
       .unique()

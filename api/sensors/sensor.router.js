@@ -62,7 +62,7 @@ router.get('/', (req,res) => {
             })
 })
 
-//GET a sensor by id
+//GET a sensor by sensor_id
 router.get('/:id', (req,res) => {
     const {id} = req.params;
     console.log(req.params)
@@ -76,20 +76,19 @@ router.get('/:id', (req,res) => {
             .catch(err => res.status(500).json(err.message))
 })
 
-// //GET a sensor by org_name
-// router.get('/org_name', (req,res) => {
-//     // const {org_name} = req.body;
-//     console.log(req)
-//     console.log(org_name)
-//     Sensors.getSensorByOrgName(org_name)
-//     .then(sensor => {
-//         if(sensor){
-//             res.status(200).json(sensor)
-//         }
-//         else res.status(404).json({message: 'sensor does not exist'})
-//     })
-//     .catch(err => res.status(500).json(err.message))  
-// })
+//GET a sensor by org_id
+router.get('/:org_id', (req,res) => {
+    const {org_id} = req.params;
+    console.log(org_id)
+    Sensors.getSensorByOrgId(org_id)
+    .then(sensor => {
+        if(sensor){
+            res.status(200).json(sensor)
+        }
+        else res.status(404).json({message: 'sensor does not exist'})
+    })
+    .catch(err => res.status(500).json(err.message))  
+})
 
 
 //UPDATE a sensor
