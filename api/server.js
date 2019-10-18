@@ -4,7 +4,6 @@ const cors = require('cors')
 
 const server = express();
 
-<<<<<<< HEAD
 // const { Client } = require('pg')
 // const client = new Client({
 //   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
@@ -80,8 +79,6 @@ sequelize.authenticate().then(() => {
   console.log(err);
 });
 
-=======
->>>>>>> 68edef7ed3b7eba2c9d41ad83db0be78c726dc5c
 //routes
 const authRouter = require("./auth/auth.router");
 const orgRouter = require("./organizations/organizations.router");
