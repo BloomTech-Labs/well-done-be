@@ -22,7 +22,9 @@ function addSensor(sensor){
 
 function getSensors(){
     return db('sensors')
-            
+            .join('pumps', 'pumps.id', 'sensors.pump_id')
+            .join('organizations', 'pumps.org_id', 'organizations.id')
+            .select('sensors.*', 'pumps.*', 'organizations.*')
 
 }
 
