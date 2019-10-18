@@ -8,7 +8,6 @@ module.exports = {
     addSensor,
     getSensors,
     getSensorById,
-    findSensorByOrgName,
     updateSensor,
     deleteSensor,
     getSensorByOrgName
@@ -36,7 +35,7 @@ function getSensorById(id){
 
 }
 
-function findSensorByOrgName(filter){
+function getSensorByOrgName(filter){
     return db('sensors')
             .join('pumps', 'sensors.pump_id', 'pumps.id')
             .join('organizations', 'pumps.org_id', 'organizations.id')
@@ -51,12 +50,9 @@ function updateSensor(id, change){
             .update(change)
 }
 
-function deleteSensor(){
+function deleteSensor(id){
     return db('sensors')
-
+            .where({id})
+            .del()
 }
 
-function getSensorByOrgName(){
-    return db('sensors')
-
-}

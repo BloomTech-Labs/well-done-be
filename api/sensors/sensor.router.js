@@ -81,7 +81,7 @@ router.get('/:id', (req,res) => {
 //     // const {org_name} = req.params;
 //     console.log(req)
 //     console.log(org_name)
-//     Sensors.findSensorByOrgName(org_name)
+//     Sensors.getSensorByOrgName(org_name)
 //     .then(sensor => {
 //         if(sensor){
 //             res.status(200).json(sensor)
@@ -115,8 +115,23 @@ router.patch('/:id', (req,res) => {
 
 
 //DELETE a sensor
-router.delete('/', (req,res) => {
-    
+router.delete('/:id', (req,res) => {
+    const {id} = req.params;
+    Sensors.getSensorById(id)
+            .then(sensor => {
+                if (sensor){
+                    Sensors.deleteSensor(id)
+                            .then(count => {
+                                res.status(200).json({message: `deleted ${count} sensor`})
+                            })
+                            .catch(err=> res.status(500).json(err))
+                }
+                else {
+                    res.status(404).json({message: "sensor does not exist"})
+                }
+            })
+            .catch(err => res.status(500).json(err.message))
+
 })
 
 module.exports = router;

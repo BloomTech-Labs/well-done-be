@@ -66,17 +66,17 @@ function addAccount(acc) {
 }
 
 
-function getUserAndStory(id) {
-    const userQuery = getUser(id);
-    const storiesQuery = getUserStories(id);
-    const country = getCountry(id);
-    return Promise.all([userQuery, storiesQuery, country]).then(
-      ([user, stories, country]) => {
-        user.stories = stories;
-        user.country = country;
-        return user;
-      }
-    );
-  }
+// function getUserAndStory(id) {
+//     const userQuery = getUser(id);
+//     const storiesQuery = getUserStories(id);
+//     const country = getCountry(id);
+//     return Promise.all([userQuery, storiesQuery, country]).then(
+//       ([user, stories, country]) => {
+//         user.stories = stories;
+//         user.country = country;
+//         return user;
+//       }
+//     );
+//   }
 
 
