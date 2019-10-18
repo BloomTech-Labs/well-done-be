@@ -78,7 +78,7 @@ router.get('/:id', (req,res) => {
 
 // //GET a sensor by org_name
 // router.get('/org_name', (req,res) => {
-//     // const {org_name} = req.params;
+//     // const {org_name} = req.body;
 //     console.log(req)
 //     console.log(org_name)
 //     Sensors.getSensorByOrgName(org_name)
