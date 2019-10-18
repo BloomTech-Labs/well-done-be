@@ -62,28 +62,54 @@ router.get('/', (req,res) => {
             })
 })
 
-
-
 //GET a sensor by id
 router.get('/:id', (req,res) => {
-    
+    const {id} = req.params;
+    console.log(req.params)
+    Sensors.getSensorById(id)
+            .then(sensor => {
+                if(sensor){
+                    res.status(200).json(sensor)
+                }
+                else res.status(404).json({message: 'sensor does not exist'})
+            })
+            .catch(err => res.status(500).json(err.message))
 })
 
-
-
-
-//GET a sensor by org_name
-router.get('/org_name', (req,res) => {
-    
-})
-
-
-
+// //GET a sensor by org_name
+// router.get('/org_name', (req,res) => {
+//     // const {org_name} = req.params;
+//     console.log(req)
+//     console.log(org_name)
+//     Sensors.findSensorByOrgName(org_name)
+//     .then(sensor => {
+//         if(sensor){
+//             res.status(200).json(sensor)
+//         }
+//         else res.status(404).json({message: 'sensor does not exist'})
+//     })
+//     .catch(err => res.status(500).json(err.message))  
+// })
 
 
 //UPDATE a sensor
-router.patch('/', (req,res) => {
-    
+router.patch('/:id', (req,res) => {
+    const change = req.body;
+    const {id} = req.params;
+    Sensors.getSensorById(id)
+            .then(sensor => {
+                if (sensor){
+                    Sensors.updateSensor(id, change)
+                            .then(count => {
+                                res.status(200).json({message: `updated ${count} sensor`})
+                            })
+                            .catch(err=> res.status(500).json(err))
+                }
+                else {
+                    res.status(404).json({message: "sensor does not exist"})
+                }
+            })
+            .catch(err => res.status(500).json(err.message))
 })
 
 
