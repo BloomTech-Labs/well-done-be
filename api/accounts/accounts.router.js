@@ -1,66 +1,74 @@
+const bcrypt = require("bcryptjs");
+
 const router = require("express").Router();
-
 const Accounts = require("./accounts.model.js");
+const { authenticate } = require("../middleware/middleware");
+const { generateToken } = require("../auth/auth.helpers");
 
-// TODO: get all accounts
-router.get("/", async (req, res) => {
-    try {
-      const accounts = await Accounts.find();
-      res.status(200).json(orgs);
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
+// * get all accounts - DONE
+// ! supposed to be only for superusers
+router.get("/", authenticate, async (req, res) => {
+  try {
+    const accounts = await Accounts.find();
+    res.status(200).json(accounts);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: get account by id
-router.get("/:account_id", async (req, res) => {
-    try {
-      const accounts = await Accounts.findById();
-      res.status(200).json(org);
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
+// * get account by id - DONE
+router.get("/:account_id", authenticate, async (req, res) => {
+  try {
+    const { account_id } = req.params;
+    const account = await Accounts.findById(account_id);
+    res.status(200).json(account);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: create account
+// * create account - DONE
+// ! supposed to be only for superusers (for now)
 router.post("/", async (req, res) => {
-    try {
-      const { org } = req.body;
-      const createdAccount = await Accounts.insert(org);
-      res.status(200).json(createdAccount);
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
+  try {
+    const account = req.body;
+    const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
+    account.password = hash;
+    await Accounts.insert(account);
+    const token = generateToken(account);
+    res.status(200).json(token);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: update account
-router.put("/:account_id", (req, res) => {
-    try {
-        const {account_id} = req.params;
-        const updateAccount = await Accounts.update(account_id);
-
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
-  
+// * update account - DONE
+// TODO: TEST
+router.put("/:account_id", authenticate, async (req, res) => {
+  try {
+    const { account_id } = req.params;
+    const changes = req.body;
+    const updatedAccount = await Accounts.update(account_id, changes);
+    res.status(200).json(updatedAccount);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
 // TODO: delete account
-router.delete("/:account_id", (req, res) => {
-    try {
-      const {account_id} = req.params;
-      const removedAccount = await Accounts.remove(org_id);
-      res.status(200).json(removedAccount);
-    } catch (err) {
-      console.log(err.message);
-      res.status(500).json(err.message);
-    }
-  });
+router.delete("/:account_id", authenticate, async (req, res) => {
+  try {
+    const { account_id } = req.params;
+    const removedAccount = await Accounts.remove(account_id);
+    res.status(200).json(removedAccount);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json(err.message);
+  }
+});
 
-  
-  
-  
+module.exports = router;

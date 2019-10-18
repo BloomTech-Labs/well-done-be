@@ -4,7 +4,10 @@ const config = require("../../knexfile");
 
 const db = require("../data/dbConfig.js");
 
-
-function getPumps() {
-    return db('sensors')
+function findAll() {
+  return db("sensors");
 }
+
+module.exports = {
+  findAll
+};
