@@ -6,6 +6,12 @@ const findAll = () => {
   return db("history");
 };
 
+function findById(id) {
+  return db("history")
+    .where({ id })
+    .first();
+}
+
 // ! findByOrgId will not work unil migrations are updated
 const findByOrgId = id => {
   try {
@@ -78,6 +84,7 @@ const remove = id => {
 
 module.exports = {
   findAll,
+  findById,
   findByOrgId,
   findByPumpId,
   findBySensorId,

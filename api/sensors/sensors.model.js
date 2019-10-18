@@ -4,6 +4,7 @@ const db = knex(config.development);
 
 // const db = require("../data/dbConfig.js");
 
+<<<<<<< HEAD:api/sensors/sensor.model.js
 module.exports = {
     addSensor,
     getSensors,
@@ -56,3 +57,12 @@ function deleteSensor(id){
             .del()
 }
 
+=======
+function findAll() {
+  return db("sensors");
+}
+
+module.exports = {
+  findAll
+};
+>>>>>>> 1878a7f0af80023950bf70c0a648cc595b6ab9ad:api/sensors/sensors.model.js
