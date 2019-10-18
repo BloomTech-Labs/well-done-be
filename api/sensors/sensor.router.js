@@ -4,12 +4,17 @@ const Sensors = require('./sensor.model');
 
 //POST a sensor
 router.post('/', (req,res) => {
-
+    const sensorData = req.body;
+    console.log('sensorData', sensorData)
+    Sensors.addSensor(sensorData)
+            .then(sensor => {
+                console.log(sensor)
+                res.status(201).json(sensor)
+            })
+            .catch(err => {
+                res.status(500).json(err.message)
+            })
 })
-
-
-
-
 
 //GET sensors
 router.get('/', (req,res) => {
@@ -46,3 +51,5 @@ router.patch('/', (req,res) => {
 router.delete('/', (req,res) => {
     
 })
+
+module.exports = router;

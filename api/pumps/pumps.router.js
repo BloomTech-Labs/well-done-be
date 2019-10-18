@@ -13,7 +13,7 @@ router.post('/', (req,res) => {
             res.status(201).json(pump)
         })
         .catch(err => {
-            res.status(500).json(err)
+            res.status(500).json(err.message)
         })
 } )
 
@@ -34,15 +34,18 @@ router.get('/', (req,res) => {
                         latitude: eachPump.latitude,
                         longitude: eachPump.longitude,
                         organization: {
-                            organization_id: eachPump.organization_id,
-                            organization_name: eachPump.organization_name,
+                            organization_id: eachPump.org_id,
+                            organization_name: eachPump.org_name,
                             headquarter_city: eachPump.headquarter_city,
                             accounts: {
                                 accounts_id: eachPump.accounts_id,
                                 first_name: eachPump.first_name,
                                 last_name: eachPump.last_name,
                                 email_address: eachPump.email_address,
-                                mobile_number: eachPump.mobile_number
+                                mobile_number: eachPump.mobile_number,
+                                super_user: eachPump.super_user,
+                                org_user: eachPump.org_user,
+                                org_admin: eachPump.org_admin
                                     }
                                 }
                             }
@@ -57,7 +60,7 @@ router.get('/', (req,res) => {
         })
     
         .catch(err => {
-            res.status(500).json({message: "Fail to retrieve pumps"})
+            res.status(500).json(err.message)
         })
 })
 
@@ -72,7 +75,7 @@ router.get('/:id', (req,res) => {
             else res.status(404).json({message: 'pump does not exist'})
             
         })
-        .catch(err => res.status(500).json(err))
+        .catch(err => res.status(500).json(err.message))
 })
 
 //UPDATE a pump
@@ -90,7 +93,7 @@ router.patch('/:id', (req,res) => {
                 }
             else {res.status(404).json({message: 'pump does not exist'})}
             })
-        .catch(err => res.json(err))
+        .catch(err => res.json(err.message))
     
 })
 
@@ -111,7 +114,7 @@ router.delete('/:id', (req,res) => {
                 }
             else {res.status(404).json({message: 'pump does not exist'})}
             })
-        .catch(err => res.status(500).json(err))
+        .catch(err => res.status(500).json(err.message))
     // Pumps.deletePump(id)
     //     .then(count => {
     //         console.log('count', count)
@@ -121,43 +124,43 @@ router.delete('/:id', (req,res) => {
     
 })
 
-// //These routes are to test get pumps
-// //POST an Org
-// router.post('/org', (req,res) => {
-//     const orgData = req.body;
-//     console.log('orgData', orgData)
-//     Pumps.addOrg(orgData)
-//         .then(org => {
-//             res.status(201).json(org)
-//         })
-//         .catch(err => {
-//             res.status(500).json(err)
-//         })
-// } )
+//These routes are to test get pumps
+//POST an Org
+router.post('/org', (req,res) => {
+    const orgData = req.body;
+    console.log('orgData', orgData)
+    Pumps.addOrg(orgData)
+        .then(org => {
+            res.status(201).json(org)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+} )
 
-// //GET orgs
-// router.get('/org', (req,res) => {
-//     Pumps.getOrgs()
-//         .then(orgs => {
-//             console.log('orgs', orgs)
-//             res.status(200).json(orgs)
-//         })
-//         .catch(err => {
-//             res.status(500).json({message: "Fail to retrieve orgs"})
-//         })
-// })
+//GET orgs
+router.get('/org', (req,res) => {
+    Pumps.getOrgs()
+        .then(orgs => {
+            console.log('orgs', orgs)
+            res.status(200).json(orgs)
+        })
+        .catch(err => {
+            res.status(500).json({message: "Fail to retrieve orgs"})
+        })
+})
 
-// //POST account
-// router.post('/acc', (req,res) => {
-//     const accData = req.body;
-//     console.log('accData', accData)
-//     Pumps.addAccount(accData)
-//         .then(acc => {
-//             res.status(201).json(acc)
-//         })
-//         .catch(err => {
-//             res.status(500).json(err)
-//         })
-// } )
+//POST account
+router.post('/acc', (req,res) => {
+    const accData = req.body;
+    console.log('accData', accData)
+    Pumps.addAccount(accData)
+        .then(acc => {
+            res.status(201).json(acc)
+        })
+        .catch(err => {
+            res.status(500).json(err)
+        })
+} )
 
 module.exports = router;

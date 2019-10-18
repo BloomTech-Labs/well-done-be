@@ -14,32 +14,34 @@ module.exports = {
 }
 
 function addSensor(sensor){
-    return db('sensor')
-
+    return db('sensors')
+            .insert(sensor)
+            .then(ids => ({id: ids[0]}))
 }
 
 
 function getSensors(){
-    return db('sensor')
+    return db('sensors')
+            
 
 }
 
 function getSensorById(){
-    return db('sensor')
+    return db('sensors')
 
 }
 
 function updateSensor(){
-    return db('sensor')
+    return db('sensors')
 
 }
 
 function deleteSensor(){
-    return db('sensor')
+    return db('sensors')
 
 }
 
 function getSensorByOrgName(){
-    return db('sensor')
+    return db('sensors')
 
 }
