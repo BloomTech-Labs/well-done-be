@@ -1,9 +1,9 @@
 const router = require("express").Router();
-
+const { authenticate } = require("../middleware/middleware");
 const Organizations = require("./organizations.model");
 
 // TODO: get all organizations
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
     const orgs = await Organizations.findAll();
     res.status(200).json(orgs);
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // TODO: get organization by id
-router.get("/:org_id", async (req, res) => {
+router.get("/:org_id", authenticate, async (req, res) => {
   try {
     const org = await Organizations.findById();
     res.status(200).json(org);
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
 });
 
 // TODO: update org
-router.put("/:org_id", (req, res) => {
+router.put("/:org_id", authenticate, async (req, res) => {
   try {
   } catch (err) {
     console.log(err.message);
@@ -46,7 +46,7 @@ router.put("/:org_id", (req, res) => {
 });
 
 //  TODO: delete org
-router.delete("/:org_id", async (req, res) => {
+router.delete("/:org_id", authenticate, async (req, res) => {
   try {
     const { org_id } = req.params;
     const removedOrg = await Organizations.remove(org_id);

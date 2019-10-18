@@ -8,7 +8,6 @@ exports.up = function(knex) {
       .inTable("organizations")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-
     column.string("first_name").notNullable();
     column.string("last_name").notNullable();
     column

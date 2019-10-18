@@ -1,11 +1,11 @@
 const router = require("express").Router();
+const History = require("./history.model");
+const { authenticate } = require("../middleware/middleware.js");
 
-const Historical = require("./history.model");
-
-// TODO: get all historical
-router.get("/", async (req, res) => {
+// TODO: get all history
+router.get("/", authenticate, async (req, res) => {
   try {
-    const history = await Historical.find();
+    const history = await History.find();
     res.status(200).json(history);
   } catch (err) {
     console.log(err.message);
@@ -13,18 +13,89 @@ router.get("/", async (req, res) => {
   }
 });
 
-// TODO: get historical by SENSOR ID
+// TODO: get history by SENSOR ID
+router.get("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const history = await History.findBySensorId(id);
+    res.status(200).json(history);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: get historical by Org
+// TODO: get history by Org ID
+router.get("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const history = await History.findByOrgId(id);
+    res.status(200).json(history);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: get historical by Pump
+// TODO: get history by Pump ID
+router.get("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const history = await History.findByPumpId(id);
+    res.status(200).json(history);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: get historical by id
+// TODO: get history by id
+router.get("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const history = await History.findById(id);
+    res.status(200).json(history);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: post to historical
+// TODO: post to history
+router.post("/", authenticate, async (req, res) => {
+  try {
+    const { history } = req.body;
+    const createdHistory = await History.insert(history);
+    res.status(200).json(createdHistory);
+  } catch (err) {
+    console.log();
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: create historical
+// TODO: update history
+router.put("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { changes } = req.body;
+    const updatedHistory = await History.update(changes, id);
+    res.status(200).jsob(updatedHistory);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: update historical
+// TODO: delete history
+router.delete("/:id", authenticate, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const removedHistory = await History.remove(id);
+    res.status(200).json(removedHistory);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json(err.message);
+  }
+});
 
-// TODO: delete historical
+module.exports = router;
