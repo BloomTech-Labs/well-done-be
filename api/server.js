@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const server = express();
 
+<<<<<<< HEAD
 // const { Client } = require('pg')
 // const client = new Client({
 //   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
@@ -79,19 +80,28 @@ sequelize.authenticate().then(() => {
   console.log(err);
 });
 
+=======
+>>>>>>> 68edef7ed3b7eba2c9d41ad83db0be78c726dc5c
 //routes
-const authRouter = require("../api/auth/auth.router");
+const authRouter = require("./auth/auth.router");
 const orgRouter = require("./organizations/organizations.router");
-const pumpsRouter = require("../api/pumps/pumps.router")
+const pumpsRouter = require("./pumps/pumps.router");
+const accountsRouter = require("./accounts/accounts.router");
+const smsNotificationsRouter = require("./sms_notifications/sms_notifications.router");
+const sensorsRouter = require("./sensors/sensors.router");
+const historyRouter = require("./history/history.router");
 
 // middleware
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
-server.use("/api/accounts", authRouter);
+server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
-server.use("/api/pumps", pumpsRouter)
-
+server.use("/api/pumps", pumpsRouter);
+server.use("/api/accounts", accountsRouter);
+server.use("/api/sms_notifications", smsNotificationsRouter);
+// TODO: server.use("/api/sensors", sensorsRouter);
+server.use("/api/history", historyRouter);
 
 //routes
 // const authRouter = require("./auth/auth.js");

@@ -67,11 +67,16 @@ async function insert(organizations) {
 }
 
 //delete an organization by id
-const remove = id =>
-  db("organizations")
-    .where({ id })
-    .del();
-
+const remove = async id => {
+  try {
+    const deleted = await db("organizations")
+      .where({ id })
+      .del();
+    return deleted;
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 // function getUserAndStory(id) {
 //     const userQuery = getUser(id);
 //     const storiesQuery = getUserStories(id);
