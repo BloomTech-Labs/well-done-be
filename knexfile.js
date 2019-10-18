@@ -21,52 +21,21 @@ module.exports = {
   }
 },
 
-  staging: {
-    client: 'pg',
-    connection: {
-      host: "postgresql://lambda:password@aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com:5432/welldone",
-      database: 'welldone-staging',
-      user:     'lambda',
-      password: 'password'
+    testing: {
+      client: 'pg',
+      connection: process.env.POSTGRESQL_URL,
+      migrations: {
+        directory: './data/migrations',
+      },
+      seeds: { directory: './data/seeds' },
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds'
-    },
-    // migrations: {
-    //   tableName: 'knex_migrations'
-    // }
-  },
 
-  production: {
-    client: 'pg',
-    connection: {
-      host: "postgresql://lambda:password@aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com:5432/welldone",
-      database: 'welldone-production',
-      user:     'lambda',
-      password: 'password'
+    production: {
+      client: 'pg',
+      connection: process.env.POSTGRESQL_URL,
+      migrations: {
+        directory: './data/migrations',
+      },
+      seeds: { directory: './data/seeds' },
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './data/migrations',
-    },
-    seeds: {
-      directory: './data/seeds'
-    },
-    // migrations: {
-    //   tableName: 'knex_migrations'
-    // }
-  }
-
-};
+    };
