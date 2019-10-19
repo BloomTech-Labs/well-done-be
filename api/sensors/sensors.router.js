@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Sensors = require('./sensor.model');
+const Sensors = require('./sensors.model');
 
 //POST a sensor
 router.post('/', (req,res) => {

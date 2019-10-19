@@ -2,31 +2,31 @@ const router = require("express").Router();
 
 const Pumps = require("./pumps.model");
 
+// //POST a pump - WORKING
+// router.post("/", (req, res) => {
+//   const pumpData = req.body;
+//   console.log("pumpData", pumpData);
+//   Pumps.insert(pumpData)
+//     .then(pump => {
+//       res.status(201).json(pump);
+//     })
+//     .catch(err => {
+//       res.status(500).json(err);
+//     });
+// });
+
+// //GET pumps
+// router.get("/", async (req, res) => {
+//   try {
+//     const pumps = await Pumps.find();
+//     res.status(200).json(pumps);
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(400).json(err.message);
+//   }
+// });
+
 //POST a pump - WORKING
-router.post("/", (req, res) => {
-  const pumpData = req.body;
-  console.log("pumpData", pumpData);
-  Pumps.insert(pumpData)
-    .then(pump => {
-      res.status(201).json(pump);
-    })
-    .catch(err => {
-      res.status(500).json(err);
-    });
-});
-
-//GET pumps
-router.get("/", async (req, res) => {
-  try {
-    const pumps = await Pumps.find();
-    res.status(200).json(pumps);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  }
-});
-
-//POST a pump
 router.post('/', (req,res) => {
     const pumpData = req.body;
     console.log('pumpData', pumpData)
@@ -39,7 +39,7 @@ router.post('/', (req,res) => {
         })
 } )
 
-//GET pumps
+//GET pumps - WORKING
 router.get('/', (req,res) => {
     Pumps.getPumps()
         .then(pumps => {
@@ -86,7 +86,7 @@ router.get('/', (req,res) => {
         })
 })
 
-//GET a pump by id
+//GET a pump by id - WORKING
 router.get('/:id', (req,res) => {
     const {id} = req.params;
     Pumps.getPumpById(id)
@@ -100,7 +100,7 @@ router.get('/:id', (req,res) => {
         .catch(err => res.status(500).json(err.message))
 })
 
-//UPDATE a pump
+//UPDATE a pump - WORKING
 router.patch('/:id', (req,res) => {
     const change = req.body;
     const {id} = req.params;
