@@ -2,18 +2,7 @@ const knex = require("knex");
 const config = require("../../knexfile");
 const db = require("../../data/dbConfig.js");
 
-module.exports = {
-    // addOrg,
-    // addAccount,
-    // getAccounts,
-    // getOrgs,
-    addPump,
-    getPumps,
-    // getPumpsAll,
-    getPumpById,
-    deletePump,
-    updatePump
-}
+
 
 function addPump(pump){
     return db('pumps')
@@ -31,6 +20,8 @@ function getPumps() {
                     'accounts.id as accounts_id', 'accounts.first_name', 'accounts.last_name', 'accounts.email_address', 'accounts.mobile_number', 'accounts.super_user', 'accounts.org_user', 'accounts.org_admin')
 
 }
+
+
 // {
 //     "org_name"= "2LAVON ORG",
 //     "headquarter_city" = "2Paris"
@@ -67,12 +58,12 @@ function getPumps() {
 //     );
 // }
 
-// function findById(id) {
-//   return db("pumps")
-//     .where({ id })
-//     .then(pumps => pumps[0]);
-//   // .first
-// }
+function getPumpById(id) {
+  return db("pumps")
+    .where({ id })
+    .then(pumps => pumps[0]);
+  // .first
+}
 
 function deletePump(id) {
     return db("pumps")
@@ -86,4 +77,16 @@ function updatePump(id, change) {
     .update(change)
 }
 
+module.exports = {
+    // addOrg,
+    // addAccount,
+    // getAccounts,
+    // getOrgs,
+    addPump,
+    getPumps,
+    // getPumpsAll,
+    getPumpById,
+    deletePump,
+    updatePump
+}
 

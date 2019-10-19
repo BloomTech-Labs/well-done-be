@@ -45,6 +45,12 @@ const update = async (id, changes) => {
   }
 };
 
+// async function update (changes, account_id) {
+//   const [id] = await db("accounts").where({ id: account_id }).first().update(changes).returning('id')
+
+//   return findById(id);
+// }
+
 //* remove account
 const remove = async id => {
   try {

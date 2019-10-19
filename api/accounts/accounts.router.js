@@ -2,12 +2,14 @@ const bcrypt = require("bcryptjs");
 
 const router = require("express").Router();
 const Accounts = require("./accounts.model.js");
-const { authenticate } = require("../middleware/middleware");
+// const { authenticate } = require("../middleware/middleware");
 const { generateToken } = require("../auth/auth.helpers");
 
 // * get all accounts - DONE
 // ! supposed to be only for superusers
-router.get("/", authenticate, async (req, res) => {
+router.get("/", 
+// authenticate, 
+async (req, res) => {
   try {
     const accounts = await Accounts.find();
     res.status(200).json(accounts);
@@ -18,7 +20,9 @@ router.get("/", authenticate, async (req, res) => {
 });
 
 // * get account by id - DONE
-router.get("/:account_id", authenticate, async (req, res) => {
+router.get("/:account_id", 
+// authenticate, 
+async (req, res) => {
   try {
     const { account_id } = req.params;
     const account = await Accounts.findById(account_id);
@@ -45,9 +49,10 @@ router.post("/", async (req, res) => {
   }
 });
 
-// * update account - DONE
-// TODO: TEST
-router.put("/:account_id", authenticate, async (req, res) => {
+// update account - WORKING but doesnt return a message on Postman/Insomnia
+router.put("/:account_id", 
+// authenticate, 
+async (req, res) => {
   try {
     const { account_id } = req.params;
     const changes = req.body;
@@ -60,7 +65,9 @@ router.put("/:account_id", authenticate, async (req, res) => {
 });
 
 // TODO: delete account
-router.delete("/:account_id", authenticate, async (req, res) => {
+router.delete("/:account_id", 
+// authenticate, 
+async (req, res) => {
   try {
     const { account_id } = req.params;
     const removedAccount = await Accounts.remove(account_id);

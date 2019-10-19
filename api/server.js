@@ -19,7 +19,7 @@ server.use(cors());
 server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
 server.use("/api/pumps", pumpsRouter);
-server.user("/api/sensors", sensorsRouter)
+server.use("/api/sensors", sensorsRouter)
 server.use("/api/accounts", accountsRouter);
 server.use("/api/sms_notifications", smsNotificationsRouter);
 // TODO: server.use("/api/sensors", sensorsRouter);

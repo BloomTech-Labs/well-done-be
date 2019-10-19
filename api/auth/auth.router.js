@@ -13,7 +13,8 @@ router.post("/login", async (req, res) => {
     const account = await Auth.findBy({ email_address }).first();
     if (account && bcrypt.compareSync(password, account.password)) {
       const token = generateToken(account);
-      res.status(200).json({ token });
+      const id = account.id
+      res.status(200).json({ token, id });
     }
   } catch (err) {
     res.status(401).json({ message: "Invalid Credentials" });
@@ -21,6 +22,8 @@ router.post("/login", async (req, res) => {
 });
 
 // TODO: logout
-router.post("/logout", authenticate, (req, res) => {});
+// router.post("/logout", 
+// authenticate
+// , (req, res) => {});
 
 module.exports = router;
