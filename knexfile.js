@@ -23,11 +23,13 @@ module.exports = {
 
     testing: {
       client: 'pg',
-      connection: process.env.POSTGRESQL_URL,
-      migrations: {
-        directory: './data/migrations',
-      },
-      seeds: { directory: './data/seeds' },
+      // version: '7.2',
+      connection: {
+        host : 'aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com',
+        user : 'lambda',
+        password : 'password',
+        database : 'welldone'
+      }
     },
 
     production: {
@@ -38,4 +40,4 @@ module.exports = {
       },
       seeds: { directory: './data/seeds' },
     },
-    };
+};
