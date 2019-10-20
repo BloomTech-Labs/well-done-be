@@ -4,10 +4,10 @@ exports.up = function(knex) {
     column
       .integer("org_id")
       .unsigned()
-      .references("id")
-      .inTable("organizations")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      // .references("id")
+      // .inTable("organizations")
+      // .onDelete("CASCADE")
+      // .onUpdate("CASCADE");
     column.string("country_name");
     column.string("province_name");
     column.string("district_name");

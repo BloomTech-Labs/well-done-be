@@ -3,23 +3,35 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './data/auth.sqlite3'
+      host : 'aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com',
+      user : 'lambda',
+      password : 'password',
+      database : 'welldone'
     },
-    useNullAsDefault: true,
     migrations: {
       directory: './data/migrations',
     },
-    seeds: {
-      directory: './data/seeds'
-    },
-    pool: {
-      afterCreate: (conn, done) => {
-        conn.run('PRAGMA foreign_keys = ON', done);
-      }
-  }
-},
+    seeds: { directory: './data/seeds' },
+  },
+  //   client: 'sqlite3',
+  //   connection: {
+  //     filename: './data/auth.sqlite3'
+  //   },
+  //   useNullAsDefault: true,
+  //   migrations: {
+  //     directory: './data/migrations',
+  //   },
+  //   seeds: {
+  //     directory: './data/seeds'
+  //   },
+  //   pool: {
+  //     afterCreate: (conn, done) => {
+  //       conn.run('PRAGMA foreign_keys = ON', done);
+  //     }
+  // }
+// },
 
     testing: {
       client: 'pg',
