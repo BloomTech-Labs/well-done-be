@@ -4,7 +4,7 @@ require('dotenv').config();
 module.exports = {
 
   development: {
-    client: 'postgres',
+    client: 'postgresql',
     connection: process.env.DATABASE_URL,
     migrations: {
       directory: __dirname + '/data/migrations',
@@ -41,7 +41,7 @@ module.exports = {
     //   }
     // },
     development: {
-      client: 'postgres',
+      client: 'postgresql',
       connection: process.env.DATABASE_URL,
       migrations: {
         directory: __dirname + '/data/migrations',
