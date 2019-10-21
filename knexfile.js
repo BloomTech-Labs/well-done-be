@@ -7,9 +7,9 @@ module.exports = {
     client: 'postgresql',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: './data/migrations',
+      directory: ' __dirname + ./data/migrations',
     },
-    seeds: { directory: './data/seeds' },
+    seeds: {  directory: ' __dirname + ./data/seeds' },
   },
   ssl: true,
   //   client: 'sqlite3',
@@ -45,9 +45,9 @@ module.exports = {
       client: 'postgresql',
       connection: process.env.DATABASE_URL,
       migrations: {
-        directory: './data/migrations',
+        directory: ' __dirname + ./data/migrations',
       },
-      seeds: { directory: './data/seeds' },
+      seeds: { directory: ' __dirname + ./data/seeds' },
     },
     ssl: true
 };
