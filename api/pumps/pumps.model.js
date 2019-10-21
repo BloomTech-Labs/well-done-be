@@ -7,7 +7,11 @@ const db = require("../../data/dbConfig.js");
 function addPump(pump){
     return db('pumps')
             .insert(pump)
-            .then(ids => ({id:ids[0]}))
+            .returning("id")
+}
+
+function findPumps() {
+  return db('pumps')
 }
 
 
@@ -19,6 +23,18 @@ function getPumps() {
                     'organizations.id as org_id', 'organizations.org_name', 'organizations.headquarter_city', 
                     'accounts.id as accounts_id', 'accounts.first_name', 'accounts.last_name', 'accounts.email_address', 'accounts.mobile_number', 'accounts.super_user', 'accounts.org_user', 'accounts.org_admin')
 
+}
+
+function getPumpsByOrgId(id) {
+  return db("pumps as p")
+  .join("organizations as o", "o.id", "p.org_id")
+  .where({org_id: id})
+}
+
+function findById(id) {
+  return db("organizations")
+    .where({ id })
+    .first();
 }
 
 
@@ -71,11 +87,21 @@ function deletePump(id) {
         .del()
 }
 
-function updatePump(id, change) {
-  return db("pumps")
-    .where({ id })
-    .update(change)
-}
+// function updatePump(id, change) {
+//   return db("pumps")
+//     .where({ id })
+//     .update(change)
+// }
+
+const updatePump = (changes, id) => {
+  try {
+    return db("pumps")
+      .where({ id })
+      .update(changes);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
 module.exports = {
     // addOrg,
@@ -84,6 +110,8 @@ module.exports = {
     // getOrgs,
     addPump,
     getPumps,
+    findPumps,
+    getPumpsByOrgId,
     // getPumpsAll,
     getPumpById,
     deletePump,

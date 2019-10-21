@@ -1,2 +1,2 @@
-select * from organizations 
 select * from pumps
+select * from history

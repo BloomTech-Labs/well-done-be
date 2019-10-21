@@ -14,11 +14,9 @@ exports.up = function(knex) {
     column.string("commune_name");
     column
       .float("latitude")
-      .unique()
       .notNullable();
     column
       .float("longitude")
-      .unique()
       .notNullable();
   });
 };
