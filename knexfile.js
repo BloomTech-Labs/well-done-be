@@ -4,12 +4,12 @@ require('dotenv').config();
 module.exports = {
 
   development: {
-    client: 'postgresql',
+    client: 'pg',
     connection: process.env.DATABASE_URL,
     migrations: {
-      directory: ' __dirname + ./data/migrations',
+      directory: __dirname + '/data/migrations',
     },
-    seeds: {  directory: ' __dirname + ./data/seeds' },
+    seeds: { directory: __dirname + '/data/seeds' },
   },
   ssl: true,
   //   client: 'sqlite3',
@@ -40,14 +40,22 @@ module.exports = {
     //     database : 'welldone'
     //   }
     // },
-
-    production: {
-      client: 'postgresql',
+    development: {
+      client: 'pg',
       connection: process.env.DATABASE_URL,
       migrations: {
-        directory: ' __dirname + ./data/migrations',
+        directory: __dirname + '/data/migrations',
       },
-      seeds: { directory: ' __dirname + ./data/seeds' },
+      seeds: { directory: __dirname + '/data/seeds' },
     },
     ssl: true
+    // production: {
+    //   client: 'pg',
+    //   connection: process.env.DATABASE_URL,
+    //   migrations: {
+    //     directory: __dirname + '/data/migrations',
+    //   },
+    //   seeds: { directory: __dirname + '/data/seeds' },
+    // },
+    // ssl: true
 };
