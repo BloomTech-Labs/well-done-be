@@ -1,15 +1,10 @@
 // Update with your config settings.
-
+require('dotenv').config();
 module.exports = {
 
   development: {
     client: 'pg',
-    connection: {
-      host : 'aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com',
-      user : 'lambda',
-      password : 'password',
-      database : 'welldone'
-    },
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: './data/migrations',
     },
