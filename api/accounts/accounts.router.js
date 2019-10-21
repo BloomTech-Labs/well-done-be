@@ -56,8 +56,8 @@ async (req, res) => {
   try {
     const { account_id } = req.params;
     const changes = req.body;
-    const updatedAccount = await Accounts.update(account_id, changes);
-    res.status(200).json(updatedAccount);
+    await Accounts.update(account_id, changes);
+    res.status(200).json({message: "Account edited successfully."});
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);
@@ -71,7 +71,7 @@ async (req, res) => {
   try {
     const { account_id } = req.params;
     const removedAccount = await Accounts.remove(account_id);
-    res.status(200).json(removedAccount);
+    res.status(200).json({message: "Account deleted!"});
   } catch (err) {
     console.log(err.message);
     res.status(500).json(err.message);
