@@ -5,64 +5,6 @@ const cors = require('cors')
 const server = express();
 
 
-// const { Client } = require('pg')
-// const client = new Client({
-//   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
-//   user: "lambda",
-//   password: "password",
-//   database: "welldone"
-// })
-// client.connect()
-
-// const { Pool, Client } = require('pg')
-// const pool = new Pool({
-  //   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
-  //   user: "lambda",
-  //   password: "password",
-  //   database: "welldone",
-  //   port: 5432,
-  // })
-  // pool.query('SELECT NOW()', (err, res) => {
-    //   console.log(err, res)
-    //   pool.end()
-    // })
-    // const client = new Client({
-      //   host: "aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com",
-      //   user: "lambda",
-      //   password: "password",
-      //   database: "welldone",
-      //   port: 5432,
-      // })
-      // client.connect()
-      
-      // client.query('SELECT NOW()', (err, res) => {
-        //   console.log(err, res)
-        //   client.end()
-        // })
-// const environment = process.env.NODE_ENV || 'development';    // if something else isn't setting ENV, use development
-// const configuration = require('../knexfile')[environment];    // require environment's settings from knexfile
-// const database = require('knex')(configuration);              // connect to DB via knex using env's settings
-        
-        //---__Works! ----*
-        
-// const { Pool, Client } = require('pg')
-// const connectionString = 'postgresql://lambda:password@aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com:5432/welldone'
-// const pool = new Pool({
-//   connectionString: connectionString,
-// })
-// pool.query('SELECT NOW()', (err, res) => {
-//   console.log(err, res)
-//   pool.end()
-// })
-// const client = new Client({
-//   connectionString: connectionString,
-// })
-// client.connect()
-// client.query('SELECT NOW()', (err, res) => {
-//   console.log(err, res)
-//   client.end()
-// })
-
 //----------*
 
 // const Sequelize = require('sequelize');
