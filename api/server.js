@@ -45,10 +45,8 @@ client.query("SELECT NOW()", (err, res) => {
   client.end();
 });
 
-// middleware
-
 server.get("/", (req, res) => {
-  res.send(`
+  res.status(200).json(`
     <h2>Welcome to the Jungle 🌴</h2>
     `);
 });

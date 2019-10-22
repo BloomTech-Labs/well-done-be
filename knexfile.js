@@ -1,4 +1,6 @@
 // Update with your config settings.
+// require('dotenv').config();
+// dotenv.config({ path: "./env" });
 
 module.exports = {
   development: {
@@ -20,15 +22,26 @@ module.exports = {
     }
   },
 
-  production: {
-    client: "pg",
-    connection: process.env.DATABASE_URL, //heroku sets this env variable automatically
+  testing: {
+    client: "sqlite3",
+    connection: {
+      filename: "./data/route.test"
+    },
+    useNullAsDefault: true,
     migrations: {
       directory: "./data/migrations"
     },
     seeds: {
       directory: "./data/seeds"
+    }
+  },
+  production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: __dirname + "/data/migrations"
     },
-    ssl: true
-  }
+    seeds: { directory: __dirname + "/data/seeds" }
+  },
+  ssl: true
 };
