@@ -41,7 +41,7 @@ module.exports = {
     //     database : 'welldone'
     //   }
     // },
-    development: {
+    production: {
       client: 'pg',
       connection: process.env.DATABASE_URL,
       migrations: {
