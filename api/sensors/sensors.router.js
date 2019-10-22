@@ -52,7 +52,7 @@ router.get('/', (req,res) => {
                         }
                     }
                     console.log(sensorsInfo)
-                    return listSensors.push(sensorsInfo)
+                    return listSensors.push(sensors)
                 })
                 console.log('listSensors', listSensors)
                 res.status(200).json(listSensors)
