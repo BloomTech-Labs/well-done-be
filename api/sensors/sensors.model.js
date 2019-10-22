@@ -11,27 +11,73 @@ function addSensor(sensor){
 }
 
 
-// function getSensors(){
-//     return db('sensors')
+function getSensors(){
+    return db('sensors')
+            .join('pumps', 'pumps.id', 'sensors.pump_id')
+            .join('organizations', 'pumps.org_id', 'organizations.id')
+            .select(
+                'sensors.id',
+                'sensors.pump_id as pump_id', 
+                'sensors.physical_id', 
+                'sensors.kind', 
+                'sensors.type', 
+                'sensors.cellular', 
+                'sensors.bluetooth', 
+                'sensors.training', 
+                'sensors.remark', 
+                'sensors.data_finished',
+                'sensors.depth',
+                'sensors.yield',
+                'sensors.static',
+                'sensors.quality',
+                'pumps.country_name',
+                'pumps.province_name',
+                'pumps.commune_name',
+                'pumps.district_name',
+                'organizations.id as org_id',
+                'organizations.org_name',
+                'organizations.headquarter_city'
+          
+            )
+}
+
+// sensor_id: eachSensor.id,
+// physical_id: eachSensor.physical_id,
+// kind: eachSensor.kind,
+// type: eachSensor.type,
+// cellular: eachSensor.cellular,
+// bluetooth: eachSensor.bluetooth,
+// training: eachSensor.training,
+// remark: eachSensor.remark,
+// data_finished: eachSensor.data_finished,
+// depth: eachSensor.depth,
+// yield: eachSensor.yield,
+// static: eachSensor.static,
+// quality: eachSensor.quality,
+// level_dynamic: eachSensor.level_dynamic,
+// pump: {
+//     pump_id: eachSensor.pump_id,
+//     country_name: eachSensor.country_name,
+//     province_name: eachSensor.province_name,
+//     commune_name: eachSensor.commune_name,
+//     district_name: eachSensor.district_name,
+//     organization: {
+//         org_name: eachSensor.org_name,
+//         headquarter_city: eachSensor.headquarter_city
+
+
+// const getSensors = () => { 
+//     try {
+//        return db('sensors')
 //             .join('pumps', 'pumps.id', 'sensors.pump_id')
 //             .join('organizations', 'pumps.org_id', 'organizations.id')
 //             .select('sensors.*', 'pumps.*', 'organizations.*')
-            
-
-// }
-
-const getSensors = () => { 
-    try {
-       return db('sensors')
-            .join('pumps', 'pumps.id', 'sensors.pump_id')
-            .join('organizations', 'pumps.org_id', 'organizations.id')
-            .select('sensors.*', 'pumps.*', 'organizations.*')
         
 
-    } catch (err) {
-        res.status(400).json(err.message)
-    }
-}
+//     } catch (err) {
+//         res.status(400).json(err.message)
+//     }
+// }
 
 function findSensors() {
     return db('sensors')
@@ -72,3 +118,4 @@ module.exports = {
   deleteSensor,
   getSensorByOrgId
 }
+
