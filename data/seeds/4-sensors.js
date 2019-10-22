@@ -10,11 +10,7 @@ exports.seed = function(knex) {
           physical_id: 12345,
           kind: "A",
           type: "B",
-<<<<<<< HEAD
           cellular: 2,
-=======
-          cellular: 8,
->>>>>>> 6e93519ef808e026897f2d8d2741cfb6b3e3103e
           bluetooth: 1,
           training: "need more training",
           remark: "cool model",
@@ -29,11 +25,7 @@ exports.seed = function(knex) {
           physical_id: 45678,
           kind: "C",
           type: "D",
-<<<<<<< HEAD
           cellular: 2,
-=======
-          cellular: 8,
->>>>>>> 6e93519ef808e026897f2d8d2741cfb6b3e3103e
           bluetooth: 1,
           training: "need more training, seriously",
           remark: "ok model",
@@ -48,11 +40,7 @@ exports.seed = function(knex) {
           physical_id: 1234578,
           kind: "E",
           type: "F",
-<<<<<<< HEAD
           cellular: 2,
-=======
-          cellular: 8,
->>>>>>> 6e93519ef808e026897f2d8d2741cfb6b3e3103e
           bluetooth: 1,
           training: "no need training",
           remark: "perfect model",
