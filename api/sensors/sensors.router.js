@@ -16,61 +16,63 @@ router.post('/', (req,res) => {
             })
 })
 
-//GET sensors
-
-router.get("/", async (req,res) => {
-    try {
-        const sensors = await Sensors.findSensors();
-        res.status(200).json(sensors)
-    } catch (err) {
-        res.status(400).json(err.message)
-    }
-})
-
-// router.get('/', (req,res) => {
-//     Sensors.getSensors()
-//             .then(sensors => {
-//                 const listSensors = []
-//                 sensors.map(eachSensor => {
-//                     const sensorsInfo = {
-//                         sensor: {
-//                             sensor_id: eachSensor.id,
-//                             physical_id: eachSensor.physical_id,
-//                             kind: eachSensor.kind,
-//                             type: eachSensor.type,
-//                             cellular: eachSensor.cellular,
-//                             bluetooth: eachSensor.bluetooth,
-//                             training: eachSensor.training,
-//                             remark: eachSensor.remark,
-//                             data_finished: eachSensor.data_finished,
-//                             depth: eachSensor.depth,
-//                             yield: eachSensor.yield,
-//                             static: eachSensor.static,
-//                             quality: eachSensor.quality,
-//                             level_dynamic: eachSensor.level_dynamic,
-//                             pump: {
-//                                 pump_id: eachSensor.pump_id,
-//                                 country_name: eachSensor.country_name,
-//                                 province_name: eachSensor.province_name,
-//                                 commune_name: eachSensor.commune_name,
-//                                 district_name: eachSensor.district_name,
-//                                 organization: {
-//                                     org_name: eachSensor.org_name,
-//                                     headquarter_city: eachSensor.headquarter_city
-//                                 }
-//                             }
-//                         }
-//                     }
-//                     console.log(sensorsInfo)
-//                     return listSensors.push(sensorsInfo)
-//                 })
-//                 console.log('listSensors', listSensors)
-//                 res.status(200).json(listSensors)
-//             })
-//             .catch(err => {
-//                 res.status(500).json(err.message)
-//             })
+// GET sensors
+router.get('/', (req,res) => {
+    Sensors.getSensors()
+            .then(sensors => {
+                console.log('sensors', sensors)
+                const listSensors = []
+                sensors.map(eachSensor => 
+                    {
+                    const sensorsInfo = {
+                        sensor: {
+                            sensor_id: eachSensor.id,
+                            physical_id: eachSensor.physical_id,
+                            kind: eachSensor.kind,
+                            type: eachSensor.type,
+                            cellular: eachSensor.cellular,
+                            bluetooth: eachSensor.bluetooth,
+                            training: eachSensor.training,
+                            remark: eachSensor.remark,
+                            data_finished: eachSensor.data_finished,
+                            depth: eachSensor.depth,
+                            yield: eachSensor.yield,
+                            static: eachSensor.static,
+                            quality: eachSensor.quality,
+                            level_dynamic: eachSensor.level_dynamic,
+                            pump: {
+                                pump_id: eachSensor.pump_id,
+                                country_name: eachSensor.country_name,
+                                province_name: eachSensor.province_name,
+                                commune_name: eachSensor.commune_name,
+                                district_name: eachSensor.district_name,
+                                organization: {
+                                    org_name: eachSensor.org_name,
+                                    headquarter_city: eachSensor.headquarter_city
+                                }
+                            }
+                        }
+                    }
+                    console.log('sensorInfo', sensorsInfo)
+                    return listSensors.push(sensorsInfo)
+                })
+                console.log('listSensors', listSensors)
+                res.status(200).json(listSensors)
+            })
+            .catch(err => {
+                res.status(500).json(err.message)
+            })
+        })
+// router.get("/", async (req,res) => {
+//     try {
+//         const sensors = await Sensors.findSensors();
+//         res.status(200).json(sensors)
+//     } catch (err) {
+//         res.status(400).json(err.message)
+//     }
 // })
+
+
 
 //GET a sensor by sensor_id
 router.get('/:id', (req,res) => {
@@ -144,3 +146,4 @@ router.delete('/:id', (req,res) => {
 })
 
 module.exports = router;
+
