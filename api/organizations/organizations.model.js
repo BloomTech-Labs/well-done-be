@@ -52,11 +52,15 @@ function findByOrgName(org_name) {
 // }
 
 
-function update(id, change){
-  return db('organizations')
-          .where({id})
-          .update(change)
-}
+function update (changes, id){
+  try {
+  return db("organizations")
+      .where({ id })
+      .update(changes); 
+  } catch (err) {
+    console.log(err.message);
+  }
+};
 
 // const update = async (id, changes) => {
 //   try {
