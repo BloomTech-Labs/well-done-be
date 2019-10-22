@@ -22,7 +22,6 @@ server.use("/api/pumps", pumpsRouter);
 server.use("/api/sensors", sensorsRouter);
 server.use("/api/accounts", accountsRouter);
 server.use("/api/sms_notifications", smsNotificationsRouter);
-// TODO: server.use("/api/sensors", sensorsRouter);
 server.use("/api/history", historyRouter);
 
 const { Pool, Client } = require("pg");
@@ -46,9 +45,7 @@ client.query("SELECT NOW()", (err, res) => {
 });
 
 server.get("/", (req, res) => {
-  res.status(200).json(`
-    <h2>Welcome to the Jungle 🌴</h2>
-    `);
+  res.status(200).json(`Welcome to the Jungle`);
 });
 
 module.exports = server;
