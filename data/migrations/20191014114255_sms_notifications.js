@@ -5,10 +5,10 @@ exports.up = function(knex) {
     column
       .integer("org_id")
       .unsigned()
-      // .references("id")
-      // .inTable("organizations")
-      // .onUpdate("RESTRICT")
-      // .onDelete("RESTRICT");
+      .references("id")
+      .inTable("organizations")
+      .onUpdate("RESTRICT")
+      .onDelete("RESTRICT");
     column.integer("status");
   });
 };

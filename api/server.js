@@ -1,30 +1,8 @@
-const express = require('express');
-const helmet = require('helmet');
-const cors = require('cors')
+const express = require("express");
+const helmet = require("helmet");
+const cors = require("cors");
 
 const server = express();
-
-
-//----------*
-
-// const Sequelize = require('sequelize');
-// // const sequelize = new Sequelize('welldone', 'postgres', 'shahid', {
-// //   host: 'aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com',
-// //   dialect: 'postgres',
-// //   pool: {
-// //     max: 9,
-// //     min: 0,
-// //     idle: 10000
-// //   }
-// // });
-// var sequelize = new Sequelize('postgresql://lambda:password@aa10su4jt2enzmn.cudv4hjvenyx.us-east-2.rds.amazonaws.com:5432/welldone');
-
-// sequelize.authenticate().then(() => {
-//   console.log("Success!");
-// }).catch((err) => {
-//   console.log(err);
-// });
-
 
 //routes
 const authRouter = require("./auth/auth.router");
@@ -35,7 +13,6 @@ const smsNotificationsRouter = require("./sms_notifications/sms_notifications.ro
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
 
-// middleware
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
@@ -48,15 +25,12 @@ server.use("/api/sms_notifications", smsNotificationsRouter);
 // TODO: server.use("/api/sensors", sensorsRouter);
 server.use("/api/history", historyRouter);
 
-//routes
-// const authRouter = require("./auth/auth.js");
 
-
-// server.use("/auth", authRouter);
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL
 const pool = new Pool({
   connectionString: connectionString,
+  ssl: true
 })
 pool.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
@@ -64,6 +38,7 @@ pool.query('SELECT NOW()', (err, res) => {
 })
 const client = new Client({
   connectionString: connectionString,
+  ssl: true
 })
 client.connect()
 client.query('SELECT NOW()', (err, res) => {
