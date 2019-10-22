@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware.js");
 const SMS_Notification = require("./sms_notifications.model.js");
 
-// * [get] - get all sms notifications - test worked
+//* [get] - get all sms notifications - test worked
 router.get("/", async (req, res) => {
   try {
     const sms_notification = await SMS_Notification.get();
@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// * [getById] - sms notifications by id - test worked
+//* [getById] - sms notifications by id - test worked
 router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// * [create] - create sms notifications - test worked
+//* [create] - create sms notifications
 router.post("/", async (req, res) => {
   try {
     const sms_notification = req.body;
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// * [update] - update sms notifications - test worked
+//* [update] - update sms notifications - test worked
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -50,7 +50,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// * [remove] - delete sms notifications - test worked
+//* [remove] - delete sms notifications - test worked
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;

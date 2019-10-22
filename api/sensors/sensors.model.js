@@ -7,17 +7,33 @@ const db = require("../../data/dbConfig.js");
 function addSensor(sensor){
     return db('sensors')
             .insert(sensor)
-            .then(ids => ({id: ids[0]}))
+            .returning("id")
 }
 
 
-function getSensors(){
-    return db('sensors')
+// function getSensors(){
+//     return db('sensors')
+//             .join('pumps', 'pumps.id', 'sensors.pump_id')
+//             .join('organizations', 'pumps.org_id', 'organizations.id')
+//             .select('sensors.*', 'pumps.*', 'organizations.*')
+// }
+
+const getSensors = () => { 
+    try {
+       return db('sensors')
             .join('pumps', 'pumps.id', 'sensors.pump_id')
             .join('organizations', 'pumps.org_id', 'organizations.id')
             .select('sensors.*', 'pumps.*', 'organizations.*')
+        
 
+    } catch (err) {
+        res.status(400).json(err.message)
+    }
 }
+
+function findSensors() {
+    return db('sensors')
+  }
 
 function getSensorById(id){
     return db('sensors')
@@ -48,6 +64,7 @@ function deleteSensor(id){
 module.exports = {
   addSensor,
   getSensors,
+  findSensors,
   getSensorById,
   updateSensor,
   deleteSensor,
