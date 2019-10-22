@@ -28,7 +28,7 @@ server.use("/api/history", historyRouter);
 // middleware
 
 server.get("/", (req, res) => {
-  res.send(`
+  res.status(200).json(`
     <h2>Welcome to the Jungle 🌴</h2>
     `);
 });
