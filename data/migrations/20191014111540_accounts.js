@@ -3,11 +3,11 @@ exports.up = function(knex) {
     column.increments();
     column
       .integer("org_id")
-      // .unsigned()
-      // .references("id")
-      // .inTable("organizations")
-      // .onDelete("RESTRICT")
-      // .onUpdate("RESTRICT");
+      .unsigned()
+      .references("id")
+      .inTable("organizations")
+      .onDelete("RESTRICT")
+      .onUpdate("RESTRICT");
     column.string("first_name").notNullable();
     column.string("last_name").notNullable();
     column

@@ -21,7 +21,7 @@ exports.seed = function(knex) {
           quality: "good"
       },
       {
-        pump_id: 1,
+        pump_id: 2,
         physical_id: 45678,
         kind: "C",
         type: "D",
@@ -37,7 +37,7 @@ exports.seed = function(knex) {
        
     },
     {
-      pump_id: 2,
+      pump_id: 3,
       physical_id: 1234578,
       kind: "E",
       type: "F",

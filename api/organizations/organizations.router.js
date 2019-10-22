@@ -54,7 +54,7 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { changes } = req.body;
+    const changes = req.body;
     const updatedOrg = await Organizations.update(changes, id);
     res.status(200).json(updatedOrg);
   } catch (err) {
@@ -63,13 +63,12 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-
 //  TODO: delete org
 router.delete("/:id", async (req, res) => {
   try {
-    const { org_id } = req.params;
-    const removedOrg = await Organizations.remove(org_id);
-    res.status(200).json(removedOrg);
+    const { id } = req.params;
+    const removed = await Organizations.remove(id);
+    res.status(200).json(removed);
   } catch (err) {
     console.log(err.message);
     res.status(500).json(err.message);

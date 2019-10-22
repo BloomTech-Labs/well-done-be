@@ -22,7 +22,6 @@ function getPumps() {
             .select('pumps.id','pumps.country_name','pumps.province_name', 'pumps.commune_name','pumps.district_name', 'pumps.latitude', 'pumps.longitude', 
                     'organizations.id as org_id', 'organizations.org_name', 'organizations.headquarter_city', 
                     'accounts.id as accounts_id', 'accounts.first_name', 'accounts.last_name', 'accounts.email_address', 'accounts.mobile_number', 'accounts.super_user', 'accounts.org_user', 'accounts.org_admin')
-
 }
 
 function getPumpsByOrgId(id) {
