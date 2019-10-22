@@ -25,12 +25,32 @@ server.use("/api/sms_notifications", smsNotificationsRouter);
 // TODO: server.use("/api/sensors", sensorsRouter);
 server.use("/api/history", historyRouter);
 
-// middleware
 
-server.get("/", (req, res) => {
-  res.send(`
+const { Pool, Client } = require('pg')
+const connectionString = process.env.DATABASE_URL
+const pool = new Pool({
+  connectionString: connectionString,
+  ssl: true
+})
+pool.query('SELECT NOW()', (err, res) => {
+  console.log(err, res)
+  pool.end()
+})
+const client = new Client({
+  connectionString: connectionString,
+  ssl: true
+})
+client.connect()
+client.query('SELECT NOW()', (err, res) => {
+  console.log(err, res)
+  client.end()
+})
+
+
+server.get('/', (req, res) => {
+    res.send(`
     <h2>Welcome to the Jungle 🌴</h2>
-    `);
+    `)
 });
 
 module.exports = server;
