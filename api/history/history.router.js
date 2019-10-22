@@ -2,18 +2,18 @@ const router = require("express").Router();
 const History = require("./history.model");
 const { authenticate } = require("../middleware/middleware.js");
 
-// GET to /api/history - WORKING :)) 
+//* [find] - /api/history - WORKING :))
 router.get("/", (req, res) => {
- History.find()
+  History.find()
     .then(history => {
       res.json(history);
     })
     .catch(err => {
-      res.status(500).json({ message: "Failed to get history" });
+      res.status(500).json({ message: err.message });
     });
 });
 
-// GET to /api/history/1 - WORKING :)) 
+//* [findByID] - /api/history/1 - WORKING :))
 router.get("/:id", (req, res) => {
   const { id } = req.params;
   History.findById(id)
@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// POST to /api/history - WORKING :)) 
+//* [insert] - /api/history - WORKING :))
 router.post("/", (req, res) => {
   const historyData = req.body;
 
@@ -40,22 +40,19 @@ router.post("/", (req, res) => {
       res.status(201).json(history);
     })
     .catch(err => {
-      res.status(500).json({ message: "Failed to create history" });
+      res.status(500).json({ message: err.message });
     });
 });
 
-// PUT to api/history/1 - WORKING :)) 
+//* [findByID] - api/history/1 - WORKING :))
 router.put("/:id", (req, res) => {
   const { id } = req.params;
   const changes = req.body;
   History.findById(id)
     .then(history => {
       if (history) {
-        History
-          .update(changes, id)
-          .then(changes => {
-          res
-            .json(changes);
+        History.update(changes, id).then(changes => {
+          res.json(changes);
         });
       } else {
         res
@@ -68,7 +65,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-
+//* [remove] - api/history/1 - WORKING :))
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -80,8 +77,19 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+//* [getHistoryBySensorId] - /api/history/sensor/1 - WORKING :))
+router.get("/sensor/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const history = await History.getHistoryBySensorId(id);
+    res.status(200).json(history);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-// TODO: get history by SENSOR ID
+module.exports = router;
 
 // TODO: get history by Org ID
 // router.get("/:id", async (req, res) => {
@@ -125,17 +133,3 @@ router.delete("/:id", async (req, res) => {
 //       res.status(500).json({ message: "Failed to delete history" });
 //     });
 // });
-
-
-// GET to /api/history/sensor/1 WORKING :)) 
-router.get("/sensor/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const history = await History.getHistoryBySensorId(id);
-    res.status(200).json(history);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  }
-});
-module.exports = router
