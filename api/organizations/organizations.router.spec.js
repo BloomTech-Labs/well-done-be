@@ -1,5 +1,9 @@
 const request = require("supertest");
+<<<<<<< HEAD
 const Organizations = require("../organizations/organizations.model");
+=======
+const Organizations = require("./organizations.model");
+>>>>>>> 518777504831129b863c9d0f9d966a6f7c2c103d
 const db = require("../../data/dbConfig");
 require("dotenv").config();
 

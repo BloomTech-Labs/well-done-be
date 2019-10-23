@@ -26,7 +26,6 @@ server.use("/api/accounts", accountsRouter);
 server.use("/api/sms_notifications", smsNotificationsRouter);
 server.use("/api/history", historyRouter);
 
-// 
 
 // const { Pool, Client } = require("pg");
 // const connectionString = process.env.DATABASE_URL;
