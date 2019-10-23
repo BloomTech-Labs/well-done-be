@@ -1,6 +1,6 @@
 const request = require("supertest");
 const Organizations = require("./organizations.model");
-const db = require("../data/dbConfig");
+const db = require("../../data/dbConfig");
 require("dotenv").config();
 
 describe("organizations router", () => {

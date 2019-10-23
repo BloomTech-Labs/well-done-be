@@ -1,7 +1,7 @@
 // const knex = require("knex");
 // const config = require("../../knexfile");
 // const db = knex(config.development);
-const Organizations = require("./organizations.model.js");
+const Organizations = require("../organizations.model");
 const db = require("../../data/dbConfig");
 
 describe("organizations model", () => {
@@ -10,7 +10,7 @@ describe("organizations model", () => {
   });
 
   it("should set environment to testing", () => {
-    expect(process.env.DB_ENV).toBe("testing");
+    expect(process.env.DB_ENV).toBe("test");
   });
 
   describe("insert()", () => {
