@@ -1,6 +1,6 @@
 const request = require('supertest'); 
 
-const accounts = require('./accounts.router.js')
+const accounts = require('./accounts.model.js')
 
 describe("accounts.router.js", () => {
     describe('GET /api/accounts', ()=> {
