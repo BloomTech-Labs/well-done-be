@@ -1,7 +1,8 @@
-const request = require("supertest");
-
+// const knex = require("knex");
+// const config = require("../../knexfile");
+// const db = knex(config.development);
 const Organizations = require("./organizations.model.js");
-const db = require("../data/dbConfig.js");
+const db = require("../../data/dbConfig");
 
 describe("organizations model", () => {
   beforeEach(async () => {
