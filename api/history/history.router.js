@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
   History.findById(id)
     .then(history => {
       if (history) {
-        res.json(history);
+        res.status(200).json(history);
       } else {
         res
           .status(404)

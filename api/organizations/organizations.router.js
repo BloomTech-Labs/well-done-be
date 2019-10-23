@@ -14,16 +14,32 @@ router.get("/", async (req, res) => {
 });
 
 // TODO: get organization by id - WORKING
-router.get("/:id", async (req, res) => {
-  try {
-    const {id} = req.params
-    const org = await Organizations.findById(id);
-    res.status(200).json(org);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  }
+router.get("/:id", (req, res) => {
+  // try {
+  //   const {id} = req.params
+  //   const org = await Organizations.findById(id);
+  //   res.status(200).json(org);
+  // } catch (err) {
+  //   console.log(err.message);
+  //   res.status(400).json(err.message);
+  // }
+  const { id } = req.params;
+  Organizations.findById(id)
+    .then(org => {
+      console.log('org', org)
+      if (org) {
+        res.status(200).json(org);
+      } else {
+        res
+          .status(404)
+          .json({ message: "Could not find org with given id." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err.message);
+    });
 });
+
 
 // TODO: create organization - WORKING
 router.post("/", async (req, res) => {
