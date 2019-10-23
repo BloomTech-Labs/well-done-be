@@ -1,7 +1,9 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const secrets = require("../config/secrets.js");
 
+console.log("environment:", secrets.environment);
 const server = express();
 
 //routes
@@ -24,6 +26,8 @@ server.use("/api/accounts", accountsRouter);
 server.use("/api/sms_notifications", smsNotificationsRouter);
 server.use("/api/history", historyRouter);
 
+// 
+
 const { Pool, Client } = require("pg");
 const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({
@@ -43,6 +47,7 @@ client.query("SELECT NOW()", (err, res) => {
   console.log(err, res);
   client.end();
 });
+
 
 server.get("/", (req, res) => {
   res.status(200).json(`Welcome to the Jungle`);
