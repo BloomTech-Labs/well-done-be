@@ -1,8 +1,8 @@
-const knex = require("knex");
-const config = require("../../knexfile");
-const db = knex(config.development);
+// const knex = require("knex");
+// const config = require("../../knexfile");
+// const db = knex(config.development);
 
-// const db = require('../../data/dbConfig')
+const db = require('../../data/dbConfig')
 const Accounts = require('./accounts.model')
 
 describe('accounts model', ()=> {

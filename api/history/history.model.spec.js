@@ -34,7 +34,7 @@ describe('history model', ()=> {
             })
 
             const history = await db('history')
-            expect(history).toHaveLength(2)
+            expect(history).toHaveLength(0)
             expect(history[0].date).toBe('2019-10-22')
             expect(accounts[0].reported_percent).toBe(34)
             expect(accounts[1].reported_percent).toBe(55)
@@ -42,4 +42,6 @@ describe('history model', ()=> {
         })
     })
 })
+
+
 
