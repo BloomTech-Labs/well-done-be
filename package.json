@@ -9,9 +9,8 @@
     "test": "cross-env DB_ENV=testing jest --watch"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
     "start": "nodemon index.js"
-
   },
   "repository": {
     "type": "git",

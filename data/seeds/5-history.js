@@ -16,7 +16,7 @@ exports.seed = function(knex) {
           reported_percent: 12
         },
         {
-          date: "2019-12-08",
+          date: "2019-08-15",
           count: 2,
           total: 9456,
           status: 3,
@@ -26,7 +26,7 @@ exports.seed = function(knex) {
           reported_percent: 12
         },
         {
-          date: "2019-12-10",
+          date: "2019-10-19",
           count: 1,
           total: 45600,
           status: 2,

@@ -10,7 +10,7 @@ exports.seed = function(knex) {
           physical_id: 12345,
           kind: "A",
           type: "B",
-          cellular: 2,
+          cellular: 8,
           bluetooth: 1,
           training: "need more training",
           remark: "cool model",
@@ -25,7 +25,7 @@ exports.seed = function(knex) {
           physical_id: 45678,
           kind: "C",
           type: "D",
-          cellular: 2,
+          cellular: 8,
           bluetooth: 1,
           training: "need more training, seriously",
           remark: "ok model",
@@ -40,7 +40,7 @@ exports.seed = function(knex) {
           physical_id: 1234578,
           kind: "E",
           type: "F",
-          cellular: 2,
+          cellular: 8,
           bluetooth: 1,
           training: "no need training",
           remark: "perfect model",
@@ -53,3 +53,4 @@ exports.seed = function(knex) {
       ]);
     });
 };
+//hahahaha
