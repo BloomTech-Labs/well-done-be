@@ -3,6 +3,7 @@ const config = require("../../knexfile");
 const db = knex(config.development);
 
 // const db = require('../../data/dbConfig')
+// const db = require('../../data/dbConfig')
 const History = require('./history.model')
 
 describe('history model', ()=> {
@@ -34,14 +35,12 @@ describe('history model', ()=> {
             })
 
             const history = await db('history')
-            expect(history).toHaveLength(0)
+            expect(history).toHaveLength(2)
             expect(history[0].date).toBe('2019-10-22')
-            expect(accounts[0].reported_percent).toBe(34)
-            expect(accounts[1].reported_percent).toBe(55)
-            expect(accounts[1].date).toBe('2019-10-23')
+            expect(history[0].reported_percent).toBe(34)
+            expect(history[1].reported_percent).toBe(55)
+            expect(history[1].date).toBe('2019-10-23')
         })
     })
 })
-
-
 

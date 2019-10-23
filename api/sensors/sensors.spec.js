@@ -1,6 +1,6 @@
 const request = require("supertest");
 const Sensors = require("./sensors.model");
-const db = require("../data/dbConfig");
+const db = require("../../data/dbConfig");
 require("dotenv").config();
 
 describe("sensors router", () => {
