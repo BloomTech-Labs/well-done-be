@@ -1,6 +1,6 @@
 const request = require("supertest");
-const Pumps = require("./pumps.model");
-const db = require("../data/dbConfig");
+const Pumps = require("../pumps/pumps.model");
+const db = require("../../data/dbConfig");
 require("dotenv").config();
 
 describe("pumps router", () => {
