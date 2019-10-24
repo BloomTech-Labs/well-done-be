@@ -1,7 +1,7 @@
 // const knex = require("knex");
 // const config = require("../../knexfile");
 // const db = knex(config.development);
-const Organizations = require("../organizations.model");
+const Organizations = require("./organizations.model");
 const db = require("../../data/dbConfig");
 
 describe("organizations model", () => {
@@ -17,26 +17,26 @@ describe("organizations model", () => {
     it("should insert organizations into the db", async () => {
       // insert a record
       await Organizations.insert({
-        organization_name: "TEST Sensor Delivery, LLC"
+        org_name: "TEST Sensor Delivery, LLC",
+        headquarter_city: "TEST Delivery, LLC"
       });
-      await Organizations.insert({ headquarter_city: "TEST Delivery, LLC" });
 
       let organizations = await db("organizations");
 
       // assert the record was inserted
-      expect(organizations).toHaveLength(2);
+      expect(organizations).toHaveLength(1);
     });
 
-    it("should insert organizations into the db", async () => {
-      // insert a record
-      const [id] = await Organizations.insert({ name: "Test Org" });
+    // it("should insert organizations into the db", async () => {
+    //   // insert a record
+    //   const [id] = await Organizations.insert({ name: "Test Org" });
 
-      let organization = await db("organizations")
-        .where({ id })
-        .first();
+    //   let organization = await db("organizations")
+    //     .where({ id })
+    //     .first();
 
-      // assert the record was inserted
-      expect(organization.name).toBe("Test Org");
-    });
+    //   // assert the record was inserted
+    //   expect(organization.name).toBe("Test Org");
+    // });
   });
 });

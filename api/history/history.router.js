@@ -6,7 +6,7 @@ const { authenticate } = require("../middleware/middleware.js");
 router.get("/", (req, res) => {
   History.find()
     .then(history => {
-      res.json(history);
+      res.status(200).json(history);
     })
     .catch(err => {
       res.status(500).json({ message: err.message });

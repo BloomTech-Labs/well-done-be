@@ -1,15 +1,17 @@
 const request = require("supertest");
 const Organizations = require("./organizations.model");
+
 const db = require("../../data/dbConfig");
 require("dotenv").config();
 
+// ! DO NOT ADD MORE TESTS IS WORKING 
 describe("organizations router", () => {
   beforeEach(async () => {
     await db("organizations").truncate();
   });
 
   it("should set environment to testing", () => {
-    expect(process.env.DB_ENV).toBe("testing");
+    expect(process.env.DB_ENV).toBe("test");
   });
 
   describe("insert()", () => {

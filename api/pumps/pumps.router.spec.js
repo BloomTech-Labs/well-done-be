@@ -8,8 +8,8 @@ describe("pumps router", () => {
     await db("pumps").truncate();
   });
 
-  it("should set environment to testing", () => {
-    expect(process.env.DB_ENV).toBe("testing");
+  it("should set environment to test", () => {
+    expect(process.env.DB_ENV).toBe("test");
   });
 
   //   describe("insert()", () => {
