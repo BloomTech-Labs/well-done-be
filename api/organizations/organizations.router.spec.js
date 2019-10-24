@@ -59,7 +59,7 @@ describe('GET /api/orgs/:id', function (){
 
   it('respond with json org not found', function (done){
     request(server)
-        .get('/api/orgs/2019')
+        .get('/api/orgs/notaproperid')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(404)

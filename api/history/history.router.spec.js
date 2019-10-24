@@ -32,7 +32,7 @@ describe("history router", () => {
           })
     })
   })
-  
+
   //Test GET all history
   describe('GET /api/history', function (){
     it('respond with json containing a list of all history', function (done){
@@ -56,7 +56,7 @@ describe("history router", () => {
   
     it('respond with json history not found', function (done){
       request(server)
-          .get('/api/history/1945')
+          .get('/api/history/notaproperid')
           .set('Accept', 'application/json')
           .expect('Content-Type', /json/)
           .expect(404)

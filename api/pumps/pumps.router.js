@@ -2,29 +2,7 @@ const router = require("express").Router();
 
 const Pumps = require("./pumps.model");
 
-// //POST a pump - WORKING
-// router.post("/", (req, res) => {
-//   const pumpData = req.body;
-//   console.log("pumpData", pumpData);
-//   Pumps.insert(pumpData)
-//     .then(pump => {
-//       res.status(201).json(pump);
-//     })
-//     .catch(err => {
-//       res.status(500).json(err);
-//     });
-// });
 
-// //GET pumps
-// router.get("/", async (req, res) => {
-//   try {
-//     const pumps = await Pumps.find();
-//     res.status(200).json(pumps);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
 
 //POST a pump - WORKING
 router.post('/', (req,res) => {
@@ -220,17 +198,6 @@ router.get('/org/:id', (req,res) => {
         })
 })
 
-// //POST account
-// router.post('/acc', (req,res) => {
-//     const accData = req.body;
-//     console.log('accData', accData)
-//     Pumps.addAccount(accData)
-//         .then(acc => {
-//             res.status(201).json(acc)
-//         })
-//         .catch(err => {
-//             res.status(500).json(err)
-//         })
-// } )
+
 
 module.exports = router;
