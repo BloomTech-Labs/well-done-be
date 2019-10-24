@@ -2,6 +2,7 @@ const router = require("express").Router();
 // const { authenticate } = require("../middleware/middleware");
 const Organizations = require("./organizations.model");
 
+const { validateOrg } = require("../middleware/middleware");
 // TODO: get all organizations
 router.get("/", async (req, res) => {
   try {
@@ -31,7 +32,7 @@ router.get("/:id", (req, res) => {
 });
 
 // TODO: create organization - WORKING
-router.post("/", async (req, res) => {
+router.post("/", validateOrg, async (req, res) => {
   try {
     const org = req.body;
     console.log("org", org);
@@ -54,7 +55,7 @@ router.post("/", async (req, res) => {
 //   }
 // });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateOrg, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;

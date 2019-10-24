@@ -4,45 +4,47 @@ const router = require("express").Router();
 const Accounts = require("./accounts.model.js");
 // const { authenticate } = require("../middleware/middleware");
 const { generateToken } = require("../auth/auth.helpers");
+const { validateAccount } = require("../middleware/middleware");
 
 // * get all accounts - DONE
 // ! supposed to be only for superusers
-router.get("/", 
-// authenticate, 
-async (req, res) => {
-  try {
-    const accounts = await Accounts.find();
-    res.status(200).json(accounts);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
+router.get(
+  "/",
+  // authenticate,
+  async (req, res) => {
+    try {
+      const accounts = await Accounts.find();
+      res.status(200).json(accounts);
+    } catch (err) {
+      console.log(err.message);
+      res.status(400).json(err.message);
+    }
   }
-});
+);
 
 // * get account by id - DONE
-router.get("/:account_id", (req,res)=> {
+router.get("/:account_id", (req, res) => {
   const { account_id } = req.params;
-    Accounts.findById(account_id)
-      .then(acc => {
-        console.log('acc', acc)
-        if (acc) {
-          res.status(200).json(acc);
-        } else {
-          res
-            .status(404)
-            .json({ message: "Could not find acc with given id." });
-        }
-      })
-      .catch(err => {
-        res.status(500).json(err.message);
-      });
+  Accounts.findById(account_id)
+    .then(acc => {
+      console.log("acc", acc);
+      if (acc) {
+        res.status(200).json(acc);
+      } else {
+        res.status(404).json({ message: "Could not find acc with given id." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err.message);
     });
+});
 
 // * create account - DONE
 // ! supposed to be only for superusers (for now)
-router.post("/", async (req, res) => {
+router.post("/", validateAccount, async (req, res) => {
   try {
     const account = req.body;
+    console.log("account", account);
     const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
     account.password = hash;
     await Accounts.insert(account);
@@ -55,32 +57,37 @@ router.post("/", async (req, res) => {
 });
 
 // update account - WORKING but doesnt return a message on Postman/Insomnia
-router.put("/:account_id", 
-// authenticate, 
-async (req, res) => {
-  try {
-    const { account_id } = req.params;
-    const changes = req.body;
-    await Accounts.update(account_id, changes);
-    res.status(200).json({message: "Account edited successfully."});
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
+router.put(
+  "/:account_id",
+  // authenticate,
+  validateAccount,
+  async (req, res) => {
+    try {
+      const { account_id } = req.params;
+      const changes = req.body;
+      await Accounts.update(account_id, changes);
+      res.status(200).json({ message: "Account edited successfully." });
+    } catch (err) {
+      console.log(err.message);
+      res.status(400).json(err.message);
+    }
   }
-});
+);
 
 // TODO: delete account
-router.delete("/:account_id", 
-// authenticate, 
-async (req, res) => {
-  try {
-    const { account_id } = req.params;
-    const removedAccount = await Accounts.remove(account_id);
-    res.status(200).json({message: "Account deleted!"});
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).json(err.message);
+router.delete(
+  "/:account_id",
+  // authenticate,
+  async (req, res) => {
+    try {
+      const { account_id } = req.params;
+      const removedAccount = await Accounts.remove(account_id);
+      res.status(200).json({ message: "Account deleted!" });
+    } catch (err) {
+      console.log(err.message);
+      res.status(500).json(err.message);
+    }
   }
-});
+);
 
 module.exports = router;

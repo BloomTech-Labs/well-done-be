@@ -1,9 +1,10 @@
 const router = require("express").Router();
 
 const Sensors = require("./sensors.model");
+const { validateSensor } = require("../middleware/middleware");
 
 //POST a sensor
-router.post("/", (req, res) => {
+router.post("/", validateSensor, (req, res) => {
   const sensorData = req.body;
   console.log("sensorData", sensorData);
   Sensors.addSensor(sensorData)
@@ -98,7 +99,7 @@ router.get("/org/:id", (req, res) => {
 });
 
 //UPDATE a sensor
-router.patch("/:id", (req, res) => {
+router.patch("/:id", validateSensor, (req, res) => {
   const change = req.body;
   const { id } = req.params;
   Sensors.getSensorById(id)

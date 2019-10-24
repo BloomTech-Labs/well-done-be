@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const History = require("./history.model");
 const { authenticate } = require("../middleware/middleware.js");
+const { validateHistory } = require("../middleware/middleware");
 
 //* [find] - /api/history - WORKING :))
 router.get("/", (req, res) => {
@@ -32,7 +33,7 @@ router.get("/:id", (req, res) => {
 });
 
 //* [insert] - /api/history - WORKING :))
-router.post("/", (req, res) => {
+router.post("/", validateHistory, (req, res) => {
   const historyData = req.body;
 
   History.insert(historyData)
