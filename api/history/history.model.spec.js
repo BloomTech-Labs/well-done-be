@@ -1,7 +1,7 @@
 const db = require('../../data/dbConfig')
 const History = require('./history.model')
 
-// ! DO NOT ADD MORE TESTS IS WORKING 
+// ALL TESTS PASSING :)
 describe('history model', ()=> {
     beforeEach(async () => {
         await db('history').truncate();

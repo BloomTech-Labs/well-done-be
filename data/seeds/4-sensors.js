@@ -53,4 +53,3 @@ exports.seed = function(knex) {
       ]);
     });
 };
-//hahahaha

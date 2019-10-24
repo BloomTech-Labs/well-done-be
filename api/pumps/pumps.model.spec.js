@@ -1,41 +1,38 @@
-// const request = require("supertest");
+const db = require("../../data/dbConfig");
+const Pumps = require("./pumps.model");
 
-// const Pumps = require("../pumps/pumps.model.js");
-// const db = require("../../data/dbConfig.js");
+// ALL TESTS PASSING :)
+describe("pumps model", () => {
+  beforeEach(async () => {
+    await db("pumps").truncate();
+  });
+  describe("insert()", () => {
+    it("should insert the provided pumps into the db", async () => {
+      await Pumps.addPump({
+        org_id: 1,
+        country_name: "Cambodiasssddd",
+        province_name: "A province",
+        district_name: "B district",
+        commune_name: "C commune",
+        latitude: 1.234,
+        longitude: 2.345
+      });
+      await Pumps.addPump({
+        org_id: 2,
+        country_name: "Country",
+        province_name: "B province",
+        district_name: "C district",
+        commune_name: "D commune",
+        latitude: 10.234,
+        longitude: 200.345
+      });
 
-// describe("pumps model", () => {
-//   beforeEach(async () => {
-//     await db("pumps").truncate();
-//   });
-
-//   it("should set environment to testing", () => {
-//     expect(process.env.DB_ENV).toBe("testing");
-//   });
-
-//   describe("insert()", () => {
-//     it("should insert pumps into the db", async () => {
-//       // insert a record
-//       await Organizations.insert({
-//         organization_name: "FAKE PUMP"
-//       });
-//       await Organizations.insert({ headquarter_city: "TEST Delivery, LLC" });
-
-//       let organizations = await db("pumps");
-
-//       // assert the record was inserted
-//       expect(organizations).toHaveLength(2);
-//     });
-
-//     it("should insert organizations into the db", async () => {
-//       // insert a record
-//       const [id] = await Organizations.insert({ name: "Test Org" });
-
-//       let organization = await db("organizations")
-//         .where({ id })
-//         .first();
-
-//       // assert the record was inserted
-//       expect(organization.name).toBe("Test Org");
-//     });
-//   });
-// });
+      const pumps = await db("pumps");
+      expect(pumps).toHaveLength(2);
+      expect(pumps[0].country_name).toBe("Cambodiasssddd");
+      expect(pumps[0].latitude).toBe(1.234);
+      expect(pumps[1].org_id).toBe(2);
+      expect(pumps[1].commune_name).toBe("D commune");
+    });
+  });
+});
