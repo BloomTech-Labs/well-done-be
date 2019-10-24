@@ -39,13 +39,15 @@ function validateAccount(request, response, next) {
     response.status(400).json({ message: "first name is required" });
   } else if (!request.body.last_name) {
     response.status(400).json({ message: "last name is required" });
+  } else if (!request.body.email_address) {
+    response.status(400).json({ message: "email address is required" });
   } else if (!request.body.password) {
     response.status(400).json({ message: "password is required" });
-  } else if (!request.body.super_user) {
+  } else if (request.body.super_user == undefined) {
     response.status(400).json({ message: "super user is required" });
-  } else if (!request.body.org_user) {
+  } else if (request.body.org_user == undefined) {
     response.status(400).json({ message: "org user is required" });
-  } else if (!request.body.org_admin) {
+  } else if (request.body.org_admin == undefined) {
     response.status(400).json({ message: "org admin is required" });
   }
   next();
@@ -82,10 +84,9 @@ function validateHistory(request, response, next) {
 function validateSms(request, response, next) {
   if (Object.keys(request.body).length === 0) {
     response.status(400).json({ message: "sms data is required" });
-  } 
-    next();
+  }
+  next();
 }
-
 
 module.exports = {
   authenticate,
