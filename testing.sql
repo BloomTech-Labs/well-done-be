@@ -1,2 +1,3 @@
-select * from organizations 
 select * from pumps
+select * from history
+select * from sensors

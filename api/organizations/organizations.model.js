@@ -38,17 +38,42 @@ function findByOrgName(org_name) {
 // name/city
 // adding pumps
 // adding sensors
-async function update(id, changes) {
+// const update = async (id, changes) => {
+//   try {
+//     changes
+//       ? await db("organizations")
+//           .where({ id })
+//           .first()
+//           .update(changes)
+//       : null;
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
+
+
+function update (changes, id){
   try {
-    changes
-      ? await db("organizations")
-          .where({ id })
-          .update(changes)
-      : null;
+  return db("organizations")
+      .where({ id })
+      .update(changes); 
   } catch (err) {
     console.log(err.message);
   }
-}
+};
+
+// const update = async (id, changes) => {
+//   try {
+//     changes
+//       ? await db("accounts")
+//           .where({ id })
+//           .first()
+//           .update(changes)
+//       : null;
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// };
 
 function findById(id) {
   return db("organizations")
@@ -58,24 +83,18 @@ function findById(id) {
 
 // create/post an organization
 // name/city
-async function insert(organizations) {
-  const [id] = await db("organizations")
-    .insert(organizations)
-    .returning("id");
+
+
+async function insert (user) {
+  const [id] = await db("organizations").insert(user).returning('id');
 
   return findById(id);
 }
-
 //delete an organization by id
-const remove = async id => {
-  try {
-    const deleted = await db("organizations")
-      .where({ id })
-      .del();
-    return deleted;
-  } catch (err) {
-    console.log(err.message);
-  }
+const remove = id => {
+  return db("organizations")
+    .where({ id })
+    .del();
 };
 // function getUserAndStory(id) {
 //     const userQuery = getUser(id);

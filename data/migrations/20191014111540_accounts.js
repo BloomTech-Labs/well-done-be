@@ -6,8 +6,8 @@ exports.up = function(knex) {
       .unsigned()
       .references("id")
       .inTable("organizations")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .onDelete("RESTRICT")
+      .onUpdate("RESTRICT");
     column.string("first_name").notNullable();
     column.string("last_name").notNullable();
     column

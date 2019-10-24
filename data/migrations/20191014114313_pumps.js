@@ -6,19 +6,17 @@ exports.up = function(knex) {
       .unsigned()
       .references("id")
       .inTable("organizations")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .onDelete("RESTRICT")
+      .onUpdate("RESTRICT");
     column.string("country_name");
     column.string("province_name");
-    column.string("commune_name");
     column.string("district_name");
+    column.string("commune_name");
     column
       .float("latitude")
-      .unique()
       .notNullable();
     column
       .float("longitude")
-      .unique()
       .notNullable();
   });
 };

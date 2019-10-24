@@ -1,18 +1,18 @@
 const knex = require("knex");
 const config = require("../../knexfile");
-const db = knex(config.development);
+const db = require("../../data/dbConfig.js");
 
-// TODO: get all sms notifications
-const find = () => {
+//* [get] - get all sms notifications - test working
+const get = async () => {
   try {
-    return db("sms_notifications");
+    return await db("sms_notifications");
   } catch (err) {
     console.log(err.message);
   }
 };
 
-// TODO: get sms notification by id
-const findById = id => {
+//* [getById] - sms notifications by id - test worked
+const getById = id => {
   try {
     return db("sms_notifications")
       .where({ id })
@@ -22,8 +22,8 @@ const findById = id => {
   }
 };
 
-// TODO: create sms notification
-const insert = async sms_notification => {
+//* [create] - create sms notifications - test worked
+const create = async sms_notification => {
   try {
     await db("sms_notifications").insert(sms_notification);
     console.log("SMS notification successfully created!");
@@ -32,41 +32,25 @@ const insert = async sms_notification => {
   }
 };
 
-// TODO: update sms notification
-const update = async (id, changes) => {
-  try {
-    changes
-      ? await db("sms_notifications")
-          .where({ id })
-          .update(changes)
-      : null;
-  } catch (err) {
-    console.log(err);
-  }
+//* [update] - update sms notifications - test worked
+const update = (changes, id) => {
+    return db("sms_notifications")
+      .where({ id })
+      .update(changes);
 };
 
-// TODO: remove sms notification
-const remove = async id => {
-  try {
-    const sms_notification = findById(id);
-    if (sms_notification) {
-      await db("sms_notifications")
-        .where({ id })
-        .del();
-    } else {
-      console.log(
-        "There was an error finding an sms notifications with the provided id."
-      );
-    }
-  } catch (err) {
-    console.log(err.message);
-  }
-};
+//* [remove] - delete sms notifications - test worked
+const remove = id => {
+  return db("sms_notifications")
+    .where({ id })
+    .del();
+} 
+
 
 module.exports = {
-  find,
-  findById,
-  insert,
+  get,
+  getById,
+  create,
   update,
   remove
 };

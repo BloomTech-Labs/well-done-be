@@ -2,11 +2,10 @@ const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware.js");
 const SMS_Notification = require("./sms_notifications.model.js");
 
-// * get all sms notifications
-// TODO: Test
-router.get("/", authenticate, async (req, res) => {
+//* [get] - get all sms notifications - test worked
+router.get("/", async (req, res) => {
   try {
-    const sms_notification = await SMS_Notification.find();
+    const sms_notification = await SMS_Notification.get();
     res.status(200).json(sms_notification);
   } catch (err) {
     console.log(err.message);
@@ -14,12 +13,11 @@ router.get("/", authenticate, async (req, res) => {
   }
 });
 
-// * get sms notifications by id
-// TODO: Test
-router.get("/:id", authenticate, async (req, res) => {
+//* [getById] - sms notifications by id - test worked
+router.get("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const sms_notification = await SMS_Notification.findById(id);
+    const sms_notification = await SMS_Notification.getById(id);
     res.status(200).json(sms_notification);
   } catch (err) {
     console.log(err.message);
@@ -27,34 +25,33 @@ router.get("/:id", authenticate, async (req, res) => {
   }
 });
 
-// * create sms notifications
-// TODO: Test
-router.post("/", authenticate, async (req, res) => {
+//* [create] - create sms notifications
+router.post("/", async (req, res) => {
   try {
     const sms_notification = req.body;
-    await SMS_Notification.insert(sms_notification);
-    res.status(200).json(token);
+    await SMS_Notification.create(sms_notification);
+    res.status(200).json(sms_notification);
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);
   }
 });
 
-// * update sms notifications
-// TODO: Test
-router.put("/:id", authenticate, async (req, res) => {
+//* [update] - update sms notifications - test worked
+router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const update_sms_notification = await SMS_Notification.update(id);
+    const changes = req.body;
+    await SMS_Notification.update(changes, id);
+    res.status(200).json(changes);
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);
   }
 });
 
-// * delete sms notifications
-// TODO: Test
-router.delete("/:id", authenticate, async (req, res) => {
+//* [remove] - delete sms notifications - test worked
+router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const removed = await SMS_Notification.remove(id);
