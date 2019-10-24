@@ -1,12 +1,11 @@
 const bcrypt = require("bcryptjs");
-
 const router = require("express").Router();
 const Accounts = require("./accounts.model.js");
 const { authenticate } = require("../middleware/middleware");
 const { generateToken } = require("../auth/auth.helpers");
 const { validateAccount } = require("../middleware/middleware");
 
-// * get all accounts - DONE
+// GET to /api/accounts
 // ! supposed to be only for superusers
 router.get("/", authenticate, async (req, res) => {
   try {
@@ -18,8 +17,8 @@ router.get("/", authenticate, async (req, res) => {
   }
 });
 
-// * get account by id - DONE
-router.get("/:account_id", (req, res) => {
+// GET to /api/accounts/1
+router.get("/:account_id", authenticate, (req, res) => {
   const { account_id } = req.params;
   Accounts.findById(account_id)
     .then(acc => {
@@ -35,9 +34,9 @@ router.get("/:account_id", (req, res) => {
     });
 });
 
-// * create account - DONE
+// POST to /api/accounts
 // ! supposed to be only for superusers (for now)
-router.post("/", validateAccount, async (req, res) => {
+router.post("/", authenticate, validateAccount, async (req, res) => {
   try {
     const account = req.body;
     console.log("account", account);
@@ -52,7 +51,7 @@ router.post("/", validateAccount, async (req, res) => {
   }
 });
 
-// update account - WORKING but doesnt return a message on Postman/Insomnia
+// PUT to /api/accounts/3
 router.put("/:account_id", authenticate, validateAccount, async (req, res) => {
   try {
     const { account_id } = req.params;
@@ -65,7 +64,7 @@ router.put("/:account_id", authenticate, validateAccount, async (req, res) => {
   }
 });
 
-// TODO: delete account
+// DELETE to /api/accounts/4
 router.delete("/:account_id", authenticate, async (req, res) => {
   try {
     const { account_id } = req.params;

@@ -21,8 +21,8 @@ server.post(
       return res.status(422).json({ errors: errors.array() });
     }
 
-    const email_address = req.body.email_address;
-    const super_user = req.body.super_user;
+    const email = req.body.email_address;
+    const super_user= req.body.super_user;
     const mobile_number = req.body.mobile_number;
   }
 );

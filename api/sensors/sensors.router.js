@@ -1,10 +1,10 @@
 const router = require("express").Router();
-
 const Sensors = require("./sensors.model");
 const { validateSensor } = require("../middleware/middleware");
+const { authenticate } = require("../middleware/middleware");
 
-//POST a sensor
-router.post("/", validateSensor, (req, res) => {
+// POST to /api/sensors
+router.post("/", authenticate, validateSensor, (req, res) => {
   const sensorData = req.body;
   console.log("sensorData", sensorData);
   Sensors.addSensor(sensorData)
@@ -17,8 +17,8 @@ router.post("/", validateSensor, (req, res) => {
     });
 });
 
-// GET sensors
-router.get("/", (req, res) => {
+// GET to /api/sensors
+router.get("/", authenticate, (req, res) => {
   Sensors.getSensors()
     .then(sensors => {
       console.log("sensors", sensors);
@@ -63,17 +63,9 @@ router.get("/", (req, res) => {
       res.status(500).json(err.message);
     });
 });
-// router.get("/", async (req,res) => {
-//     try {
-//         const sensors = await Sensors.findSensors();
-//         res.status(200).json(sensors)
-//     } catch (err) {
-//         res.status(400).json(err.message)
-//     }
-// })
 
-//GET a sensor by sensor_id
-router.get("/:id", (req, res) => {
+// GET to /api/sensors/2
+router.get("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   console.log(req.params);
   Sensors.getSensorById(id)
@@ -85,8 +77,8 @@ router.get("/:id", (req, res) => {
     .catch(err => res.status(500).json(err.message));
 });
 
-//GET a sensor by org_id
-router.get("/org/:id", (req, res) => {
+// GET to /api/sensors/org/2
+router.get("/org/:id", authenticate, (req, res) => {
   const { org_id } = req.params;
   console.log(org_id);
   Sensors.getSensorByOrgId(org_id)
@@ -98,8 +90,8 @@ router.get("/org/:id", (req, res) => {
     .catch(err => res.status(500).json(err.message));
 });
 
-//UPDATE a sensor
-router.patch("/:id", validateSensor, (req, res) => {
+// PATCH to /api/sensors/4
+router.patch("/:id", authenticate, validateSensor, (req, res) => {
   const change = req.body;
   const { id } = req.params;
   Sensors.getSensorById(id)
@@ -117,8 +109,8 @@ router.patch("/:id", validateSensor, (req, res) => {
     .catch(err => res.status(500).json(err.message));
 });
 
-//DELETE a sensor
-router.delete("/:id", (req, res) => {
+// DELETE to /api/sensors/5
+router.delete("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   Sensors.getSensorById(id)
     .then(sensor => {
