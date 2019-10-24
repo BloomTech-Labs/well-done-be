@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware.js");
-const SMS_Notification = require("./sms_notifications.model.js");
+const SMS_Notification = require("../sms_notifications/sms_notifications.model.js");
 
 //* [get] - get all sms notifications - test worked
 router.get("/", async (req, res) => {
