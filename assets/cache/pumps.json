@@ -1,1 +1,2054 @@
-{"lastFetch":1571892642,"pumps":[{"id":"4715","latitude":13.66048333,"longitude":104.0075117,"village":{"village":"Khun Ream","commune":"Khun Ream","district":"Banteay Srei","province":"Siem Reap"},"finish_construction":"2009-01-01","well_depth":32,"yield":null,"static":3,"level_dynamic":24,"status":0,"statuses":{"Thu Oct 10 2019":{"count":288,"total":3153160385,"status":2},"Fri Oct 11 2019":{"count":288,"total":7094470707,"status":2},"Sat Oct 12 2019":{"count":288,"total":3338042236,"status":2},"Sun Oct 13 2019":{"count":288,"total":3293686748,"status":2},"Mon Oct 14 2019":{"count":288,"total":2113105267,"status":2},"Tue Oct 15 2019":{"count":288,"total":3766868912,"status":2},"Wed Oct 16 2019":{"count":288,"total":3251241825,"status":2},"Thu Oct 17 2019":{"count":288,"total":1342212315,"status":2},"Fri Oct 18 2019":{"count":130,"total":3068339327,"status":2},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4716","latitude":13.71848913,"longitude":104.0458861,"village":{"village":"Toul Krous","commune":"Khun Ream","district":"Banteay Srei","province":"Siem Reap"},"finish_construction":"2009-02-15","well_depth":44,"yield":4,"static":12,"level_dynamic":24,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":11887962625,"status":2},"Fri Oct 11 2019":{"count":288,"total":9039826188,"status":2},"Sat Oct 12 2019":{"count":288,"total":847245532,"status":2},"Sun Oct 13 2019":{"count":288,"total":5032011,"status":2},"Mon Oct 14 2019":{"count":288,"total":240358118,"status":2},"Tue Oct 15 2019":{"count":288,"total":2776614809,"status":2},"Wed Oct 16 2019":{"count":288,"total":673254105,"status":2},"Thu Oct 17 2019":{"count":288,"total":3623667095,"status":2},"Fri Oct 18 2019":{"count":288,"total":7837479571,"status":2},"Sat Oct 19 2019":{"count":288,"total":8026796803,"status":2},"Sun Oct 20 2019":{"count":65,"total":3959412275,"status":2},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4717","latitude":13.638061,"longitude":103.72714,"village":{"village":"Romeat (Trapang Svay)","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2016-11-22","well_depth":47,"yield":1.1,"static":2.5,"level_dynamic":25,"status":0,"statuses":{"Thu Oct 10 2019":{"count":14,"total":5187647027,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4719","latitude":13.644706,"longitude":103.712294,"village":{"village":"Sambuo","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2017-06-16","well_depth":48,"yield":1.6,"static":3,"level_dynamic":14,"status":0,"statuses":{"Thu Oct 10 2019":{"count":22,"total":630405376,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4721","latitude":13.64786333,"longitude":103.73116,"village":{"village":"Lbeuk","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2016-02-02","well_depth":60,"yield":1,"static":7,"level_dynamic":16,"status":0,"statuses":{"Thu Oct 10 2019":{"count":41,"total":809332137,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4723","latitude":13.38661366,"longitude":103.8736725,"village":{"village":"Lbeuk","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2016-06-01","well_depth":53,"yield":1,"static":6.5,"level_dynamic":15,"status":0,"statuses":{"Thu Oct 10 2019":{"count":30,"total":168711650,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4724","latitude":13.64882499,"longitude":103.7358017,"village":{"village":"Lbeuk","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2016-02-04","well_depth":53,"yield":1,"static":4,"level_dynamic":17,"status":0,"statuses":{"Thu Oct 10 2019":{"count":34,"total":0,"status":0},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4725","latitude":13.9946536,"longitude":103.7437508,"village":{"village":"Kandal","commune":"Sleng Spean","district":"Srei Snam","province":"Siem Reap"},"finish_construction":"2018-02-24","well_depth":32,"yield":1.2,"static":1.7,"level_dynamic":14,"status":1,"statuses":{}},{"id":"4726","latitude":13.82670166,"longitude":103.4662067,"village":{"village":"Brey","commune":"Brey","district":"Srei Snam","province":"Siem Reap"},"finish_construction":"2018-01-01","well_depth":42,"yield":1.05,"static":2,"level_dynamic":20,"status":1,"statuses":{}},{"id":"4727","latitude":13.99717773,"longitude":103.7426426,"village":{"village":"Kandal","commune":"Sleng Spean","district":"Srei Snam","province":"Siem Reap"},"finish_construction":"2018-02-22","well_depth":32,"yield":1.2,"static":2.3,"level_dynamic":17,"status":1,"statuses":{}},{"id":"4728","latitude":13.742632,"longitude":106.980843,"village":{"village":"Chraneang","commune":"Sleng Spean","district":"Srei Snam","province":"Siem Reap"},"finish_construction":"2016-12-20","well_depth":30,"yield":1,"static":3,"level_dynamic":21,"status":1,"statuses":{}},{"id":"4729","latitude":13.74760833,"longitude":103.5436617,"village":{"village":"Mongtbong","commune":"Mong","district":"Srei Snam","province":"Siem Reap"},"finish_construction":"2015-01-10","well_depth":30,"yield":1.2,"static":5,"level_dynamic":12,"status":1,"statuses":{}},{"id":"4734","latitude":13.74180294,"longitude":106.9793701,"village":{"village":"L'ak","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2016-10-17","well_depth":47,"yield":2,"static":18,"level_dynamic":21,"status":1,"statuses":{}},{"id":"4736","latitude":13.74180294,"longitude":106.9793701,"village":{"village":"Kouk (Ampil)","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2018-09-19","well_depth":45,"yield":2,"static":18,"level_dynamic":24,"status":1,"statuses":{}},{"id":"4738","latitude":13.74180294,"longitude":106.9793701,"village":{"village":"Phleu Thom","commune":"Ta Veaeng Leu","district":"Ta Veaeng","province":"Ratanak Kiri"},"finish_construction":"2018-05-08","well_depth":38,"yield":1.5,"static":15,"level_dynamic":25,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":9911953167,"status":2},"Fri Oct 11 2019":{"count":288,"total":8120620466,"status":2},"Sat Oct 12 2019":{"count":288,"total":7568023654,"status":2},"Sun Oct 13 2019":{"count":288,"total":2055714661,"status":2},"Mon Oct 14 2019":{"count":288,"total":4379734989,"status":2},"Tue Oct 15 2019":{"count":288,"total":336942126,"status":2},"Wed Oct 16 2019":{"count":288,"total":6420599406,"status":2},"Thu Oct 17 2019":{"count":288,"total":8289458928,"status":2},"Fri Oct 18 2019":{"count":288,"total":10108358172,"status":2},"Sat Oct 19 2019":{"count":288,"total":5281741520,"status":2},"Sun Oct 20 2019":{"count":288,"total":1859957617,"status":2},"Mon Oct 21 2019":{"count":38,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4740","latitude":13.87483,"longitude":107.40677,"village":{"village":"Tang Se Loam","commune":"Nhang","district":"Andoung Meas","province":"Ratanak Kiri"},"finish_construction":"2014-01-01","well_depth":39,"yield":2,"static":25,"level_dynamic":33,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":618475290336,"status":2},"Fri Oct 11 2019":{"count":288,"total":618475290336,"status":2},"Sat Oct 12 2019":{"count":289,"total":561785077499,"status":2},"Sun Oct 13 2019":{"count":288,"total":483183820575,"status":2},"Mon Oct 14 2019":{"count":288,"total":618475290336,"status":2},"Tue Oct 15 2019":{"count":288,"total":618475290336,"status":2},"Wed Oct 16 2019":{"count":288,"total":618475290336,"status":2},"Thu Oct 17 2019":{"count":288,"total":618475290336,"status":2},"Fri Oct 18 2019":{"count":288,"total":618475290336,"status":2},"Sat Oct 19 2019":{"count":288,"total":537189678854,"status":2},"Sun Oct 20 2019":{"count":288,"total":601597411048,"status":2},"Mon Oct 21 2019":{"count":288,"total":579820584690,"status":2},"Tue Oct 22 2019":{"count":58,"total":117524398026,"status":2},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4741","latitude":13.794899,"longitude":107.028886,"village":{"village":"L'eun Chong","commune":"Ou Chum","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2017-11-15","well_depth":42,"yield":1.5,"static":28,"level_dynamic":35,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":847810959,"status":2},"Fri Oct 11 2019":{"count":288,"total":363121769,"status":2},"Sat Oct 12 2019":{"count":288,"total":2078764809,"status":2},"Sun Oct 13 2019":{"count":288,"total":5128249261,"status":2},"Mon Oct 14 2019":{"count":288,"total":1585057032,"status":2},"Tue Oct 15 2019":{"count":288,"total":5680439548,"status":2},"Wed Oct 16 2019":{"count":288,"total":1122818887,"status":2},"Thu Oct 17 2019":{"count":288,"total":1556187645,"status":2},"Fri Oct 18 2019":{"count":288,"total":1323857914,"status":2},"Sat Oct 19 2019":{"count":288,"total":5562878069,"status":2},"Sun Oct 20 2019":{"count":280,"total":1936774752,"status":2},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4742","latitude":13.68651955,"longitude":107.2160912,"village":{"village":"Kouk (Pouy)","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2014-01-01","well_depth":60,"yield":1.5,"static":30,"level_dynamic":45,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":1068815750,"status":2},"Fri Oct 11 2019":{"count":288,"total":3593615,"status":2},"Sat Oct 12 2019":{"count":288,"total":4990163,"status":2},"Sun Oct 13 2019":{"count":288,"total":3905732,"status":2},"Mon Oct 14 2019":{"count":288,"total":560311801,"status":2},"Tue Oct 15 2019":{"count":288,"total":6719210,"status":2},"Wed Oct 16 2019":{"count":288,"total":1287087206,"status":2},"Thu Oct 17 2019":{"count":288,"total":290979250,"status":2},"Fri Oct 18 2019":{"count":288,"total":5858466,"status":2},"Sat Oct 19 2019":{"count":288,"total":1815381907,"status":2},"Sun Oct 20 2019":{"count":288,"total":951036491,"status":2},"Mon Oct 21 2019":{"count":86,"total":1356951,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4743","latitude":13.86639,"longitude":107.055199,"village":{"village":"L'ak","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2018-06-10","well_depth":52,"yield":1.5,"static":26,"level_dynamic":32,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":9596544966,"status":2},"Fri Oct 11 2019":{"count":288,"total":9041197771,"status":2},"Sat Oct 12 2019":{"count":288,"total":21111912067,"status":2},"Sun Oct 13 2019":{"count":288,"total":10766988772,"status":2},"Mon Oct 14 2019":{"count":288,"total":14191219691,"status":2},"Tue Oct 15 2019":{"count":288,"total":19465802228,"status":2},"Wed Oct 16 2019":{"count":288,"total":16456043873,"status":2},"Thu Oct 17 2019":{"count":288,"total":14789330928,"status":2},"Fri Oct 18 2019":{"count":288,"total":18701065625,"status":2},"Sat Oct 19 2019":{"count":288,"total":13432277856,"status":2},"Sun Oct 20 2019":{"count":288,"total":16636109310,"status":2},"Mon Oct 21 2019":{"count":72,"total":4533663064,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4746","latitude":13.865388,"longitude":107.066529,"village":{"village":"L'ak","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2018-06-20","well_depth":56,"yield":2,"static":26,"level_dynamic":31,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":218204060,"status":2},"Fri Oct 11 2019":{"count":288,"total":317880317,"status":2},"Sat Oct 12 2019":{"count":288,"total":977409851,"status":2},"Sun Oct 13 2019":{"count":288,"total":282588401,"status":2},"Mon Oct 14 2019":{"count":288,"total":936888901,"status":2},"Tue Oct 15 2019":{"count":288,"total":1150140506,"status":2},"Wed Oct 16 2019":{"count":288,"total":2778997124,"status":2},"Thu Oct 17 2019":{"count":288,"total":1721056168,"status":2},"Fri Oct 18 2019":{"count":288,"total":2245543955,"status":2},"Sat Oct 19 2019":{"count":288,"total":1905637401,"status":2},"Sun Oct 20 2019":{"count":288,"total":883267402,"status":2},"Mon Oct 21 2019":{"count":77,"total":334895,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4747","latitude":13.750234,"longitude":106.94527,"village":{"village":"Cha Ungchan","commune":"Cha Ung","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2015-01-01","well_depth":40,"yield":1.5,"static":16,"level_dynamic":22,"status":1,"statuses":{}},{"id":"4749","latitude":13.78178833,"longitude":107.0310667,"village":{"village":"L'eun Kraen","commune":"Ou Chum","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2002-01-01","well_depth":70,"yield":1.5,"static":28,"level_dynamic":35,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":34217528,"status":2},"Fri Oct 11 2019":{"count":288,"total":138761,"status":2},"Sat Oct 12 2019":{"count":288,"total":506621378,"status":2},"Sun Oct 13 2019":{"count":288,"total":0,"status":0},"Mon Oct 14 2019":{"count":288,"total":0,"status":0},"Tue Oct 15 2019":{"count":288,"total":730,"status":2},"Wed Oct 16 2019":{"count":288,"total":0,"status":0},"Thu Oct 17 2019":{"count":288,"total":0,"status":0},"Fri Oct 18 2019":{"count":288,"total":0,"status":0},"Sat Oct 19 2019":{"count":288,"total":0,"status":0},"Sun Oct 20 2019":{"count":288,"total":0,"status":0},"Mon Oct 21 2019":{"count":92,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4750","latitude":13.74180294,"longitude":106.9793701,"village":{"village":"L'eun Kraen","commune":"Ou Chum","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2017-01-01","well_depth":60,"yield":2,"static":25,"level_dynamic":35,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":2863398118,"status":2},"Fri Oct 11 2019":{"count":288,"total":157257804,"status":2},"Sat Oct 12 2019":{"count":288,"total":3099077394,"status":2},"Sun Oct 13 2019":{"count":288,"total":494294709,"status":2},"Mon Oct 14 2019":{"count":288,"total":1269011909,"status":2},"Tue Oct 15 2019":{"count":288,"total":5587468198,"status":2},"Wed Oct 16 2019":{"count":288,"total":1958771753,"status":2},"Thu Oct 17 2019":{"count":288,"total":4309087939,"status":2},"Fri Oct 18 2019":{"count":288,"total":7433309480,"status":2},"Sat Oct 19 2019":{"count":288,"total":800649315,"status":2},"Sun Oct 20 2019":{"count":288,"total":4429289499,"status":2},"Mon Oct 21 2019":{"count":92,"total":112537458,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4754","latitude":13.986311,"longitude":107.34607,"village":{"village":"Tang Se Loam","commune":"Nhang","district":"Andoung Meas","province":"Ratanak Kiri"},"finish_construction":"2015-01-01","well_depth":45,"yield":2,"static":28,"level_dynamic":35,"status":2,"statuses":{"Thu Oct 10 2019":{"count":287,"total":18455,"status":2},"Fri Oct 11 2019":{"count":288,"total":1101,"status":2},"Sat Oct 12 2019":{"count":286,"total":0,"status":0},"Sun Oct 13 2019":{"count":288,"total":426543,"status":2},"Mon Oct 14 2019":{"count":288,"total":174605,"status":2},"Tue Oct 15 2019":{"count":288,"total":237757,"status":2},"Wed Oct 16 2019":{"count":288,"total":159335,"status":2},"Thu Oct 17 2019":{"count":288,"total":23606,"status":2},"Fri Oct 18 2019":{"count":288,"total":1669893,"status":2},"Sat Oct 19 2019":{"count":288,"total":0,"status":0},"Sun Oct 20 2019":{"count":288,"total":18561,"status":2},"Mon Oct 21 2019":{"count":288,"total":118300151,"status":2},"Tue Oct 22 2019":{"count":57,"total":33833526,"status":2},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4755","latitude":13.68651955,"longitude":107.2160912,"village":{"village":"Ki Koung","commune":"Ta Veaeng Leu","district":"Ta Veaeng","province":"Ratanak Kiri"},"finish_construction":"2018-05-24","well_depth":31,"yield":5,"static":5,"level_dynamic":11,"status":2,"statuses":{"Thu Oct 10 2019":{"count":288,"total":21386146458,"status":2},"Fri Oct 11 2019":{"count":288,"total":15696785787,"status":2},"Sat Oct 12 2019":{"count":288,"total":19908955143,"status":2},"Sun Oct 13 2019":{"count":288,"total":48768066931,"status":2},"Mon Oct 14 2019":{"count":288,"total":32748155849,"status":2},"Tue Oct 15 2019":{"count":288,"total":24470822018,"status":2},"Wed Oct 16 2019":{"count":288,"total":19975183262,"status":2},"Thu Oct 17 2019":{"count":288,"total":39029811725,"status":2},"Fri Oct 18 2019":{"count":288,"total":18833210722,"status":2},"Sat Oct 19 2019":{"count":288,"total":6959633077,"status":2},"Sun Oct 20 2019":{"count":288,"total":10033645061,"status":2},"Mon Oct 21 2019":{"count":40,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4760","latitude":13.74180294,"longitude":106.9793701,"village":{"village":"Ta Nga","commune":"Nhang","district":"Andoung Meas","province":"Ratanak Kiri"},"finish_construction":"2015-06-06","well_depth":30,"yield":3,"static":5,"level_dynamic":10,"status":1,"statuses":{}},{"id":"4761","latitude":13.644723,"longitude":103.712812,"village":{"village":"Sambuo","commune":"Nokorpheas","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2016-01-29","well_depth":40,"yield":1.5,"static":7,"level_dynamic":16,"status":0,"statuses":{"Thu Oct 10 2019":{"count":24,"total":18329372732,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4762","latitude":13.8653917,"longitude":107.0437533,"village":{"village":"L'ak","commune":"L'ak","district":"Ou Chum","province":"Ratanak Kiri"},"finish_construction":"2014-06-10","well_depth":34,"yield":2,"static":16,"level_dynamic":22,"status":2,"statuses":{"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":422,"total":12026902392,"status":2},"Sat Oct 12 2019":{"count":520,"total":5781704142,"status":2},"Sun Oct 13 2019":{"count":239,"total":11942330081,"status":2},"Mon Oct 14 2019":{"count":288,"total":12069709855,"status":2},"Tue Oct 15 2019":{"count":288,"total":10089526187,"status":2},"Wed Oct 16 2019":{"count":366,"total":6527147720,"status":2},"Thu Oct 17 2019":{"count":6,"total":3929874682,"status":2},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":160,"total":4377222051,"status":2},"Sun Oct 20 2019":{"count":288,"total":3942860088,"status":2},"Mon Oct 21 2019":{"count":288,"total":14020996476,"status":2},"Tue Oct 22 2019":{"count":288,"total":6561576672,"status":2},"Wed Oct 23 2019":{"count":288,"total":7240479066,"status":2}}},{"id":"4763","latitude":13.66288,"longitude":104.0218467,"village":{"village":"Khnar Rungvas","commune":"Khun Ream","district":"Banteay Srei","province":"Siem Reap"},"finish_construction":"2016-12-08","well_depth":32,"yield":1,"static":2,"level_dynamic":20,"status":0,"statuses":{"Thu Oct 10 2019":{"count":288,"total":21437377,"status":2},"Fri Oct 11 2019":{"count":288,"total":21326121,"status":2},"Sat Oct 12 2019":{"count":288,"total":66492501,"status":2},"Sun Oct 13 2019":{"count":288,"total":43966528,"status":2},"Mon Oct 14 2019":{"count":288,"total":4958166,"status":2},"Tue Oct 15 2019":{"count":288,"total":13226236,"status":2},"Wed Oct 16 2019":{"count":288,"total":11794434,"status":2},"Thu Oct 17 2019":{"count":288,"total":18526613,"status":2},"Fri Oct 18 2019":{"count":84,"total":22671635,"status":2},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"4764","latitude":13.66423349,"longitude":104.0051294,"village":{"village":"Khun Ream","commune":"Khun Ream","district":"Banteay Srei","province":"Siem Reap"},"finish_construction":"2016-01-01","well_depth":33,"yield":1.5,"static":3,"level_dynamic":18,"status":0,"statuses":{"Thu Oct 10 2019":{"count":108,"total":1136140,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1},"Wed Oct 23 2019":{"count":0,"total":0,"status":1}}},{"id":"7418","latitude":13.74755566,"longitude":106.9771385,"village":{"village":"Kok Yeang","commune":"Don Peng","district":"Angkor Chum","province":"Siem Reap"},"finish_construction":"2018-01-27","well_depth":32,"yield":1,"static":1.6,"level_dynamic":14,"status":0,"error":"500"}]}
+{
+    "lastFetch": 1571933233,
+    "pumps": [
+        {
+            "id": "4715",
+            "latitude": 13.66048333,
+            "longitude": 104.0075117,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2009-01-01",
+            "well_depth": 32,
+            "yield": null,
+            "static": 3,
+            "level_dynamic": 24,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 3153160385,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 7094470707,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 3338042236,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 3293686748,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 2113105267,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 3766868912,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 3251241825,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 1342212315,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 4508808552,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 7198242233,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 3814878209,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 3603596532,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 288,
+                    "total": 7906751292,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 288,
+                    "total": 2541635165,
+                    "status": 2
+                }
+            }
+        },
+        {
+            "id": "4716",
+            "latitude": 13.71848913,
+            "longitude": 104.0458861,
+            "village": {
+                "village": "Toul Krous",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2009-02-15",
+            "well_depth": 44,
+            "yield": 4,
+            "static": 12,
+            "level_dynamic": 24,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 11887962625,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 9039826188,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 847245532,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 5032011,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 240358118,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 2776614809,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 673254105,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 3623667095,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 7837479571,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 8026796803,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 65,
+                    "total": 3959412275,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4717",
+            "latitude": 13.638061,
+            "longitude": 103.72714,
+            "village": {
+                "village": "Romeat (Trapang Svay)",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-11-22",
+            "well_depth": 47,
+            "yield": 1.1,
+            "static": 2.5,
+            "level_dynamic": 25,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 14,
+                    "total": 5187647027,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 12 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 13 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 14 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 15 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 16 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Thu Oct 17 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4719",
+            "latitude": 13.644706,
+            "longitude": 103.712294,
+            "village": {
+                "village": "Sambuo",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2017-06-16",
+            "well_depth": 48,
+            "yield": 1.6,
+            "static": 3,
+            "level_dynamic": 14,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 22,
+                    "total": 630405376,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 12 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 13 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 14 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 15 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 16 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Thu Oct 17 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4721",
+            "latitude": 13.64786333,
+            "longitude": 103.73116,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-02-02",
+            "well_depth": 60,
+            "yield": 1,
+            "static": 7,
+            "level_dynamic": 16,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 809882197,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 283,
+                    "total": 3308234,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 36,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 63488164,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 1016392868,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 337889566,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 3004048,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 50781,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 770,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 27622,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 9853,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 288,
+                    "total": 40714580,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 288,
+                    "total": 143102,
+                    "status": 2
+                }
+            }
+        },
+        {
+            "id": "4723",
+            "latitude": 13.38661366,
+            "longitude": 103.8736725,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-06-01",
+            "well_depth": 53,
+            "yield": 1,
+            "static": 6.5,
+            "level_dynamic": 15,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 30,
+                    "total": 168711650,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 12 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 13 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 14 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 15 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 16 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Thu Oct 17 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4724",
+            "latitude": 13.64882499,
+            "longitude": 103.7358017,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-02-04",
+            "well_depth": 53,
+            "yield": 1,
+            "static": 4,
+            "level_dynamic": 17,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 22 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Wed Oct 23 2019": {
+                    "count": 287,
+                    "total": 0,
+                    "status": 0
+                }
+            }
+        },
+        {
+            "id": "4725",
+            "latitude": 13.9946536,
+            "longitude": 103.7437508,
+            "village": {
+                "village": "Kandal",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-02-24",
+            "well_depth": 32,
+            "yield": 1.2,
+            "static": 1.7,
+            "level_dynamic": 14,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4726",
+            "latitude": 13.82670166,
+            "longitude": 103.4662067,
+            "village": {
+                "village": "Brey",
+                "commune": "Brey",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-01-01",
+            "well_depth": 42,
+            "yield": 1.05,
+            "static": 2,
+            "level_dynamic": 20,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4727",
+            "latitude": 13.99717773,
+            "longitude": 103.7426426,
+            "village": {
+                "village": "Kandal",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-02-22",
+            "well_depth": 32,
+            "yield": 1.2,
+            "static": 2.3,
+            "level_dynamic": 17,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4728",
+            "latitude": 13.742632,
+            "longitude": 106.980843,
+            "village": {
+                "village": "Chraneang",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-12-20",
+            "well_depth": 30,
+            "yield": 1,
+            "static": 3,
+            "level_dynamic": 21,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4729",
+            "latitude": 13.74760833,
+            "longitude": 103.5436617,
+            "village": {
+                "village": "Mongtbong",
+                "commune": "Mong",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2015-01-10",
+            "well_depth": 30,
+            "yield": 1.2,
+            "static": 5,
+            "level_dynamic": 12,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4734",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2016-10-17",
+            "well_depth": 47,
+            "yield": 2,
+            "static": 18,
+            "level_dynamic": 21,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4736",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Kouk (Ampil)",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-09-19",
+            "well_depth": 45,
+            "yield": 2,
+            "static": 18,
+            "level_dynamic": 24,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4738",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Phleu Thom",
+                "commune": "Ta Veaeng Leu",
+                "district": "Ta Veaeng",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-05-08",
+            "well_depth": 38,
+            "yield": 1.5,
+            "static": 15,
+            "level_dynamic": 25,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 9911953167,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 8120620466,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 7568023654,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 2055714661,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 4379734989,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 336942126,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 6420599406,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 8289458928,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 10108358172,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 5281741520,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 1859957617,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 38,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4740",
+            "latitude": 13.87483,
+            "longitude": 107.40677,
+            "village": {
+                "village": "Tang Se Loam",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-01-01",
+            "well_depth": 39,
+            "yield": 2,
+            "static": 25,
+            "level_dynamic": 33,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 289,
+                    "total": 561785077499,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 483183820575,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 537189678854,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 601597411048,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 579820584690,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 58,
+                    "total": 117524398026,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4741",
+            "latitude": 13.794899,
+            "longitude": 107.028886,
+            "village": {
+                "village": "L'eun Chong",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2017-11-15",
+            "well_depth": 42,
+            "yield": 1.5,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 847810959,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 363121769,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 2078764809,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 5128249261,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 1585057032,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 5680439548,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 1122818887,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 1556187645,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 1323857914,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 5562878069,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 1937416645,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 2117509475,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 288,
+                    "total": 5025918007,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 288,
+                    "total": 4495270790,
+                    "status": 2
+                }
+            }
+        },
+        {
+            "id": "4742",
+            "latitude": 13.68651955,
+            "longitude": 107.2160912,
+            "village": {
+                "village": "Kouk (Pouy)",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-01-01",
+            "well_depth": 60,
+            "yield": 1.5,
+            "static": 30,
+            "level_dynamic": 45,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 1068815750,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 3593615,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 4990163,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 3905732,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 560311801,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 6719210,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 1287087206,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 290979250,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 5858466,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 1815381907,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 951036491,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 86,
+                    "total": 1356951,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4743",
+            "latitude": 13.86639,
+            "longitude": 107.055199,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-06-10",
+            "well_depth": 52,
+            "yield": 1.5,
+            "static": 26,
+            "level_dynamic": 32,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 9596544966,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 9041197771,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 21111912067,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 10766988772,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 14191219691,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 19465802228,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 16456043873,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 14789330928,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 18701065625,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 13432277856,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 16636109310,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 72,
+                    "total": 4533663064,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4746",
+            "latitude": 13.865388,
+            "longitude": 107.066529,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-06-20",
+            "well_depth": 56,
+            "yield": 2,
+            "static": 26,
+            "level_dynamic": 31,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 218204060,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 317880317,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 977409851,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 282588401,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 936888901,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 1150140506,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 2778997124,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 1721056168,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 2245543955,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 1905637401,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 883267402,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 77,
+                    "total": 334895,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4747",
+            "latitude": 13.750234,
+            "longitude": 106.94527,
+            "village": {
+                "village": "Cha Ungchan",
+                "commune": "Cha Ung",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-01-01",
+            "well_depth": 40,
+            "yield": 1.5,
+            "static": 16,
+            "level_dynamic": 22,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4749",
+            "latitude": 13.78178833,
+            "longitude": 107.0310667,
+            "village": {
+                "village": "L'eun Kraen",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2002-01-01",
+            "well_depth": 70,
+            "yield": 1.5,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 34217528,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 138761,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 506621378,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 730,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Mon Oct 21 2019": {
+                    "count": 92,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4750",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "L'eun Kraen",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2017-01-01",
+            "well_depth": 60,
+            "yield": 2,
+            "static": 25,
+            "level_dynamic": 35,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 2863398118,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 157257804,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 3099077394,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 494294709,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 1269011909,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 5587468198,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 1958771753,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 4309087939,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 7433309480,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 800649315,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 4429289499,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 92,
+                    "total": 112537458,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4754",
+            "latitude": 13.986311,
+            "longitude": 107.34607,
+            "village": {
+                "village": "Tang Se Loam",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-01-01",
+            "well_depth": 45,
+            "yield": 2,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 287,
+                    "total": 18455,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 1101,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 286,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 426543,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 174605,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 237757,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 159335,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 23606,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 1669893,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 0,
+                    "status": 0
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 18561,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 118300151,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 57,
+                    "total": 33833526,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4755",
+            "latitude": 13.68651955,
+            "longitude": 107.2160912,
+            "village": {
+                "village": "Ki Koung",
+                "commune": "Ta Veaeng Leu",
+                "district": "Ta Veaeng",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-05-24",
+            "well_depth": 31,
+            "yield": 5,
+            "static": 5,
+            "level_dynamic": 11,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 21386146458,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 15696785787,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 19908955143,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 48768066931,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 32748155849,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 24470822018,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 19975183262,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 39029811725,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 288,
+                    "total": 18833210722,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 288,
+                    "total": 6959633077,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 10033645061,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 40,
+                    "total": 0,
+                    "status": 0
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4760",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Ta Nga",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-06-06",
+            "well_depth": 30,
+            "yield": 3,
+            "static": 5,
+            "level_dynamic": 10,
+            "status": 1,
+            "statuses": {}
+        },
+        {
+            "id": "4761",
+            "latitude": 13.644723,
+            "longitude": 103.712812,
+            "village": {
+                "village": "Sambuo",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-01-29",
+            "well_depth": 40,
+            "yield": 1.5,
+            "static": 7,
+            "level_dynamic": 16,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 24,
+                    "total": 18329372732,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 12 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 13 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 14 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 15 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 16 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Thu Oct 17 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4762",
+            "latitude": 13.8653917,
+            "longitude": 107.0437533,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-06-10",
+            "well_depth": 34,
+            "yield": 2,
+            "static": 16,
+            "level_dynamic": 22,
+            "status": 2,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 11 2019": {
+                    "count": 422,
+                    "total": 12026902392,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 520,
+                    "total": 5781704142,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 239,
+                    "total": 11942330081,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 12069709855,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 10089526187,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 366,
+                    "total": 6527147720,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 6,
+                    "total": 3929874682,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 160,
+                    "total": 4377222051,
+                    "status": 2
+                },
+                "Sun Oct 20 2019": {
+                    "count": 288,
+                    "total": 3942860088,
+                    "status": 2
+                },
+                "Mon Oct 21 2019": {
+                    "count": 288,
+                    "total": 14020996476,
+                    "status": 2
+                },
+                "Tue Oct 22 2019": {
+                    "count": 288,
+                    "total": 6561576672,
+                    "status": 2
+                },
+                "Wed Oct 23 2019": {
+                    "count": 288,
+                    "total": 7240479066,
+                    "status": 2
+                }
+            }
+        },
+        {
+            "id": "4763",
+            "latitude": 13.66288,
+            "longitude": 104.0218467,
+            "village": {
+                "village": "Khnar Rungvas",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-12-08",
+            "well_depth": 32,
+            "yield": 1,
+            "static": 2,
+            "level_dynamic": 20,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 288,
+                    "total": 21437377,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 288,
+                    "total": 21326121,
+                    "status": 2
+                },
+                "Sat Oct 12 2019": {
+                    "count": 288,
+                    "total": 66492501,
+                    "status": 2
+                },
+                "Sun Oct 13 2019": {
+                    "count": 288,
+                    "total": 43966528,
+                    "status": 2
+                },
+                "Mon Oct 14 2019": {
+                    "count": 288,
+                    "total": 4958166,
+                    "status": 2
+                },
+                "Tue Oct 15 2019": {
+                    "count": 288,
+                    "total": 13226236,
+                    "status": 2
+                },
+                "Wed Oct 16 2019": {
+                    "count": 288,
+                    "total": 11794434,
+                    "status": 2
+                },
+                "Thu Oct 17 2019": {
+                    "count": 288,
+                    "total": 18526613,
+                    "status": 2
+                },
+                "Fri Oct 18 2019": {
+                    "count": 84,
+                    "total": 22671635,
+                    "status": 2
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "4764",
+            "latitude": 13.66423349,
+            "longitude": 104.0051294,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-01-01",
+            "well_depth": 33,
+            "yield": 1.5,
+            "static": 3,
+            "level_dynamic": 18,
+            "status": 0,
+            "statuses": {
+                "Thu Oct 10 2019": {
+                    "count": 108,
+                    "total": 1136140,
+                    "status": 2
+                },
+                "Fri Oct 11 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 12 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 13 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 14 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 15 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 16 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Thu Oct 17 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Fri Oct 18 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sat Oct 19 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Sun Oct 20 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Mon Oct 21 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Tue Oct 22 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                },
+                "Wed Oct 23 2019": {
+                    "count": 0,
+                    "total": 0,
+                    "status": 1
+                }
+            }
+        },
+        {
+            "id": "7418",
+            "latitude": 13.74755566,
+            "longitude": 106.9771385,
+            "village": {
+                "village": "Kok Yeang",
+                "commune": "Don Peng",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-01-27",
+            "well_depth": 32,
+            "yield": 1,
+            "static": 1.6,
+            "level_dynamic": 14,
+            "status": 0,
+            "error": "500"
+        }
+    ]
+}

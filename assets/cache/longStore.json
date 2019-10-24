@@ -1,1 +1,1526 @@
-{"pumps":{"4715":{"Tue Sep 03 2019":{"count":0,"total":0,"status":0},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Aug 22 2019":{"count":288,"total":2422268773,"status":2},"Fri Aug 23 2019":{"count":288,"total":1101302451,"status":2},"Sat Aug 24 2019":{"count":288,"total":1958443835,"status":2},"Sun Aug 25 2019":{"count":288,"total":2525713202,"status":2},"Mon Aug 26 2019":{"count":288,"total":201277655,"status":2},"Tue Aug 27 2019":{"count":288,"total":694420525,"status":2},"Wed Aug 28 2019":{"count":288,"total":16394359524,"status":2},"Thu Aug 29 2019":{"count":288,"total":11977488442,"status":2},"Fri Aug 30 2019":{"count":288,"total":22748171345,"status":2},"Sat Aug 31 2019":{"count":288,"total":31369377846,"status":2},"Sun Sep 01 2019":{"count":110,"total":9663981074,"status":2},"Mon Sep 02 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0}},"4716":{"Wed Aug 28 2019":{"count":0,"total":0,"status":0},"Thu Aug 29 2019":{"count":0,"total":0,"status":0},"Fri Aug 30 2019":{"count":0,"total":0,"status":0},"Sat Aug 31 2019":{"count":0,"total":0,"status":0},"Sun Sep 01 2019":{"count":0,"total":0,"status":0},"Mon Sep 02 2019":{"count":212,"total":4938656852,"status":2},"Tue Sep 03 2019":{"count":288,"total":152709491,"status":2},"Wed Sep 04 2019":{"count":288,"total":544096718,"status":2},"Thu Sep 05 2019":{"count":288,"total":390368905,"status":2},"Fri Sep 06 2019":{"count":288,"total":19973799,"status":2},"Sat Sep 07 2019":{"count":288,"total":2397928618,"status":2},"Sun Sep 08 2019":{"count":288,"total":660721218,"status":2},"Mon Sep 09 2019":{"count":288,"total":3897537,"status":2},"Tue Sep 10 2019":{"count":288,"total":36731163,"status":2},"Wed Sep 11 2019":{"count":288,"total":36315513,"status":2},"Thu Sep 12 2019":{"count":288,"total":19042149,"status":2},"Fri Sep 13 2019":{"count":288,"total":2849098,"status":2},"Sat Sep 14 2019":{"count":288,"total":738728,"status":2},"Sun Sep 15 2019":{"count":53,"total":51550463,"status":2},"Mon Sep 16 2019":{"count":0,"total":0,"status":0},"Tue Sep 17 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":15280996100,"status":2},"Thu Oct 10 2019":{"count":288,"total":11887962625,"status":2},"Fri Oct 11 2019":{"count":288,"total":9039826188,"status":2},"Sat Oct 12 2019":{"count":288,"total":847245532,"status":2},"Sun Oct 13 2019":{"count":288,"total":5032011,"status":2},"Mon Oct 14 2019":{"count":288,"total":240358118,"status":2},"Tue Oct 15 2019":{"count":288,"total":2776614809,"status":2},"Wed Oct 16 2019":{"count":288,"total":673254105,"status":2},"Thu Oct 17 2019":{"count":288,"total":3623667095,"status":2},"Fri Oct 18 2019":{"count":288,"total":7837479571,"status":2},"Sat Oct 19 2019":{"count":288,"total":8026796803,"status":2},"Sun Oct 20 2019":{"count":65,"total":3959412275,"status":2},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4717":{"Wed Oct 09 2019":{"count":0,"total":0,"status":1},"Thu Oct 10 2019":{"count":14,"total":5187647027,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4719":{"Wed Aug 28 2019":{"count":0,"total":0,"status":0},"Thu Aug 29 2019":{"count":252,"total":6536544628,"status":2},"Fri Aug 30 2019":{"count":288,"total":1880571728,"status":2},"Sat Aug 31 2019":{"count":288,"total":4713627477,"status":2},"Sun Sep 01 2019":{"count":288,"total":1377916044,"status":2},"Mon Sep 02 2019":{"count":288,"total":1433702167,"status":2},"Tue Sep 03 2019":{"count":288,"total":21431528,"status":2},"Wed Sep 04 2019":{"count":288,"total":1321561328,"status":2},"Thu Sep 05 2019":{"count":288,"total":6089150487,"status":2},"Fri Sep 06 2019":{"count":288,"total":1848305570,"status":2},"Sat Sep 07 2019":{"count":288,"total":4695412126,"status":2},"Sun Sep 08 2019":{"count":288,"total":5724159203,"status":2},"Mon Sep 09 2019":{"count":288,"total":1776117033,"status":2},"Tue Sep 10 2019":{"count":288,"total":3176860864,"status":2},"Wed Sep 11 2019":{"count":288,"total":1624409443,"status":2},"Thu Sep 12 2019":{"count":288,"total":3943624005,"status":2},"Fri Sep 13 2019":{"count":118,"total":1890292356,"status":2},"Sat Sep 14 2019":{"count":0,"total":0,"status":0},"Sun Sep 15 2019":{"count":0,"total":0,"status":0},"Mon Sep 16 2019":{"count":0,"total":0,"status":0},"Tue Sep 17 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":5956605440,"status":2},"Thu Oct 10 2019":{"count":22,"total":630405376,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4721":{"Wed Aug 28 2019":{"count":28,"total":8993704232,"status":2},"Thu Aug 29 2019":{"count":0,"total":0,"status":0},"Fri Aug 30 2019":{"count":0,"total":0,"status":0},"Sat Aug 31 2019":{"count":0,"total":0,"status":0},"Sun Sep 01 2019":{"count":0,"total":0,"status":0},"Mon Sep 02 2019":{"count":0,"total":0,"status":0},"Tue Sep 03 2019":{"count":0,"total":0,"status":0},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":643288891,"status":2},"Thu Oct 10 2019":{"count":41,"total":809332137,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4723":{"Wed Aug 28 2019":{"count":22,"total":8209648391,"status":2},"Thu Aug 29 2019":{"count":0,"total":0,"status":0},"Fri Aug 30 2019":{"count":0,"total":0,"status":0},"Sat Aug 31 2019":{"count":0,"total":0,"status":0},"Sun Sep 01 2019":{"count":0,"total":0,"status":0},"Mon Sep 02 2019":{"count":0,"total":0,"status":0},"Tue Sep 03 2019":{"count":0,"total":0,"status":0},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":29525851872,"status":2},"Thu Oct 10 2019":{"count":30,"total":168711650,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4724":{"Wed Aug 28 2019":{"count":46,"total":4769143789,"status":2},"Thu Aug 29 2019":{"count":0,"total":0,"status":0},"Fri Aug 30 2019":{"count":0,"total":0,"status":0},"Sat Aug 31 2019":{"count":0,"total":0,"status":0},"Sun Sep 01 2019":{"count":0,"total":0,"status":0},"Mon Sep 02 2019":{"count":0,"total":0,"status":0},"Tue Sep 03 2019":{"count":0,"total":0,"status":0},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":0,"status":0},"Thu Oct 10 2019":{"count":34,"total":0,"status":0},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4725":{"Wed Oct 09 2019":{"count":26,"total":0,"status":0},"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4726":{"Wed Aug 28 2019":{"count":288,"total":857567116,"status":2},"Thu Aug 29 2019":{"count":288,"total":8446844,"status":2},"Fri Aug 30 2019":{"count":288,"total":13029958,"status":2},"Sat Aug 31 2019":{"count":288,"total":10442959,"status":2},"Sun Sep 01 2019":{"count":288,"total":1814041849,"status":2},"Mon Sep 02 2019":{"count":288,"total":43405797,"status":2},"Tue Sep 03 2019":{"count":288,"total":19014154,"status":2},"Wed Sep 04 2019":{"count":288,"total":9287763,"status":2},"Thu Sep 05 2019":{"count":288,"total":140224749,"status":2},"Fri Sep 06 2019":{"count":288,"total":737293258,"status":2},"Sat Sep 07 2019":{"count":38,"total":3772991,"status":2},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Sep 11 2019":{"count":0,"total":0,"status":0},"Thu Sep 12 2019":{"count":0,"total":0,"status":0},"Fri Sep 13 2019":{"count":0,"total":0,"status":0},"Sat Sep 14 2019":{"count":0,"total":0,"status":0},"Sun Sep 15 2019":{"count":0,"total":0,"status":0},"Mon Sep 16 2019":{"count":0,"total":0,"status":0},"Tue Sep 17 2019":{"count":0,"total":0,"status":0}},"4727":{"Wed Oct 09 2019":{"count":24,"total":9732789282,"status":2},"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4728":{"Wed Oct 09 2019":{"count":47,"total":10433735,"status":2},"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4729":{"Wed Oct 09 2019":{"count":29,"total":811,"status":2},"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4734":{"Wed Sep 04 2019":{"count":288,"total":3877972057,"status":2},"Thu Sep 05 2019":{"count":288,"total":6120059068,"status":2},"Fri Sep 06 2019":{"count":288,"total":11132347043,"status":2},"Sat Sep 07 2019":{"count":288,"total":6178478037,"status":2},"Sun Sep 08 2019":{"count":288,"total":7974240167,"status":2},"Mon Sep 09 2019":{"count":288,"total":3750042639,"status":2},"Tue Sep 10 2019":{"count":288,"total":7914273966,"status":2},"Wed Sep 11 2019":{"count":288,"total":11805978882,"status":2},"Thu Sep 12 2019":{"count":288,"total":18985421969,"status":2},"Fri Sep 13 2019":{"count":288,"total":15376112405,"status":2},"Sat Sep 14 2019":{"count":288,"total":13421184293,"status":2},"Sun Sep 15 2019":{"count":288,"total":10044519508,"status":2},"Mon Sep 16 2019":{"count":288,"total":13422601144,"status":2},"Tue Sep 17 2019":{"count":57,"total":8027253174,"status":2}},"4736":{"Thu Aug 22 2019":{"count":288,"total":0,"status":1},"Fri Aug 23 2019":{"count":288,"total":17174830,"status":2},"Sat Aug 24 2019":{"count":288,"total":0,"status":1},"Sun Aug 25 2019":{"count":288,"total":0,"status":1},"Mon Aug 26 2019":{"count":288,"total":23,"status":2},"Tue Aug 27 2019":{"count":288,"total":30,"status":2},"Wed Aug 28 2019":{"count":288,"total":0,"status":1},"Thu Aug 29 2019":{"count":288,"total":0,"status":1},"Fri Aug 30 2019":{"count":288,"total":0,"status":1},"Sat Aug 31 2019":{"count":288,"total":319291392,"status":2},"Sun Sep 01 2019":{"count":288,"total":0,"status":1},"Mon Sep 02 2019":{"count":288,"total":0,"status":1},"Tue Sep 03 2019":{"count":312,"total":0,"status":1},"Wed Sep 04 2019":{"count":431,"total":0,"status":1},"Thu Sep 05 2019":{"count":288,"total":1921672563,"status":2},"Fri Sep 06 2019":{"count":285,"total":252513025,"status":2},"Sat Sep 07 2019":{"count":288,"total":0,"status":1},"Sun Sep 08 2019":{"count":288,"total":0,"status":1},"Mon Sep 09 2019":{"count":288,"total":0,"status":1},"Tue Sep 10 2019":{"count":288,"total":0,"status":1},"Wed Sep 11 2019":{"count":288,"total":0,"status":1},"Thu Sep 12 2019":{"count":288,"total":0,"status":1},"Fri Sep 13 2019":{"count":288,"total":0,"status":1},"Sat Sep 14 2019":{"count":288,"total":0,"status":1},"Sun Sep 15 2019":{"count":288,"total":0,"status":1},"Mon Sep 16 2019":{"count":288,"total":0,"status":1},"Tue Sep 17 2019":{"count":44,"total":607672436,"status":2}},"4738":{"Wed Oct 09 2019":{"count":288,"total":9958973785,"status":2},"Thu Oct 10 2019":{"count":288,"total":9911953167,"status":2},"Fri Oct 11 2019":{"count":288,"total":8120620466,"status":2},"Sat Oct 12 2019":{"count":288,"total":7568023654,"status":2},"Sun Oct 13 2019":{"count":288,"total":2055714661,"status":2},"Mon Oct 14 2019":{"count":288,"total":4379734989,"status":2},"Tue Oct 15 2019":{"count":288,"total":336942126,"status":2},"Wed Oct 16 2019":{"count":288,"total":6420599406,"status":2},"Thu Oct 17 2019":{"count":288,"total":8289458928,"status":2},"Fri Oct 18 2019":{"count":288,"total":10108358172,"status":2},"Sat Oct 19 2019":{"count":288,"total":5281741520,"status":2},"Sun Oct 20 2019":{"count":288,"total":1859957617,"status":2},"Mon Oct 21 2019":{"count":38,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4740":{"Wed Sep 04 2019":{"count":288,"total":64424509410,"status":2},"Thu Sep 05 2019":{"count":288,"total":168997027796,"status":2},"Fri Sep 06 2019":{"count":288,"total":197568495524,"status":2},"Sat Sep 07 2019":{"count":288,"total":541165879044,"status":2},"Sun Sep 08 2019":{"count":288,"total":343597383520,"status":2},"Mon Sep 09 2019":{"count":288,"total":266220863365,"status":2},"Tue Sep 10 2019":{"count":288,"total":410169376577,"status":2},"Wed Sep 11 2019":{"count":288,"total":384651231054,"status":2},"Thu Sep 12 2019":{"count":288,"total":447012142896,"status":2},"Fri Sep 13 2019":{"count":288,"total":618475290336,"status":2},"Sat Sep 14 2019":{"count":288,"total":489626271516,"status":2},"Sun Sep 15 2019":{"count":116,"total":237347274643,"status":2},"Mon Sep 16 2019":{"count":0,"total":0,"status":0},"Tue Sep 17 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":613073026787,"status":2},"Thu Oct 10 2019":{"count":288,"total":618475290336,"status":2},"Fri Oct 11 2019":{"count":288,"total":618475290336,"status":2},"Sat Oct 12 2019":{"count":289,"total":561785077499,"status":2},"Sun Oct 13 2019":{"count":288,"total":483183820575,"status":2},"Mon Oct 14 2019":{"count":288,"total":618475290336,"status":2},"Tue Oct 15 2019":{"count":288,"total":618475290336,"status":2},"Wed Oct 16 2019":{"count":288,"total":618475290336,"status":2},"Thu Oct 17 2019":{"count":288,"total":618475290336,"status":2},"Fri Oct 18 2019":{"count":288,"total":618475290336,"status":2},"Sat Oct 19 2019":{"count":288,"total":537189678854,"status":2},"Sun Oct 20 2019":{"count":288,"total":601597411048,"status":2},"Mon Oct 21 2019":{"count":288,"total":579820584690,"status":2},"Tue Oct 22 2019":{"count":58,"total":117524398026,"status":2}},"4741":{"Wed Aug 28 2019":{"count":288,"total":2461675291,"status":2},"Thu Aug 29 2019":{"count":288,"total":1813846617,"status":2},"Fri Aug 30 2019":{"count":288,"total":2559449902,"status":2},"Sat Aug 31 2019":{"count":288,"total":7908047797,"status":2},"Sun Sep 01 2019":{"count":288,"total":4377767372,"status":2},"Mon Sep 02 2019":{"count":288,"total":5777607616,"status":2},"Tue Sep 03 2019":{"count":288,"total":5077502631,"status":2},"Wed Sep 04 2019":{"count":288,"total":12870913368,"status":2},"Thu Sep 05 2019":{"count":288,"total":1690407451,"status":2},"Fri Sep 06 2019":{"count":288,"total":6202365780,"status":2},"Sat Sep 07 2019":{"count":288,"total":2849401115,"status":2},"Sun Sep 08 2019":{"count":288,"total":10297624743,"status":2},"Mon Sep 09 2019":{"count":289,"total":4191699411,"status":2},"Tue Sep 10 2019":{"count":288,"total":4651172847,"status":2},"Wed Sep 11 2019":{"count":288,"total":437354240,"status":2},"Thu Sep 12 2019":{"count":288,"total":9059856077,"status":2},"Fri Sep 13 2019":{"count":288,"total":2940833621,"status":2},"Sat Sep 14 2019":{"count":288,"total":7197841835,"status":2},"Sun Sep 15 2019":{"count":288,"total":7392427696,"status":2},"Mon Sep 16 2019":{"count":288,"total":4854138213,"status":2},"Tue Sep 17 2019":{"count":71,"total":1702095,"status":2},"Wed Oct 09 2019":{"count":288,"total":2466064350,"status":2},"Thu Oct 10 2019":{"count":288,"total":847810959,"status":2},"Fri Oct 11 2019":{"count":288,"total":363121769,"status":2},"Sat Oct 12 2019":{"count":288,"total":2078764809,"status":2},"Sun Oct 13 2019":{"count":288,"total":5128249261,"status":2},"Mon Oct 14 2019":{"count":288,"total":1585057032,"status":2},"Tue Oct 15 2019":{"count":288,"total":5680439548,"status":2},"Wed Oct 16 2019":{"count":288,"total":1122818887,"status":2},"Thu Oct 17 2019":{"count":288,"total":1556187645,"status":2},"Fri Oct 18 2019":{"count":288,"total":1323857914,"status":2},"Sat Oct 19 2019":{"count":288,"total":5562878069,"status":2},"Sun Oct 20 2019":{"count":280,"total":1936774752,"status":2},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4742":{"Tue Aug 20 2019":{"count":288,"total":53509668,"status":2},"Wed Aug 21 2019":{"count":288,"total":19343916,"status":2},"Thu Aug 22 2019":{"count":288,"total":2252711,"status":2},"Fri Aug 23 2019":{"count":288,"total":53509668,"status":2},"Sat Aug 24 2019":{"count":288,"total":19343916,"status":2},"Sun Aug 25 2019":{"count":288,"total":2252711,"status":2},"Mon Aug 26 2019":{"count":288,"total":443766531,"status":2},"Tue Aug 27 2019":{"count":288,"total":5392117,"status":2},"Wed Aug 28 2019":{"count":288,"total":113595373,"status":2},"Thu Aug 29 2019":{"count":288,"total":2129131,"status":2},"Fri Aug 30 2019":{"count":288,"total":3285351,"status":2},"Sat Aug 31 2019":{"count":288,"total":449948,"status":2},"Sun Sep 01 2019":{"count":288,"total":2219458,"status":2},"Mon Sep 02 2019":{"count":288,"total":1577572,"status":2},"Tue Sep 03 2019":{"count":288,"total":1740035,"status":2},"Wed Sep 04 2019":{"count":288,"total":175633525,"status":2},"Thu Sep 05 2019":{"count":288,"total":1518297,"status":2},"Fri Sep 06 2019":{"count":288,"total":6693729,"status":2},"Sat Sep 07 2019":{"count":288,"total":21440060,"status":2},"Sun Sep 08 2019":{"count":288,"total":48943713,"status":2},"Mon Sep 09 2019":{"count":288,"total":322778572,"status":2},"Tue Sep 10 2019":{"count":288,"total":1165834185,"status":2},"Wed Sep 11 2019":{"count":288,"total":111050905,"status":2},"Thu Sep 12 2019":{"count":288,"total":6332597,"status":2},"Fri Sep 13 2019":{"count":288,"total":197404515,"status":2},"Sat Sep 14 2019":{"count":288,"total":1943126,"status":2},"Sun Sep 15 2019":{"count":288,"total":28600823,"status":2},"Mon Sep 16 2019":{"count":288,"total":4038629,"status":2},"Tue Sep 17 2019":{"count":24,"total":220967529,"status":2},"Wed Oct 09 2019":{"count":288,"total":2723527,"status":2},"Thu Oct 10 2019":{"count":288,"total":1068815750,"status":2},"Fri Oct 11 2019":{"count":288,"total":3593615,"status":2},"Sat Oct 12 2019":{"count":288,"total":4990163,"status":2},"Sun Oct 13 2019":{"count":288,"total":3905732,"status":2},"Mon Oct 14 2019":{"count":288,"total":560311801,"status":2},"Tue Oct 15 2019":{"count":288,"total":6719210,"status":2},"Wed Oct 16 2019":{"count":288,"total":1287087206,"status":2},"Thu Oct 17 2019":{"count":288,"total":290979250,"status":2},"Fri Oct 18 2019":{"count":288,"total":5858466,"status":2},"Sat Oct 19 2019":{"count":288,"total":1815381907,"status":2},"Sun Oct 20 2019":{"count":288,"total":951036491,"status":2},"Mon Oct 21 2019":{"count":86,"total":1356951,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4743":{"Thu Aug 22 2019":{"count":288,"total":3850657742,"status":2},"Fri Aug 23 2019":{"count":288,"total":2962483892,"status":2},"Sat Aug 24 2019":{"count":288,"total":2733848792,"status":2},"Sun Aug 25 2019":{"count":288,"total":3541789452,"status":2},"Mon Aug 26 2019":{"count":288,"total":3850657742,"status":2},"Tue Aug 27 2019":{"count":288,"total":5504405696,"status":2},"Wed Aug 28 2019":{"count":288,"total":8515240463,"status":2},"Thu Aug 29 2019":{"count":288,"total":2274287556,"status":2},"Fri Aug 30 2019":{"count":288,"total":2029909971,"status":2},"Sat Aug 31 2019":{"count":288,"total":1451908727,"status":2},"Sun Sep 01 2019":{"count":288,"total":2531574177,"status":2},"Mon Sep 02 2019":{"count":288,"total":1603335714,"status":2},"Tue Sep 03 2019":{"count":288,"total":728335578,"status":2},"Wed Sep 04 2019":{"count":288,"total":3110956807,"status":2},"Thu Sep 05 2019":{"count":288,"total":527850400,"status":2},"Fri Sep 06 2019":{"count":288,"total":7139105510,"status":2},"Sat Sep 07 2019":{"count":288,"total":5023810815,"status":2},"Sun Sep 08 2019":{"count":288,"total":7973651379,"status":2},"Mon Sep 09 2019":{"count":288,"total":8301714606,"status":2},"Tue Sep 10 2019":{"count":288,"total":5249954642,"status":2},"Wed Sep 11 2019":{"count":288,"total":7451879548,"status":2},"Thu Sep 12 2019":{"count":288,"total":5113335323,"status":2},"Fri Sep 13 2019":{"count":288,"total":3961008283,"status":2},"Sat Sep 14 2019":{"count":288,"total":8651833467,"status":2},"Sun Sep 15 2019":{"count":288,"total":10286651252,"status":2},"Mon Sep 16 2019":{"count":288,"total":17869378697,"status":2},"Tue Sep 17 2019":{"count":55,"total":2753969754,"status":2},"Wed Oct 09 2019":{"count":289,"total":12927219833,"status":2},"Thu Oct 10 2019":{"count":288,"total":9596544966,"status":2},"Fri Oct 11 2019":{"count":288,"total":9041197771,"status":2},"Sat Oct 12 2019":{"count":288,"total":21111912067,"status":2},"Sun Oct 13 2019":{"count":288,"total":10766988772,"status":2},"Mon Oct 14 2019":{"count":288,"total":14191219691,"status":2},"Tue Oct 15 2019":{"count":288,"total":19465802228,"status":2},"Wed Oct 16 2019":{"count":288,"total":16456043873,"status":2},"Thu Oct 17 2019":{"count":288,"total":14789330928,"status":2},"Fri Oct 18 2019":{"count":288,"total":18701065625,"status":2},"Sat Oct 19 2019":{"count":288,"total":13432277856,"status":2},"Sun Oct 20 2019":{"count":288,"total":16636109310,"status":2},"Mon Oct 21 2019":{"count":72,"total":4533663064,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4746":{"Thu Aug 22 2019":{"count":288,"total":1769297914,"status":2},"Fri Aug 23 2019":{"count":288,"total":54255162,"status":2},"Sat Aug 24 2019":{"count":288,"total":997665297,"status":2},"Sun Aug 25 2019":{"count":288,"total":20862291,"status":2},"Mon Aug 26 2019":{"count":288,"total":36839067,"status":2},"Tue Aug 27 2019":{"count":288,"total":1769297914,"status":2},"Wed Aug 28 2019":{"count":288,"total":829879386,"status":2},"Thu Aug 29 2019":{"count":288,"total":210606,"status":2},"Fri Aug 30 2019":{"count":288,"total":16782,"status":2},"Sat Aug 31 2019":{"count":288,"total":19375929,"status":2},"Sun Sep 01 2019":{"count":288,"total":10,"status":2},"Mon Sep 02 2019":{"count":288,"total":864935356,"status":2},"Tue Sep 03 2019":{"count":288,"total":1109140138,"status":2},"Wed Sep 04 2019":{"count":288,"total":21810972,"status":2},"Thu Sep 05 2019":{"count":288,"total":211351766,"status":2},"Fri Sep 06 2019":{"count":288,"total":395230289,"status":2},"Sat Sep 07 2019":{"count":289,"total":188830837,"status":2},"Sun Sep 08 2019":{"count":288,"total":36757311,"status":2},"Mon Sep 09 2019":{"count":288,"total":492008,"status":2},"Tue Sep 10 2019":{"count":288,"total":68834061,"status":2},"Wed Sep 11 2019":{"count":288,"total":906576332,"status":2},"Thu Sep 12 2019":{"count":288,"total":739173533,"status":2},"Fri Sep 13 2019":{"count":288,"total":3232572,"status":2},"Sat Sep 14 2019":{"count":288,"total":1358200978,"status":2},"Sun Sep 15 2019":{"count":288,"total":36253864,"status":2},"Mon Sep 16 2019":{"count":288,"total":1047396922,"status":2},"Tue Sep 17 2019":{"count":58,"total":421667,"status":2},"Wed Oct 09 2019":{"count":288,"total":393423061,"status":2},"Thu Oct 10 2019":{"count":288,"total":218204060,"status":2},"Fri Oct 11 2019":{"count":288,"total":317880317,"status":2},"Sat Oct 12 2019":{"count":288,"total":977409851,"status":2},"Sun Oct 13 2019":{"count":288,"total":282588401,"status":2},"Mon Oct 14 2019":{"count":288,"total":936888901,"status":2},"Tue Oct 15 2019":{"count":288,"total":1150140506,"status":2},"Wed Oct 16 2019":{"count":288,"total":2778997124,"status":2},"Thu Oct 17 2019":{"count":288,"total":1721056168,"status":2},"Fri Oct 18 2019":{"count":288,"total":2245543955,"status":2},"Sat Oct 19 2019":{"count":288,"total":1905637401,"status":2},"Sun Oct 20 2019":{"count":288,"total":883267402,"status":2},"Mon Oct 21 2019":{"count":77,"total":334895,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4747":{"Wed Sep 04 2019":{"count":288,"total":0,"status":1},"Thu Sep 05 2019":{"count":288,"total":0,"status":1},"Fri Sep 06 2019":{"count":288,"total":10,"status":2},"Sat Sep 07 2019":{"count":288,"total":71809,"status":2},"Sun Sep 08 2019":{"count":288,"total":230811,"status":2},"Mon Sep 09 2019":{"count":288,"total":78,"status":2},"Tue Sep 10 2019":{"count":288,"total":685609,"status":2},"Wed Sep 11 2019":{"count":288,"total":1399,"status":2},"Thu Sep 12 2019":{"count":288,"total":305374100,"status":2},"Fri Sep 13 2019":{"count":288,"total":223925,"status":2},"Sat Sep 14 2019":{"count":288,"total":24560,"status":2},"Sun Sep 15 2019":{"count":288,"total":17012268,"status":2},"Mon Sep 16 2019":{"count":288,"total":68124221,"status":2},"Tue Sep 17 2019":{"count":99,"total":50870005,"status":2}},"4749":{"Wed Sep 04 2019":{"count":288,"total":1016121476,"status":2},"Thu Sep 05 2019":{"count":288,"total":2722799603,"status":2},"Fri Sep 06 2019":{"count":288,"total":1978692329,"status":2},"Sat Sep 07 2019":{"count":288,"total":923167953,"status":2},"Sun Sep 08 2019":{"count":288,"total":2796901675,"status":2},"Mon Sep 09 2019":{"count":288,"total":7584692720,"status":2},"Tue Sep 10 2019":{"count":288,"total":1676161085,"status":2},"Wed Sep 11 2019":{"count":288,"total":3991402240,"status":2},"Thu Sep 12 2019":{"count":288,"total":1458853413,"status":2},"Fri Sep 13 2019":{"count":288,"total":3094012210,"status":2},"Sat Sep 14 2019":{"count":288,"total":1655451352,"status":2},"Sun Sep 15 2019":{"count":288,"total":1066207679,"status":2},"Mon Sep 16 2019":{"count":288,"total":339757285,"status":2},"Tue Sep 17 2019":{"count":78,"total":289322149,"status":2},"Wed Oct 09 2019":{"count":288,"total":405912475,"status":2},"Thu Oct 10 2019":{"count":288,"total":34217528,"status":2},"Fri Oct 11 2019":{"count":288,"total":138761,"status":2},"Sat Oct 12 2019":{"count":288,"total":506621378,"status":2},"Sun Oct 13 2019":{"count":288,"total":0,"status":0},"Mon Oct 14 2019":{"count":288,"total":0,"status":0},"Tue Oct 15 2019":{"count":288,"total":730,"status":2},"Wed Oct 16 2019":{"count":288,"total":0,"status":0},"Thu Oct 17 2019":{"count":288,"total":0,"status":0},"Fri Oct 18 2019":{"count":288,"total":0,"status":0},"Sat Oct 19 2019":{"count":288,"total":0,"status":0},"Sun Oct 20 2019":{"count":288,"total":0,"status":0},"Mon Oct 21 2019":{"count":92,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4750":{"Wed Sep 04 2019":{"count":288,"total":2684624553,"status":2},"Thu Sep 05 2019":{"count":288,"total":840166623,"status":2},"Fri Sep 06 2019":{"count":288,"total":887902143,"status":2},"Sat Sep 07 2019":{"count":288,"total":2182091297,"status":2},"Sun Sep 08 2019":{"count":288,"total":1378805063,"status":2},"Mon Sep 09 2019":{"count":288,"total":3464844674,"status":2},"Tue Sep 10 2019":{"count":288,"total":979370775,"status":2},"Wed Sep 11 2019":{"count":288,"total":4228631792,"status":2},"Thu Sep 12 2019":{"count":288,"total":768513671,"status":2},"Fri Sep 13 2019":{"count":288,"total":2942323534,"status":2},"Sat Sep 14 2019":{"count":288,"total":1445657134,"status":2},"Sun Sep 15 2019":{"count":288,"total":260318413,"status":2},"Mon Sep 16 2019":{"count":288,"total":1260836535,"status":2},"Tue Sep 17 2019":{"count":78,"total":0,"status":1},"Wed Oct 09 2019":{"count":288,"total":867260478,"status":2},"Thu Oct 10 2019":{"count":288,"total":2863398118,"status":2},"Fri Oct 11 2019":{"count":288,"total":157257804,"status":2},"Sat Oct 12 2019":{"count":288,"total":3099077394,"status":2},"Sun Oct 13 2019":{"count":288,"total":494294709,"status":2},"Mon Oct 14 2019":{"count":288,"total":1269011909,"status":2},"Tue Oct 15 2019":{"count":288,"total":5587468198,"status":2},"Wed Oct 16 2019":{"count":288,"total":1958771753,"status":2},"Thu Oct 17 2019":{"count":288,"total":4309087939,"status":2},"Fri Oct 18 2019":{"count":288,"total":7433309480,"status":2},"Sat Oct 19 2019":{"count":288,"total":800649315,"status":2},"Sun Oct 20 2019":{"count":288,"total":4429289499,"status":2},"Mon Oct 21 2019":{"count":92,"total":112537458,"status":2},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4754":{"Wed Oct 09 2019":{"count":288,"total":15223,"status":2},"Thu Oct 10 2019":{"count":287,"total":18455,"status":2},"Fri Oct 11 2019":{"count":288,"total":1101,"status":2},"Sat Oct 12 2019":{"count":286,"total":0,"status":0},"Sun Oct 13 2019":{"count":288,"total":426543,"status":2},"Mon Oct 14 2019":{"count":288,"total":174605,"status":2},"Tue Oct 15 2019":{"count":288,"total":237757,"status":2},"Wed Oct 16 2019":{"count":288,"total":159335,"status":2},"Thu Oct 17 2019":{"count":288,"total":23606,"status":2},"Fri Oct 18 2019":{"count":288,"total":1669893,"status":2},"Sat Oct 19 2019":{"count":288,"total":0,"status":0},"Sun Oct 20 2019":{"count":288,"total":18561,"status":2},"Mon Oct 21 2019":{"count":288,"total":118300151,"status":2},"Tue Oct 22 2019":{"count":57,"total":33833526,"status":2}},"4755":{"Wed Oct 09 2019":{"count":288,"total":25836949819,"status":2},"Thu Oct 10 2019":{"count":288,"total":21386146458,"status":2},"Fri Oct 11 2019":{"count":288,"total":15696785787,"status":2},"Sat Oct 12 2019":{"count":288,"total":19908955143,"status":2},"Sun Oct 13 2019":{"count":288,"total":48768066931,"status":2},"Mon Oct 14 2019":{"count":288,"total":32748155849,"status":2},"Tue Oct 15 2019":{"count":288,"total":24470822018,"status":2},"Wed Oct 16 2019":{"count":288,"total":19975183262,"status":2},"Thu Oct 17 2019":{"count":288,"total":39029811725,"status":2},"Fri Oct 18 2019":{"count":288,"total":18833210722,"status":2},"Sat Oct 19 2019":{"count":288,"total":6959633077,"status":2},"Sun Oct 20 2019":{"count":288,"total":10033645061,"status":2},"Mon Oct 21 2019":{"count":40,"total":0,"status":0},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4760":{},"4761":{"Wed Aug 28 2019":{"count":288,"total":0,"status":1},"Thu Aug 29 2019":{"count":288,"total":49732736294,"status":2},"Fri Aug 30 2019":{"count":288,"total":77570779338,"status":2},"Sat Aug 31 2019":{"count":288,"total":118719617551,"status":2},"Sun Sep 01 2019":{"count":288,"total":111025725674,"status":2},"Mon Sep 02 2019":{"count":288,"total":58313412093,"status":2},"Tue Sep 03 2019":{"count":115,"total":6634321165,"status":2},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":162818032173,"status":2},"Thu Oct 10 2019":{"count":24,"total":18329372732,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4762":{"Tue Aug 20 2019":{"count":288,"total":54995701,"status":2},"Wed Aug 21 2019":{"count":288,"total":2497651767,"status":2},"Thu Aug 22 2019":{"count":288,"total":103152618,"status":2},"Fri Aug 23 2019":{"count":288,"total":2566056422,"status":2},"Sat Aug 24 2019":{"count":288,"total":6802644277,"status":2},"Sun Aug 25 2019":{"count":288,"total":54995701,"status":2},"Mon Aug 26 2019":{"count":288,"total":4872049660,"status":2},"Tue Aug 27 2019":{"count":288,"total":8282562867,"status":2},"Wed Aug 28 2019":{"count":288,"total":4674693767,"status":2},"Thu Aug 29 2019":{"count":288,"total":18143160,"status":2},"Fri Aug 30 2019":{"count":288,"total":2497651767,"status":2},"Sat Aug 31 2019":{"count":288,"total":103152618,"status":2},"Sun Sep 01 2019":{"count":288,"total":47372839,"status":2},"Mon Sep 02 2019":{"count":288,"total":1269485371,"status":2},"Tue Sep 03 2019":{"count":288,"total":16060,"status":2},"Wed Sep 04 2019":{"count":288,"total":92756680,"status":2},"Thu Sep 05 2019":{"count":288,"total":941843513,"status":2},"Fri Sep 06 2019":{"count":288,"total":4098628114,"status":2},"Sat Sep 07 2019":{"count":288,"total":3828489388,"status":2},"Sun Sep 08 2019":{"count":288,"total":1120657720,"status":2},"Mon Sep 09 2019":{"count":288,"total":2213078359,"status":2},"Tue Sep 10 2019":{"count":288,"total":2037563128,"status":2},"Wed Sep 11 2019":{"count":288,"total":6366653927,"status":2},"Thu Sep 12 2019":{"count":288,"total":4492671442,"status":2},"Fri Sep 13 2019":{"count":288,"total":2629935630,"status":2},"Sat Sep 14 2019":{"count":288,"total":3220227042,"status":2},"Sun Sep 15 2019":{"count":288,"total":940353548,"status":2},"Mon Sep 16 2019":{"count":288,"total":1542121108,"status":2},"Tue Sep 17 2019":{"count":288,"total":1207948656,"status":2},"Wed Oct 09 2019":{"count":33,"total":19393513,"status":2},"Thu Oct 10 2019":{"count":0,"total":0,"status":1},"Fri Oct 11 2019":{"count":422,"total":12026902392,"status":2},"Sat Oct 12 2019":{"count":520,"total":5781704142,"status":2},"Sun Oct 13 2019":{"count":239,"total":11942330081,"status":2},"Mon Oct 14 2019":{"count":288,"total":12069709855,"status":2},"Tue Oct 15 2019":{"count":288,"total":10089526187,"status":2},"Wed Oct 16 2019":{"count":366,"total":6527147720,"status":2},"Thu Oct 17 2019":{"count":6,"total":3929874682,"status":2},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":160,"total":4377222051,"status":2},"Sun Oct 20 2019":{"count":167,"total":1385427801,"status":2},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4763":{"Tue Aug 20 2019":{"count":284,"total":5380129,"status":2},"Wed Aug 21 2019":{"count":287,"total":4182534,"status":2},"Thu Aug 22 2019":{"count":288,"total":41219838,"status":2},"Fri Aug 23 2019":{"count":294,"total":3236588,"status":2},"Sat Aug 24 2019":{"count":282,"total":1909145,"status":2},"Sun Aug 25 2019":{"count":292,"total":24238969,"status":2},"Mon Aug 26 2019":{"count":284,"total":5380129,"status":2},"Tue Aug 27 2019":{"count":288,"total":10656481,"status":2},"Wed Aug 28 2019":{"count":288,"total":29274835,"status":2},"Thu Aug 29 2019":{"count":289,"total":4158789,"status":2},"Fri Aug 30 2019":{"count":288,"total":7032176,"status":2},"Sat Aug 31 2019":{"count":287,"total":4182534,"status":2},"Sun Sep 01 2019":{"count":288,"total":41219838,"status":2},"Mon Sep 02 2019":{"count":288,"total":2971672,"status":2},"Tue Sep 03 2019":{"count":288,"total":72686161,"status":2},"Wed Sep 04 2019":{"count":288,"total":1862857,"status":2},"Thu Sep 05 2019":{"count":288,"total":33656959,"status":2},"Fri Sep 06 2019":{"count":288,"total":4474939,"status":2},"Sat Sep 07 2019":{"count":288,"total":14127458,"status":2},"Sun Sep 08 2019":{"count":288,"total":16341279,"status":2},"Mon Sep 09 2019":{"count":288,"total":9283743,"status":2},"Tue Sep 10 2019":{"count":288,"total":5305341,"status":2},"Wed Sep 11 2019":{"count":288,"total":157179311,"status":2},"Thu Sep 12 2019":{"count":288,"total":26992879,"status":2},"Fri Sep 13 2019":{"count":288,"total":563386882,"status":2},"Sat Sep 14 2019":{"count":84,"total":510336487,"status":2},"Sun Sep 15 2019":{"count":0,"total":0,"status":0},"Mon Sep 16 2019":{"count":0,"total":0,"status":0},"Tue Sep 17 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":52874481,"status":2},"Thu Oct 10 2019":{"count":288,"total":21437377,"status":2},"Fri Oct 11 2019":{"count":288,"total":21326121,"status":2},"Sat Oct 12 2019":{"count":288,"total":66492501,"status":2},"Sun Oct 13 2019":{"count":288,"total":43966528,"status":2},"Mon Oct 14 2019":{"count":288,"total":4958166,"status":2},"Tue Oct 15 2019":{"count":288,"total":13226236,"status":2},"Wed Oct 16 2019":{"count":288,"total":11794434,"status":2},"Thu Oct 17 2019":{"count":288,"total":18526613,"status":2},"Fri Oct 18 2019":{"count":84,"total":22671635,"status":2},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"4764":{"Tue Aug 20 2019":{"count":288,"total":1094425,"status":2},"Wed Aug 21 2019":{"count":107,"total":31059,"status":2},"Thu Aug 22 2019":{"count":0,"total":0,"status":0},"Fri Aug 23 2019":{"count":288,"total":832946,"status":2},"Sat Aug 24 2019":{"count":288,"total":1340563,"status":2},"Sun Aug 25 2019":{"count":288,"total":838748,"status":2},"Mon Aug 26 2019":{"count":288,"total":132231,"status":2},"Tue Aug 27 2019":{"count":288,"total":1094425,"status":2},"Wed Aug 28 2019":{"count":288,"total":2933806,"status":2},"Thu Aug 29 2019":{"count":288,"total":1196756,"status":2},"Fri Aug 30 2019":{"count":288,"total":53349,"status":2},"Sat Aug 31 2019":{"count":288,"total":54588,"status":2},"Sun Sep 01 2019":{"count":107,"total":31059,"status":2},"Mon Sep 02 2019":{"count":0,"total":0,"status":0},"Tue Sep 03 2019":{"count":0,"total":0,"status":0},"Wed Sep 04 2019":{"count":0,"total":0,"status":0},"Thu Sep 05 2019":{"count":0,"total":0,"status":0},"Fri Sep 06 2019":{"count":0,"total":0,"status":0},"Sat Sep 07 2019":{"count":0,"total":0,"status":0},"Sun Sep 08 2019":{"count":0,"total":0,"status":0},"Mon Sep 09 2019":{"count":0,"total":0,"status":0},"Tue Sep 10 2019":{"count":0,"total":0,"status":0},"Wed Oct 09 2019":{"count":288,"total":4868098,"status":2},"Thu Oct 10 2019":{"count":108,"total":1136140,"status":2},"Fri Oct 11 2019":{"count":0,"total":0,"status":1},"Sat Oct 12 2019":{"count":0,"total":0,"status":1},"Sun Oct 13 2019":{"count":0,"total":0,"status":1},"Mon Oct 14 2019":{"count":0,"total":0,"status":1},"Tue Oct 15 2019":{"count":0,"total":0,"status":1},"Wed Oct 16 2019":{"count":0,"total":0,"status":1},"Thu Oct 17 2019":{"count":0,"total":0,"status":1},"Fri Oct 18 2019":{"count":0,"total":0,"status":1},"Sat Oct 19 2019":{"count":0,"total":0,"status":1},"Sun Oct 20 2019":{"count":0,"total":0,"status":1},"Mon Oct 21 2019":{"count":0,"total":0,"status":1},"Tue Oct 22 2019":{"count":0,"total":0,"status":1}},"7418":{}}}
+{
+    "pumps": {
+        "4715": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 3153160385,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 7094470707,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 3338042236,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 3293686748,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 2113105267,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 3766868912,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 3251241825,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 1342212315,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 130,
+                "total": 3068339327,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4716": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 11887962625,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 9039826188,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 847245532,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 5032011,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 240358118,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 2776614809,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 673254105,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 3623667095,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 7837479571,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 8026796803,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 65,
+                "total": 3959412275,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4717": {
+            "Thu Oct 10 2019": {
+                "count": 14,
+                "total": 5187647027,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4719": {
+            "Thu Oct 10 2019": {
+                "count": 22,
+                "total": 630405376,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4721": {
+            "Thu Oct 10 2019": {
+                "count": 41,
+                "total": 809332137,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4723": {
+            "Thu Oct 10 2019": {
+                "count": 30,
+                "total": 168711650,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4724": {
+            "Thu Oct 10 2019": {
+                "count": 34,
+                "total": 0,
+                "status": 0
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4725": {},
+        "4726": {},
+        "4727": {},
+        "4728": {},
+        "4729": {},
+        "4734": {},
+        "4736": {},
+        "4738": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 9911953167,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 8120620466,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 7568023654,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 2055714661,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 4379734989,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 336942126,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 6420599406,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 8289458928,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 10108358172,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 5281741520,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 1859957617,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 38,
+                "total": 0,
+                "status": 0
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4740": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 289,
+                "total": 561785077499,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 483183820575,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 618475290336,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 537189678854,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 601597411048,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 288,
+                "total": 579820584690,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 58,
+                "total": 117524398026,
+                "status": 2
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4741": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 847810959,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 363121769,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 2078764809,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 5128249261,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 1585057032,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 5680439548,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 1122818887,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 1556187645,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 1323857914,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 5562878069,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 280,
+                "total": 1936774752,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4742": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 1068815750,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 3593615,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 4990163,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 3905732,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 560311801,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 6719210,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 1287087206,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 290979250,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 5858466,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 1815381907,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 951036491,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 86,
+                "total": 1356951,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4743": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 9596544966,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 9041197771,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 21111912067,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 10766988772,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 14191219691,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 19465802228,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 16456043873,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 14789330928,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 18701065625,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 13432277856,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 16636109310,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 72,
+                "total": 4533663064,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4746": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 218204060,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 317880317,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 977409851,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 282588401,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 936888901,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 1150140506,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 2778997124,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 1721056168,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 2245543955,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 1905637401,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 883267402,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 77,
+                "total": 334895,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4747": {},
+        "4749": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 34217528,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 138761,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 506621378,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 730,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Mon Oct 21 2019": {
+                "count": 92,
+                "total": 0,
+                "status": 0
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4750": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 2863398118,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 157257804,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 3099077394,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 494294709,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 1269011909,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 5587468198,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 1958771753,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 4309087939,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 7433309480,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 800649315,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 4429289499,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 92,
+                "total": 112537458,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4754": {
+            "Thu Oct 10 2019": {
+                "count": 287,
+                "total": 18455,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 1101,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 286,
+                "total": 0,
+                "status": 0
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 426543,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 174605,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 237757,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 159335,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 23606,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 1669893,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 0,
+                "status": 0
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 18561,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 288,
+                "total": 118300151,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 57,
+                "total": 33833526,
+                "status": 2
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4755": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 21386146458,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 15696785787,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 19908955143,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 48768066931,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 32748155849,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 24470822018,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 19975183262,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 39029811725,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 18833210722,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 6959633077,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 10033645061,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 40,
+                "total": 0,
+                "status": 0
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4760": {},
+        "4761": {
+            "Thu Oct 10 2019": {
+                "count": 24,
+                "total": 18329372732,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4762": {
+            "Thu Oct 10 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 11 2019": {
+                "count": 422,
+                "total": 12026902392,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 520,
+                "total": 5781704142,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 239,
+                "total": 11942330081,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 12069709855,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 10089526187,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 366,
+                "total": 6527147720,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 6,
+                "total": 3929874682,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 160,
+                "total": 4377222051,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 3942860088,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 288,
+                "total": 14020996476,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 288,
+                "total": 6561576672,
+                "status": 2
+            },
+            "Wed Oct 23 2019": {
+                "count": 288,
+                "total": 7240479066,
+                "status": 2
+            }
+        },
+        "4763": {
+            "Thu Oct 10 2019": {
+                "count": 288,
+                "total": 21437377,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 21326121,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 66492501,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 43966528,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 4958166,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 13226236,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 11794434,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 18526613,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 84,
+                "total": 22671635,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "4764": {
+            "Thu Oct 10 2019": {
+                "count": 108,
+                "total": 1136140,
+                "status": 2
+            },
+            "Fri Oct 11 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 12 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 13 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 14 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 15 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 16 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 17 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Fri Oct 18 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sat Oct 19 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Sun Oct 20 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Mon Oct 21 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Tue Oct 22 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            }
+        },
+        "7418": {}
+    }
+}
