@@ -29,6 +29,7 @@ const seedJSONSensors = () => {
   });
 };
 
+seedJSONSensors()
 
 const seedJSONPumps = () => {
     Data.pumps.map(data => {
@@ -72,5 +73,6 @@ function addSensor(sensor) {
   }
 
 seedJSONPumps();
+
 
 module.exports = seedJSONPumps, seedJSONSensors, getPumps;
