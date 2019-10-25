@@ -109,6 +109,11 @@ function deleteSensor(id){
             .del()
 }
 
+function getSensorNPump() {
+    return db("sensors as s")
+    .join("pumps as p", "p.sensor_ID", "s.physical_id")
+}
+
 module.exports = {
   addSensor,
   getSensors,
@@ -116,7 +121,8 @@ module.exports = {
   getSensorById,
   updateSensor,
   deleteSensor,
-  getSensorByOrgId
+  getSensorByOrgId,
+  getSensorNPump
 }
 
 

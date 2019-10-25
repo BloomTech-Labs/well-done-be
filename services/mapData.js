@@ -20,7 +20,7 @@ const seedJSONSensors = () => {
     const sensor = {
       physical_id: id,
       data_finished: finish_construction,
-      well_depth: well_depth,
+      depth: well_depth,
       yield: yield,
       static: static
     };
@@ -29,6 +29,7 @@ const seedJSONSensors = () => {
   });
 };
 
+seedJSONSensors()
 
 const seedJSONPumps = () => {
     Data.pumps.map(data => {
@@ -72,5 +73,6 @@ function addSensor(sensor) {
   }
 
 seedJSONPumps();
+
 
 module.exports = seedJSONPumps, seedJSONSensors, getPumps;

@@ -3,12 +3,14 @@ const Sensors = require("./sensors.model");
 const db = require("../../data/dbConfig");
 require("dotenv").config();
 
+
+// ! DO NOT ADD MORE TESTS, is WORKING AS IS
 describe("sensors router", () => {
   beforeEach(async () => {
     await db("sensors").truncate();
   });
 
-  it("should set environment to test", () => {
+  it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 
