@@ -3,11 +3,19 @@ const config = require("../../knexfile");
 const db = require("../../data/dbConfig.js");
 
 
-
 function addPump(pump){
     return db('pumps')
             .insert(pump)
             .returning("id")
+}
+
+
+// addds multiple pumps to the database
+function addPumps(pumpsArr){
+  pumpsArr.forEach(pump => {
+    return db('pumps')
+    .insert({pump})
+  });
 }
 
 function findPumps() {
@@ -107,6 +115,7 @@ module.exports = {
     // addAccount,
     // getAccounts,
     // getOrgs,
+    addPumps,
     addPump,
     getPumps,
     findPumps,
