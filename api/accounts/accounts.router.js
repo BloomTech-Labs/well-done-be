@@ -21,34 +21,22 @@ async (req, res) => {
 
 // * get account by id - DONE
 router.get("/:account_id", (req,res)=> {
-// authenticate, 
-// async (req, res) => {
-//   try {
-//     const { account_id } = req.params;
-//     const account = await Accounts.findById(account_id);
-//     res.status(200).json(account);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// }
-const { account_id } = req.params;
-  Accounts.findById(account_id)
-    .then(acc => {
-      console.log('acc', acc)
-      if (acc) {
-        res.status(200).json(acc);
-      } else {
-        res
-          .status(404)
-          .json({ message: "Could not find acc with given id." });
-      }
-    })
-    .catch(err => {
-      res.status(500).json(err.message);
+  const { account_id } = req.params;
+    Accounts.findById(account_id)
+      .then(acc => {
+        console.log('acc', acc)
+        if (acc) {
+          res.status(200).json(acc);
+        } else {
+          res
+            .status(404)
+            .json({ message: "Could not find acc with given id." });
+        }
+      })
+      .catch(err => {
+        res.status(500).json(err.message);
+      });
     });
-
-  });
 
 // * create account - DONE
 // ! supposed to be only for superusers (for now)

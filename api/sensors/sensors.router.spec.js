@@ -1,25 +1,32 @@
 const request = require("supertest");
 const server = require("../server");
-describe("pumps router", () => {
+// ALL TESTS PASSING :) 
+describe("sensors router", () => {
   it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 });
-//Test POST a pump
-describe("POST /api/pumps", function() {
-  let pump = {
-    org_id: "1",
-    country_name: "4th country",
-    province_name: "4th province",
-    district_name: "4th district",
-    commune_name: "4th commune",
-    latitude: "1.2345",
-    longitude: "2.3456"
+//Test POST a sensor
+describe("POST /api/sensors", function() {
+  let sensor = {
+    pump_id: 1,
+    physical_id: 12325,
+    kind: "B",
+    type: "A",
+    cellular: 1,
+    bluetooth: 1,
+    training: "training",
+    remark: "good tests",
+    data_finished: "2018-11-02",
+    depth: 221,
+    yield: 21,
+    static: 1,
+    quality: "fair"
   };
-  it("respond with 201 created", function(done) {
+  it("respond with 200 created", function(done) {
     request(server)
-      .post("/api/pumps")
-      .send(pump)
+      .post("/api/sensors")
+      .send(sensor)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(201)
@@ -29,28 +36,28 @@ describe("POST /api/pumps", function() {
       });
   });
 });
-//Test GET all pumps
-describe("GET /api/pumps", function() {
-  it("respond with json containing a list of all pumps", function(done) {
+//Test GET all sensors
+describe("GET /api/sensors", function() {
+  it("respond with json containing a list of all sensors", function(done) {
     request(server)
-      .get("/api/pumps")
+      .get("/api/sensors")
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
 });
-//Test GET pump by id
-describe("GET /api/pumps/:id", function() {
+//Test GET sensor by id
+describe("GET /api/sensors/:id", function() {
   it("respond with json containing a single pump", function(done) {
     request(server)
-      .get("/api/pumps/1")
+      .get("/api/sensors/1")
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
-  it("respond with json pump not found", function(done) {
+  it("respond with json sensor not found", function(done) {
     request(server)
-      .get("/api/pumps/notaproperid")
+      .get("/api/sensors/notaproperid")
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(404)

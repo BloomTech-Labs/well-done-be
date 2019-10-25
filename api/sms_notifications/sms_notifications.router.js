@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware.js");
-const SMS_Notification = require("./sms_notifications.model.js");
+const SMS_Notification = require("../sms_notifications/sms_notifications.model.js");
 
 //* [get] - get all sms notifications - test worked
 router.get("/", async (req, res) => {
@@ -14,18 +14,16 @@ router.get("/", async (req, res) => {
 });
 
 //* [getById] - sms notifications by id - test worked
-router.get('/:id', (req,res) => {
-  const {id} = req.params;
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
   SMS_Notification.getById(id)
-      .then(sms => {
-          if(sms){
-              res.status(200).json(sms)
-          }
-          else res.status(404).json({message: 'sms does not exist'})
-          
-      })
-      .catch(err => res.status(500).json(err.message))
-})
+    .then(sms => {
+      if (sms) {
+        res.status(200).json(sms);
+      } else res.status(404).json({ message: "sms does not exist" });
+    })
+    .catch(err => res.status(500).json(err.message));
+});
 
 //* [create] - create sms notifications
 router.post("/", async (req, res) => {

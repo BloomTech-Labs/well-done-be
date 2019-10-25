@@ -46,10 +46,12 @@ paths:
         description: Pump object that needs to be added 
         required: true
         schema:
-          $ref: '#/definitions/Pump'
+          $ref: '#/definitions/Pumps'
       responses:
-        405:
-          description: Invalid input
+        201:
+          description: created successfully
+        500:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -71,11 +73,13 @@ paths:
         description: Pump object that is received back 
         required: true
         schema:
-          $ref: '#/definitions/Pump'
+            type: array
+            items:
+              $ref: '#/definitions/Pumps'
       responses:
         200:
           description: successful!
-        404:
+        400:
           description: Pumps not found
         
       # security:
@@ -117,11 +121,11 @@ paths:
         200:
           description: successful! 
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Pump'
-        400:
-          description: Error 
+            $ref: '#/definitions/Pumps'
+        404:
+          description: Pump does not exist
+        500:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -146,11 +150,9 @@ paths:
         200:
           description: successful! 
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Pump'
-        400:
-          description: Invalid 
+            $ref: '#/definitions/Pumps'
+        404:
+          description: Pump does not exist
     put:
       tags:
       - Pump
@@ -171,11 +173,35 @@ paths:
         200:
           description: successful! 
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Pump'
+            $ref: '#/definitions/Pumps'
         400:
           description: Error 
+  /api/pumps/org/{orgId}:
+    get:
+      tags:
+      - Pump
+      summary: Find Pump By Org_ID
+      description: One pump is recalled at a time
+      operationId: orgId
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: orgId
+        in: path
+        description: ID of org
+        required: true
+        type: integer
+        format: int64
+      responses:
+        200:
+          description: successful! 
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Pumps'
+        400:
+          description: Invalid
   /api/sensors:
     post:
       tags:
@@ -194,12 +220,14 @@ paths:
         description: Sensor object that needs to be added 
         required: true
         schema:
-          $ref: '#/definitions/Sensor'
+          $ref: '#/definitions/SensorPOST'
       responses:
         200:
           description: successful!
-        405:
-          description: Invalid input
+        404:
+          description: invalid input
+        500:
+          description: error
     get:
       tags:
       - Sensor
@@ -217,10 +245,12 @@ paths:
         description: Sensors object that is retreived  
         required: true
         schema:
-          $ref: '#/definitions/Sensor'
+          $ref: '#/definitions/SensorsGET'
       responses:
-        405:
-          description: Invalid input
+        200:
+          description: successful!
+        500:
+          description: error
   /api/sensor/{sensorId}:
     get:
       tags:
@@ -242,14 +272,14 @@ paths:
         200:
           description: successful operation
           schema:
-            $ref: '#/definitions/Sensor'
-        400:
-          description: Invalid ID supplied
+            $ref: '#/definitions/SensorPOST'
         404:
-          description: Sensor not found
+          description: Sensor does not exist
+        500:
+          description: error
       security:
       - api_key: []
-    put:
+    patch:
       tags:
       - Sensor
       summary: Updates a sensor 
@@ -280,11 +310,11 @@ paths:
         200:
           description: successful!
           schema:
-            $ref: '#/definitions/Sensor'
-        400:
-          description: Invalid ID supplied
+            $ref: '#/definitions/SensorPOST'
         404:
-          description: Sensor not found
+          description: Sensor does not exist
+        500:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -311,53 +341,40 @@ paths:
       responses:
         200:
           description: successful!
-        400:
-          description: Invalid ID supplied
+          schema:
+            $ref: '#/definitions/SensorPOST'
         404:
-          description: Sensor not found
+          description: Sensor does not exist
+        500:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
       #   - read:pets
-  /api/{org_name}/sensors:
+  /api/sensors/org/{orgId}:
     get:
       tags:
       - Sensor
-      summary: get all sensors of an organization
-      operationId: getSensorByOrg
-      consumes:
-      - multipart/form-data
+      summary: Find Pump By Org_ID
+      description: One sensor is recalled at a time
+      operationId: orgIdforSensor
       produces:
       - application/json
+      - application/xml
       parameters:
-      - name: org_name
+      - name: orgId
         in: path
-        description: Organization name
+        description: ID of org
         required: true
-        type: string
-       
-      # - name: additionalMetadata
-      #   in: formData
-      #   description: Additional data to pass to server
-      #   required: false
-      #   type: string
-      # - name: file
-      #   in: formData
-      #   description: file to upload
-      #   required: false
-      #   type: file
+        type: integer
+        format: int64
       responses:
         200:
-          description: successful!
+          description: successful! 
+          schema:
+           $ref: '#/definitions/SensorPOST'
         400:
-          description: Invalid org_name
-        404:
-          description: Sensor not found
-        
-      # security:
-      # - petstore_auth:
-      #   - write:pets
-      #   - read:pets
+          description: Invalid
   /api/accounts:
     post:
       tags:
@@ -372,7 +389,7 @@ paths:
         description: Account object that needs to be added 
         required: true
         schema:
-          $ref: '#/definitions/Account'
+          $ref: '#/definitions/Accounts'
       produces:
       - application/json
       responses:
@@ -392,8 +409,8 @@ paths:
       responses:
         200:
           description: successful!
-        500:
-          description: cannot retreive data
+        400:
+          description: error
   /api/account/{accountId}:
     get:
       tags:
@@ -415,11 +432,13 @@ paths:
         200:
           description: successful operation
           schema:
-            $ref: '#/definitions/Account'
-        400:
-          description: Invalid ID supplied
+            type: array
+            items:
+              $ref: '#/definitions/Accounts'
         404:
           description: Account not found
+        500:
+          description: error
     put:
       tags:
       - Account
@@ -451,9 +470,9 @@ paths:
         200:
           description: successful 
           schema:
-            $ref: '#/definitions/Account'
-        405:
-          description: Invalid input
+            $ref: '#/definitions/Accounts'
+        400:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -480,15 +499,14 @@ paths:
       responses:
         200:
           description: successful!
-        400:
-          description: Invalid ID supplied
-        404:
-          description: Account not found
+        500:
+          description: error
+        
       # security:
       # - petstore_auth:
       #   - write:pets
       #   - read:pets 
-  /api/organization:
+  /api/orgs:
     post:
       tags:
       - Organization
@@ -502,13 +520,13 @@ paths:
         description: Organization object that needs to be added 
         required: true
         schema:
-          $ref: '#/definitions/Account'
+          $ref: '#/definitions/Organizations'
       produces:
       - application/json
       responses:
         200:
           description: successful!
-        500:
+        400:
           description: invalid input
     get:
       tags:
@@ -522,9 +540,9 @@ paths:
       responses:
         200:
           description: successful!
-        500:
-          description: cannot retreive data
-  /api/organization/{orgId}:
+        404:
+          description: error
+  /api/orgs/{orgId}:
     get:
       tags:
       - Organization
@@ -545,11 +563,11 @@ paths:
         200:
           description: successful 
           schema:
-            $ref: '#/definitions/Organization'
-        400:
-          description: Invalid ID supplied
+            $ref: '#/definitions/Organizations'
         404:
-          description: Account not found
+          description: Org not found
+        500:
+          description: error
     put:
       tags:
       - Organization
@@ -581,9 +599,9 @@ paths:
         200:
           description: successful 
           schema:
-            $ref: '#/definitions/Organization'
-        405:
-          description: Invalid input
+            $ref: '#/definitions/Organizations'
+        400:
+          description: error
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -610,10 +628,9 @@ paths:
       responses:
         200:
           description: successful!
-        400:
-          description: Invalid ID supplied
-        404:
-          description: Organization not found
+        500:
+          description: error
+        
       # security:
       # - petstore_auth:
       #   - write:pets
@@ -631,9 +648,13 @@ securityDefinitions:
     name: api_key
     in: header
 definitions:
-  Account_types:
+  Accounts:
     type: object
     required:
+    - first_name
+    - last_name
+    - email_address
+    - password
     - super_user
     - org_user
     - org_admin
@@ -641,28 +662,11 @@ definitions:
       id:
         type: integer
         format: int64
-      super_user:
-        type: boolean
-        example: false
-      org_user:
-        type: boolean
-        example: true
-      org_admin:
-        type: boolean
-        example: false
-  Account:
-    type: object
-    required:
-    - first_name
-    - last_name
-    - email_address
-    - password
-    properties:
-      id:
+      # account_type:
+      #   $ref: '#/definitions/Account_types'
+      org_id:
         type: integer
         format: int64
-      account_type:
-        $ref: '#/definitions/Account_types'
       first_name:
         type: string
         example: John
@@ -676,68 +680,110 @@ definitions:
         type: string
         example: 123abc@!@#
       mobile_number:
-        type: integer
-        example: 7742903807
-  Organization:
+        type: string
+        example: 774-290-3807
+      super_user:
+        type: boolean
+        example: true
+      org_user:
+        type: boolean
+        example: false
+      org_admin:
+        type: boolean
+        example: false
+  Organizations:
     type: object
     required:
     - org_name
-    - headquarter
     properties:
       id:
         type: integer
         format: int64
-      account:
-        $ref: '#/definitions/Account'
       org_name:
         type: string
-      headquarter:
+      headquarter_city:
         type: string
-  Pump:
+  OrgInSensor:
     type: object
     required:
-    - country_name
-    - province_name
-    - district_name
-    - commune_name
+    - org_name
+    properties:
+      org_name:
+        type: string
+      headquarter_city:
+        type: string
+  Pumps:
+    type: object
+    required:
+      - latitude
+      - longitude
     properties:
       id:
         type: integer
         format: int64
-      organization:
-        $ref: '#/definitions/Organization'
+      org_id: 
+        type: integer
+        format: int64
       country_name:
         type: string
-        example: Cambodia
+        example: coountry
       province_name:
         type: string
-        example: Xiemriep
+        example: province
       district_name:
         type: string
-        example: abc
+        example: district
       commune_name:
         type: string
-        example: def
+        example: commune
       latitude:
-        type: integer
-        example: 12345
-      longtitude:
-        type: integer
-        example: 67890
-  Historical:
+        type: number
+        example: 1.2345
+      longitude:
+        type: number
+        example: 6.7890
+  PumpInSensor:
     type: object
     required:
-    - date
-    - count
-    - total
-    - status
+      - latitude
+      - longitude
+    properties:
+      pump_id:
+        type: integer
+        format: int64
+      country_name:
+        type: string
+        example: coountry
+      province_name:
+        type: string
+        example: province
+      district_name:
+        type: string
+        example: district
+      commune_name:
+        type: string
+        example: commune
+      latitude:
+        type: number
+        example: 1.2345
+      longitude:
+        type: number
+        example: 6.7890
+      organization:
+        $ref: '#/definitions/OrgInSensor' 
+      
+  History:
+    type: object
+    # required:
+    # # - date
     properties:
       id:
         type: integer
         format: int64
       date:
         type: string
-        format: date-time
+        format: date
+        example: 2019-10-22
       count:
         type: integer
         format: int64
@@ -747,36 +793,30 @@ definitions:
       status:
         type: integer
         format: int64
-        enum:
-          - working
-          - not working
-  Sensor:
+      sensor_id:
+        type: integer
+        format: int64
+      pad_seconds:
+        type: integer
+        format: int64
+      pad_counts:
+        type: integer
+        format: int64
+      reported_percent:
+        type: integer
+        format: int64
+  SensorsGET:
     type: object
-    required:
-    - sensor_ID
-    - kind
-    - type
-    - cellular
-    - bluetooth
-    - training
-    - remark
-    - data_finished
-    - depth
-    - yield
-    - static
-    - quality
-    - level_dynamic
+    # required:
+    # - sensor_ID
+  
     properties:
-      id:
+      sensor_id:
         type: integer
         format: int64
-      sensor_ID:
+      physical_id:
         type: integer
         format: int64
-      pump: 
-        $ref: '#/definitions/Pump' 
-      historial_data: 
-        $ref: '#/definitions/Historical' 
       kind:
         type: string
       type:
@@ -793,7 +833,8 @@ definitions:
         type: string
       data_finished:
         type: string
-        format: date-time
+        # format: date
+        example: yyyy-mm-dd
       depth:
         type: integer
         format: int64
@@ -805,13 +846,54 @@ definitions:
         format: int64
       quality:
         type: string
-      level_dynamic:
-        type: integer
-        format: int64
-        
-      
+      pump: 
+        $ref: '#/definitions/PumpInSensor' 
     xml:
       name: Pump
+     
+  SensorPOST:
+    type: object
+    # required:
+    # - sensor_ID
+    properties:
+      id:
+        type: integer
+        format: int64
+      pump_id:
+        type: integer
+        format: int64
+      physical_id:
+        type: integer
+        format: int64
+      kind:
+        type: string
+      type:
+        type: string
+      cellular:
+        type: integer
+        format: int64
+      bluetooth:
+        type: integer
+        format: int64
+      training:
+        type: string
+      remark:
+        type: string
+      data_finished:
+        type: string
+        # format: date
+        example: yyyy-mm-dd
+      depth:
+        type: integer
+        format: int64
+      yeild:
+        type: integer
+        format: int64
+      static:
+        type: integer
+        format: int64
+      quality:
+        type: string
   # ApiResponse:
   #   type: object
   #   properties:

@@ -15,24 +15,14 @@ router.get("/", async (req, res) => {
 
 // TODO: get organization by id - WORKING
 router.get("/:id", (req, res) => {
-  // try {
-  //   const {id} = req.params
-  //   const org = await Organizations.findById(id);
-  //   res.status(200).json(org);
-  // } catch (err) {
-  //   console.log(err.message);
-  //   res.status(400).json(err.message);
-  // }
   const { id } = req.params;
   Organizations.findById(id)
     .then(org => {
-      console.log('org', org)
+      console.log("org", org);
       if (org) {
         res.status(200).json(org);
       } else {
-        res
-          .status(404)
-          .json({ message: "Could not find org with given id." });
+        res.status(404).json({ message: "Could not find org with given id." });
       }
     })
     .catch(err => {
@@ -45,7 +35,7 @@ router.get("/:id", (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const org = req.body;
-    console.log("org", org)
+    console.log("org", org);
     const createdOrg = await Organizations.insert(org);
     res.status(200).json(createdOrg);
   } catch (err) {
@@ -53,19 +43,6 @@ router.post("/", async (req, res) => {
     res.status(400).json(err.message);
   }
 });
-
-
-
-// TODO: update org
-// router.put("/:id", async (req, res) => {
-//   try {
-//     const {org} = req.body;
-//     console.log("org", org)
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
 
 router.put("/:id", async (req, res) => {
   try {
