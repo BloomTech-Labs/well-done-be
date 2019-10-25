@@ -46,7 +46,6 @@ async function getPumps() {
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
-      // console.log(pump.data)
       let village = null
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
         village = await prismic.getVillage(pump.data.village.id)
@@ -70,28 +69,23 @@ async function getPumps() {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
         let newData = {}
-        // console.log("*****res.data*****", res.data)
         res.data
-        ? res.data.dates.forEach((date, index) => {
-          newData = {
-            ...newData,
-            statuses: {
-              date: date,
-              count: res.data.statuses[index].count,
-              total: res.data.statuses[index].total,
-              status: res.data.statuses[index].status,
-              reportedPercent: res.statuses[index].reportedPercent,
-              pad_counts: res.data.statuses[index].padSeconds.map((item) => item),
-              pad_seconds: res.data.statuses[index].padCounts.map((item) => item),
-            },
-          }
-        })
+          ? res.data.dates.forEach((date, index) => {
+              newData = {
+                ...newData,
+                [date]: {
+                  count: res.data.statuses[index].count,
+                  total: res.data.statuses[index].total,
+                  status: res.data.statuses[index].status,
+                },
+              }
+            })
           : {}
         results.push({
           id: pump,
           ...pumps[pump],
           status: res.data.status,
-          date: newData
+          statuses: newData,
         })
       } catch (err) {
         console.error(`Error on pump #${pump}`)
@@ -99,7 +93,6 @@ async function getPumps() {
       }
     })
     console.log("Fetching Pumps Success")
-    // console.log("pumps results*********",{ lastFetch: moment().unix(), pumps: results })
     return { lastFetch: moment().unix(), pumps: results }
   } else {
     console.log("Data Up To Date")

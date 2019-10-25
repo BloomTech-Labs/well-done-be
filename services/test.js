@@ -70,29 +70,34 @@ async function getPumps() {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
         let newData = {}
-        // console.log("*****res.data*****", res.data)
+        console.log("*****res.data*****", res.data.padCounts)
         res.data
-        ? res.data.dates.forEach((date, index) => {
-          newData = {
-            ...newData,
-            statuses: {
-              date: date,
-              count: res.data.statuses[index].count,
-              total: res.data.statuses[index].total,
-              status: res.data.statuses[index].status,
-              reportedPercent: res.statuses[index].reportedPercent,
-              pad_counts: res.data.statuses[index].padSeconds.map((item) => item),
-              pad_seconds: res.data.statuses[index].padCounts.map((item) => item),
+          ? res.data.dates.forEach((date, statuses, index) => {
+              newData = {
+                ...newData,
+                [date]: {
+                  count: res.data.statuses[index].count,
+                  total: res.data.statuses[index].total,
+                  status: res.data.statuses[index].status,
+                  padCounts: res.data.statuses[index].padCounts,
+                  pad
+                }, 
+   
+              }
             },
-          }
-        })
+        )
           : {}
         results.push({
           id: pump,
           ...pumps[pump],
           status: res.data.status,
-          date: newData
-        })
+          statuses: newData,
+          padSeconds: res.data.padSeconds,
+          padCounts: res.data.padCounts,
+          reportedPercent: res.data.reportedPercent,
+        }
+        ,console.log(res.data.padSeconds)
+        )
       } catch (err) {
         console.error(`Error on pump #${pump}`)
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
@@ -112,6 +117,7 @@ async function createStore() {
   const data = require("../assets/cache/pumps.json")
   let pumps = {}
   data.pumps.forEach(({ id, dates, statuses }, index) => {
+    // console.log(data.pumps)
     let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
 
     pumps = {

@@ -42,34 +42,39 @@
                 "status": 2
             },
             "Fri Oct 18 2019": {
-                "count": 130,
-                "total": 3068339327,
+                "count": 288,
+                "total": 4508808552,
                 "status": 2
             },
             "Sat Oct 19 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 7198242233,
+                "status": 2
             },
             "Sun Oct 20 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 3814878209,
+                "status": 2
             },
             "Mon Oct 21 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 3603596532,
+                "status": 2
             },
             "Tue Oct 22 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 7906751292,
+                "status": 2
             },
             "Wed Oct 23 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 2541635165,
+                "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 83,
+                "total": 583900763,
+                "status": 2
             }
         },
         "4716": {
@@ -139,6 +144,11 @@
                 "status": 1
             },
             "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 24 2019": {
                 "count": 0,
                 "total": 0,
                 "status": 1
@@ -290,74 +300,79 @@
         },
         "4721": {
             "Thu Oct 10 2019": {
-                "count": 41,
-                "total": 809332137,
+                "count": 288,
+                "total": 809882197,
                 "status": 2
             },
             "Fri Oct 11 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 283,
+                "total": 3308234,
+                "status": 2
             },
             "Sat Oct 12 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 36,
+                "status": 2
             },
             "Sun Oct 13 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 63488164,
+                "status": 2
             },
             "Mon Oct 14 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 1016392868,
+                "status": 2
             },
             "Tue Oct 15 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 337889566,
+                "status": 2
             },
             "Wed Oct 16 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Thu Oct 17 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 3004048,
+                "status": 2
             },
             "Fri Oct 18 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 50781,
+                "status": 2
             },
             "Sat Oct 19 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 770,
+                "status": 2
             },
             "Sun Oct 20 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 27622,
+                "status": 2
             },
             "Mon Oct 21 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 9853,
+                "status": 2
             },
             "Tue Oct 22 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 40714580,
+                "status": 2
             },
             "Wed Oct 23 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 143102,
+                "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 109,
+                "total": 3219199,
+                "status": 2
             }
         },
         "4723": {
@@ -434,78 +449,154 @@
         },
         "4724": {
             "Thu Oct 10 2019": {
-                "count": 34,
+                "count": 288,
                 "total": 0,
                 "status": 0
             },
             "Fri Oct 11 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Sat Oct 12 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Sun Oct 13 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Mon Oct 14 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Tue Oct 15 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Wed Oct 16 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Thu Oct 17 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Fri Oct 18 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Sat Oct 19 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Sun Oct 20 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Mon Oct 21 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Tue Oct 22 2019": {
-                "count": 0,
+                "count": 288,
                 "total": 0,
-                "status": 1
+                "status": 0
             },
             "Wed Oct 23 2019": {
-                "count": 0,
+                "count": 287,
                 "total": 0,
-                "status": 1
+                "status": 0
+            },
+            "Thu Oct 24 2019": {
+                "count": 100,
+                "total": 0,
+                "status": 0
             }
         },
         "4725": {},
-        "4726": {},
+        "4726": {
+            "Fri Oct 11 2019": {
+                "count": 288,
+                "total": 514700548,
+                "status": 2
+            },
+            "Sat Oct 12 2019": {
+                "count": 288,
+                "total": 1409442348,
+                "status": 2
+            },
+            "Sun Oct 13 2019": {
+                "count": 288,
+                "total": 844762558,
+                "status": 2
+            },
+            "Mon Oct 14 2019": {
+                "count": 288,
+                "total": 25030912,
+                "status": 2
+            },
+            "Tue Oct 15 2019": {
+                "count": 288,
+                "total": 1144341250,
+                "status": 2
+            },
+            "Wed Oct 16 2019": {
+                "count": 288,
+                "total": 1030789607,
+                "status": 2
+            },
+            "Thu Oct 17 2019": {
+                "count": 288,
+                "total": 1001169655,
+                "status": 2
+            },
+            "Fri Oct 18 2019": {
+                "count": 288,
+                "total": 414031551,
+                "status": 2
+            },
+            "Sat Oct 19 2019": {
+                "count": 288,
+                "total": 2282317208,
+                "status": 2
+            },
+            "Sun Oct 20 2019": {
+                "count": 288,
+                "total": 1987434627,
+                "status": 2
+            },
+            "Mon Oct 21 2019": {
+                "count": 288,
+                "total": 850797747,
+                "status": 2
+            },
+            "Tue Oct 22 2019": {
+                "count": 288,
+                "total": 656890406,
+                "status": 2
+            },
+            "Wed Oct 23 2019": {
+                "count": 288,
+                "total": 1629093121,
+                "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 288,
+                "total": 856234976,
+                "status": 2
+            }
+        },
         "4727": {},
         "4728": {},
         "4729": {},
@@ -581,6 +672,11 @@
                 "count": 0,
                 "total": 0,
                 "status": 1
+            },
+            "Thu Oct 24 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
             }
         },
         "4740": {
@@ -653,6 +749,11 @@
                 "count": 0,
                 "total": 0,
                 "status": 1
+            },
+            "Thu Oct 24 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
             }
         },
         "4741": {
@@ -707,24 +808,29 @@
                 "status": 2
             },
             "Sun Oct 20 2019": {
-                "count": 280,
-                "total": 1936774752,
+                "count": 288,
+                "total": 1937416645,
                 "status": 2
             },
             "Mon Oct 21 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 2117509475,
+                "status": 2
             },
             "Tue Oct 22 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 5025918007,
+                "status": 2
             },
             "Wed Oct 23 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 4495270790,
+                "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 123,
+                "total": 8706956,
+                "status": 2
             }
         },
         "4742": {
@@ -794,6 +900,11 @@
                 "status": 1
             },
             "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 24 2019": {
                 "count": 0,
                 "total": 0,
                 "status": 1
@@ -869,6 +980,11 @@
                 "count": 0,
                 "total": 0,
                 "status": 1
+            },
+            "Thu Oct 24 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
             }
         },
         "4746": {
@@ -938,6 +1054,11 @@
                 "status": 1
             },
             "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 24 2019": {
                 "count": 0,
                 "total": 0,
                 "status": 1
@@ -1014,6 +1135,11 @@
                 "count": 0,
                 "total": 0,
                 "status": 1
+            },
+            "Thu Oct 24 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
             }
         },
         "4750": {
@@ -1083,6 +1209,11 @@
                 "status": 1
             },
             "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 24 2019": {
                 "count": 0,
                 "total": 0,
                 "status": 1
@@ -1158,6 +1289,11 @@
                 "count": 0,
                 "total": 0,
                 "status": 1
+            },
+            "Thu Oct 24 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
             }
         },
         "4755": {
@@ -1227,6 +1363,11 @@
                 "status": 1
             },
             "Wed Oct 23 2019": {
+                "count": 0,
+                "total": 0,
+                "status": 1
+            },
+            "Thu Oct 24 2019": {
                 "count": 0,
                 "total": 0,
                 "status": 1
@@ -1375,6 +1516,11 @@
                 "count": 288,
                 "total": 7240479066,
                 "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 288,
+                "total": 9550310746,
+                "status": 2
             }
         },
         "4763": {
@@ -1419,34 +1565,39 @@
                 "status": 2
             },
             "Fri Oct 18 2019": {
-                "count": 84,
-                "total": 22671635,
+                "count": 288,
+                "total": 36060989,
                 "status": 2
             },
             "Sat Oct 19 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 33910053,
+                "status": 2
             },
             "Sun Oct 20 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 47729103,
+                "status": 2
             },
             "Mon Oct 21 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 51256268,
+                "status": 2
             },
             "Tue Oct 22 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 35819242,
+                "status": 2
             },
             "Wed Oct 23 2019": {
-                "count": 0,
-                "total": 0,
-                "status": 1
+                "count": 288,
+                "total": 218469311,
+                "status": 2
+            },
+            "Thu Oct 24 2019": {
+                "count": 288,
+                "total": 158886265,
+                "status": 2
             }
         },
         "4764": {
