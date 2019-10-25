@@ -16,6 +16,26 @@ router.post('/', (req,res) => {
             })
 })
 
+router.get("/all", async (req, res) => {
+  try {
+    const sensors = await Sensors.findSensors();
+    res.status(200).json(sensors);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
+
+router.get("/data", async (req, res) => {
+    try {
+      const sensors = await Sensors.getSensorNPump();
+      res.status(200).json(sensors);
+    } catch (err) {
+      console.log(err.message);
+      res.status(400).json(err.message);
+    }
+  });
+
 // GET sensors
 router.get('/', (req,res) => {
     Sensors.getSensors()
