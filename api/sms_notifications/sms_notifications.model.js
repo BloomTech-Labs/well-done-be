@@ -2,7 +2,7 @@ const knex = require("knex");
 const config = require("../../knexfile");
 const db = require("../../data/dbConfig.js");
 
-//* [get] - get all sms notifications - test working
+//* [get] - get all sms notifications
 const get = async () => {
   try {
     return await db("sms_notifications");
@@ -11,7 +11,7 @@ const get = async () => {
   }
 };
 
-//* [getById] - sms notifications by id - test worked
+//* [getById] - sms notifications by id
 const getById = id => {
   try {
     return db("sms_notifications")
@@ -22,7 +22,7 @@ const getById = id => {
   }
 };
 
-//* [create] - create sms notifications - test worked
+//* [create] - create sms notifications
 const create = async sms_notification => {
   try {
     await db("sms_notifications").insert(sms_notification);
@@ -32,20 +32,19 @@ const create = async sms_notification => {
   }
 };
 
-//* [update] - update sms notifications - test worked
+//* [update] - update sms notifications
 const update = (changes, id) => {
-    return db("sms_notifications")
-      .where({ id })
-      .update(changes);
+  return db("sms_notifications")
+    .where({ id })
+    .update(changes);
 };
 
-//* [remove] - delete sms notifications - test worked
+//* [remove] - delete sms notifications
 const remove = id => {
   return db("sms_notifications")
     .where({ id })
     .del();
-} 
-
+};
 
 module.exports = {
   get,

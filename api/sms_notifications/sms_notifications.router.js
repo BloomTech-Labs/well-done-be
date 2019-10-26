@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware.js");
 const SMS_Notification = require("../sms_notifications/sms_notifications.model.js");
+const { validateSms } = require("../middleware/middleware");
 
 //* [get] - get all sms notifications - test worked
 router.get("/", async (req, res) => {
@@ -26,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 //* [create] - create sms notifications
-router.post("/", async (req, res) => {
+router.post("/", validateSms, async (req, res) => {
   try {
     const sms_notification = req.body;
     await SMS_Notification.create(sms_notification);
@@ -38,7 +39,7 @@ router.post("/", async (req, res) => {
 });
 
 //* [update] - update sms notifications - test worked
-router.put("/:id", async (req, res) => {
+router.put("/:id", validateSms, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;

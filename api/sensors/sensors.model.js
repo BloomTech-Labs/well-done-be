@@ -2,8 +2,6 @@ const knex = require("knex");
 const config = require("../../knexfile");
 const db = require("../../data/dbConfig.js");
 
-// const db = require("../data/dbConfig.js");
-
 function addSensor(sensor) {
   return db("sensors")
     .insert(sensor)
@@ -38,42 +36,6 @@ function getSensors() {
       "organizations.headquarter_city"
     );
 }
-
-// sensor_id: eachSensor.id,
-// physical_id: eachSensor.physical_id,
-// kind: eachSensor.kind,
-// type: eachSensor.type,
-// cellular: eachSensor.cellular,
-// bluetooth: eachSensor.bluetooth,
-// training: eachSensor.training,
-// remark: eachSensor.remark,
-// data_finished: eachSensor.data_finished,
-// depth: eachSensor.depth,
-// yield: eachSensor.yield,
-// static: eachSensor.static,
-// quality: eachSensor.quality,
-// level_dynamic: eachSensor.level_dynamic,
-// pump: {
-//     pump_id: eachSensor.pump_id,
-//     country_name: eachSensor.country_name,
-//     province_name: eachSensor.province_name,
-//     commune_name: eachSensor.commune_name,
-//     district_name: eachSensor.district_name,
-//     organization: {
-//         org_name: eachSensor.org_name,
-//         headquarter_city: eachSensor.headquarter_city
-
-// const getSensors = () => {
-//     try {
-//        return db('sensors')
-//             .join('pumps', 'pumps.id', 'sensors.pump_id')
-//             .join('organizations', 'pumps.org_id', 'organizations.id')
-//             .select('sensors.*', 'pumps.*', 'organizations.*')
-
-//     } catch (err) {
-//         res.status(400).json(err.message)
-//     }
-// }
 
 function findSensors() {
   return db("sensors");
