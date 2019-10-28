@@ -74,7 +74,8 @@ async function getPumps() {
           ? res.data.dates.forEach((date, index) => {
               newData = {
                 ...newData,
-                [date]: {
+                statuses: {
+                  date: date,
                   count: res.data.statuses[index].count,
                   total: res.data.statuses[index].total,
                   status: res.data.statuses[index].status,
