@@ -5,14 +5,7 @@ exports.up = function(knex) {
     column.integer("count");
     column.integer("total");
     column.integer("status");
-    column
-      .integer("sensor_id")
-      .unsigned()
-      .references("id")
-      .inTable("sensors")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-    
+    column.integer("sensor_id");
     column.integer("pad_seconds");
     column.integer("pad_counts");
     column.integer("reported_percent");

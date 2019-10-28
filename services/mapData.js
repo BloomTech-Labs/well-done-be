@@ -68,6 +68,8 @@ const seedJSONPumps = () => {
      Data.pumps.map(data => {
         console.log('current data map = ', data);
         console.log("data statuses****", data.statuses)
+        console.log(data.id, "this is data id")
+        // console.log(data.statuses.statuses.count, "logging count")
         if (data.statuses != undefined) {  
       //  const {
       //    id,
@@ -90,7 +92,7 @@ const seedJSONPumps = () => {
            id
          } = data
          let history = {
-           sensor_id: id
+           sensor_id: data.id
         
          }
          addHistory(history);
