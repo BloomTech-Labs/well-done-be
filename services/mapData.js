@@ -7,6 +7,19 @@ const db = require("../data/dbConfig");
 
 // const getPumps = Data.pumps.map(pump => console.log("getPumps", pump))
 
+let target = {
+    "id": 13,
+    "date": "Sun Oct 27 2019",
+    "count": 112,
+    "total": 4129758402,
+    "status": 2,
+    "sensor_id": 4715,
+    "pad_seconds": "[2928,3625,1830,276]",
+    "pad_counts": "[26,28,25,13]",
+    "reported_percent": 0.3888888888888889 
+}
+
+
 const seedJSONSensors = () => {
   Data.pumps.map(data => {
     // console.log(data);
@@ -78,7 +91,7 @@ const seedJSONPumps = () => {
       //    statuses: { statuses: {date = "", count = 0, total=  0, status = 0, padCounts = [], padSeconds = [], reportedPercent = ""}}} = data
       
     
-  
+
        let history = {
          sensor_id: data.id,
          count: data.statuses.statuses.count,
@@ -140,5 +153,50 @@ function addSensor(sensor) {
       });
   }
 
+
+function addStatus (status){
+  knex.transaction(function(trx) {
+    knex.insert(status, "id").then(([id]) => {
+      const padCounts = status.padCounts.map(p => {
+        return {
+          statuses_id: id,
+          ...p
+        }
+      });
+      const padSeconds = status.padSeconds.map(s => {
+        return {
+          statuses_id: id,
+          ...s
+        }
+      });
+      const insertCounts = knex.insert(padCounts).into("padCounts");
+      const insertSeconds = knex.insert(padSeconds).into("padSeconds");
+      const promises = [insertCounts, insertSeconds]
+
+      return Promise.all(promises).then(results => {
+        const {counts, seconds} = results;
+        return id;
+      })
+
+    })
+      .then(trx.commit)
+      .catch(trx.rollback);
+    
+  })
+  .then(function(inserts) {
+    console.log(inserts.length + ' statuses');
+  })
+  .catch(function(error) {
+    // If we get here, that means that neither the 'Old Books' catalogues insert,
+    // nor any of the books inserts will have taken place.
+    console.error(error);
+  });
+}
+
+
+
+
+
+  
 //seedJSONHistory,
 module.exports = seedJSONPumps, seedJSONHistory, seedJSONSensors;
