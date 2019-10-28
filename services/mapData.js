@@ -67,22 +67,38 @@ const seedJSONPumps = () => {
    const seedJSONHistory = () => {
      Data.pumps.map(data => {
         console.log('current data map = ', data);
-       const {
-         id,
-         date: { statuses: {date, count, status, pad_counts, pad_seconds, reportedPercent}}} = data;
-       const history = {
-         sensor_id: id,
-         count: count,
-         total: total,
-         status: status,
-         date: date,
-         pad_counts: pad_counts,
-         pad_seconds: pad_seconds,
-         reportedPercent: reportedPercent
-       };
+        console.log("data statuses****", data.statuses)
+        if (data.statuses != undefined) {  
+      //  const {
+      //    id,
+      //    statuses: { statuses: {date = "", count = 0, total=  0, status = 0, padCounts = [], padSeconds = [], reportedPercent = ""}}} = data 
+        
+       let history = {
+         sensor_id: data.id,
+         count: data.statuses.count,
+         total: data.statuses.total,
+         status: data.statuses.status,
+         date: data.statuses.date,
+         pad_counts: data.statuses.padCounts,
+         pad_seconds: data.statuses.padSeconds,
+         reported_percent: data.statuses.reportedPercent,
+       } 
+      
        addHistory(history);
+      } else {
+         const {
+           id
+         } = data
+         let history = {
+           sensor_id: id
+        
+         }
+         addHistory(history);
+
+       }
+      //  addHistory(history);
       //  console.log("history", history);
-     });
+     })
    };
 
   seedJSONHistory()
