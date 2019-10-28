@@ -1,0 +1,41 @@
+{
+    "lastFetch": 1572298346,
+    "pumps": [
+        {
+            "id": "4715",
+            "latitude": 13.66048333,
+            "longitude": 104.0075117,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2009-01-01",
+            "well_depth": 32,
+            "yield": null,
+            "static": 3,
+            "level_dynamic": 24,
+            "status": 2,
+            "statuses": {
+                "statuses": {
+                    "date": "Sun Oct 27 2019",
+                    "count": 112,
+                    "total": 4129758402,
+                    "status": 2,
+                    "pad_counts": [
+                        26,
+                        28,
+                        25,
+                        13
+                    ],
+                    "pad_seconds": [
+                        2928,
+                        3625,
+                        1830,
+                        276
+                    ],
+                    "reported_percent": 0.3888888888888889
+                }
+            }
+        } ] }
