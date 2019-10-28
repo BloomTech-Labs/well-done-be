@@ -98,14 +98,15 @@ const seedJSONPumps = () => {
          total: data.statuses.statuses.total,
          status: data.statuses.statuses.status,
          date: data.statuses.statuses.date,
-        pad_counts: JSON.stringify([data.statuses.statuses.pad_counts[0], data.statuses.statuses.pad_counts[1], data.statuses.statuses.pad_counts[2], data.statuses.statuses.pad_counts[3]]),
-        pad_seconds: JSON.stringify([data.statuses.statuses.pad_seconds[0], data.statuses.statuses.pad_seconds[1], data.statuses.statuses.pad_seconds[2], data.statuses.statuses.pad_seconds[3]]),
+        // pad_counts: JSON.stringify([data.statuses.statuses.pad_counts[0], data.statuses.statuses.pad_counts[1], data.statuses.statuses.pad_counts[2], data.statuses.statuses.pad_counts[3]]),
+        // pad_seconds: JSON.stringify([data.statuses.statuses.pad_seconds[0], data.statuses.statuses.pad_seconds[1], data.statuses.statuses.pad_seconds[2], data.statuses.statuses.pad_seconds[3]]),
         reported_percent: data.statuses.statuses.reported_percent
        } 
 
        console.log("HISTORY", history)
       
        addHistory(history);
+       addStatus(history)
       // } else {
       //   // console.log(typeof data.statuses.statuses, "line 93 result")
       //    const {
@@ -154,23 +155,25 @@ function addSensor(sensor) {
   }
 
 
-function addStatus (status){
+function addStatus (history){
   knex.transaction(function(trx) {
-    knex.insert(status, "id").then(([id]) => {
-      const padCounts = status.padCounts.map(p => {
+    knex.transacting(trx).insert(history, "id").then(([id]) => {
+      
+      const padCounts = history.padCounts.map(p => {
         return {
-          statuses_id: id,
+          history_id: id,
           ...p
         }
+        
       });
-      const padSeconds = status.padSeconds.map(s => {
+      const padSeconds = history.padSeconds.map(s => {
         return {
-          statuses_id: id,
+          history_id: id,
           ...s
         }
       });
-      const insertCounts = knex.insert(padCounts).into("padCounts");
-      const insertSeconds = knex.insert(padSeconds).into("padSeconds");
+      const insertCounts = knex.insert(padCounts).into("pad_counts");
+      const insertSeconds = knex.insert(padSeconds).into("pad_seconds");
       const promises = [insertCounts, insertSeconds]
 
       return Promise.all(promises).then(results => {
