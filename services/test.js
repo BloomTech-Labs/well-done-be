@@ -33,20 +33,20 @@ async function main() {
 const url =
   "https://dashboard.welldone.org/.netlify/functions/get_momo_status?id="
 async function getPumps() {
-  const { data: config } = await prismic.getDoc("config")
-  const oldData = require("../assets/cache/pumps.json")
-  if (
-    !oldData.lastFetch ||
-    oldData.lastFetch <
-      moment()
-        .subtract(config.update_data, "hours")
-        .unix()
-  ) {
-    console.log("Fetching Pumps Init")
+  // const { data: config } = await prismic.getDoc("config")
+  // we don't want to subtract this data anymore...
+  // const oldData = require("../assets/cache/pumps.json")
+  // if (
+    // // ! oldData.lastFetch ||
+  //   oldData.lastFetch <
+  //     moment()
+  //       .subtract(config.update_data, "hours")
+  //       .unix()
+  // ) {
+  //   console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
-      // console.log(pump.data)
       let village = null
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
         village = await prismic.getVillage(pump.data.village.id)
@@ -70,9 +70,8 @@ async function getPumps() {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
         let newData = {}
-        console.log("*****res.data*****", res.data.padCounts)
         res.data
-          ? res.data.dates.forEach((date, statuses, index) => {
+          ? res.data.dates.forEach((date, index) => {
               newData = {
                 ...newData,
                 [date]: {
@@ -80,50 +79,44 @@ async function getPumps() {
                   total: res.data.statuses[index].total,
                   status: res.data.statuses[index].status,
                   padCounts: res.data.statuses[index].padCounts,
-                  pad
-                }, 
-   
+                  padSeconds:res.data.statuses[index].padSeconds,
+                  reportedPercent:res.data.statuses[index].reportedPercent
+                },
               }
-            },
-        )
+            })
           : {}
         results.push({
           id: pump,
           ...pumps[pump],
           status: res.data.status,
           statuses: newData,
-          padSeconds: res.data.padSeconds,
-          padCounts: res.data.padCounts,
-          reportedPercent: res.data.reportedPercent,
-        }
-        ,console.log(res.data.padSeconds)
-        )
+        })
       } catch (err) {
         console.error(`Error on pump #${pump}`)
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
       }
     })
     console.log("Fetching Pumps Success")
-    // console.log("pumps results*********",{ lastFetch: moment().unix(), pumps: results })
     return { lastFetch: moment().unix(), pumps: results }
-  } else {
-    console.log("Data Up To Date")
-    return oldData
-  }
-}
+  } 
+  // else { 
+  //   console.log("Data Up To Date")
+  //   return oldData
+  // }
+
 
 async function createStore() {
   const oldData = require("../assets/cache/longStore.json")
   const data = require("../assets/cache/pumps.json")
   let pumps = {}
   data.pumps.forEach(({ id, dates, statuses }, index) => {
-    // console.log(data.pumps)
-    let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
+
+    // let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
 
     pumps = {
       ...pumps,
       [id]: {
-        ...pumpOldData,
+        // ...pumpOldData,
         ...data.pumps.find(pump => pump.id === id).statuses,
       },
     }
@@ -137,5 +130,5 @@ async function asyncForEach(array, callback) {
     await callback(array[index], index, array)
   }
 }
-
-main()
+     
+main();

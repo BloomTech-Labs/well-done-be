@@ -33,19 +33,20 @@ async function main() {
 const url =
   "https://dashboard.welldone.org/.netlify/functions/get_momo_status?id="
 async function getPumps() {
-  const { data: config } = await prismic.getDoc("config")
-  const oldData = require("../assets/cache/pumps.json")
-  if (
-    !oldData.lastFetch ||
-    oldData.lastFetch <
-      moment()
-        .subtract(config.update_data, "hours")
-        .unix()
-  ) {
-    console.log("Fetching Pumps Init")
+  // const { data: config } = await prismic.getDoc("config")
+  // const oldData = require("../assets/cache/pumps.json")
+  // if (
+  //   !oldData.lastFetch ||
+  //   oldData.lastFetch <
+  //     moment()
+  //       .subtract(config.update_data, "hours")
+  //       .unix()
+  // ) {
+  //   console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
+      // console.log(pump.data)
       let village = null
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
         village = await prismic.getVillage(pump.data.village.id)
@@ -69,23 +70,28 @@ async function getPumps() {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
         let newData = {}
+        // console.log("*****res.data*****", res.data)
         res.data
-          ? res.data.dates.forEach((date, index) => {
-              newData = {
-                ...newData,
-                [date]: {
-                  count: res.data.statuses[index].count,
-                  total: res.data.statuses[index].total,
-                  status: res.data.statuses[index].status,
-                },
-              }
-            })
+        ? res.data.dates.forEach((date, index) => {
+          newData = {
+            ...newData,
+            statuses: {
+              date: date,
+              count: res.data.statuses[index].count,
+              total: res.data.statuses[index].total,
+              status: res.data.statuses[index].status,
+              reportedPercent: res.statuses[index].reportedPercent,
+              pad_counts: res.data.statuses[index].padSeconds, //.map((item) => item),
+              pad_seconds: res.data.statuses[index].padCounts //.map((item) => item),
+            },
+          }
+        })
           : {}
         results.push({
           id: pump,
           ...pumps[pump],
           status: res.data.status,
-          statuses: newData,
+          date: newData
         })
       } catch (err) {
         console.error(`Error on pump #${pump}`)
@@ -93,11 +99,12 @@ async function getPumps() {
       }
     })
     console.log("Fetching Pumps Success")
+    // console.log("pumps results*********",{ lastFetch: moment().unix(), pumps: results })
     return { lastFetch: moment().unix(), pumps: results }
-  } else {
-    console.log("Data Up To Date")
-    return oldData
-  }
+  // } else {
+  //   console.log("Data Up To Date")
+  //   return oldData
+  // }
 }
 
 async function createStore() {
