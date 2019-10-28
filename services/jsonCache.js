@@ -86,6 +86,9 @@ async function getPumps() {
               }
             })
           : {}
+            // : statuses = {
+
+          // }
         results.push({
           id: pump,
           ...pumps[pump],

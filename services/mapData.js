@@ -9,7 +9,7 @@ const db = require("../data/dbConfig");
 
 const seedJSONSensors = () => {
   Data.pumps.map(data => {
-    console.log(data);
+    // console.log(data);
     const {
       id,
       finish_construction,
@@ -67,39 +67,47 @@ const seedJSONPumps = () => {
    const seedJSONHistory = () => {
      Data.pumps.map(data => {
         console.log('current data map = ', data);
-        console.log("data statuses****", data.statuses)
-        console.log(data.id, "this is data id")
+        // console.log("data statuses****", data.statuses)
+        // console.log("data statuses.STATUSES****", data.statuses.statuses)
+        // console.log(data.id, "this is data id")
         // console.log(data.statuses.statuses.count, "logging count")
-        if (data.statuses != undefined) {  
+        // if (data.statuses != undefined) {  
+          // console.log(typeof data.statuses, "line 74 result")
       //  const {
       //    id,
-      //    statuses: { statuses: {date = "", count = 0, total=  0, status = 0, padCounts = [], padSeconds = [], reportedPercent = ""}}} = data 
-        
+      //    statuses: { statuses: {date = "", count = 0, total=  0, status = 0, padCounts = [], padSeconds = [], reportedPercent = ""}}} = data
+      
+    
+  
        let history = {
          sensor_id: data.id,
-         count: data.statuses.count,
-         total: data.statuses.total,
-         status: data.statuses.status,
-         date: data.statuses.date,
-         pad_counts: data.statuses.padCounts,
-         pad_seconds: data.statuses.padSeconds,
-         reported_percent: data.statuses.reportedPercent,
+         count: data.statuses.statuses.count,
+         total: data.statuses.statuses.total,
+         status: data.statuses.statuses.status,
+         date: data.statuses.statuses.date,
+        pad_counts: JSON.stringify([data.statuses.statuses.pad_counts[0], data.statuses.statuses.pad_counts[1], data.statuses.statuses.pad_counts[2], data.statuses.statuses.pad_counts[3]]),
+        pad_seconds: JSON.stringify([data.statuses.statuses.pad_seconds[0], data.statuses.statuses.pad_seconds[1], data.statuses.statuses.pad_seconds[2], data.statuses.statuses.pad_seconds[3]]),
+        reported_percent: data.statuses.statuses.reported_percent
        } 
+
+       console.log("HISTORY", history)
       
        addHistory(history);
-      } else {
-         const {
-           id
-         } = data
-         let history = {
-           sensor_id: data.id
+      // } else {
+      //   // console.log(typeof data.statuses.statuses, "line 93 result")
+      //    const {
+      //      id
+      //    } = data
+      //    let history = {
+      //      sensor_id: data.id,
+      //     //  statuses: {}
         
-         }
-         addHistory(history);
+      //    }
+      //    addHistory(history);
 
-       }
-      //  addHistory(history);
-      //  console.log("history", history);
+      //  }
+      //addHistory(history);
+     // console.log("history", history);
      })
    };
 
