@@ -33,16 +33,16 @@ async function main() {
 const url =
   "https://dashboard.welldone.org/.netlify/functions/get_momo_status?id="
 async function getPumps() {
-  const { data: config } = await prismic.getDoc("config")
-  const oldData = require("../assets/cache/pumps.json")
-  if (
-    !oldData.lastFetch ||
-    oldData.lastFetch <
-      moment()
-        .subtract(config.update_data, "hours")
-        .unix()
-  ) {
-    console.log("Fetching Pumps Init")
+  // const { data: config } = await prismic.getDoc("config")
+  // const oldData = require("../assets/cache/pumps.json")
+  // if (
+  //   !oldData.lastFetch ||
+  //   oldData.lastFetch <
+  //     moment()
+  //       .subtract(config.update_data, "hours")
+  //       .unix()
+  // ) {
+  //   console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
@@ -70,7 +70,7 @@ async function getPumps() {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
         const res = await axios.get(`${url}${pump}`)
         let newData = {}
-        // console.log("*****res.data*****", res.data)
+        console.log("*****res.data*****", res.data)
         res.data
         ? res.data.dates.forEach((date, index) => {
           newData = {
@@ -81,8 +81,11 @@ async function getPumps() {
               total: res.data.statuses[index].total,
               status: res.data.statuses[index].status,
               reportedPercent: res.statuses[index].reportedPercent,
-              pad_counts: res.data.statuses[index].padSeconds.map((item) => item),
-              pad_seconds: res.data.statuses[index].padCounts.map((item) => item),
+              // pad_counts: res.data.statuses[index].padSeconds.map((item) => item),
+              // pad_seconds: res.data.statuses[index].padCounts.map((item) => item),
+              pad_counts: res.data.statuses[index].padSeconds,
+              pad_seconds: res.data.statuses[index].padCounts
+
             },
           }
         })
@@ -98,26 +101,27 @@ async function getPumps() {
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
       }
     })
+    // console.log(newData, 'this is the new data')
     console.log("Fetching Pumps Success")
     // console.log("pumps results*********",{ lastFetch: moment().unix(), pumps: results })
     return { lastFetch: moment().unix(), pumps: results }
-  } else {
-    console.log("Data Up To Date")
-    return oldData
-  }
+  // } else {
+  //   console.log("Data Up To Date")
+  //   return oldData
+  // }
 }
 
 async function createStore() {
-  const oldData = require("../assets/cache/longStore.json")
+  // const oldData = require("../assets/cache/longStore.json")
   const data = require("../assets/cache/pumps.json")
   let pumps = {}
   data.pumps.forEach(({ id, dates, statuses }, index) => {
-    let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
+    // let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
 
     pumps = {
       ...pumps,
       [id]: {
-        ...pumpOldData,
+        // ...pumpOldData,
         ...data.pumps.find(pump => pump.id === id).statuses,
       },
     }
