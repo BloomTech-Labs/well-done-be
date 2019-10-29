@@ -155,34 +155,40 @@ function addSensor(sensor) {
       });
   }
 
+  function addCounts(counts) {
+    return db("counts")
+    .insert(counts)
+  }
+
+  function addSeconds(seconds) {
+    return db("pad_seconds")
+    .insert(seconds)
+  }
 
 function addStatus (history){
+  const id = history.sensor_id
   db.transaction(function(trx) {
-    console.log("history line 161",history)
-    // db.transacting(trx)
-  return db("history").insert(history, "id")
-    .transacting(trx)
+  return db("history").transacting(trx).where({id})
     .then(([id]) => {
-      console.log("history line 163", history)
-// got this far, want to now look into mapping over on line 169 and see where were getting pad counts from in history.pad_counts
-      console.log(history.pad_counts)
-      const pad_counts = history.pad_counts.map(p => {
-        console.log(p, "this is pppppppppppp")
-        return {
+      const getPadCounts = Data.pumps.map(data => {
+        let current = {
           history_id: id,
-          ...p
+          ...data.statuses.statuses.pad_counts
         }
-        
-      });
-      const pad_seconds = history.pad_seconds.map(s => {
-        console.log(history.pad_seconds, "PAD SECONDS")
-        return {
+        return addCounts(current)
+      })
+
+      const getPadSeconds = Data.pumps.map(data => {
+        let current = {
           history_id: id,
-          ...s
+          ...data.statuses.statuses.pad_seconds
         }
+        return addSeconds(current)
       });
-      const insert_counts = db.insert(pad_counts).into("pad_counts");
-      const insert_seconds = db.insert(pad_seconds).into("pad_seconds");
+
+      const insert_counts = db.insert(getPadCounts).into("pad_counts");
+      const insert_seconds = db.insert(getPadSeconds).into("pad_seconds");
+
       const promises = [insert_counts, insert_seconds]
 
       return Promise.all(promises).then(results => {

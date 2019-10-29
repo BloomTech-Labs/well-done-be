@@ -6,8 +6,6 @@ exports.up = function(knex) {
     column.integer("total").nullable();
     column.integer("status").nullable();
     column.integer("sensor_id");
-    column.specificType("pad_seconds","integer ARRAY").nullable();
-    column.specificType("pad_counts", "integer ARRAY").nullable();
     column.integer("reported_percent").nullable();
 
   });
