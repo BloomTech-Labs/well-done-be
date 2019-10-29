@@ -57,35 +57,35 @@ const seedJSONPumps = () => {
   seedJSONPumps();
 
   
-//"date": {
+// "date": {
 // "statuses": {
 //     "date": "Thu Oct 24 2019",
 //     "count": 109,
 //     "total": 3219199,
 //     "status": 2,
 //     "pad_counts": [
-//    const seedJSONHistory = () => {
-//      Data.pumps.map(data => {
-//         console.log('current data map = ', data);
-//        const {
-//          id,
-//          date: { statuses: {date, count, status, pad_counts, pad_seconds, reportedPercent}}} = data;
-//        const history = {
-//          sensor_id: id,
-//          count: count,
-//          total: total,
-//          status: status,
-//          date: date,
-//          pad_counts: pad_counts,
-//          pad_seconds: pad_seconds,
-//          reportedPercent: reportedPercent
-//        };
-//        addHistory(history);
-//       //  console.log("history", history);
-//      });
-//    };
+   const seedJSONHistory = () => {
+     Data.pumps.map(data => {
+        console.log('current data map = ', data);
+       const {
+         id,
+         date: { statuses: {date, count, status, pad_counts, pad_seconds, reportedPercent}}} = data;
+       const history = {
+         sensor_id: id,
+         count: count,
+         total: total,
+         status: status,
+         date: date,
+         pad_counts: pad_counts,
+         pad_seconds: pad_seconds,
+         reportedPercent: reportedPercent
+       };
+       addHistory(history);
+      //  console.log("history", history);
+     });
+   };
 
-//   seedJSONHistory()
+  seedJSONHistory()
 
 function addPump(pump) {
   return db("pumps")
@@ -115,4 +115,4 @@ function addSensor(sensor) {
   }
 
 //seedJSONHistory,
-module.exports = seedJSONPumps, seedJSONSensors;
+module.exports = seedJSONPumps, seedJSONHistory, seedJSONSensors;
