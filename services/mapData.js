@@ -5,6 +5,7 @@ const knex = require("knex");
 const config = require("../knexfile");
 const db = require("../data/dbConfig");
 
+
 // const getPumps = Data.pumps.map(pump => console.log("getPumps", pump))
 
 let target = {
@@ -103,10 +104,10 @@ const seedJSONPumps = () => {
         reported_percent: data.statuses.statuses.reported_percent
        } 
 
-       console.log("HISTORY", history)
+      //  console.log("HISTORY", history)
       
        addHistory(history);
-       addStatus(history)
+       addStatus(history);
       // } else {
       //   // console.log(typeof data.statuses.statuses, "line 93 result")
       //    const {
@@ -156,25 +157,33 @@ function addSensor(sensor) {
 
 
 function addStatus (history){
-  knex.transaction(function(trx) {
-    knex.transacting(trx).insert(history, "id").then(([id]) => {
-      
-      const padCounts = history.padCounts.map(p => {
+  db.transaction(function(trx) {
+    console.log("history line 161",history)
+    // db.transacting(trx)
+  db.insert(history, "id")
+    .transacting(trx)
+    .then(([id]) => {
+      console.log("history line 163", history)
+
+      // console.log(history.pad_counts)
+      const pad_counts = history.pad_counts.map(p => {
+        console.log(p, "this is pppppppppppp")
         return {
           history_id: id,
           ...p
         }
         
       });
-      const padSeconds = history.padSeconds.map(s => {
+      const pad_seconds = history.pad_seconds.map(s => {
+        console.log(history.pad_seconds, "PAD SECONDS")
         return {
           history_id: id,
           ...s
         }
       });
-      const insertCounts = knex.insert(padCounts).into("pad_counts");
-      const insertSeconds = knex.insert(padSeconds).into("pad_seconds");
-      const promises = [insertCounts, insertSeconds]
+      const insert_counts = db.insert(pad_counts).into("pad_counts");
+      const insert_seconds = db.insert(pad_seconds).into("pad_seconds");
+      const promises = [insert_counts, insert_seconds]
 
       return Promise.all(promises).then(results => {
         const {counts, seconds} = results;

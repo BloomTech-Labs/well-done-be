@@ -4,7 +4,7 @@ const { authenticate } = require("../middleware/middleware");
 const { validateHistory } = require("../middleware/middleware");
 
 // GET to /api/history
-router.get("/", authenticate, (req, res) => {
+router.get("/", (req, res) => {
   History.find()
     .then(history => {
       res.status(200).json(history);

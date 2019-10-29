@@ -84,16 +84,6 @@ const updatePump = (changes, id) => {
 };
 
 module.exports = {
-<<<<<<< HEAD
-  addPump,
-  getPumps,
-  findPumps,
-  getPumpsByOrgId,
-  getPumpById,
-  deletePump,
-  updatePump
-};
-=======
     // addOrg,
     // addAccount,
     // getAccounts,
@@ -109,4 +99,3 @@ module.exports = {
     updatePump
 }
 
->>>>>>> 19c32ec2d1aa58bf9050a15e88e9ae9d07d4feb3

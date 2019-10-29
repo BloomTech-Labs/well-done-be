@@ -3,28 +3,20 @@ const Sensors = require("./sensors.model");
 const { validateSensor } = require("../middleware/middleware");
 const { authenticate } = require("../middleware/middleware");
 
-<<<<<<< HEAD
-// POST to /api/sensors
-router.post("/", authenticate, validateSensor, (req, res) => {
+
+//POST a sensor
+router.post("/", (req, res) => {
   const sensorData = req.body;
   console.log("sensorData", sensorData);
   Sensors.addSensor(sensorData)
-=======
-const Sensors = require('./sensors.model');
-
-//POST a sensor
-router.post('/', (req,res) => {
-    const sensorData = req.body;
-    console.log('sensorData', sensorData)
-    Sensors.addSensor(sensorData)
-            .then(sensor => {
-                console.log(sensor)
-                res.status(201).json(sensor)
-            })
-            .catch(err => {
-                res.status(500).json(err.message)
-            })
-})
+    .then(sensor => {
+      console.log(sensor);
+      res.status(201).json(sensor);
+    })
+    .catch(err => {
+      res.status(500).json(err.message);
+    });
+});
 
 router.get("/", async (req, res) => {
   try {
@@ -37,24 +29,24 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/pumps", async (req, res) => {
-    try {
-      const sensors = await Sensors.getSensorNPump();
-      res.status(200).json(sensors);
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
+  try {
+    const sensors = await Sensors.getSensorNPump();
+    res.status(200).json(sensors);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
-  router.get("/details", async (req, res) => {
-    try {
-      const sensors = await Sensors.getSensorNPumpNHistory();
-      res.status(200).json(sensors);
-    } catch (err) {
-      console.log(err.message);
-      res.status(400).json(err.message);
-    }
-  });
+router.get("/details", async (req, res) => {
+  try {
+    const sensors = await Sensors.getSensorNPumpNHistory();
+    res.status(200).json(sensors);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
 
 // GET sensors
 // router.get('/', (req,res) => {
@@ -62,7 +54,7 @@ router.get("/pumps", async (req, res) => {
 //             .then(sensors => {
 //                 console.log('sensors', sensors)
 //                 const listSensors = []
-//                 sensors.map(eachSensor => 
+//                 sensors.map(eachSensor =>
 //                     {
 //                     const sensorsInfo = {
 //                         sensor: {
@@ -112,28 +104,24 @@ router.get("/pumps", async (req, res) => {
 //     }
 // })
 
-
-
 //GET a sensor by sensor_id
-router.get('/:id', (req,res) => {
-    const {id} = req.params;
-    console.log(req.params)
-    Sensors.getSensorById(id)
-            .then(sensor => {
-                if(sensor){
-                    res.status(200).json(sensor)
-                }
-                else res.status(404).json({message: 'sensor does not exist'})
-            })
-            .catch(err => res.status(500).json(err.message))
-})
+router.get("/:id", (req, res) => {
+  const { id } = req.params;
+  console.log(req.params);
+  Sensors.getSensorById(id)
+    .then(sensor => {
+      if (sensor) {
+        res.status(200).json(sensor);
+      } else res.status(404).json({ message: "sensor does not exist" });
+    })
+    .catch(err => res.status(500).json(err.message));
+});
 
 //GET a sensor by org_id
-router.get('/org/:id', (req,res) => {
-    const {org_id} = req.params;
-    console.log(org_id)
-    Sensors.getSensorByOrgId(org_id)
->>>>>>> 19c32ec2d1aa58bf9050a15e88e9ae9d07d4feb3
+router.get("/org/:id", (req, res) => {
+  const { org_id } = req.params;
+  console.log(org_id);
+  Sensors.getSensorByOrgId(org_id)
     .then(sensor => {
       console.log(sensor);
       res.status(201).json(sensor);
