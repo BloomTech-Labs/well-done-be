@@ -3,8 +3,7 @@ const config = require("../../knexfile");
 // const db = knex(config.development);
 const db = require("../../data/dbConfig.js");
 
-
-//* get all accounts - DONE
+//* get all accounts
 const find = () => {
   try {
     return db("accounts");
@@ -47,13 +46,6 @@ const update = async (id, changes) => {
   }
 };
 
-// async function update (changes, account_id) {
-//   const [id] = await db("accounts").where({ id: account_id }).first().update(changes).returning('id')
-
-//   return findById(id);
-// }
-
-//* remove account
 const remove = async id => {
   try {
     await db("accounts")

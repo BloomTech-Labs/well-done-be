@@ -79,13 +79,16 @@ async function getPumps() {
                   count: res.data.statuses[index].count,
                   total: res.data.statuses[index].total,
                   status: res.data.statuses[index].status,
-                  padCounts: res.data.statuses[index].padCounts,
-                  padSeconds:res.data.statuses[index].padSeconds,
-                  reportedPercent:res.data.statuses[index].reportedPercent
+                  pad_counts: res.data.statuses[index].padCounts,
+                  pad_seconds:res.data.statuses[index].padSeconds,
+                  reported_percent:res.data.statuses[index].reportedPercent
                 },
               }
             })
           : {}
+            // : statuses = {
+
+          // }
         results.push({
           id: pump,
           ...pumps[pump],

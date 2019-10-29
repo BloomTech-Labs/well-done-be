@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const History = require("./history.model");
-const { authenticate } = require("../middleware/middleware.js");
+const { authenticate } = require("../middleware/middleware");
+const { validateHistory } = require("../middleware/middleware");
 
-//* [find] - /api/history - WORKING :))
+// GET to /api/history
 router.get("/", (req, res) => {
   History.find()
     .then(history => {
@@ -13,8 +14,8 @@ router.get("/", (req, res) => {
     });
 });
 
-//* [findByID] - /api/history/1 - WORKING :))
-router.get("/:id", (req, res) => {
+// GET to /api/history/1
+router.get("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   History.findById(id)
     .then(history => {
@@ -31,8 +32,8 @@ router.get("/:id", (req, res) => {
     });
 });
 
-//* [insert] - /api/history - WORKING :))
-router.post("/", (req, res) => {
+// POST to /api/history
+router.post("/", authenticate, validateHistory, (req, res) => {
   const historyData = req.body;
 
   History.insert(historyData)
@@ -44,8 +45,8 @@ router.post("/", (req, res) => {
     });
 });
 
-//* [findByID] - api/history/1 - WORKING :))
-router.put("/:id", (req, res) => {
+// PUT to /api/history 2
+router.put("/:id", authenticate, validateHistory, (req, res) => {
   const { id } = req.params;
   const changes = req.body;
   History.findById(id)
@@ -65,8 +66,8 @@ router.put("/:id", (req, res) => {
     });
 });
 
-//* [remove] - api/history/1 - WORKING :))
-router.delete("/:id", async (req, res) => {
+// DELETE to /api/history/3
+router.delete("/:id", authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     await History.remove(id);
@@ -77,8 +78,8 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-//* [getHistoryBySensorId] - /api/history/sensor/1 - WORKING :))
-router.get("/sensor/:id", async (req, res) => {
+// GET to /api/history/sensor/1
+router.get("/sensor/:id", authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const history = await History.getHistoryBySensorId(id);
@@ -90,46 +91,3 @@ router.get("/sensor/:id", async (req, res) => {
 });
 
 module.exports = router;
-
-// TODO: get history by Org ID
-// router.get("/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const history = await History.findByOrgId(id);
-//     res.status(200).json(history);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
-// TODO: get history by Pump ID
-// router.get("sensor/:id", async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const history = await History.findBySensorId(id);
-//     res.status(200).json(history);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
-// DELETE to /api/history/3 - should be working now (need to double check again after POST)
-// router.delete("/:id", (req, res) => {
-//   const { id } = req.params;
-
-//   History.remove(id)
-//     .then(deleted => {
-//       if (deleted) {
-//         return res.json(deleted);
-//       } else {
-//         res
-//           .status(404)
-//           .json({ message: "Could not find history with given id" });
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).json({ message: "Failed to delete history" });
-//     });
-// });

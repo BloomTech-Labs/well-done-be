@@ -16,7 +16,7 @@ exports.up = function(knex) {
     column.string("training");
     column.string("remark");
     column.date("data_finished");
-    column.integer("depth");
+    column.integer("depth")
     column.integer("yield");
     column.integer("static");
     column.string("quality");

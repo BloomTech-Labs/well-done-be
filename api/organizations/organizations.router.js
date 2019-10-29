@@ -1,9 +1,10 @@
 const router = require("express").Router();
-// const { authenticate } = require("../middleware/middleware");
+const { authenticate } = require("../middleware/middleware");
 const Organizations = require("./organizations.model");
+const { validateOrg } = require("../middleware/middleware");
 
-// TODO: get all organizations
-router.get("/", async (req, res) => {
+// GET to /api/orgs
+router.get("/", authenticate, async (req, res) => {
   try {
     const orgs = await Organizations.findAll();
     res.status(200).json(orgs);
@@ -13,23 +14,28 @@ router.get("/", async (req, res) => {
   }
 });
 
-// TODO: get organization by id - WORKING
-router.get("/:id", async (req, res) => {
-  try {
-    const {id} = req.params
-    const org = await Organizations.findById(id);
-    res.status(200).json(org);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  }
+// GET to /api/orgs/1
+router.get("/:id", authenticate, (req, res) => {
+  const { id } = req.params;
+  Organizations.findById(id)
+    .then(org => {
+      console.log("org", org);
+      if (org) {
+        res.status(200).json(org);
+      } else {
+        res.status(404).json({ message: "Could not find org with given id." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err.message);
+    });
 });
 
-// TODO: create organization - WORKING
-router.post("/", async (req, res) => {
+// POST to api/orgs
+router.post("/", authenticate, validateOrg, async (req, res) => {
   try {
     const org = req.body;
-    console.log("org", org)
+    console.log("org", org);
     const createdOrg = await Organizations.insert(org);
     res.status(200).json(createdOrg);
   } catch (err) {
@@ -38,20 +44,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-
-
-// TODO: update org
-// router.put("/:id", async (req, res) => {
-//   try {
-//     const {org} = req.body;
-//     console.log("org", org)
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
-router.put("/:id", async (req, res) => {
+// PUT to /api/orgs/1
+router.put("/:id", authenticate, validateOrg, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;
@@ -63,8 +57,8 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-//  TODO: delete org
-router.delete("/:id", async (req, res) => {
+// DELETE to /api/orgs/4
+router.delete("/:id", authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const removed = await Organizations.remove(id);
