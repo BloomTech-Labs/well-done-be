@@ -16,8 +16,8 @@ const smsNotificationsRouter = require("./sms_notifications/sms_notifications.ro
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
 const mapPumpsRouter = require("../services/mapData");
-const padSecondsRouter = require("./pad_seconds/pad_seconds.model")     
-const padCountsRouter = require("./pad_counts/pad_counts.model")     
+const padSecondsRouter = require("./pad_seconds/pad_seconds.router")     
+const padCountsRouter = require("./pad_counts/pad_counts.router")     
 
 
 server.use(express.json());

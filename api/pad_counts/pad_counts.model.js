@@ -4,7 +4,13 @@ function find() {
     return db("pad_counts")
 }
 
+function add(count) {
+    return db("pad_counts")
+    .insert(count)
+}
+
 
 module.exports = {
-    find
+    find,
+    add
 }

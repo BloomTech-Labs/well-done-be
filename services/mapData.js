@@ -70,28 +70,10 @@ const seedJSONPumps = () => {
 
   seedJSONPumps();
 
-  
-// "date": {
-// "statuses": {
-//     "date": "Thu Oct 24 2019",
-//     "count": 109,
-//     "total": 3219199,
-//     "status": 2,
-//     "pad_counts": [
+
    const seedJSONHistory = () => {
      Data.pumps.map(data => {
-        console.log('current data map = ', data);
-        // console.log("data statuses****", data.statuses)
-        // console.log("data statuses.STATUSES****", data.statuses.statuses)
-        // console.log(data.id, "this is data id")
-        // console.log(data.statuses.statuses.count, "logging count")
-        // if (data.statuses != undefined) {  
-          // console.log(typeof data.statuses, "line 74 result")
-      //  const {
-      //    id,
-      //    statuses: { statuses: {date = "", count = 0, total=  0, status = 0, padCounts = [], padSeconds = [], reportedPercent = ""}}} = data
-      
-    
+        // console.log('current data map = ', data);
 
        let history = {
          sensor_id: data.id,
@@ -99,30 +81,12 @@ const seedJSONPumps = () => {
          total: data.statuses.statuses.total,
          status: data.statuses.statuses.status,
          date: data.statuses.statuses.date,
-        // pad_counts: JSON.stringify([data.statuses.statuses.pad_counts[0], data.statuses.statuses.pad_counts[1], data.statuses.statuses.pad_counts[2], data.statuses.statuses.pad_counts[3]]),
-        // pad_seconds: JSON.stringify([data.statuses.statuses.pad_seconds[0], data.statuses.statuses.pad_seconds[1], data.statuses.statuses.pad_seconds[2], data.statuses.statuses.pad_seconds[3]]),
         reported_percent: data.statuses.statuses.reported_percent
-       } 
-
-      //  console.log("HISTORY", history)
-      
+       }  
+       let currentId = history.sensor_id   
+      //  console.log(currentId, "this is the current id")  
        addHistory(history);
        addStatus(history);
-      // } else {
-      //   // console.log(typeof data.statuses.statuses, "line 93 result")
-      //    const {
-      //      id
-      //    } = data
-      //    let history = {
-      //      sensor_id: data.id,
-      //     //  statuses: {}
-        
-      //    }
-      //    addHistory(history);
-
-      //  }
-      //addHistory(history);
-     // console.log("history", history);
      })
    };
 
@@ -165,56 +129,57 @@ function addSensor(sensor) {
     .insert(seconds)
   }
 
-function addStatus (history){
-  const id = history.sensor_id
-  db.transaction(function(trx) {
-  return db("history").transacting(trx).where({id})
-    .then(([id]) => {
-      const getPadCounts = Data.pumps.map(data => {
-        let current = {
-          history_id: id,
-          ...data.statuses.statuses.pad_counts
-        }
-        return addCounts(current)
-      })
+  function getHistoryFilter(filter) {
+    return db("history")
+    .where(filter)
 
-      const getPadSeconds = Data.pumps.map(data => {
-        let current = {
-          history_id: id,
-          ...data.statuses.statuses.pad_seconds
-        }
-        return addSeconds(current)
-      });
-
-      const insert_counts = db.insert(getPadCounts).into("pad_counts");
-      const insert_seconds = db.insert(getPadSeconds).into("pad_seconds");
-
-      const promises = [insert_counts, insert_seconds]
-
-      return Promise.all(promises).then(results => {
-        const {counts, seconds} = results;
-        return id;
-      })
-
-    })
-      .then(trx.commit)
-      .catch(trx.rollback);
     
-  })
-  .then(function(inserts) {
-    console.log(inserts.length + ' statuses');
-  })
-  .catch(function(error) {
-    // If we get here, that means that neither the 'Old Books' catalogues insert,
-    // nor any of the books inserts will have taken place.
-    console.error(error);
-  });
-}
+  }
 
+  function addStatusTest(filter) {
+    try {
+    return db("history")
+    .where(filter)
+    .first()
+    } catch (err) {
+      console.log(err.message)
 
+    }
+  }
 
+  function addPadCounts(counts) {
+    return db("pad_counts")
+      .insert(counts)
+      .returning("id")
+      .then(res => {
+        console.log(res);
+      });
+  }
 
+  function addPadSeconds(seconds) {
+    return db("pad_counts")
+      .insert(seconds)
+      .returning("id")
+      .then(res => {
+        console.log(res);
+      });
+  }
 
-  
-//seedJSONHistory,
+function addStatus (history){
+  const {sensor_id} = history
+  addStatusTest({sensor_id})
+    .then(res => {
+      const getPadCounts = Data.pumps.forEach((data, idx) => {
+        const insertPadCounts = data.statuses.statuses.pad_counts.map(item => {
+          let counts = {
+          history_id: res.id,
+          counts: item
+          }
+          console.log(counts)
+          addPadCounts(counts, console.log("help"))
+        })
+      })
+    })
+  }
+        
 module.exports = seedJSONPumps, seedJSONHistory, seedJSONSensors;
