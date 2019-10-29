@@ -160,12 +160,12 @@ function addStatus (history){
   db.transaction(function(trx) {
     console.log("history line 161",history)
     // db.transacting(trx)
-  db.insert(history, "id")
+  return db("history").insert(history, "id")
     .transacting(trx)
     .then(([id]) => {
       console.log("history line 163", history)
-
-      // console.log(history.pad_counts)
+// got this far, want to now look into mapping over on line 169 and see where were getting pad counts from in history.pad_counts
+      console.log(history.pad_counts)
       const pad_counts = history.pad_counts.map(p => {
         console.log(p, "this is pppppppppppp")
         return {
