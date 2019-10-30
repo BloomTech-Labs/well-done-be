@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const secrets = require("../config/secrets.js");
-const { seedJSONPumps, seedJSONSensors, seedJSONHistory, getPumps  } = require('../services/mapData.js');
+const { seedJSONPumps, seedJSONSensors, seedJSONHistory, getPumps, addStatus  } = require('../services/mapData.js');
 
 console.log("environment:", secrets.environment);
 const server = express();

@@ -71,25 +71,88 @@ const seedJSONPumps = () => {
   seedJSONPumps();
 
 
-   const seedJSONHistory = () => {
-     Data.pumps.forEach((data, idx) => {
-     if (data.statuses) {
-       console.log("julie is here")
-       let history = {
-        sensor_id: Data.pumps[idx].id,
-        count: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.count : 0,
-        total: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.total : 0,
-        status: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.status : 0,
-        date: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.date : "",
-        reported_percent: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.reported_percent : 0
+  //  const seedJSONHistory = () => {
+  //    Data.pumps.forEach((data, idx) => {
+  //    if (data.statuses) {
+  //      console.log("julie is here")
+  //      let history = {
+  //       sensor_id: Data.pumps[idx].id,
+  //       count: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.count : 0,
+  //       total: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.total : 0,
+  //       status: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.status : 0,
+  //       date: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.date : "",
+  //       reported_percent: Data.pumps[idx].statuses.statuses ? Data.pumps[idx].statuses.statuses.reported_percent : 0
+  //      }  
+  //      let currentId = history.sensor_id   
+  //     //  console.log(currentId, "this is the current id")  
+  //      addHistory(history);
+  //     //  addStatus(history);
+  //     } else {console.log("these are empty")}})
+  //   };
 
-       }  
-       let currentId = history.sensor_id   
-      //  console.log(currentId, "this is the current id")  
-       addHistory(history);
-      //  addStatus(history);
-      } else {console.log("these are empty")}})
-    };
+    const seedJSONHistory = () => {
+      Data.pumps.forEach((data, idx) => {
+      if (data.statuses) {
+        let history = {
+         sensor_id: data.id,
+         count: data.statuses.statuses ? data.statuses.statuses.count : 0,
+         total: data.statuses.statuses ? data.statuses.statuses.total : 0,
+         status: data.statuses.statuses ? data.statuses.statuses.status : 0,
+         date: data.statuses.statuses ? data.statuses.statuses.date : "",
+         reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : 0
+        }  
+        let currentId = history.sensor_id   
+        // console.log(history.reported_percent, "reported percent")
+        // console.log(currentId, "this is the current id")
+      //  history.reported_percent  ? 
+        addHistory(history)
+        addStatus(history);
+       } else {console.log("these are empty")}})
+     };
+
+    // const seedJSONHistory = () => {
+    //   Data.pumps.map(data => {
+    //      // console.log('current data map = ', data);
+    //      let sensor_ID = ''; 
+    //      let count = 0; 
+    //      let total = 0; 
+    //      let status = 0;
+    //      let date = '';
+    //      let pad_seconds = [];
+    //      let pad_counts = []; 
+    //      let reported_percent = 0;
+    //      let history = {};
+ 
+    //      if(typeof data.statuses.statuses !== 'undefined'){
+ 
+    //        sensor_ID = data.id;
+    //        count = data.statuses.statuses.count;
+    //        total = data.statuses.statuses.total;
+    //        status = data.statuses.statuses.status;
+    //        date = data.statuses.statuses.date;
+    //        pad_seconds = data.statuses.statuses.pad_seconds;
+    //        pad_counts = data.statuses.statuses.pad_counts;
+    //        reported_percent = data.statuses.statuses.reported_percent;
+           
+           
+    //        history = {
+    //          sensor_ID,
+    //          count,
+    //          total,
+    //          status,
+    //          date,
+    //          pad_seconds,
+    //          pad_counts,
+    //          reported_percent
+    //        }  
+    //        let currentId = history.sensor_id   
+    //        addHistory(history);
+    //      }
+    //    //  console.log(currentId, "this is the current id")  
+    //    console.log("*******************history****************", history);
+    //     //addStatus(history);
+    //   })
+    // };
 
   // const seedJSONHistory = () => {
   //   for (let i = 0; i < Data.pumps.length; i++) {
@@ -114,18 +177,7 @@ const seedJSONPumps = () => {
   // }
   
 
-  // const seedJSONHistory = () => {
-  //   Data.pumps.forEach((data, idx) => {
-  //     switch(data[idx]) {
-  //       case undefined:
-  //         console.log("I am undefined");
-          
-  //       case typeof data.statuses === {}:
-  //         console.log("I am an object");
-          
   
-  //     }
-  //   })}
         
     
 
@@ -234,5 +286,7 @@ function addStatus (history){
       } else {console.log("statuses is empty (line 193)")}})
     })
   }
+
+ 
         
 module.exports = seedJSONPumps, seedJSONHistory, seedJSONSensors;
