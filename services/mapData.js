@@ -171,37 +171,29 @@ function addSensor(sensor) {
     .first()
   }
   function addStatus (history){	  
-    // const id = history.sensor_id	  
-    db.transaction(function(trx) {	   
+    // db.transaction(function(trx) {	   
     return db("history").insert(history, "id")
       .then(([id]) => {	
-        console.log("********line 178", id)
         const getPadCounts = Data.pumps.forEach((data, idx) => {
-          console.log(data, "this is data line 180")
           if (data.id === history.sensor_id) {
-            console.log(data.id, "this is data id")
-            console.log(history.sensor_id, "this is history sensor id")
-
-            const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)
-              console.log(cleanData, "this is the clean data")
-          
+            const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)          
                   const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(item => {
                     let current = {
                     history_id: id,
                     counts: item
                     }
-                    addPadCounts(current, console.log("added via addPadCounts line 192"))
+                    addPadCounts(current)
                   })	
                   const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
                     let current = {
                     history_id: id,
                     seconds: item
                     }
-                    addPadSeconds(current, console.log("added via addPadCounts line 192"))
+                    addPadSeconds(current)
                   })
                 }})
               })
-            })
+            //})
           }
   // function addStatus (status){
   //   db.transaction(function(trx) {

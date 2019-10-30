@@ -14,10 +14,10 @@ router.get("/", (req, res) => {
     });
 });
 
-// GET to /api/history/1
-router.get("/:id", authenticate, (req, res) => {
+//GET to /api/history/1
+router.get("/:id", (req, res) => {
   const { id } = req.params;
-  History.findById(id)
+  History.getHistoryById(id)
     .then(history => {
       if (history) {
         res.json(history);
@@ -31,6 +31,23 @@ router.get("/:id", authenticate, (req, res) => {
       res.status(500).json({ message: "Failed to get history" });
     });
 });
+
+// router.get("/:id", (req, res) => {
+//   const { id } = req.params;
+//   History.getHistoryBySensorId(id)
+//     .then(history => {
+//       if (history) {
+//         res.json(history);
+//       } else {
+//         res
+//           .status(404)
+//           .json({ message: "Could not find history with given id." });
+//       }
+//     })
+//     .catch(err => {
+//       res.status(500).json({ message: "Failed to get history" });
+//     });
+// });
 
 // POST to /api/history
 router.post("/", authenticate, validateHistory, (req, res) => {

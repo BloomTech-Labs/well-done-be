@@ -20,6 +20,41 @@ const findById = id => {
   }
 };
 
+
+// const findById = id => {
+//   try {
+//     return db("history as h")
+//       .join("pad_counts as c", "c.history_id", "h.id")
+//       .join("pad_seconds as s", "s.history_id", "h.id")
+//       .where({ id })
+//       .first();
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// };
+const padCounts = (id) => {
+  return db("pad_counts")
+  .where({history_id: id})
+}
+
+const padSeconds = (id) => {
+  return db("pad_seconds")
+  .where({history_id: id})
+}
+
+function getHistoryById(id) {
+  const historyQuery = findById(id);
+  const getPadCounts = padCounts(id);
+  const getPadSeconds = padSeconds(id);
+  return Promise.all([historyQuery, getPadCounts, getPadSeconds]).then(
+    ([history, counts, seconds]) => {
+      history.pad_counts = counts;
+      history.pad_seconds = seconds;
+      return history;
+    }
+  );
+}
+
 function getHistoryBySensorId(id) {
   try {
     return db("history as h")
@@ -76,5 +111,6 @@ module.exports = {
   insert,
   update,
   remove,
-  getHistoryBySensorId
+  getHistoryBySensorId,
+  getHistoryById
 };

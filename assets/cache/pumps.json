@@ -1,5 +1,5 @@
 {
-    "lastFetch": 1572389159,
+    "lastFetch": 1572467877,
     "pumps": [
         {
             "id": "4715",
@@ -19,23 +19,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Oct 28 2019",
-                    "count": 288,
-                    "total": 1463229413,
+                    "date": "Tue Oct 29 2019",
+                    "count": 55,
+                    "total": 241637314,
                     "status": 2,
                     "pad_counts": [
-                        47,
-                        41,
-                        34,
-                        7
+                        8,
+                        5,
+                        4,
+                        2
                     ],
                     "pad_seconds": [
-                        5674,
-                        4206,
-                        1537,
-                        93
+                        1431,
+                        321,
+                        118,
+                        16
                     ],
-                    "reported_percent": 1
+                    "reported_percent": 0.1909722222222222
                 }
             }
         },
@@ -57,7 +57,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Oct 28 2019",
+                    "date": "Tue Oct 29 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -77,6 +77,5 @@
                 }
             }
         }
-        
     ]
 }
