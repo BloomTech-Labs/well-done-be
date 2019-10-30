@@ -190,9 +190,15 @@ function addSensor(sensor) {
                     history_id: id,
                     counts: item
                     }
-                    console.log(current, "this is current line 191")
                     addPadCounts(current, console.log("added via addPadCounts line 192"))
                   })	
+                  const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
+                    let current = {
+                    history_id: id,
+                    seconds: item
+                    }
+                    addPadSeconds(current, console.log("added via addPadCounts line 192"))
+                  })
                 }})
               })
             })
