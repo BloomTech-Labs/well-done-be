@@ -2,7 +2,7 @@
 exports.up = function(knex) {
     return knex.schema.createTable("pad_seconds", column => {
         column.increments();
-        column.string("seconds");
+        column.specificType("counts", "integer ARRAY");
         column
           .integer("history_id")
           .unsigned()
