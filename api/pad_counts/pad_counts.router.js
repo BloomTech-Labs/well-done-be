@@ -32,4 +32,15 @@ router.get("/", async (req, res) => {
     }
   });
 
+  router.put("/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const changes = req.body;
+      const updatedPadCounts = await PadCounts.updatePadCounts(changes, id);
+      res.status(200).json(updatedPadCounts);
+    } catch (err) {
+      console.log(err.message);
+      res.status(400).json(err.message);
+    }
+  });
 module.exports = router;

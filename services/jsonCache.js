@@ -33,17 +33,17 @@ async function main() {
 const url =
   "https://dashboard.welldone.org/.netlify/functions/get_momo_status?id="
 async function getPumps() {
-  // const { data: config } = await prismic.getDoc("config")
-  // we don't want to subtract this data anymore...
-  // const oldData = require("../assets/cache/pumps.json")
-  // if (
+  const { data: config } = await prismic.getDoc("config")
+  //we don't want to subtract this data anymore...
+  const oldData = require("../assets/cache/pumps.json")
+  if (
     // // ! oldData.lastFetch ||
-  //   oldData.lastFetch <
-  //     moment()
-  //       .subtract(config.update_data, "hours")
-  //       .unix()
-  // ) {
-  //   console.log("Fetching Pumps Init")
+    oldData.lastFetch <
+      moment()
+        .subtract(config.update_data, "hours")
+        .unix()
+  ) {
+    console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
     await asyncForEach(prismicPumps.results, async pump => {
@@ -86,9 +86,6 @@ async function getPumps() {
               }
             })
           : {}
-            // : statuses = {
-
-          // }
         results.push({
           id: pump,
           ...pumps[pump],
@@ -100,27 +97,28 @@ async function getPumps() {
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
       }
     })
-    // console.log(newData, 'this is the new data')
+    console.log(newData, 'this is the new data')
     console.log("Fetching Pumps Success")
     return { lastFetch: moment().unix(), pumps: results }
   } 
-  // else { 
-  //   console.log("Data Up To Date")
-  //   return oldData
-  // }
+  else { 
+    console.log("Data Up To Date")
+    return oldData
+  }
+}
 
 
 async function createStore() {
-  // const oldData = require("../assets/cache/longStore.json")
+  const oldData = require("../assets/cache/longStore.json")
   const data = require("../assets/cache/pumps.json")
   let pumps = {}
   data.pumps.forEach(({ id, dates, statuses }, index) => {
-    // let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
+    let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
 
     pumps = {
       ...pumps,
       [id]: {
-        // ...pumpOldData,
+        ...pumpOldData,
         ...data.pumps.find(pump => pump.id === id).statuses,
       },
     }
@@ -128,6 +126,25 @@ async function createStore() {
 
   return { pumps }
 }
+
+// async function createStore() {
+//   const oldData = require("../assets/cache/longStore.json")
+//   const data = require("../assets/cache/pumps.json")
+//   let pumps = {}
+//   data.pumps.forEach(({ id, dates, statuses }, index) => {
+//     let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
+
+//     pumps = {
+//       ...pumps,
+//       [id]: {
+//         ...pumpOldData,
+//         ...data.pumps.find(pump => pump.id === id).statuses,
+//       },
+//     }
+//   })
+
+//   return { pumps }
+// }
 
 async function asyncForEach(array, callback) {
   for (let index = 0; index < array.length; index++) {

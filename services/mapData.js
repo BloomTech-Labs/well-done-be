@@ -90,7 +90,7 @@ const seedJSONPumps = () => {
         }  
         // addHistory(history)
         addStatus(history)
-       } else {console.log(`error sensor_id: ${data.id}`)}})
+       } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
      };
 
 
@@ -176,31 +176,199 @@ function addSensor(sensor) {
     .where({id})
     .first()
   }
+  // function addStatus (history){	  
+  //   // db.transaction(function(trx) {	   
+  //   return db("history").insert(history, "id")
+  //     .then(([id]) => {	
+  //       const getPadCounts = Data.pumps.forEach((data, idx) => {
+  //         if (data.id === history.sensor_id) {
+  //           const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)          
+  //                 const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(item => {
+  //                   let current = {
+  //                   history_id: id,
+  //                   counts: item
+  //                   }
+  //                   addPadCounts(current)
+  //                 })	
+  //                 const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
+  //                   let current = {
+  //                   history_id: id,
+  //                   seconds: item
+  //                   }
+  //                   addPadSeconds(current)
+  //                 })
+  //               }})
+  //             })
+  //           //})
+  //         }
+
+  function getPadCountHistory(id) {
+    return db("pad_counts")
+    .where({history_id: id})
+    .first()
+
+  }
+
+  function updatePadCounts(current, id) {
+    return db("pad_counts")
+      .where({ history_id: id })
+      .update(current)
+      .then(res => {
+        console.log(res, "this is line 217")
+      })
+      // return getPadCountHistory(id)
+
+  }
+
+  function updatePadSeconds(current, id) {
+    return db("pad_seconds")
+      .where({ history_id: id })
+      .update(current)
+      .then(res => {
+        console.log(res, "this is line 228")
+      })
+      
+
+  }
+
+  
+
   function addStatus (history){	  
     // db.transaction(function(trx) {	   
     return db("history").insert(history, "id")
       .then(([id]) => {	
         const getPadCounts = Data.pumps.forEach((data, idx) => {
           if (data.id === history.sensor_id) {
-            const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)          
+            
+            const cleanData = Data.pumps.filter(item => item.id === history.sensor_id) 
+            if (cleanData[0].statuses.statuses === undefined) {
+              console.log(`no statuses associated with sensor id ${history.sensor_id}`)
+            } else {
+              let count1 = 0
+              let count2 = 0        
                   const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(item => {
+                    if(count1 === 0) {
+                      let current = {
+                        history_id: id,
+                        [`count_${count1}`]: null ? item : item,
+                      }
+                      count1++
+                      addPadCounts(current)
+                  } else if (count1 < 4) {
+                    console.log(item, "this is item 249")
                     let current = {
-                    history_id: id,
-                    counts: item
-                    }
-                    addPadCounts(current)
-                  })	
-                  const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
-                    let current = {
-                    history_id: id,
-                    seconds: item
-                    }
-                    addPadSeconds(current)
-                  })
-                }})
+                        history_id: id,
+                        [`count_${count1}`]: null ? item : item,
+                      }
+                      count1++
+                      console.log(current, "this is line 254 current")
+                      updatePadCounts(current, id)
+                  } 
+                      else {
+                        count1 = 0
+                      }})	
+            const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
+              if(count2 === 0) {
+                let current = {
+                  history_id: id,
+                  [`seconds_${count2}`]: null ? item : item,
+                }
+                count2++
+                addPadSeconds(current)
+            } else if (count2 < 4) {
+              console.log(item, "this is item 273")
+              let current = {
+                  history_id: id,
+                  [`seconds_${count2}`]: null ? item : item,
+                }
+                count2++
+                console.log(current, "this is line 279 current")
+                updatePadSeconds(current, id)
+            } 
+                else {
+                  count2 = 0
+                }})	
+                }}})
               })
             //})
           }
+
+  // function addStatus (history){	  
+  //   // db.transaction(function(trx) {	   
+  //   return db("history").insert(history, "id")
+  //     .then(([id]) => {	
+  //       const getPadCounts = Data.pumps.forEach((data, idx) => {
+  //         if (data.id === history.sensor_id) {
+            
+  //           const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)  
+  //             let count1 = 0
+  //             let count2 = 0        
+  //                 const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(async item => {
+                    
+                    
+  //                   if(count1 === 0) {
+  //                     console.log(count1, "line 231")
+  //                   let current = {
+  //                   history_id: id,
+  //                   [`count_${count1}`]: null ? item : item,
+  //                   }
+  //                   count1++
+  //                   addPadCounts(current)
+  //                   console.log(current, "zero")
+  //                 } else if (count1 === 1) {
+  //                   console.log(count1, "line 239")
+  //                   let current = {
+  //                     history_id: id,
+  //                     [`count_${count1}`]: null ? item : item,
+  //                     }
+  //                     console.log(id, "this is line 244")
+  //                     count1++
+  //                     updatePadCounts(current, id)
+  //                     console.log(current, "one")
+
+  //                 } else if (count1 === 2) {
+  //                   console.log(count1, "line 249")
+  //                   let current = {
+  //                     history_id: id,
+  //                     [`count_${count1}`]: null ? item : item,
+  //                     }
+  //                     console.log(id, "this is line 254")
+  //                     count1++
+  //                     updatePadCounts(current, id)
+  //                     .then (res => {console.log(res, "result line 259")})
+  //                     console.log(current, "two")
+  //                   }
+  //                     else if (count1 === 3) {
+  //                       console.log(count1, "line 258")
+  //                       let current = {
+  //                         history_id: id,
+  //                         [`count_${count1}`]: null ? item : item,
+  //                         }
+  //                         console.log(id, "this is line 263")
+  //                         count1++
+  //                         try {
+  //                           const update = await updatePadCounts(current, id)
+  //                           console.log(update, "update line 272")
+  //                         console.log(current, "three")
+  //                       } catch (err) {
+  //                         console.log(err, "this is the error line 274")
+  //                       }
+  //                     }
+  //                     else {count1 = 0}})	
+  //                 const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
+                    
+  //                   if(count2 < 4) {
+  //                   let current = {
+  //                   history_id: id,
+  //                   [`seconds_${count2}`]: item,
+  //                   }
+  //                   count2++
+  //                   addPadSeconds(current)
+  //                 }else {count2 = 0}})
+  //               }})
+  //             })
+  //           //})
+  //         }
 
         
   // function addStatus (status){

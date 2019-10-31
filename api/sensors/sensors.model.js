@@ -77,6 +77,7 @@ function getSensorNPump() {
     .join("pumps as p", "p.sensor_ID", "s.physical_id")
 }
 
+//convert this to promises to return entire object
 function getSensorNPumpNHistory() {
     return db("sensors as s")
     .join("pumps as p", "p.sensor_ID", "s.physical_id")
