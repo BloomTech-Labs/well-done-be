@@ -97,7 +97,7 @@ async function getPumps() {
         results.push({ id: pump, ...pumps[pump], status: 0, error: "500" })
       }
     })
-    console.log(newData, 'this is the new data')
+    // console.log(newData, 'this is the new data')
     console.log("Fetching Pumps Success")
     return { lastFetch: moment().unix(), pumps: results }
   } 
