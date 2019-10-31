@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     res.status(400).json(err.message);
   }
 });
-
+//gets sensor and pump
 router.get("/pumps", async (req, res) => {
   try {
     const sensors = await Sensors.getSensorNPump();
@@ -37,7 +37,7 @@ router.get("/pumps", async (req, res) => {
     res.status(400).json(err.message);
   }
 });
-
+// gets sensor and pump
 router.get("/details", async (req, res) => {
   try {
     const sensors = await Sensors.getSensorNPumpNHistory();
@@ -109,6 +109,19 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
   console.log(req.params);
   Sensors.getSensorById(id)
+    .then(sensor => {
+      if (sensor) {
+        res.status(200).json(sensor);
+      } else res.status(404).json({ message: "sensor does not exist" });
+    })
+    .catch(err => res.status(500).json(err.message));
+});
+
+//get sensor by physical_id
+router.get("/sensor_id/:id", (req, res) => {
+  const { id } = req.params;
+  console.log(req.params);
+  Sensors.getSensorBySensorId(id)
     .then(sensor => {
       if (sensor) {
         res.status(200).json(sensor);

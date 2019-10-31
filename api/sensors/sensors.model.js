@@ -47,6 +47,12 @@ function getSensorById(id) {
     .then(sensors => sensors[0]);
 }
 
+function getSensorBySensorId(id) {
+  return db("sensors")
+  .where({ physical_id: id })
+
+}
+
 function getSensorByOrgId(org_id) {
   return db("sensors")
     .join("pumps", "sensors.pump_id", "pumps.id")
@@ -86,7 +92,8 @@ module.exports = {
   deleteSensor,
   getSensorByOrgId,
   getSensorNPump,
-  getSensorNPumpNHistory
+  getSensorNPumpNHistory,
+  getSensorBySensorId
 }
 
 

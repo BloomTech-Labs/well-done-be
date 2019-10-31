@@ -21,8 +21,14 @@ let target = {
 }
 
 
+const getCurrentPumpDate = Data.pumps.filter(item => item.statuses != undefined).filter(item => item.statuses.statuses)[0].statuses.statuses.date
+console.log(getCurrentPumpDate)
+
 const seedJSONSensors = () => {
-  Data.pumps.map(data => {
+
+  
+  Data.pumps.forEach((data, idx) => {
+
     // console.log(data);
     const {
       id,
@@ -84,7 +90,7 @@ const seedJSONPumps = () => {
         }  
         // addHistory(history)
         addStatus(history)
-       } else {console.log("these are empty")}})
+       } else {console.log(`error sensor_id: ${data.id}`)}})
      };
 
 
@@ -195,6 +201,8 @@ function addSensor(sensor) {
               })
             //})
           }
+
+        
   // function addStatus (status){
   //   db.transaction(function(trx) {
   //     db.insert(status, "id").then(([id]) => {
