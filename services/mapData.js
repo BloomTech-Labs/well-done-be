@@ -151,7 +151,7 @@ const getUpdatedSensors = () => {
   });
 };
 
-getUpdatedSensors()
+// getUpdatedSensors()
 
 const getUpdatedPumps = () => {
   Data.pumps.map(data => {
@@ -174,7 +174,7 @@ const getUpdatedPumps = () => {
   });
 };
 
-getUpdatedPumps();
+// getUpdatedPumps();
 
 
 const getUpdatedHistory = () => {
@@ -193,7 +193,7 @@ const getUpdatedHistory = () => {
   };
 
 
-  getUpdatedHistory()
+  // getUpdatedHistory()
 
   function getHistoryStatuses (history){	  
     return db("history").insert(history, "id")
@@ -202,11 +202,6 @@ const getUpdatedHistory = () => {
             if (cleanData[0].statuses.statuses === undefined) {
               console.log(`no statuses associated with sensor id ${history.sensor_id}`)
             } else {
-              console.log(cleanData[0].statuses.statuses.pad_counts[0], "********0"),
-              console.log(cleanData[0].statuses.statuses.pad_counts[1], "**********1"),
-              console.log(cleanData[0].statuses.statuses.pad_counts[2], "*********2"),
-              console.log(cleanData[0].statuses.statuses.pad_counts[3], "***********3")
-             
                   const getPadCounts = () => {
                       let current = {
                         history_id: id,
@@ -233,7 +228,6 @@ const getUpdatedHistory = () => {
             getPadSeconds()
             getPadCounts()
           }
-
         }
   )
 }

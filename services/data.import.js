@@ -22,7 +22,7 @@ async function main() {
   try {
     console.log("Fetching Init")
     await cacheResource("pumps", getPumps)
-    await cacheResource("longStore", createStore)
+    // await cacheResource("longStore", createStore)
     process.exit(0)
   } catch (err) {
     console.error(err)
@@ -151,25 +151,5 @@ async function asyncForEach(array, callback) {
     await callback(array[index], index, array)
   }
 }
-
-// function setClock () {
-//   setTimeOut(() => { main()}, 2000)
-// }
-
-
-// function setClock(cb) {
-//   setTimeout(() => {
-//     cb()
-//     console.log('fetching data from set clock')
-//   }, 100)
-// }
-
-function setClock() {
-  setTimeout( function() {
-    main()
-    console.log("fetching Data");
-  }, 5000 );
-}
-
-
-setClock()
+     
+main();
