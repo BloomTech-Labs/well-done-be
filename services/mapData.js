@@ -179,17 +179,69 @@ console.log(getCurrentPumpDate)
       
 //     }
 
+// const getUpdatedSensors = () => {
+
+
+
+//   Data.pumps.forEach((data, idx) => {
+//     const sensorCheck = () => {
+//       sensorsTable()
+//       .then(res => {
+//         // console.log(res, "this is the res line 149")
+//         // const filtered = res.filter(item => item.physical_id !== data.id)
+//         //filters new fetched data
+//         console.log(res, "this is res line 193")
+//         const filtered = Data.pumps.filter(item => item.id !== res.physical_id)
+//         // console.log(filtered, "line 194 filtered")
+
+//         if (filtered.length > 0 || res.length === 0) {
+
+//         filtered.map(item => {
+//           // if (item.physical_id !== data.id) {
+//           // console.log(`${item.physical_id} and ${data.id}`)
+//           const {
+//             id,
+//             finish_construction,
+//             well_depth,
+//             yield,
+//             static,
+//           } = data;
+//           const sensor = {
+//             physical_id: id,
+//             data_finished: finish_construction,
+//             depth: well_depth,
+//             yield: yield,
+//             static: static
+//           };
+//           addSensor(sensor);
+          
+//         // } else {console.log(`${item.id} is already in database`)}});
+//       })
+//     } else {console.log(`hi!`)}});
+
+//         }
+//         sensorCheck()
+//       })
+    
+      
+//     }
+  
 const getUpdatedSensors = () => {
 
 
 
-  Data.pumps.forEach((data, idx) => {
+  // Data.pumps.forEach((data, idx) => {
     const sensorCheck = () => {
       sensorsTable()
       .then(res => {
         // console.log(res, "this is the res line 149")
-        const filtered = res.filter(item => item.physical_id === data.id)
-        if (filtered.length > 0) {
+        // const filtered = res.filter(item => item.physical_id !== data.id)
+        //filters new fetched data
+        console.log(res, "this is res line 193")
+        const filtered = Data.pumps.filter(item => item.id !== res.physical_id)
+        // console.log(filtered, "line 194 filtered")
+
+        if (filtered.length > 0 || res.length === 0) {
 
         filtered.map(item => {
           // if (item.physical_id !== data.id) {
@@ -216,12 +268,12 @@ const getUpdatedSensors = () => {
 
         }
         sensorCheck()
-      })
+      // })
     
       
     }
   
-   
+ 
 
 
 getUpdatedSensors()
