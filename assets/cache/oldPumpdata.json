@@ -1,0 +1,6115 @@
+{
+    "lastFetch": 1572548007,
+    "pumps": [
+        {
+            "id": "4715",
+            "latitude": 13.66048333,
+            "longitude": 104.0075117,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2009-01-01",
+            "well_depth": 32,
+            "yield": null,
+            "static": 3,
+            "level_dynamic": 24,
+            "status": 2,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 1342212315,
+                    "status": 2,
+                    "pad_counts": [
+                        55,
+                        54,
+                        45,
+                        9
+                    ],
+                    "pad_seconds": [
+                        6858,
+                        5833,
+                        1465,
+                        86
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 4508808552,
+                    "status": 2,
+                    "pad_counts": [
+                        43,
+                        43,
+                        38,
+                        17
+                    ],
+                    "pad_seconds": [
+                        4922,
+                        4764,
+                        1394,
+                        305
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 7198242233,
+                    "status": 2,
+                    "pad_counts": [
+                        59,
+                        56,
+                        46,
+                        18
+                    ],
+                    "pad_seconds": [
+                        7121,
+                        6102,
+                        2376,
+                        486
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 3814878209,
+                    "status": 2,
+                    "pad_counts": [
+                        51,
+                        50,
+                        42,
+                        11
+                    ],
+                    "pad_seconds": [
+                        6602,
+                        5803,
+                        1880,
+                        255
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 3603596532,
+                    "status": 2,
+                    "pad_counts": [
+                        41,
+                        41,
+                        35,
+                        8
+                    ],
+                    "pad_seconds": [
+                        5392,
+                        4935,
+                        1709,
+                        243
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 7906751292,
+                    "status": 2,
+                    "pad_counts": [
+                        52,
+                        51,
+                        43,
+                        19
+                    ],
+                    "pad_seconds": [
+                        7878,
+                        6706,
+                        2448,
+                        535
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 2541635165,
+                    "status": 2,
+                    "pad_counts": [
+                        49,
+                        48,
+                        39,
+                        10
+                    ],
+                    "pad_seconds": [
+                        7318,
+                        6054,
+                        2218,
+                        164
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 1608657750,
+                    "status": 2,
+                    "pad_counts": [
+                        127,
+                        57,
+                        46,
+                        9
+                    ],
+                    "pad_seconds": [
+                        35026,
+                        6816,
+                        2024,
+                        100
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 8643024523,
+                    "status": 2,
+                    "pad_counts": [
+                        61,
+                        60,
+                        51,
+                        27
+                    ],
+                    "pad_seconds": [
+                        9176,
+                        8398,
+                        3003,
+                        581
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 288,
+                    "total": 7198404540,
+                    "status": 2,
+                    "pad_counts": [
+                        48,
+                        48,
+                        40,
+                        17
+                    ],
+                    "pad_seconds": [
+                        5619,
+                        5660,
+                        2385,
+                        487
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 288,
+                    "total": 7753405112,
+                    "status": 2,
+                    "pad_counts": [
+                        50,
+                        52,
+                        46,
+                        22
+                    ],
+                    "pad_seconds": [
+                        5617,
+                        6150,
+                        3011,
+                        522
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 288,
+                    "total": 1463229413,
+                    "status": 2,
+                    "pad_counts": [
+                        47,
+                        41,
+                        34,
+                        7
+                    ],
+                    "pad_seconds": [
+                        5674,
+                        4206,
+                        1537,
+                        93
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 55,
+                    "total": 241637314,
+                    "status": 2,
+                    "pad_counts": [
+                        8,
+                        5,
+                        4,
+                        2
+                    ],
+                    "pad_seconds": [
+                        1431,
+                        321,
+                        118,
+                        16
+                    ],
+                    "reported_percent": 0.1909722222222222
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4716",
+            "latitude": 13.71848913,
+            "longitude": 104.0458861,
+            "village": {
+                "village": "Toul Krous",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2009-02-15",
+            "well_depth": 44,
+            "yield": 4,
+            "static": 12,
+            "level_dynamic": 24,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 3623667095,
+                    "status": 2,
+                    "pad_counts": [
+                        24,
+                        25,
+                        13,
+                        10
+                    ],
+                    "pad_seconds": [
+                        2274,
+                        2621,
+                        582,
+                        248
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 7837479571,
+                    "status": 2,
+                    "pad_counts": [
+                        33,
+                        28,
+                        23,
+                        21
+                    ],
+                    "pad_seconds": [
+                        5885,
+                        4315,
+                        2127,
+                        532
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 8026796803,
+                    "status": 2,
+                    "pad_counts": [
+                        104,
+                        48,
+                        42,
+                        21
+                    ],
+                    "pad_seconds": [
+                        24077,
+                        8078,
+                        3090,
+                        542
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 65,
+                    "total": 3959412275,
+                    "status": 2,
+                    "pad_counts": [
+                        10,
+                        10,
+                        10,
+                        9
+                    ],
+                    "pad_seconds": [
+                        1862,
+                        2348,
+                        588,
+                        272
+                    ],
+                    "reported_percent": 0.22569444444444445
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4717",
+            "latitude": 13.638061,
+            "longitude": 103.72714,
+            "village": {
+                "village": "Romeat (Trapang Svay)",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-11-22",
+            "well_depth": 47,
+            "yield": 1.1,
+            "static": 2.5,
+            "level_dynamic": 25,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 178,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.6180555555555556
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 32,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.1111111111111111
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4719",
+            "latitude": 13.644706,
+            "longitude": 103.712294,
+            "village": {
+                "village": "Sambuo",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2017-06-16",
+            "well_depth": 48,
+            "yield": 1.6,
+            "static": 3,
+            "level_dynamic": 14,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 3637201120,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        55,
+                        49,
+                        9
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        11178,
+                        6199,
+                        227
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 13646294496,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        70,
+                        31,
+                        16
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        9254,
+                        3077,
+                        937
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 8477973216,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        52,
+                        25,
+                        12
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        6448,
+                        3072,
+                        576
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 13342612192,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        72,
+                        40,
+                        22
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        10206,
+                        3941,
+                        909
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 7269797856,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        20,
+                        18,
+                        13
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        1855,
+                        980,
+                        498
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 17277671392,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        42,
+                        38,
+                        26
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        5171,
+                        3524,
+                        1187
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 9613739488,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        63,
+                        62,
+                        23
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        12604,
+                        10176,
+                        623
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 9420713184,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        45,
+                        40,
+                        25
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        4062,
+                        2530,
+                        641
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 15042940896,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        44,
+                        36,
+                        19
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        6290,
+                        3159,
+                        1034
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 50,
+                    "total": 9347325390,
+                    "status": 2,
+                    "pad_counts": [
+                        50,
+                        16,
+                        12,
+                        9
+                    ],
+                    "pad_seconds": [
+                        15000,
+                        2609,
+                        1232,
+                        646
+                    ],
+                    "reported_percent": 0.1736111111111111
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4721",
+            "latitude": 13.64786333,
+            "longitude": 103.73116,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-02-02",
+            "well_depth": 60,
+            "yield": 1,
+            "static": 7,
+            "level_dynamic": 16,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 3004048,
+                    "status": 2,
+                    "pad_counts": [
+                        12,
+                        9,
+                        2,
+                        0
+                    ],
+                    "pad_seconds": [
+                        1971,
+                        844,
+                        49,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 50781,
+                    "status": 2,
+                    "pad_counts": [
+                        4,
+                        3,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        409,
+                        231,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 770,
+                    "status": 2,
+                    "pad_counts": [
+                        1,
+                        1,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        2,
+                        3,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 27622,
+                    "status": 2,
+                    "pad_counts": [
+                        3,
+                        3,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        270,
+                        125,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 9853,
+                    "status": 2,
+                    "pad_counts": [
+                        2,
+                        2,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        147,
+                        44,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 40714580,
+                    "status": 2,
+                    "pad_counts": [
+                        70,
+                        7,
+                        4,
+                        1
+                    ],
+                    "pad_seconds": [
+                        19975,
+                        1201,
+                        122,
+                        2
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 143102,
+                    "status": 2,
+                    "pad_counts": [
+                        94,
+                        8,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        27403,
+                        546,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 109,
+                    "total": 3219199,
+                    "status": 2,
+                    "pad_counts": [
+                        12,
+                        12,
+                        2,
+                        0
+                    ],
+                    "pad_seconds": [
+                        1198,
+                        929,
+                        53,
+                        0
+                    ],
+                    "reported_percent": 0.3784722222222222
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4723",
+            "latitude": 13.38661366,
+            "longitude": 103.8736725,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-06-01",
+            "well_depth": 53,
+            "yield": 1,
+            "static": 6.5,
+            "level_dynamic": 15,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4724",
+            "latitude": 13.64882499,
+            "longitude": 103.7358017,
+            "village": {
+                "village": "Lbeuk",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-02-04",
+            "well_depth": 53,
+            "yield": 1,
+            "static": 4,
+            "level_dynamic": 17,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 287,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.9965277777777778
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 100,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.3472222222222222
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4725",
+            "latitude": 13.9946536,
+            "longitude": 103.7437508,
+            "village": {
+                "village": "Kandal",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-02-24",
+            "well_depth": 32,
+            "yield": 1.2,
+            "static": 1.7,
+            "level_dynamic": 14,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4726",
+            "latitude": 13.82670166,
+            "longitude": 103.4662067,
+            "village": {
+                "village": "Brey",
+                "commune": "Brey",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-01-01",
+            "well_depth": 42,
+            "yield": 1.05,
+            "static": 2,
+            "level_dynamic": 20,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 1001169655,
+                    "status": 2,
+                    "pad_counts": [
+                        48,
+                        46,
+                        34,
+                        6
+                    ],
+                    "pad_seconds": [
+                        5687,
+                        5571,
+                        1369,
+                        61
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 414031551,
+                    "status": 2,
+                    "pad_counts": [
+                        27,
+                        26,
+                        24,
+                        3
+                    ],
+                    "pad_seconds": [
+                        3524,
+                        3472,
+                        783,
+                        24
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 2282317208,
+                    "status": 2,
+                    "pad_counts": [
+                        31,
+                        31,
+                        20,
+                        6
+                    ],
+                    "pad_seconds": [
+                        3176,
+                        3103,
+                        591,
+                        155
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 1987434627,
+                    "status": 2,
+                    "pad_counts": [
+                        49,
+                        47,
+                        38,
+                        9
+                    ],
+                    "pad_seconds": [
+                        5553,
+                        5635,
+                        2206,
+                        126
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 850797747,
+                    "status": 2,
+                    "pad_counts": [
+                        48,
+                        49,
+                        41,
+                        4
+                    ],
+                    "pad_seconds": [
+                        4706,
+                        4221,
+                        1386,
+                        52
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 656890406,
+                    "status": 2,
+                    "pad_counts": [
+                        26,
+                        28,
+                        22,
+                        4
+                    ],
+                    "pad_seconds": [
+                        3044,
+                        3094,
+                        927,
+                        40
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 1629093121,
+                    "status": 2,
+                    "pad_counts": [
+                        50,
+                        52,
+                        38,
+                        6
+                    ],
+                    "pad_seconds": [
+                        6002,
+                        6879,
+                        2096,
+                        103
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 856234976,
+                    "status": 2,
+                    "pad_counts": [
+                        30,
+                        27,
+                        21,
+                        4
+                    ],
+                    "pad_seconds": [
+                        3260,
+                        3020,
+                        892,
+                        55
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 37,
+                    "total": 4890633923,
+                    "status": 2,
+                    "pad_counts": [
+                        16,
+                        19,
+                        16,
+                        5
+                    ],
+                    "pad_seconds": [
+                        2031,
+                        2738,
+                        1037,
+                        337
+                    ],
+                    "reported_percent": 0.1284722222222222
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4727",
+            "latitude": 13.99717773,
+            "longitude": 103.7426426,
+            "village": {
+                "village": "Kandal",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-02-22",
+            "well_depth": 32,
+            "yield": 1.2,
+            "static": 2.3,
+            "level_dynamic": 17,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4728",
+            "latitude": 13.742632,
+            "longitude": 106.980843,
+            "village": {
+                "village": "Chraneang",
+                "commune": "Sleng Spean",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-12-20",
+            "well_depth": 30,
+            "yield": 1,
+            "static": 3,
+            "level_dynamic": 21,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4729",
+            "latitude": 13.74760833,
+            "longitude": 103.5436617,
+            "village": {
+                "village": "Mongtbong",
+                "commune": "Mong",
+                "district": "Srei Snam",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2015-01-10",
+            "well_depth": 30,
+            "yield": 1.2,
+            "static": 5,
+            "level_dynamic": 12,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4734",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2016-10-17",
+            "well_depth": 47,
+            "yield": 2,
+            "static": 18,
+            "level_dynamic": 21,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4736",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Kouk (Ampil)",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-09-19",
+            "well_depth": 45,
+            "yield": 2,
+            "static": 18,
+            "level_dynamic": 24,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4738",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Phleu Thom",
+                "commune": "Ta Veaeng Leu",
+                "district": "Ta Veaeng",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-05-08",
+            "well_depth": 38,
+            "yield": 1.5,
+            "static": 15,
+            "level_dynamic": 25,
+            "status": 2,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 8289458928,
+                    "status": 2,
+                    "pad_counts": [
+                        15,
+                        14,
+                        14,
+                        14
+                    ],
+                    "pad_seconds": [
+                        2082,
+                        923,
+                        618,
+                        570
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 10108358172,
+                    "status": 2,
+                    "pad_counts": [
+                        17,
+                        16,
+                        16,
+                        16
+                    ],
+                    "pad_seconds": [
+                        2434,
+                        978,
+                        743,
+                        698
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 5281741520,
+                    "status": 2,
+                    "pad_counts": [
+                        11,
+                        10,
+                        10,
+                        10
+                    ],
+                    "pad_seconds": [
+                        2349,
+                        883,
+                        539,
+                        363
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 1859957617,
+                    "status": 2,
+                    "pad_counts": [
+                        67,
+                        3,
+                        3,
+                        3
+                    ],
+                    "pad_seconds": [
+                        19708,
+                        434,
+                        256,
+                        128
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 5660465050,
+                    "status": 2,
+                    "pad_counts": [
+                        9,
+                        8,
+                        8,
+                        8
+                    ],
+                    "pad_seconds": [
+                        1381,
+                        547,
+                        412,
+                        392
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 3402762583,
+                    "status": 2,
+                    "pad_counts": [
+                        4,
+                        4,
+                        4,
+                        4
+                    ],
+                    "pad_seconds": [
+                        702,
+                        307,
+                        245,
+                        235
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 8550265613,
+                    "status": 2,
+                    "pad_counts": [
+                        68,
+                        9,
+                        8,
+                        8
+                    ],
+                    "pad_seconds": [
+                        19287,
+                        1036,
+                        786,
+                        593
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 16022060436,
+                    "status": 2,
+                    "pad_counts": [
+                        77,
+                        16,
+                        16,
+                        15
+                    ],
+                    "pad_seconds": [
+                        21553,
+                        1486,
+                        1187,
+                        1112
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 288,
+                    "total": 9180132278,
+                    "status": 2,
+                    "pad_counts": [
+                        14,
+                        12,
+                        11,
+                        11
+                    ],
+                    "pad_seconds": [
+                        1412,
+                        801,
+                        648,
+                        637
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 288,
+                    "total": 4953807942,
+                    "status": 2,
+                    "pad_counts": [
+                        10,
+                        9,
+                        9,
+                        9
+                    ],
+                    "pad_seconds": [
+                        1283,
+                        626,
+                        376,
+                        342
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 288,
+                    "total": 10310740801,
+                    "status": 2,
+                    "pad_counts": [
+                        16,
+                        16,
+                        15,
+                        15
+                    ],
+                    "pad_seconds": [
+                        2177,
+                        1013,
+                        763,
+                        712
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 8,
+                    "total": 84281609,
+                    "status": 2,
+                    "pad_counts": [
+                        1,
+                        1,
+                        1,
+                        1
+                    ],
+                    "pad_seconds": [
+                        10,
+                        10,
+                        7,
+                        5
+                    ],
+                    "reported_percent": 0.027777777777777776
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4740",
+            "latitude": 13.87483,
+            "longitude": 107.40677,
+            "village": {
+                "village": "Tang Se Loam",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-01-01",
+            "well_depth": 39,
+            "yield": 2,
+            "static": 25,
+            "level_dynamic": 33,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        288,
+                        288,
+                        288
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        86400,
+                        86400,
+                        42912
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 618475290336,
+                    "status": 2,
+                    "pad_counts": [
+                        288,
+                        288,
+                        288,
+                        288
+                    ],
+                    "pad_seconds": [
+                        86400,
+                        86400,
+                        86400,
+                        42912
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 537189678854,
+                    "status": 2,
+                    "pad_counts": [
+                        250,
+                        250,
+                        250,
+                        251
+                    ],
+                    "pad_seconds": [
+                        75000,
+                        75000,
+                        75000,
+                        37272
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 601597411048,
+                    "status": 2,
+                    "pad_counts": [
+                        280,
+                        280,
+                        280,
+                        281
+                    ],
+                    "pad_seconds": [
+                        84000,
+                        84000,
+                        84000,
+                        41741
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 579820584690,
+                    "status": 2,
+                    "pad_counts": [
+                        270,
+                        270,
+                        270,
+                        270
+                    ],
+                    "pad_seconds": [
+                        81000,
+                        81000,
+                        81000,
+                        40230
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 58,
+                    "total": 117524398026,
+                    "status": 2,
+                    "pad_counts": [
+                        54,
+                        54,
+                        54,
+                        55
+                    ],
+                    "pad_seconds": [
+                        16200,
+                        16200,
+                        16200,
+                        8155
+                    ],
+                    "reported_percent": 0.2013888888888889
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4741",
+            "latitude": 13.794899,
+            "longitude": 107.028886,
+            "village": {
+                "village": "L'eun Chong",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2017-11-15",
+            "well_depth": 42,
+            "yield": 1.5,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 2,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 1556187645,
+                    "status": 2,
+                    "pad_counts": [
+                        52,
+                        51,
+                        38,
+                        3
+                    ],
+                    "pad_seconds": [
+                        6899,
+                        3122,
+                        501,
+                        105
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 1323857914,
+                    "status": 2,
+                    "pad_counts": [
+                        63,
+                        61,
+                        42,
+                        4
+                    ],
+                    "pad_seconds": [
+                        8399,
+                        3692,
+                        541,
+                        89
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 5562878069,
+                    "status": 2,
+                    "pad_counts": [
+                        62,
+                        61,
+                        38,
+                        6
+                    ],
+                    "pad_seconds": [
+                        7937,
+                        3488,
+                        746,
+                        385
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 1937416645,
+                    "status": 2,
+                    "pad_counts": [
+                        73,
+                        69,
+                        43,
+                        7
+                    ],
+                    "pad_seconds": [
+                        8330,
+                        3137,
+                        416,
+                        131
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 2117509475,
+                    "status": 2,
+                    "pad_counts": [
+                        62,
+                        61,
+                        45,
+                        8
+                    ],
+                    "pad_seconds": [
+                        8520,
+                        4047,
+                        630,
+                        143
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 5025918007,
+                    "status": 2,
+                    "pad_counts": [
+                        65,
+                        64,
+                        40,
+                        9
+                    ],
+                    "pad_seconds": [
+                        8466,
+                        3376,
+                        742,
+                        345
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 4495270790,
+                    "status": 2,
+                    "pad_counts": [
+                        69,
+                        67,
+                        52,
+                        12
+                    ],
+                    "pad_seconds": [
+                        9157,
+                        3969,
+                        845,
+                        308
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 4101176542,
+                    "status": 2,
+                    "pad_counts": [
+                        87,
+                        78,
+                        50,
+                        6
+                    ],
+                    "pad_seconds": [
+                        9556,
+                        3834,
+                        702,
+                        281
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 6377642775,
+                    "status": 2,
+                    "pad_counts": [
+                        66,
+                        63,
+                        43,
+                        12
+                    ],
+                    "pad_seconds": [
+                        9333,
+                        3880,
+                        909,
+                        439
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 288,
+                    "total": 2328344203,
+                    "status": 2,
+                    "pad_counts": [
+                        155,
+                        57,
+                        44,
+                        7
+                    ],
+                    "pad_seconds": [
+                        41406,
+                        3338,
+                        504,
+                        158
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 288,
+                    "total": 6674919286,
+                    "status": 2,
+                    "pad_counts": [
+                        72,
+                        70,
+                        52,
+                        11
+                    ],
+                    "pad_seconds": [
+                        9742,
+                        4506,
+                        1124,
+                        459
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 288,
+                    "total": 3261927978,
+                    "status": 2,
+                    "pad_counts": [
+                        71,
+                        70,
+                        53,
+                        9
+                    ],
+                    "pad_seconds": [
+                        8148,
+                        3568,
+                        691,
+                        221
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 288,
+                    "total": 4175447243,
+                    "status": 2,
+                    "pad_counts": [
+                        91,
+                        88,
+                        63,
+                        8
+                    ],
+                    "pad_seconds": [
+                        10739,
+                        4513,
+                        821,
+                        285
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 288,
+                    "total": 4311446574,
+                    "status": 2,
+                    "pad_counts": [
+                        61,
+                        58,
+                        34,
+                        9
+                    ],
+                    "pad_seconds": [
+                        5750,
+                        2496,
+                        573,
+                        298
+                    ],
+                    "reported_percent": 1
+                }
+            ]
+        },
+        {
+            "id": "4742",
+            "latitude": 13.68651955,
+            "longitude": 107.2160912,
+            "village": {
+                "village": "Kouk (Pouy)",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-01-01",
+            "well_depth": 60,
+            "yield": 1.5,
+            "static": 30,
+            "level_dynamic": 45,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 290979250,
+                    "status": 2,
+                    "pad_counts": [
+                        88,
+                        81,
+                        19,
+                        2
+                    ],
+                    "pad_seconds": [
+                        11919,
+                        2926,
+                        86,
+                        19
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 5858466,
+                    "status": 2,
+                    "pad_counts": [
+                        91,
+                        74,
+                        20,
+                        0
+                    ],
+                    "pad_seconds": [
+                        11894,
+                        3951,
+                        83,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 1815381907,
+                    "status": 2,
+                    "pad_counts": [
+                        105,
+                        92,
+                        32,
+                        6
+                    ],
+                    "pad_seconds": [
+                        13375,
+                        4280,
+                        333,
+                        124
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 951036491,
+                    "status": 2,
+                    "pad_counts": [
+                        89,
+                        85,
+                        24,
+                        2
+                    ],
+                    "pad_seconds": [
+                        14503,
+                        4927,
+                        177,
+                        65
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 86,
+                    "total": 1356951,
+                    "status": 2,
+                    "pad_counts": [
+                        36,
+                        28,
+                        4,
+                        0
+                    ],
+                    "pad_seconds": [
+                        3774,
+                        787,
+                        20,
+                        0
+                    ],
+                    "reported_percent": 0.2986111111111111
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4743",
+            "latitude": 13.86639,
+            "longitude": 107.055199,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-06-10",
+            "well_depth": 52,
+            "yield": 1.5,
+            "static": 26,
+            "level_dynamic": 32,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 14789330928,
+                    "status": 2,
+                    "pad_counts": [
+                        33,
+                        32,
+                        31,
+                        29
+                    ],
+                    "pad_seconds": [
+                        5088,
+                        3667,
+                        1632,
+                        1020
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 18701065625,
+                    "status": 2,
+                    "pad_counts": [
+                        93,
+                        47,
+                        42,
+                        35
+                    ],
+                    "pad_seconds": [
+                        23960,
+                        3987,
+                        1973,
+                        1286
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 13432277856,
+                    "status": 2,
+                    "pad_counts": [
+                        118,
+                        28,
+                        25,
+                        22
+                    ],
+                    "pad_seconds": [
+                        32632,
+                        2658,
+                        1370,
+                        927
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 16636109310,
+                    "status": 2,
+                    "pad_counts": [
+                        130,
+                        42,
+                        40,
+                        35
+                    ],
+                    "pad_seconds": [
+                        36736,
+                        4019,
+                        2251,
+                        1141
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 72,
+                    "total": 4533663064,
+                    "status": 2,
+                    "pad_counts": [
+                        7,
+                        7,
+                        6,
+                        5
+                    ],
+                    "pad_seconds": [
+                        703,
+                        659,
+                        365,
+                        314
+                    ],
+                    "reported_percent": 0.25
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4746",
+            "latitude": 13.865388,
+            "longitude": 107.066529,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-06-20",
+            "well_depth": 56,
+            "yield": 2,
+            "static": 26,
+            "level_dynamic": 31,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 1721056168,
+                    "status": 2,
+                    "pad_counts": [
+                        69,
+                        67,
+                        54,
+                        11
+                    ],
+                    "pad_seconds": [
+                        6793,
+                        3627,
+                        741,
+                        113
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 2245543955,
+                    "status": 2,
+                    "pad_counts": [
+                        57,
+                        52,
+                        39,
+                        13
+                    ],
+                    "pad_seconds": [
+                        6623,
+                        3350,
+                        825,
+                        148
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 1905637401,
+                    "status": 2,
+                    "pad_counts": [
+                        82,
+                        71,
+                        61,
+                        8
+                    ],
+                    "pad_seconds": [
+                        8119,
+                        2862,
+                        740,
+                        128
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 883267402,
+                    "status": 2,
+                    "pad_counts": [
+                        71,
+                        68,
+                        48,
+                        10
+                    ],
+                    "pad_seconds": [
+                        5479,
+                        2532,
+                        464,
+                        56
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 77,
+                    "total": 334895,
+                    "status": 2,
+                    "pad_counts": [
+                        1,
+                        1,
+                        1,
+                        0
+                    ],
+                    "pad_seconds": [
+                        55,
+                        32,
+                        5,
+                        0
+                    ],
+                    "reported_percent": 0.2673611111111111
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4747",
+            "latitude": 13.750234,
+            "longitude": 106.94527,
+            "village": {
+                "village": "Cha Ungchan",
+                "commune": "Cha Ung",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-01-01",
+            "well_depth": 40,
+            "yield": 1.5,
+            "static": 16,
+            "level_dynamic": 22,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4749",
+            "latitude": 13.78178833,
+            "longitude": 107.0310667,
+            "village": {
+                "village": "L'eun Kraen",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2002-01-01",
+            "well_depth": 70,
+            "yield": 1.5,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 92,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.3194444444444444
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4750",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "L'eun Kraen",
+                "commune": "Ou Chum",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2017-01-01",
+            "well_depth": 60,
+            "yield": 2,
+            "static": 25,
+            "level_dynamic": 35,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 4309087939,
+                    "status": 2,
+                    "pad_counts": [
+                        49,
+                        46,
+                        44,
+                        25
+                    ],
+                    "pad_seconds": [
+                        5629,
+                        2507,
+                        1129,
+                        286
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 7433309480,
+                    "status": 2,
+                    "pad_counts": [
+                        62,
+                        59,
+                        53,
+                        36
+                    ],
+                    "pad_seconds": [
+                        6344,
+                        2751,
+                        1483,
+                        500
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 800649315,
+                    "status": 2,
+                    "pad_counts": [
+                        33,
+                        31,
+                        23,
+                        7
+                    ],
+                    "pad_seconds": [
+                        3712,
+                        1460,
+                        502,
+                        51
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 4429289499,
+                    "status": 2,
+                    "pad_counts": [
+                        38,
+                        37,
+                        31,
+                        20
+                    ],
+                    "pad_seconds": [
+                        4533,
+                        1952,
+                        884,
+                        300
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 92,
+                    "total": 112537458,
+                    "status": 2,
+                    "pad_counts": [
+                        3,
+                        3,
+                        3,
+                        3
+                    ],
+                    "pad_seconds": [
+                        434,
+                        354,
+                        211,
+                        6
+                    ],
+                    "reported_percent": 0.3194444444444444
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4754",
+            "latitude": 13.986311,
+            "longitude": 107.34607,
+            "village": {
+                "village": "Tang Se Loam",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-01-01",
+            "well_depth": 45,
+            "yield": 2,
+            "static": 28,
+            "level_dynamic": 35,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 23606,
+                    "status": 2,
+                    "pad_counts": [
+                        12,
+                        9,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        1264,
+                        100,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 1669893,
+                    "status": 2,
+                    "pad_counts": [
+                        21,
+                        18,
+                        5,
+                        0
+                    ],
+                    "pad_seconds": [
+                        1802,
+                        431,
+                        26,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 18561,
+                    "status": 2,
+                    "pad_counts": [
+                        2,
+                        2,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        150,
+                        83,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 118300151,
+                    "status": 2,
+                    "pad_counts": [
+                        8,
+                        7,
+                        3,
+                        2
+                    ],
+                    "pad_seconds": [
+                        588,
+                        331,
+                        13,
+                        8
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 57,
+                    "total": 33833526,
+                    "status": 2,
+                    "pad_counts": [
+                        7,
+                        7,
+                        1,
+                        1
+                    ],
+                    "pad_seconds": [
+                        361,
+                        74,
+                        4,
+                        2
+                    ],
+                    "reported_percent": 0.19791666666666666
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4755",
+            "latitude": 13.68651955,
+            "longitude": 107.2160912,
+            "village": {
+                "village": "Ki Koung",
+                "commune": "Ta Veaeng Leu",
+                "district": "Ta Veaeng",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2018-05-24",
+            "well_depth": 31,
+            "yield": 5,
+            "static": 5,
+            "level_dynamic": 11,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 39029811725,
+                    "status": 2,
+                    "pad_counts": [
+                        42,
+                        42,
+                        40,
+                        39
+                    ],
+                    "pad_seconds": [
+                        6625,
+                        5576,
+                        4284,
+                        2701
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 18833210722,
+                    "status": 2,
+                    "pad_counts": [
+                        34,
+                        33,
+                        29,
+                        25
+                    ],
+                    "pad_seconds": [
+                        4617,
+                        2974,
+                        2851,
+                        1297
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 6959633077,
+                    "status": 2,
+                    "pad_counts": [
+                        9,
+                        9,
+                        8,
+                        6
+                    ],
+                    "pad_seconds": [
+                        1415,
+                        1068,
+                        844,
+                        482
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 10033645061,
+                    "status": 2,
+                    "pad_counts": [
+                        16,
+                        16,
+                        16,
+                        16
+                    ],
+                    "pad_seconds": [
+                        1806,
+                        1270,
+                        904,
+                        692
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 40,
+                    "total": 0,
+                    "status": 0,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0.1388888888888889
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4760",
+            "latitude": 13.74180294,
+            "longitude": 106.9793701,
+            "village": {
+                "village": "Ta Nga",
+                "commune": "Nhang",
+                "district": "Andoung Meas",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2015-06-06",
+            "well_depth": 30,
+            "yield": 3,
+            "static": 5,
+            "level_dynamic": 10,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "4761",
+            "latitude": 13.644723,
+            "longitude": 103.712812,
+            "village": {
+                "village": "Sambuo",
+                "commune": "Nokorpheas",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-01-29",
+            "well_depth": 40,
+            "yield": 1.5,
+            "static": 7,
+            "level_dynamic": 16,
+            "status": 0,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 199345111748,
+                    "status": 2,
+                    "pad_counts": [
+                        166,
+                        125,
+                        123,
+                        122
+                    ],
+                    "pad_seconds": [
+                        49321,
+                        26283,
+                        23329,
+                        13830
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 187166840595,
+                    "status": 2,
+                    "pad_counts": [
+                        156,
+                        133,
+                        126,
+                        126
+                    ],
+                    "pad_seconds": [
+                        43079,
+                        25801,
+                        21252,
+                        12986
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 193952887831,
+                    "status": 2,
+                    "pad_counts": [
+                        177,
+                        125,
+                        123,
+                        122
+                    ],
+                    "pad_seconds": [
+                        52427,
+                        25425,
+                        22605,
+                        13459
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 209199607510,
+                    "status": 2,
+                    "pad_counts": [
+                        170,
+                        139,
+                        137,
+                        135
+                    ],
+                    "pad_seconds": [
+                        44504,
+                        27399,
+                        24028,
+                        14515
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 232474654086,
+                    "status": 2,
+                    "pad_counts": [
+                        213,
+                        153,
+                        149,
+                        147
+                    ],
+                    "pad_seconds": [
+                        62498,
+                        30352,
+                        27420,
+                        16125
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 137925673404,
+                    "status": 2,
+                    "pad_counts": [
+                        167,
+                        101,
+                        111,
+                        99
+                    ],
+                    "pad_seconds": [
+                        49006,
+                        16560,
+                        17673,
+                        9555
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 217572684449,
+                    "status": 2,
+                    "pad_counts": [
+                        227,
+                        131,
+                        129,
+                        129
+                    ],
+                    "pad_seconds": [
+                        67351,
+                        28828,
+                        26161,
+                        15096
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 151216227365,
+                    "status": 2,
+                    "pad_counts": [
+                        170,
+                        114,
+                        112,
+                        111
+                    ],
+                    "pad_seconds": [
+                        49433,
+                        18296,
+                        16210,
+                        10489
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 186718911718,
+                    "status": 2,
+                    "pad_counts": [
+                        174,
+                        130,
+                        125,
+                        124
+                    ],
+                    "pad_seconds": [
+                        50258,
+                        25818,
+                        20737,
+                        12957
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 58,
+                    "total": 40891065030,
+                    "status": 2,
+                    "pad_counts": [
+                        58,
+                        37,
+                        36,
+                        35
+                    ],
+                    "pad_seconds": [
+                        17400,
+                        5076,
+                        4272,
+                        2835
+                    ],
+                    "reported_percent": 0.2013888888888889
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            ]
+        },
+        {
+            "id": "4762",
+            "latitude": 13.8653917,
+            "longitude": 107.0437533,
+            "village": {
+                "village": "L'ak",
+                "commune": "L'ak",
+                "district": "Ou Chum",
+                "province": "Ratanak Kiri"
+            },
+            "finish_construction": "2014-06-10",
+            "well_depth": 34,
+            "yield": 2,
+            "static": 16,
+            "level_dynamic": 22,
+            "status": 2,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 6,
+                    "total": 3929874682,
+                    "status": 2,
+                    "pad_counts": [
+                        6,
+                        6,
+                        6,
+                        6
+                    ],
+                    "pad_seconds": [
+                        1800,
+                        1235,
+                        666,
+                        269
+                    ],
+                    "reported_percent": 0.020833333333333332
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 160,
+                    "total": 4377222051,
+                    "status": 2,
+                    "pad_counts": [
+                        66,
+                        24,
+                        22,
+                        17
+                    ],
+                    "pad_seconds": [
+                        19163,
+                        1752,
+                        858,
+                        298
+                    ],
+                    "reported_percent": 0.5555555555555556
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 3942860088,
+                    "status": 2,
+                    "pad_counts": [
+                        204,
+                        67,
+                        55,
+                        28
+                    ],
+                    "pad_seconds": [
+                        60600,
+                        5535,
+                        2064,
+                        257
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 14020996476,
+                    "status": 2,
+                    "pad_counts": [
+                        188,
+                        75,
+                        62,
+                        43
+                    ],
+                    "pad_seconds": [
+                        56163,
+                        6801,
+                        3170,
+                        952
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 6561576672,
+                    "status": 2,
+                    "pad_counts": [
+                        211,
+                        64,
+                        54,
+                        30
+                    ],
+                    "pad_seconds": [
+                        63209,
+                        5660,
+                        2392,
+                        439
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 7240479066,
+                    "status": 2,
+                    "pad_counts": [
+                        204,
+                        90,
+                        70,
+                        37
+                    ],
+                    "pad_seconds": [
+                        60943,
+                        6631,
+                        2822,
+                        482
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 9550310746,
+                    "status": 2,
+                    "pad_counts": [
+                        184,
+                        82,
+                        70,
+                        34
+                    ],
+                    "pad_seconds": [
+                        54316,
+                        6122,
+                        2727,
+                        644
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 4721522418,
+                    "status": 2,
+                    "pad_counts": [
+                        199,
+                        83,
+                        75,
+                        38
+                    ],
+                    "pad_seconds": [
+                        59314,
+                        6266,
+                        2777,
+                        305
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 288,
+                    "total": 7869298561,
+                    "status": 2,
+                    "pad_counts": [
+                        203,
+                        68,
+                        55,
+                        32
+                    ],
+                    "pad_seconds": [
+                        60687,
+                        5443,
+                        2377,
+                        528
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 288,
+                    "total": 13872262127,
+                    "status": 2,
+                    "pad_counts": [
+                        208,
+                        107,
+                        95,
+                        58
+                    ],
+                    "pad_seconds": [
+                        61718,
+                        8720,
+                        4398,
+                        930
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 288,
+                    "total": 6059200686,
+                    "status": 2,
+                    "pad_counts": [
+                        200,
+                        73,
+                        59,
+                        23
+                    ],
+                    "pad_seconds": [
+                        59534,
+                        5776,
+                        2405,
+                        407
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 288,
+                    "total": 6503707542,
+                    "status": 2,
+                    "pad_counts": [
+                        200,
+                        95,
+                        87,
+                        39
+                    ],
+                    "pad_seconds": [
+                        59507,
+                        8666,
+                        3433,
+                        424
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 288,
+                    "total": 11239098680,
+                    "status": 2,
+                    "pad_counts": [
+                        170,
+                        79,
+                        73,
+                        40
+                    ],
+                    "pad_seconds": [
+                        50663,
+                        6705,
+                        3224,
+                        756
+                    ],
+                    "reported_percent": 1
+                }
+            ]
+        },
+        {
+            "id": "4763",
+            "latitude": 13.66288,
+            "longitude": 104.0218467,
+            "village": {
+                "village": "Khnar Rungvas",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-12-08",
+            "well_depth": 32,
+            "yield": 1,
+            "static": 2,
+            "level_dynamic": 20,
+            "status": 2,
+            "statuses": [
+                {
+                    "date": "Thu Oct 17 2019",
+                    "count": 288,
+                    "total": 18526613,
+                    "status": 2,
+                    "pad_counts": [
+                        56,
+                        54,
+                        31,
+                        0
+                    ],
+                    "pad_seconds": [
+                        4062,
+                        2278,
+                        309,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 18 2019",
+                    "count": 288,
+                    "total": 36060989,
+                    "status": 2,
+                    "pad_counts": [
+                        42,
+                        40,
+                        27,
+                        0
+                    ],
+                    "pad_seconds": [
+                        3667,
+                        2447,
+                        625,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 19 2019",
+                    "count": 288,
+                    "total": 33910053,
+                    "status": 2,
+                    "pad_counts": [
+                        65,
+                        64,
+                        42,
+                        0
+                    ],
+                    "pad_seconds": [
+                        5436,
+                        3689,
+                        575,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 20 2019",
+                    "count": 288,
+                    "total": 47729103,
+                    "status": 2,
+                    "pad_counts": [
+                        52,
+                        50,
+                        24,
+                        2
+                    ],
+                    "pad_seconds": [
+                        3831,
+                        2459,
+                        234,
+                        2
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 21 2019",
+                    "count": 288,
+                    "total": 51256268,
+                    "status": 2,
+                    "pad_counts": [
+                        61,
+                        54,
+                        41,
+                        1
+                    ],
+                    "pad_seconds": [
+                        5334,
+                        3301,
+                        587,
+                        1
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 22 2019",
+                    "count": 288,
+                    "total": 35819242,
+                    "status": 2,
+                    "pad_counts": [
+                        76,
+                        72,
+                        49,
+                        0
+                    ],
+                    "pad_seconds": [
+                        5362,
+                        3723,
+                        607,
+                        0
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 23 2019",
+                    "count": 288,
+                    "total": 218469311,
+                    "status": 2,
+                    "pad_counts": [
+                        65,
+                        64,
+                        42,
+                        5
+                    ],
+                    "pad_seconds": [
+                        4712,
+                        3439,
+                        576,
+                        11
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Thu Oct 24 2019",
+                    "count": 288,
+                    "total": 158886265,
+                    "status": 2,
+                    "pad_counts": [
+                        48,
+                        45,
+                        30,
+                        2
+                    ],
+                    "pad_seconds": [
+                        3432,
+                        2195,
+                        423,
+                        9
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Fri Oct 25 2019",
+                    "count": 288,
+                    "total": 112056113,
+                    "status": 2,
+                    "pad_counts": [
+                        50,
+                        49,
+                        34,
+                        3
+                    ],
+                    "pad_seconds": [
+                        4549,
+                        2922,
+                        478,
+                        5
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sat Oct 26 2019",
+                    "count": 288,
+                    "total": 100388858,
+                    "status": 2,
+                    "pad_counts": [
+                        42,
+                        41,
+                        27,
+                        3
+                    ],
+                    "pad_seconds": [
+                        3586,
+                        2618,
+                        573,
+                        4
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Sun Oct 27 2019",
+                    "count": 288,
+                    "total": 59947891,
+                    "status": 2,
+                    "pad_counts": [
+                        57,
+                        53,
+                        31,
+                        1
+                    ],
+                    "pad_seconds": [
+                        5230,
+                        2886,
+                        447,
+                        2
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Mon Oct 28 2019",
+                    "count": 288,
+                    "total": 204040727,
+                    "status": 2,
+                    "pad_counts": [
+                        42,
+                        40,
+                        26,
+                        2
+                    ],
+                    "pad_seconds": [
+                        3924,
+                        2497,
+                        327,
+                        12
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Tue Oct 29 2019",
+                    "count": 288,
+                    "total": 128516989,
+                    "status": 2,
+                    "pad_counts": [
+                        39,
+                        33,
+                        20,
+                        3
+                    ],
+                    "pad_seconds": [
+                        2537,
+                        1483,
+                        186,
+                        7
+                    ],
+                    "reported_percent": 1
+                },
+                {
+                    "date": "Wed Oct 30 2019",
+                    "count": 288,
+                    "total": 105200611,
+                    "status": 2,
+                    "pad_counts": [
+                        42,
+                        40,
+                        26,
+                        2
+                    ],
+                    "pad_seconds": [
+                        4463,
+                        1842,
+                        363,
+                        5
+                    ],
+                    "reported_percent": 1
+                }
+            ]
+        },
+        {
+            "id": "4764",
+            "latitude": 13.66423349,
+            "longitude": 104.0051294,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-01-01",
+            "well_depth": 33,
+            "yield": 1.5,
+            "static": 3,
+            "level_dynamic": 18,
+            "status": 1,
+            "dates": 0,
+            "statuses": {
+                "statuses": {
+                    "date": "Date",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
+                    "pad_counts": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "pad_seconds": [
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    "reported_percent": 0
+                }
+            }
+        },
+        {
+            "id": "7418",
+            "latitude": 13.74755566,
+            "longitude": 106.9771385,
+            "village": {
+                "village": "Kok Yeang",
+                "commune": "Don Peng",
+                "district": "Angkor Chum",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2018-01-27",
+            "well_depth": 32,
+            "yield": 1,
+            "static": 1.6,
+            "level_dynamic": 14,
+            "status": 0,
+            "dates": 0,
+            "statuses": 0,
+            "error": "500"
+        }
+    ]
+}

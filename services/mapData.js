@@ -126,35 +126,66 @@ function addSensor(sensor) {
    
   }
 
+function pumpsTable() {
+  return db("pumps")
+}
+
+function sensorsTable() {
+  return db("sensors")
+}
+
 //gets current date
 const getCurrentPumpDate = Data.pumps.filter(item => item.statuses != undefined).filter(item => item.statuses.statuses)[0].statuses.statuses.date
 console.log(getCurrentPumpDate)
 
 const getUpdatedSensors = () => {
 
-  Data.pumps.forEach((data, idx) => {
-    const {
-      id,
-      finish_construction,
-      well_depth,
-      yield,
-      static,
-    } = data;
-    const sensor = {
-      physical_id: id,
-      data_finished: finish_construction,
-      depth: well_depth,
-      yield: yield,
-      static: static
-    };
-    addSensor(sensor);
-  });
-};
 
-// getUpdatedSensors()
+
+  Data.pumps.forEach((data, idx) => {
+    const sensorCheck = () => {
+      sensorsTable()
+      .then(res => {
+        // console.log(res, "this is the res line 149")
+      res.map(item => {
+        if (item.physical_id !== data.id) {
+          console.log(`${item.physical_id} and ${data.id}`)
+          const {
+            id,
+            finish_construction,
+            well_depth,
+            yield,
+            static,
+          } = data;
+          const sensor = {
+            physical_id: id,
+            data_finished: finish_construction,
+            depth: well_depth,
+            yield: yield,
+            static: static
+          };
+          addSensor(sensor);
+        } else {console.log(`${item.id} is already in database`)}});
+      })
+        }
+        sensorCheck()
+      })
+    
+      
+    }
+  
+   
+
+
+getUpdatedSensors()
 
 const getUpdatedPumps = () => {
   Data.pumps.map(data => {
+    const pumpCheck = () => {
+      pumpsTable()
+      const pumpFilter = pumpCheck.map(item => {
+        if (item.id !== data.id) {
+    
     const {
       id,
       latitude,
@@ -171,10 +202,13 @@ const getUpdatedPumps = () => {
       province_name: province
     };
     addPump(pump);
-  });
-};
+  } else {console.log(`${item.id} is already in database`)}});
+        
+}
+})
+}
 
-// getUpdatedPumps();
+getUpdatedPumps();
 
 
 const getUpdatedHistory = () => {
@@ -214,16 +248,16 @@ const getUpdatedHistory = () => {
                       addPadCounts(current)
                
                       }	
-            const getPadSeconds = () => {
-                let current = {
-                  history_id: id,
-                  seconds_0: cleanData[0].statuses.statuses.pad_seconds[0],
-                  seconds_1: cleanData[0].statuses.statuses.pad_seconds[1],
-                  seconds_2: cleanData[0].statuses.statuses.pad_seconds[2],
-                  seconds_3: cleanData[0].statuses.statuses.pad_seconds[3]
-                }
-            
-                addPadSeconds(current)
+                  const getPadSeconds = () => {
+                      let current = {
+                        history_id: id,
+                        seconds_0: cleanData[0].statuses.statuses.pad_seconds[0],
+                        seconds_1: cleanData[0].statuses.statuses.pad_seconds[1],
+                        seconds_2: cleanData[0].statuses.statuses.pad_seconds[2],
+                        seconds_3: cleanData[0].statuses.statuses.pad_seconds[3]
+                      }
+                  
+                      addPadSeconds(current)
             } 
             getPadSeconds()
             getPadCounts()

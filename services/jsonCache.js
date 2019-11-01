@@ -152,17 +152,6 @@ async function asyncForEach(array, callback) {
   }
 }
 
-// function setClock () {
-//   setTimeOut(() => { main()}, 2000)
-// }
-
-
-// function setClock(cb) {
-//   setTimeout(() => {
-//     cb()
-//     console.log('fetching data from set clock')
-//   }, 100)
-// }
 
 function setClock() {
   setTimeout( function() {
