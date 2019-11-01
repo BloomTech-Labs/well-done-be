@@ -195,60 +195,105 @@ const getUpdatedHistory = () => {
 
   getUpdatedHistory()
 
-  async function getHistoryStatuses (history){	  
+  function getHistoryStatuses (history){	  
     return db("history").insert(history, "id")
-      .then(([id]) => {	
-      const getPadCounts = Data.pumps.forEach((data, idx) => {
-          if (data.id === history.sensor_id) {
- //get just the history that matches the history that needs to have statuses added:           
+      .then(([id]) => {	         
             const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)
-      //only add statuses to histories that don't contain an empty statuses object: 
             if (cleanData[0].statuses.statuses === undefined) {
               console.log(`no statuses associated with sensor id ${history.sensor_id}`)
             } else {
-              let count1 = 0
-              let count2 = 0        
-                  const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(item => {
-                    if(count1 === 0) {
+              console.log(cleanData[0].statuses.statuses.pad_counts[0], "********0"),
+              console.log(cleanData[0].statuses.statuses.pad_counts[1], "**********1"),
+              console.log(cleanData[0].statuses.statuses.pad_counts[2], "*********2"),
+              console.log(cleanData[0].statuses.statuses.pad_counts[3], "***********3")
+             
+                  const getPadCounts = () => {
                       let current = {
                         history_id: id,
-                        [`count_${count1}`]: null ? item : item,
+                        count_0: cleanData[0].statuses.statuses.pad_counts[0],
+                        count_1: cleanData[0].statuses.statuses.pad_counts[1],
+                        count_2: cleanData[0].statuses.statuses.pad_counts[2],
+                        count_3: cleanData[0].statuses.statuses.pad_counts[3]
                       }
-                      count1++
+                     
                       addPadCounts(current)
-                  } else if (count1 < 4) {
-                    let current = {
-                        history_id: id,
-                        [`count_${count1}`]: null ? item : item,
-                      }
-                      count1++
-                      updatePadCounts(current, id)
-                  } 
-                      else {
-                        count1 = 0
-                      }})	
-            const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
-              if(count2 === 0) {
+               
+                      }	
+            const getPadSeconds = () => {
                 let current = {
                   history_id: id,
-                  [`seconds_${count2}`]: null ? item : item,
+                  seconds_0: cleanData[0].statuses.statuses.pad_seconds[0],
+                  seconds_1: cleanData[0].statuses.statuses.pad_seconds[1],
+                  seconds_2: cleanData[0].statuses.statuses.pad_seconds[2],
+                  seconds_3: cleanData[0].statuses.statuses.pad_seconds[3]
                 }
-                count2++
+            
                 addPadSeconds(current)
-            } else if (count2 < 4) {
-              let current = {
-                  history_id: id,
-                  [`seconds_${count2}`]: null ? item : item,
-                }
-                count2++
-                updatePadSeconds(current, id)
             } 
-                else {
-                  count2 = 0
-                }})	
-      }}})
-    })
+            getPadSeconds()
+            getPadCounts()
+          }
+
+        }
+  )
 }
+
+
+
+//   function getHistoryStatuses (history){	  
+//     return db("history").insert(history, "id")
+//       .then(([id]) => {	
+//       const getPadCounts = Data.pumps.forEach((data, idx) => {
+//           if (data.id === history.sensor_id) {
+//  //get just the history that matches the history that needs to have statuses added:           
+//             const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)
+//       //only add statuses to histories that don't contain an empty statuses object: 
+//             if (cleanData[0].statuses.statuses === undefined) {
+//               console.log(`no statuses associated with sensor id ${history.sensor_id}`)
+//             } else {
+//               let count1 = 0
+//               let count2 = 0        
+//                   const getPadCounts = cleanData[0].statuses.statuses.pad_counts.map(item => {
+//                     if(count1 === 0) {
+//                       let current = {
+//                         history_id: id,
+//                         [`count_${count1}`]: null ? item : item,
+//                       }
+//                       count1++
+//                       addPadCounts(current)
+//                   } else if (count1 < 4) {
+//                     let current = {
+//                         history_id: id,
+//                         [`count_${count1}`]: null ? item : item,
+//                       }
+//                       count1++
+//                       updatePadCounts(current, id)
+//                   } 
+//                       else {
+//                         count1 = 0
+//                       }})	
+//             const getPadSeconds = cleanData[0].statuses.statuses.pad_seconds.map(item => {
+//               if(count2 === 0) {
+//                 let current = {
+//                   history_id: id,
+//                   [`seconds_${count2}`]: null ? item : item,
+//                 }
+//                 count2++
+//                 addPadSeconds(current)
+//             } else if (count2 < 4) {
+//               let current = {
+//                   history_id: id,
+//                   [`seconds_${count2}`]: null ? item : item,
+//                 }
+//                 count2++
+//                 updatePadSeconds(current, id)
+//             } 
+//                 else {
+//                   count2 = 0
+//                 }})	
+//       }}})
+//     })
+// }
 
 module.exports = getUpdatedPumps, getUpdatedSensors, getUpdatedHistory;
 
