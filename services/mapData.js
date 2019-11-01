@@ -138,6 +138,47 @@ function sensorsTable() {
 const getCurrentPumpDate = Data.pumps.filter(item => item.statuses != undefined).filter(item => item.statuses.statuses)[0].statuses.statuses.date
 console.log(getCurrentPumpDate)
 
+// const getUpdatedSensors = () => {
+
+
+
+//   Data.pumps.forEach((data, idx) => {
+//     const sensorCheck = () => {
+//       sensorsTable()
+//       .then(res => {
+//         // console.log(res, "this is the res line 149")
+//         if (res.physical_id !== data.id) {
+
+//         res.map(item => {
+//           // if (item.physical_id !== data.id) {
+//           console.log(`${item.physical_id} and ${data.id}`)
+//           const {
+//             id,
+//             finish_construction,
+//             well_depth,
+//             yield,
+//             static,
+//           } = data;
+//           const sensor = {
+//             physical_id: id,
+//             data_finished: finish_construction,
+//             depth: well_depth,
+//             yield: yield,
+//             static: static
+//           };
+//           addSensor(sensor);
+          
+//         // } else {console.log(`${item.id} is already in database`)}});
+//       })
+//     } else {console.log(`${item.id} is already in database`)}});
+
+//         }
+//         sensorCheck()
+//       })
+    
+      
+//     }
+
 const getUpdatedSensors = () => {
 
 
@@ -147,9 +188,12 @@ const getUpdatedSensors = () => {
       sensorsTable()
       .then(res => {
         // console.log(res, "this is the res line 149")
-      res.map(item => {
-        if (item.physical_id !== data.id) {
-          console.log(`${item.physical_id} and ${data.id}`)
+        const filtered = res.filter(item => item.physical_id === data.id)
+        if (filtered.length > 0) {
+
+        filtered.map(item => {
+          // if (item.physical_id !== data.id) {
+          // console.log(`${item.physical_id} and ${data.id}`)
           const {
             id,
             finish_construction,
@@ -165,8 +209,11 @@ const getUpdatedSensors = () => {
             static: static
           };
           addSensor(sensor);
-        } else {console.log(`${item.id} is already in database`)}});
+          
+        // } else {console.log(`${item.id} is already in database`)}});
       })
+    } else {console.log(`hi!`)}});
+
         }
         sensorCheck()
       })
@@ -208,7 +255,7 @@ const getUpdatedPumps = () => {
 })
 }
 
-getUpdatedPumps();
+// getUpdatedPumps();
 
 
 const getUpdatedHistory = () => {
