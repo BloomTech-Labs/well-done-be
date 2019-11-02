@@ -2,6 +2,9 @@ const fs = require("fs")
 const axios = require("axios")
 const prismic = require("./prismicData")
 const moment = require("moment")
+// const { getUpdatedPumps, getUpdatedSensors, getUpdatedHistory  } = require('./mapData')
+// const getUpdatedPumps = require('./mapData')
+const router = require("express").Router();
 
 async function cacheResource(resourceName, resourceLoader) {
   const resource = await resourceLoader()
@@ -155,10 +158,16 @@ async function asyncForEach(array, callback) {
 
 function setClock() {
   setTimeout( function() {
-    main()
+    main();
+    // getUpdatedPumps();
+    // getUpdatedSensors();
+    // getUpdatedHistory();
+    // console.log(typeof getUpdatedPumps, "this is type of getUpdatedPumps")
     console.log("fetching Data");
   }, 5000 );
 }
 
 
 setClock()
+
+
