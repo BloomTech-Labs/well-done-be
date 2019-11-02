@@ -142,42 +142,6 @@ console.log(getCurrentPumpDate)
 
 
 
-//   Data.pumps.forEach((data, idx) => {
-//     const sensorCheck = () => {
-//       sensorsTable()
-//       .then(res => {
-//         // console.log(res, "this is the res line 149")
-//         if (res.physical_id !== data.id) {
-
-//         res.map(item => {
-//           // if (item.physical_id !== data.id) {
-//           console.log(`${item.physical_id} and ${data.id}`)
-//           const {
-//             id,
-//             finish_construction,
-//             well_depth,
-//             yield,
-//             static,
-//           } = data;
-//           const sensor = {
-//             physical_id: id,
-//             data_finished: finish_construction,
-//             depth: well_depth,
-//             yield: yield,
-//             static: static
-//           };
-//           addSensor(sensor);
-          
-//         // } else {console.log(`${item.id} is already in database`)}});
-//       })
-//     } else {console.log(`${item.id} is already in database`)}});
-
-//         }
-//         sensorCheck()
-//       })
-    
-      
-//     }
 
 // const getUpdatedSensors = () => {
 
@@ -275,22 +239,11 @@ console.log(getCurrentPumpDate)
   
  
 const getUpdatedSensors = () => {
-
-
-
-  // Data.pumps.forEach((data, idx) => {
     const sensorCheck = () => {
       sensorsTable()
       .then(res => {
-        // console.log(res, "this is the res line 149")
-        // const filtered = res.filter(item => item.physical_id !== data.id)
-        //filters new fetched data
-        console.log(res, "this is res line 193")
         if (res.length === 0) {
           Data.pumps.forEach((data, idx) => {
-           
-              // if (item.physical_id !== data.id) {
-              // console.log(`${item.physical_id} and ${data.id}`)
               const {
                 id,
                 finish_construction,
@@ -306,17 +259,31 @@ const getUpdatedSensors = () => {
                 static: static
               };
               addSensor(sensor);
-              
-            // } else {console.log(`${item.id} is already in database`)}});
           })
         } else if (res.length > 0) {
-          console.log(res.length, "this is length 313")
-          const filtered = Data.pumps.filter(item => item.id !== res.physical_id)
-          console.log(filtered, "line 314")
+          
+          const current = res.map(item => item.physical_id)
+          const incoming = Data.pumps.map(item => Number(item.id))
+
+          console.log(current.length, "this is current")
+          console.log(incoming.length, "this is incoming")
+          console.log(current, "this is current")
+          console.log(incoming, "this is incoming")
+
+      let filtered = incoming.filter(item => !current.includes(item))
+      let mapped = incoming.map(item => console.log(typeof item, "incoming"))
+      let mapped1 = current.map(item => console.log(typeof item, "current"))
+
+
+      let arr = [1, 2, 3, 4]
+      let arr2 = [1, 4, 5, 6]
+      let filtered2 = arr.filter(item => !arr2.includes(item))
+
+          console.log(filtered.length, "this is filtered")
+          console.log(filtered2, "this is filtered2 test")
+
+          // filtered ?
           filtered.map(data => {
-            console.log("line 316**********")
-            // if (item.physical_id !== data.id) {
-            // console.log(`${item.physical_id} and ${data.id}`)
             const {
               id,
               finish_construction,
@@ -333,19 +300,22 @@ const getUpdatedSensors = () => {
             };
             addSensor(sensor);
             
-          // } else {console.log(`${item.id} is already in database`)}});
+        // }) : console.log("filtered is undefined")
         })
-        }})
+      }
+      })
         
-    } 
-    sensorCheck()
-  }
      
-
+    
+  }
+  sensorCheck() 
+}
   
  
 
 getUpdatedSensors()
+
+
 
 const getUpdatedPumps = () => {
   Data.pumps.map(data => {
@@ -523,3 +493,119 @@ module.exports = getUpdatedPumps, getUpdatedSensors, getUpdatedHistory;
 
  
         
+  // const getUpdatedSensors = () => {
+
+
+
+  //   // Data.pumps.forEach((data, idx) => {
+  //     const sensorCheck = () => {
+  //       sensorsTable()
+  //       .then(res => {
+  //         // console.log(res, "this is the res line 149")
+  //         // const filtered = res.filter(item => item.physical_id !== data.id)
+  //         //filters new fetched data
+  //         // console.log(res, "this is res line 193")
+  //         if (res.length === 0) {
+  //           // console.log("I am line 290")
+  //           Data.pumps.forEach((data, idx) => {
+  //           //  console.log("I am line 291")
+  //               // if (item.physical_id !== data.id) {
+  //               // console.log(`${item.physical_id} and ${data.id}`)
+  //               const {
+  //                 id,
+  //                 finish_construction,
+  //                 well_depth,
+  //                 yield,
+  //                 static,
+  //               } = data;
+  //               const sensor = {
+  //                 physical_id: id,
+  //                 data_finished: finish_construction,
+  //                 depth: well_depth,
+  //                 yield: yield,
+  //                 static: static
+  //               };
+  //               addSensor(sensor);
+                
+  //             // } else {console.log(`${item.id} is already in database`)}});
+  //           })
+  //         } else if (res.length > 0) {
+  //           // console.log(res.length, "this is length 313")
+  //           const current = res.map(item => item.physical_id)
+  //           const incoming = Data.pumps.map(item => item.id)
+  
+  //           console.log(current)
+  
+  //         }
+  //       })
+  //     }
+  
+            // const filtered = Data.pumps.filter(item => item.id !== res_Physical_Ids)
+  
+           
+  
+            // const filtered = Data.pumps.map(item => {
+  
+  
+            //   const filter = res_Physical_Ids
+              
+            // })
+  
+          //  const filtered = () => {
+          //    let result = []
+          //    for (item in incomingData_Ids){
+          //      if(item.includes(res_Physical_Ids)) {
+          //         result.push(item)
+          //      }
+          //    }
+             
+          //    return result;
+          //  } 
+  
+      //      const filtered = () => {
+      //       let result = []
+      //       let dupes = []
+      //       for (let item1 in current){
+      //         // console.log(current[item1], "this is item1")
+      //         if(incoming.indexOf(current[item1]) === -1) {
+                
+      //            result.push(incoming[item1])
+      //         } else {dupes.push(incoming[item1])}
+      //       }
+            
+           
+          
+      //     return result;
+      //   } 
+  
+      //       console.log(filtered(), "line 314")
+  
+      //       filtered() ?
+      //       filtered().map(data => {
+      //         // console.log("line 316**********")
+      //         // if (item.physical_id !== data.id) {
+      //         // console.log(`${item.physical_id} and ${data.id}`)
+      //         const {
+      //           id,
+      //           finish_construction,
+      //           well_depth,
+      //           yield,
+      //           static,
+      //         } = data;
+      //         const sensor = {
+      //           physical_id: id,
+      //           data_finished: finish_construction,
+      //           depth: well_depth,
+      //           yield: yield,
+      //           static: static
+      //         };
+      //         addSensor(sensor);
+              
+      //       // } else {console.log(`${item.id} is already in database`)}});
+      //     }) : console.log("filtered is undefined")
+      //     }})
+          
+      // } 
+    //   sensorCheck()
+    // }
+       
