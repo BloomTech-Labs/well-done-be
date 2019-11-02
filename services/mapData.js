@@ -265,54 +265,36 @@ const getUpdatedSensors = () => {
           const current = res.map(item => item.physical_id)
           const incoming = Data.pumps.map(item => Number(item.id))
 
-          console.log(current.length, "this is current")
-          console.log(incoming.length, "this is incoming")
-          console.log(current, "this is current")
-          console.log(incoming, "this is incoming")
+          let filtered = incoming.filter(item => !current.includes(item))
+          console.log(filtered.length, "this is the filtered length")
+          console.log(filtered.map(item => item), "this is what is in filtered")
 
-      let filtered = incoming.filter(item => !current.includes(item))
-      let mapped = incoming.map(item => console.log(typeof item, "incoming"))
-      let mapped1 = current.map(item => console.log(typeof item, "current"))
-
-
-      let arr = [1, 2, 3, 4]
-      let arr2 = [1, 4, 5, 6]
-      let filtered2 = arr.filter(item => !arr2.includes(item))
-
-          console.log(filtered.length, "this is filtered")
-          console.log(filtered2, "this is filtered2 test")
-
-          // filtered ?
-          filtered.map(data => {
-            const {
-              id,
-              finish_construction,
-              well_depth,
-              yield,
-              static,
-            } = data;
-            const sensor = {
-              physical_id: id,
-              data_finished: finish_construction,
-              depth: well_depth,
-              yield: yield,
-              static: static
-            };
-            addSensor(sensor);
-            
-        // }) : console.log("filtered is undefined")
+          const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+          console.log(newSensors, "this is new sensors")
+  
+            newSensors.map(data => {
+              const {
+                id,
+                finish_construction,
+                well_depth,
+                yield,
+                static,
+              } = data;
+              const sensor = {
+                physical_id: id,
+                data_finished: finish_construction,
+                depth: well_depth,
+                yield: yield,
+                static: static
+              };
+              addSensor(sensor);
         })
       }
-      })
-        
-     
-    
+    }) 
   }
   sensorCheck() 
 }
   
- 
-
 getUpdatedSensors()
 
 

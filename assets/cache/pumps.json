@@ -978,6 +978,24 @@
             "statuses": {}
         },
         {
+            "id": "8002",
+            "latitude": 13.66423349,
+            "longitude": 104.0051294,
+            "village": {
+                "village": "Khun Ream",
+                "commune": "Khun Ream",
+                "district": "Banteay Srei",
+                "province": "Siem Reap"
+            },
+            "finish_construction": "2016-01-01",
+            "well_depth": 33,
+            "yield": 1.5,
+            "static": 3,
+            "level_dynamic": 18,
+            "status": 1,
+            "statuses": {}
+        },
+        {
             "id": "7418",
             "latitude": 13.74755566,
             "longitude": 106.9771385,
