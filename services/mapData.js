@@ -270,6 +270,7 @@ pumpCheck()
 
 
 const setLastFetchTable = () => {
+  console.log("line 273")
   const fetchCheck = () => {
     getLastFetchTable()
     .then(res => {
@@ -290,24 +291,33 @@ const setLastFetchTable = () => {
       })
      
 
-      } else {console.log(`last_fetch table length: ${res.length}`)}
+      } else {getUpdatedHistory()}
+        // console.log(`last_fetch table length: ${res.length}`)}
     })
    
  }
  fetchCheck()
 }
 
-
 const getUpdatedHistory = () => {
   
-  const updateHistory = () => {
-    setLastFetchTable()
-    getLastFetchTable()
-      .then(res => {
-        console.log(res, "this is 307")
-  
-    if (Data.lastFetch !== res[0].last) {
-      addLastFetch(Data.lastFetch)
+  const updateHistory = async () => {
+    const gettingLastFetch = await getLastFetchTable()
+      .then(res => {    
+        if (Data.lastFetch !== res[0].last) {
+          addLastFetch(Data.lastFetch)
+          getLastFetchTable()
+        .then(res => { 
+      const prevFetch = res[1].created_at.split('').slice(0,10).join('')
+      const recentFetch = res[0].created_at.split('').slice(0,10).join('')
+      const prevFetchLAST = res[1].last
+      const recentFetchLAST = res[0].last
+              console.log(prevFetch, "this is prevFetch")
+              console.log(recentFetch, "this is recentFetch")
+              console.log(prevFetchLAST, "this is prevFetch")
+              console.log(recentFetchLAST, "this is recentFetch")
+      //if prev fetch date is not the same day as the most recent fetch add the new history and pad/seconds
+      if (prevFetch !== recentFetch) {
       Data.pumps.forEach((data, idx) => {
       if (data.statuses) {
         let history = {
@@ -321,6 +331,9 @@ const getUpdatedHistory = () => {
         getHistoryStatuses(history)
     } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
   } else {console.log("history is current")}
+})
+  }
+
  })
   
  }
@@ -365,8 +378,9 @@ function getHistoryStatuses (history){
   )
 }
 getUpdatedSensors()
-getUpdatedHistory()
+// getUpdatedHistory()
 getUpdatedPumps();
+setLastFetchTable()
 // const exported = module.exports = {
   
 //   getUpdatedPumps, 
