@@ -378,28 +378,14 @@ function getHistoryStatuses (history){
   )
 }
 getUpdatedSensors()
-// getUpdatedHistory()
 getUpdatedPumps();
 setLastFetchTable()
-// const exported = module.exports = {
-  
-//   getUpdatedPumps, 
-//   getUpdatedSensors, 
-//   getUpdatedHistory
-// };
+
 
 module.exports = getUpdatedPumps, 
 module.exports = getUpdatedSensors, 
 module.exports = getUpdatedHistory
-// getUpdatedSensors()
-// getUpdatedHistory()
-// getUpdatedPumps();
-// const exported = module.exports = {
-  
-//   getUpdatedPumps, 
-//   getUpdatedSensors, 
-//   getUpdatedHistory
-// };
+
 
 //this is the previous working version of getUpdatedPumps
 
