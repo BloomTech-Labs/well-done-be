@@ -1,10 +1,10 @@
 const fs = require("fs")
 const axios = require("axios")
 const prismic = require("./prismicData")
-const moment = require("moment")
-// const { getUpdatedPumps, getUpdatedSensors, getUpdatedHistory  } = require('./mapData')
-// const getUpdatedPumps = require('./mapData')
+const moment = require("moment");
 const router = require("express").Router();
+const mapData = require('./mapData')
+const schedule = require('node-schedule');
 
 async function cacheResource(resourceName, resourceLoader) {
   const resource = await resourceLoader()
@@ -156,18 +156,37 @@ async function asyncForEach(array, callback) {
 }
 
 
-function setClock() {
-  setTimeout( function() {
-    main();
-    // getUpdatedPumps();
-    // getUpdatedSensors();
-    // getUpdatedHistory();
-    // console.log(typeof getUpdatedPumps, "this is type of getUpdatedPumps")
-    console.log("fetching Data");
-  }, 5000 );
-}
 
 
-setClock()
+
+const rule = new schedule.RecurrenceRule();
+rule.minute = 36;
+ 
+function fetchTime() { 
+  async function firstFetch() {
+    try {
+    // const getMain = await main()
+    const upDateDb = await mapData.getUpdated()
+    console.log("***********first fetch**************")
+    } catch (err) {
+      console.log(err, "error 246")
+    }
+  }
+  firstFetch()
+
+    schedule.scheduleJob(rule, () => {
+    console.log('The answer to life, the universe, and everything!');
+    async function newFetch() {
+      try {
+      const getMain = await main()
+      const upDateDb = await mapData.getUpdated()
+      } catch (err) {
+        console.log(err, "error 246")
+      }
+    }
+    newFetch()
+  })
+} 
+fetchTime()
 
 
