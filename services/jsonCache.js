@@ -156,37 +156,37 @@ async function asyncForEach(array, callback) {
 }
 
 
+main()
 
 
-
-const rule = new schedule.RecurrenceRule();
-rule.minute = 36;
+// const rule = new schedule.RecurrenceRule();
+// rule.minute = 36;
  
-function fetchTime() { 
-  async function firstFetch() {
-    try {
-    // const getMain = await main()
-    const upDateDb = await mapData.getUpdated()
-    console.log("***********first fetch**************")
-    } catch (err) {
-      console.log(err, "error 246")
-    }
-  }
-  firstFetch()
+// function fetchTime() { 
+//   async function firstFetch() {
+//     try {
+//     const getMain = await main()
+//     const upDateDb = await mapData.getUpdated()
+//     console.log("***********first fetch**************")
+//     } catch (err) {
+//       console.log(err, "error 246")
+//     }
+//   }
+//   firstFetch()
 
-    schedule.scheduleJob(rule, () => {
-    console.log('The answer to life, the universe, and everything!');
-    async function newFetch() {
-      try {
-      const getMain = await main()
-      const upDateDb = await mapData.getUpdated()
-      } catch (err) {
-        console.log(err, "error 246")
-      }
-    }
-    newFetch()
-  })
-} 
-fetchTime()
+//     schedule.scheduleJob(rule, () => {
+//     console.log('The answer to life, the universe, and everything!');
+//     async function newFetch() {
+//       try {
+//       const getMain = await main()
+//       const upDateDb = await mapData.getUpdated()
+//       } catch (err) {
+//         console.log(err, "error 246")
+//       }
+//     }
+//     newFetch()
+//   })
+// } 
+// fetchTime()
 
 

@@ -301,8 +301,9 @@ const setLastFetchTable = () => {
 
 const getUpdatedHistory = () => {
   
-  const updateHistory = async () => {
-    const gettingLastFetch = await getLastFetchTable()
+  const updateHistory = () => {
+    console.log("this is line 305")
+    getLastFetchTable()
       .then(res => {    
         if (Data.lastFetch !== res[0].last) {
           addLastFetch(Data.lastFetch)
@@ -378,13 +379,15 @@ function getHistoryStatuses (history){
   )
 }
 // module.exports = getUpdatedSensors;
-
-module.exports = {getUpdated: function () {
-  getUpdatedSensors()
-  getUpdatedPumps()
-  setLastFetchTable()
-  }
-}
+getUpdatedSensors()
+getUpdatedPumps()
+setLastFetchTable()
+// module.exports = {getUpdated: function () {
+//   getUpdatedSensors()
+//   getUpdatedPumps()
+//   setLastFetchTable()
+//   }
+// }
 
 
 
