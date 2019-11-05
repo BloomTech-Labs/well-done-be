@@ -33,7 +33,7 @@ server.use("/api/history", historyRouter);
 server.use("/api/pad_counts", padCountsRouter);
 server.use("/api/pad_seconds", padSecondsRouter)
 
-server.use(mapData.getUpdated())
+server.use(mapData.getUpdated)
 
 
 
