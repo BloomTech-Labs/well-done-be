@@ -1,4 +1,8 @@
-//   function addStatus (history){
+    "build": "sloth .1 \"node services/jsonCache.js && node index.js\" true true"
+
+
+
+/   function addStatus (history){
 //     const {sensor_id} = history
 //     addStatusTest({sensor_id})
 //       .then(res => {
