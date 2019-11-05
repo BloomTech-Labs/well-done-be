@@ -17,7 +17,7 @@ exports.up = function(knex) {
     column.string("remark");
     column.date("data_finished");
     column.integer("depth")
-    column.integer("yield");
+    column.real("yield");
     column.integer("static");
     column.string("quality");
   });
