@@ -3,7 +3,7 @@ const axios = require("axios")
 const prismic = require("./prismicData")
 const moment = require("moment");
 const router = require("express").Router();
-const mapData = require('./mapData')
+// const mapData = require('./mapData')
 const schedule = require('node-schedule');
 
 async function cacheResource(resourceName, resourceLoader) {
@@ -159,8 +159,8 @@ async function asyncForEach(array, callback) {
 main()
 
 
-// const rule = new schedule.RecurrenceRule();
-// rule.minute = 36;
+const rule = new schedule.RecurrenceRule();
+rule.minute = 36;
  
 // function fetchTime() { 
 //   async function firstFetch() {
