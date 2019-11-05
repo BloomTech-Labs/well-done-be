@@ -52,11 +52,13 @@ function addSensor(sensor) {
 
   function addCounts(counts) {
     return db("counts")
+    .returning("id")
     .insert(counts)
   }
 
   function addSeconds(seconds) {
     return db("pad_seconds")
+    .returning("id")
     .insert(seconds)
   }
 
@@ -70,6 +72,7 @@ function addSensor(sensor) {
   function addStatusTest(filter) {
     try {
     return db("history")
+    .returning("id")
     .where(filter)
     .first()
     } catch (err) {
@@ -138,6 +141,7 @@ function sensorsTable() {
 function addLastFetch(current) {
   return db("last_fetch")
   .insert({last: current})
+  .returning("id")
   .then(res => console.log(current, "****line 140"))
 }
 
