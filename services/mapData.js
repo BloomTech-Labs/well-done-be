@@ -172,9 +172,10 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: yield,
-                static: static
+                yield: (yield - Math.floor(yield)) !== 0 ? yield : Number(`${yield}.0`),
+                static: (static - Math.floor(static)) !== 0 ? static : Number(`${static}.0`)
               };
+              console.log(sensor)
               addSensor(sensor);
           })
         } else if (res.length > 0) {
@@ -201,9 +202,10 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: yield,
-                static: static
+                yield: (yield - Math.floor(yield)) !== 0 ? yield : yield + "." + 0,
+                static: (static - Math.floor(static)) !== 0 ? static : static + "." + 0
               };
+             
               addSensor(sensor);
         })
       }
