@@ -2,10 +2,13 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const secrets = require("../config/secrets.js");
-// const { getUpdatedPumps, getUpdatedSensors, getUpdatedHistory  } = require('../services/mapData.js');
 
 console.log("environment:", secrets.environment);
 const server = express();
+
+// import database functions
+
+const mapData = require("../services/mapData");
 
 //routes
 const authRouter = require("./auth/auth.router");
@@ -15,7 +18,6 @@ const accountsRouter = require("./accounts/accounts.router");
 const smsNotificationsRouter = require("./sms_notifications/sms_notifications.router");
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
-const mapData = require("../services/mapData");
 const padSecondsRouter = require("./pad_seconds/pad_seconds.router")     
 const padCountsRouter = require("./pad_counts/pad_counts.router")     
 
@@ -33,6 +35,7 @@ server.use("/api/history", historyRouter);
 server.use("/api/pad_counts", padCountsRouter);
 server.use("/api/pad_seconds", padSecondsRouter)
 
+//update database functions
 server.use(mapData.getUpdated)
 
 
