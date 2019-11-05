@@ -202,8 +202,8 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: (yield - Math.floor(yield)) !== 0 ? yield : yield + "." + 0,
-                static: (static - Math.floor(static)) !== 0 ? static : static + "." + 0
+                yield: (yield - Math.floor(yield)) !== 0 ? yield : Number(`${yield}.0`),
+                static: (static - Math.floor(static)) !== 0 ? static : Number(`${static}.0`)
               };
              
               addSensor(sensor);
@@ -384,17 +384,23 @@ function getHistoryStatuses (history){
       }
   )
 }
-// module.exports = getUpdatedSensors;
 getUpdatedSensors()
 getUpdatedPumps()
 setLastFetchTable()
-// module.exports = {getUpdated: function () {
+
+module.exports = {getUpdated: function () {
+  getUpdatedSensors,
+  getUpdatedPumps,
+  setLastFetchTable
+  }
+}
+
+// module.exports = {
 //   getUpdatedSensors()
 //   getUpdatedPumps()
 //   setLastFetchTable()
 //   }
 // }
-
 
 
 //this is the previous working version of getUpdatedPumps

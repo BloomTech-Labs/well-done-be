@@ -15,7 +15,7 @@ const accountsRouter = require("./accounts/accounts.router");
 const smsNotificationsRouter = require("./sms_notifications/sms_notifications.router");
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
-const mapPumpsRouter = require("../services/mapData");
+const mapData = require("../services/mapData");
 const padSecondsRouter = require("./pad_seconds/pad_seconds.router")     
 const padCountsRouter = require("./pad_counts/pad_counts.router")     
 
@@ -30,9 +30,10 @@ server.use("/api/sensors", sensorsRouter);
 server.use("/api/accounts", accountsRouter);
 server.use("/api/sms_notifications", smsNotificationsRouter);
 server.use("/api/history", historyRouter);
-server.use("/api/mapData", mapPumpsRouter); 
 server.use("/api/pad_counts", padCountsRouter);
 server.use("/api/pad_seconds", padSecondsRouter)
+
+server.use(mapData.getUpdated())
 
 
 

@@ -2,7 +2,7 @@ const fs = require("fs")
 const axios = require("axios")
 const prismic = require("./prismicData")
 const moment = require("moment");
-const router = require("express").Router();
+// const router = require("express").Router();
 // const mapData = require('./mapData')
 const schedule = require('node-schedule');
 
