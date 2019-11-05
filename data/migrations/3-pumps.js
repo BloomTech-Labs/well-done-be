@@ -8,7 +8,7 @@ exports.up = function(knex) {
       .inTable("organizations")
       .onDelete("RESTRICT")
       .onUpdate("RESTRICT");
-    column.integer("sensor_ID")
+    column.integer("sensor_pid")
     column.string("country_name");
     column.string("province_name");
     column.string("district_name");

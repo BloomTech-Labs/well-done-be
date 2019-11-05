@@ -81,17 +81,17 @@ function deleteSensor(id) {
     .del();
 }
 
-// function getSensorNPump() {
-//     return db("sensors as s")
-//     .join("pumps as p", "p.sensor_ID", "s.physical_id")
-// }
+function getSensorNPump() {
+    return db("sensors as s")
+    .join("pumps as p", "p.sensor_pid", "s.physical_id")
+}
 
 //convert this to promises to return entire object
-// function getSensorNPumpNHistory() {
-//     return db("sensors as s")
-//     .join("pumps as p", "p.sensor_ID", "s.physical_id")
-//     .join("history as h", "h.sensor_id", "s.physical_id")
-// }
+function getSensorNPumpNHistory() {
+    return db("sensors as s")
+    .join("pumps as p", "p.sensor_pid", "s.physical_id")
+    .join("history as h", "h.sensor_id", "s.physical_id")
+}
 
 module.exports = {
   addSensor,
@@ -101,8 +101,8 @@ module.exports = {
   updateSensor,
   deleteSensor,
   getSensorByOrgId,
-  // getSensorNPump,
-  // getSensorNPumpNHistory,
+  getSensorNPump,
+  getSensorNPumpNHistory,
   getSensorBySensorId
 }
 

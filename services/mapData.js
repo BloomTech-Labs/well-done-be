@@ -228,7 +228,7 @@ const getUpdatedPumps = () => {
             village: { village, commune, district, province }
           } = data;
           const pump = {
-            sensor_ID: id,
+            sensor_pid: id,
             latitude: latitude,
             longitude: longitude,
             country_name: village,
@@ -240,7 +240,7 @@ const getUpdatedPumps = () => {
         })
       } else if (res.length > 0) {
         
-        const current = res.map(item => item.sensor_ID)
+        const current = res.map(item => item.sensor_pid)
         const incoming = Data.pumps.map(item => Number(item.id))
 
         let filtered = incoming.filter(item => !current.includes(item))
@@ -258,7 +258,7 @@ const getUpdatedPumps = () => {
               village: { village, commune, district, province }
             } = data;
             const pump = {
-              sensor_ID: id,
+              sensor_pid: id,
               latitude: latitude,
               longitude: longitude,
               country_name: village,
@@ -419,7 +419,7 @@ module.exports = {getUpdated: function () {
 //       village: { village, commune, district, province }
 //     } = data;
 //     const pump = {
-//       sensor_ID: id,
+//       sensor_pid: id,
 //       latitude: latitude,
 //       longitude: longitude,
 //       country_name: village,

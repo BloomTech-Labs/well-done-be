@@ -753,7 +753,7 @@ definitions:
   Sensor:
     type: object
     required:
-    - sensor_ID
+    - sensor_pid
     - kind
     - type
     - cellular
