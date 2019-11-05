@@ -201,8 +201,8 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: yield,
-                static: static
+                yield: Number(yield),
+                static: Number(static)
               };
               addSensor(sensor);
         })
