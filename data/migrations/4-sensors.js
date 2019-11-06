@@ -1,13 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("sensors", column => {
     column.increments();
-    column
-      .integer("pump_id")
-      .unsigned()
-      .references("id")
-      .inTable("pumps")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
     column.integer("physical_id");
     column.string("kind");
     column.string("type");

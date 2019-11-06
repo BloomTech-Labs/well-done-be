@@ -2,10 +2,10 @@
 exports.up = function(knex) {
     return knex.schema.createTable("pad_seconds", column => {
         column.increments();
-        column.integer("seconds_0");
-        column.integer("seconds_1");
-        column.integer("seconds_2");
-        column.integer("seconds_3");
+        column.integer("pad_seconds_0");
+        column.integer("pad_seconds_1");
+        column.integer("pad_seconds_2");
+        column.integer("pad_seconds_3");
 
         column
           .integer("history_id")
