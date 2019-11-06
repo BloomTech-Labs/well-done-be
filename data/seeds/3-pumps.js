@@ -5,6 +5,7 @@ exports.seed = function (knex) {
 		return knex('pumps').insert([
 			{
 				org_id: 1,
+				sensor_pid: 1234,
 				country_name: '1st country',
 				province_name: '1st province',
 				district_name: '1st district',
@@ -14,6 +15,7 @@ exports.seed = function (knex) {
 			},
 			{
 				org_id: 2,
+				sensor_pid: 4567,
 				country_name: '2nd country',
 				province_name: '2nd province',
 				district_name: '2nd district',
@@ -23,6 +25,7 @@ exports.seed = function (knex) {
 			},
 			{
 				org_id: 3,
+				sensor_pid: 1234,
 				country_name: '3rd country',
 				province_name: '3rd province',
 				district_name: '3rd district',

@@ -1,16 +1,8 @@
 const router = require("express").Router();
 const PadSeconds = require("./pad_seconds.model")
+const { authenticate } = require("../middleware/middleware");
 
-// router.get("/", async (req,res) => {
-//     try {
-//         const padSeconds = await PadSeconds.find()
-//         res.status(200).json(padSeconds)
-//     } catch (e) {
-//         res.status(400).json(e.message)
-//     }
-// })
-
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
     try {
       const pad = await PadSeconds.find();
       res.status(200).json(pad);

@@ -17,7 +17,7 @@ router.post("/", authenticate, validatePump, (req, res) => {
 });
 
 // GET to /api/pumps
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
     const pumps = await Pumps.findPumps();
     res.status(200).json(pumps);

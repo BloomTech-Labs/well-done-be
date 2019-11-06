@@ -2,7 +2,6 @@ const db = require("../../data/dbConfig.js");
 
 function find() {
     return db("pad_counts as p")
-    // .select(["p.count_0", "p.count_1"])
 }
 
 function add(count) {

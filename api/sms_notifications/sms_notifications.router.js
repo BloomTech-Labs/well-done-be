@@ -4,7 +4,7 @@ const SMS_Notification = require("../sms_notifications/sms_notifications.model.j
 const { validateSms } = require("../middleware/middleware");
 
 //* [get] - get all sms notifications - test worked
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
   try {
     const sms_notification = await SMS_Notification.get();
     res.status(200).json(sms_notification);
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 //* [getById] - sms notifications by id - test worked
-router.get("/:id", (req, res) => {
+router.get("/:id", authenticate, (req, res) => {
   const { id } = req.params;
   SMS_Notification.getById(id)
     .then(sms => {
@@ -27,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 //* [create] - create sms notifications
-router.post("/", validateSms, async (req, res) => {
+router.post("/", authenticate, validateSms, async (req, res) => {
   try {
     const sms_notification = req.body;
     await SMS_Notification.create(sms_notification);
@@ -39,7 +39,7 @@ router.post("/", validateSms, async (req, res) => {
 });
 
 //* [update] - update sms notifications - test worked
-router.put("/:id", validateSms, async (req, res) => {
+router.put("/:id", authenticate, validateSms, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;
@@ -52,7 +52,7 @@ router.put("/:id", validateSms, async (req, res) => {
 });
 
 //* [remove] - delete sms notifications - test worked
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const removed = await SMS_Notification.remove(id);

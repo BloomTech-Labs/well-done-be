@@ -1,16 +1,8 @@
 const router = require("express").Router();
 const PadCounts = require("./pad_counts.model")
+const { authenticate } = require("../middleware/middleware");
 
-// router.get("/", async (req,res) => {
-//     try {
-//         const padCounts = await PadCounts.find()
-//         res.status(200).json(padCounts)
-//     } catch (e) {
-//         res.status(400).json(e.message)
-//     }
-// })
-
-router.get("/", async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
     try {
       const pad = await PadCounts.find();
       res.status(200).json(pad);
@@ -20,7 +12,7 @@ router.get("/", async (req, res) => {
     }
   });
 
-  router.post("/", async (req, res) => {
+  router.post("/", authenticate, async (req, res) => {
     try {
       const count = req.body;
       console.log("count", count);
@@ -32,7 +24,7 @@ router.get("/", async (req, res) => {
     }
   });
 
-  router.put("/:id", async (req, res) => {
+  router.put("/:id", authenticate, async (req, res) => {
     try {
       const { id } = req.params;
       const changes = req.body;

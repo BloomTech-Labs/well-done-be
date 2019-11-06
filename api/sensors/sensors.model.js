@@ -47,12 +47,6 @@ function getSensorById(id) {
     .then(sensors => sensors[0]);
 }
 
-// function getSensorBySensorId(id) {
-//   return db("sensors")
-//   .where({ physical_id: id })
-
-// }
-
 function getSensorBySensorId(id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
