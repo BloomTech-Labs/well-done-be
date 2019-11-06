@@ -4,7 +4,7 @@ const prismic = require("./prismicData")
 const moment = require("moment");
 // const router = require("express").Router();
 // const mapData = require('./mapData')
-const schedule = require('node-schedule');
+// const schedule = require('node-schedule');
 
 async function cacheResource(resourceName, resourceLoader) {
   const resource = await resourceLoader()
@@ -130,25 +130,6 @@ async function createStore() {
   return { pumps }
 }
 
-// async function createStore() {
-//   const oldData = require("../assets/cache/longStore.json")
-//   const data = require("../assets/cache/pumps.json")
-//   let pumps = {}
-//   data.pumps.forEach(({ id, dates, statuses }, index) => {
-//     let pumpOldData = oldData.pumps ? oldData.pumps[id] : {}
-
-//     pumps = {
-//       ...pumps,
-//       [id]: {
-//         ...pumpOldData,
-//         ...data.pumps.find(pump => pump.id === id).statuses,
-//       },
-//     }
-//   })
-
-//   return { pumps }
-// }
-
 async function asyncForEach(array, callback) {
   for (let index = 0; index < array.length; index++) {
     await callback(array[index], index, array)
@@ -158,35 +139,5 @@ async function asyncForEach(array, callback) {
 
 main()
 
-
-const rule = new schedule.RecurrenceRule();
-rule.minute = 36;
- 
-// function fetchTime() { 
-//   async function firstFetch() {
-//     try {
-//     const getMain = await main()
-//     const upDateDb = await mapData.getUpdated()
-//     console.log("***********first fetch**************")
-//     } catch (err) {
-//       console.log(err, "error 246")
-//     }
-//   }
-//   firstFetch()
-
-//     schedule.scheduleJob(rule, () => {
-//     console.log('The answer to life, the universe, and everything!');
-//     async function newFetch() {
-//       try {
-//       const getMain = await main()
-//       const upDateDb = await mapData.getUpdated()
-//       } catch (err) {
-//         console.log(err, "error 246")
-//       }
-//     }
-//     newFetch()
-//   })
-// } 
-// fetchTime()
 
 

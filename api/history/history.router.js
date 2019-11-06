@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 //GET to /api/history/1
 router.get("/:id", (req, res) => {
   const { id } = req.params;
-  History.findById(id)
+  History.getHistoryById(id)
     .then(history => {
       if (history) {
         res.json(history);
@@ -96,15 +96,15 @@ router.delete("/:id", authenticate, async (req, res) => {
 });
 
 // GET to /api/history/sensor/1
-router.get("/sensor/:id", authenticate, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const history = await History.getHistoryBySensorId(id);
-    res.status(200).json(history);
-  } catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  }
-});
+// router.get("/sensor/:id",  async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const history = await History.getHistoryBySensorId(id);
+//     res.status(200).json(history);
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(400).json(err.message);
+//   }
+// });
 
 module.exports = router;

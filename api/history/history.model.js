@@ -5,8 +5,8 @@ const db = require("../../data/dbConfig.js");
 const find = () => {
   try {
     return db("history as h")
-    // .join("pad_seconds as s", "s.history_id", "h.id")
-    // .join("pad_counts as c", "c.history_id", "h.id")
+    .join("pad_seconds as s", "s.history_id", "h.id")
+    .join("pad_counts as c", "c.history_id", "h.id")
   } catch (err) {
     console.log(err.message);
   }
@@ -15,8 +15,6 @@ const find = () => {
 const findById = id => {
   try {
     return db("history as h")
-    // .join("pad_seconds as s", "s.history_id", "h.id")
-    // .join("pad_counts as c", "c.history_id", "h.id")
       .where({ id })
       .first();
   } catch (err) {
@@ -24,18 +22,6 @@ const findById = id => {
   }
 };
 
-
-// const findById = id => {
-//   try {
-//     return db("history as h")
-//       .join("pad_counts as c", "c.history_id", "h.id")
-//       .join("pad_seconds as s", "s.history_id", "h.id")
-//       .where({ id })
-//       .first();
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// };
 const padCounts = (id) => {
   return db("pad_counts")
   .where({history_id: id})
@@ -45,6 +31,7 @@ const padSeconds = (id) => {
   return db("pad_seconds")
   .where({history_id: id})
 }
+
 
 function getHistoryById(id) {
   const historyQuery = findById(id);
@@ -57,16 +44,6 @@ function getHistoryById(id) {
       return history;
     }
   );
-}
-
-function getHistoryBySensorId(id) {
-  try {
-    return db("history as h")
-      .join("sensors as s", "s.id", "h.sensor_id")
-      .where({ sensor_id: id });
-  } catch (err) {
-    res.status(400).json(err.message);
-  }
 }
 
 const insert = async historical => {
@@ -115,6 +92,5 @@ module.exports = {
   insert,
   update,
   remove,
-  getHistoryBySensorId,
   getHistoryById
 };
