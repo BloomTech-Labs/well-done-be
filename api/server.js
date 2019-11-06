@@ -42,6 +42,7 @@ server.use(mapData.getUpdated)
 
 server.get("/", (req, res) => {
   res.status(200).json(`Welcome to the Jungle`);
+  res.send('Welcome to the Jungle');
 
   // const getPumps = Pumps.map(pump => console.log(pump))
   // getPumps()
