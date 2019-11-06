@@ -36,7 +36,7 @@ router.get("/:account_id", authenticate, (req, res) => {
 
 // POST to /api/accounts
 // ! supposed to be only for superusers (for now)
-router.post("/", authenticate, validateAccount, async (req, res) => {
+router.post("/", validateAccount, async (req, res) => {
   try {
     const account = req.body;
     console.log("account", account);
