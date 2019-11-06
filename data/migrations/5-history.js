@@ -6,7 +6,7 @@ exports.up = function(knex) {
     column.integer("total").nullable();
     column.integer("status").nullable();
     column.integer("sensor_id");
-    column.integer("reported_percent").nullable();
+    column.float("reported_percent").nullable();
 
   });
 };
