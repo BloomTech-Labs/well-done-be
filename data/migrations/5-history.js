@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable("history", column => {
     column.increments();
-    column.date("date").nullable();
+    column.string("date").nullable();
     column.integer("count").nullable();
     column.integer("total").nullable();
     column.integer("status").nullable();

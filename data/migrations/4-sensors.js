@@ -15,7 +15,7 @@ exports.up = function(knex) {
     column.integer("bluetooth");
     column.string("training");
     column.string("remark");
-    column.date("data_finished");
+    column.string("data_finished");
     column.integer("depth")
     column.float("yield");
     column.float("static");
