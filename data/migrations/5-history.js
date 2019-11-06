@@ -3,7 +3,7 @@ exports.up = function(knex) {
     column.increments();
     column.string("date").nullable();
     column.integer("count").nullable();
-    column.integer("total").nullable();
+    column.bigInteger("total").nullable();
     column.integer("status").nullable();
     column.integer("sensor_id");
     column.float("reported_percent").nullable();
