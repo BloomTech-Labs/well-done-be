@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 //GET to /api/history/1
 router.get("/:id", (req, res) => {
   const { id } = req.params;
-  History.getHistoryById(id)
+  History.findById(id)
     .then(history => {
       if (history) {
         res.json(history);

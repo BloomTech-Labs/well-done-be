@@ -56,8 +56,6 @@ function getSensorById(id) {
 function getSensorBySensorId(id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
-  .join("pad_counts as c", "c.history_id", "h.id")
-  .join("pad_seconds as p", "p.history_id", "h.id")
   .where({ physical_id: id })
 
 }

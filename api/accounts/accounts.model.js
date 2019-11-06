@@ -6,7 +6,8 @@ const db = require("../../data/dbConfig.js");
 //* get all accounts
 const find = () => {
   try {
-    return db("accounts");
+    return db("accounts")
+    .select(["id", "first_name", "last_name", "email_address", "mobile_number", "super_user", "org_user", "org_admin"])
   } catch (err) {
     console.log(err.message);
   }
@@ -16,6 +17,7 @@ const find = () => {
 const findById = id => {
   try {
     return db("accounts")
+      .select(["id", "first_name", "last_name", "email_address", "mobile_number", "super_user", "org_user", "org_admin"])
       .where({ id })
       .first();
   } catch (err) {

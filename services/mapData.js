@@ -172,8 +172,8 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: (yield - Math.floor(yield)) !== 0 ? yield : Number(`${yield}.0`),
-                static: (static - Math.floor(static)) !== 0 ? static : Number(`${static}.0`)
+                yield: yield,
+                static: static
               };
               console.log(sensor)
               addSensor(sensor);
@@ -202,8 +202,8 @@ const getUpdatedSensors = () => {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: (yield - Math.floor(yield)) !== 0 ? yield : Number(`${yield}.0`),
-                static: (static - Math.floor(static)) !== 0 ? static : Number(`${static}.0`)
+                yield: yield,
+                static: static
               };
              
               addSensor(sensor);
@@ -286,11 +286,11 @@ const setLastFetchTable = () => {
           if (data.statuses) {
             let history = {
               sensor_id: data.id,
-              count: data.statuses.statuses ? data.statuses.statuses.count : 0,
-              total: data.statuses.statuses ? data.statuses.statuses.total : 0,
-              status: data.statuses.statuses ? data.statuses.statuses.status : 0,
-              date: data.statuses.statuses ? data.statuses.statuses.date : "",
-              reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : 0
+              count: data.statuses.statuses ? data.statuses.statuses.count : null,
+              total: data.statuses.statuses ? data.statuses.statuses.total : null,
+              status: data.statuses.statuses ? data.statuses.statuses.status : null,
+              date: data.statuses.statuses ? data.statuses.statuses.date : null,
+              reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
             }  
             getHistoryStatuses(history)
         } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}
@@ -329,11 +329,11 @@ const getUpdatedHistory = () => {
       if (data.statuses) {
         let history = {
           sensor_id: data.id,
-          count: data.statuses.statuses ? data.statuses.statuses.count : 0,
-          total: data.statuses.statuses ? data.statuses.statuses.total : 0,
-          status: data.statuses.statuses ? data.statuses.statuses.status : 0,
-          date: data.statuses.statuses ? data.statuses.statuses.date : "",
-          reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : 0
+          count: data.statuses.statuses ? data.statuses.statuses.count : null,
+          total: data.statuses.statuses ? data.statuses.statuses.total : null,
+          status: data.statuses.statuses ? data.statuses.statuses.status : null,
+          date: data.statuses.statuses ? data.statuses.statuses.date : null,
+          reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
         }  
         getHistoryStatuses(history)
     } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
@@ -358,10 +358,10 @@ function getHistoryStatuses (history){
                 const getPadCounts = () => {
                     let current = {
                       history_id: id,
-                      count_0: cleanData[0].statuses.statuses.pad_counts[0],
-                      count_1: cleanData[0].statuses.statuses.pad_counts[1],
-                      count_2: cleanData[0].statuses.statuses.pad_counts[2],
-                      count_3: cleanData[0].statuses.statuses.pad_counts[3]
+                      pad_count_0: cleanData[0].statuses.statuses.pad_counts[0],
+                      pad_count_1: cleanData[0].statuses.statuses.pad_counts[1],
+                      pad_count_2: cleanData[0].statuses.statuses.pad_counts[2],
+                      pad_count_3: cleanData[0].statuses.statuses.pad_counts[3]
                     }
                     
                     addPadCounts(current)
@@ -370,10 +370,10 @@ function getHistoryStatuses (history){
                 const getPadSeconds = () => {
                     let current = {
                       history_id: id,
-                      seconds_0: cleanData[0].statuses.statuses.pad_seconds[0],
-                      seconds_1: cleanData[0].statuses.statuses.pad_seconds[1],
-                      seconds_2: cleanData[0].statuses.statuses.pad_seconds[2],
-                      seconds_3: cleanData[0].statuses.statuses.pad_seconds[3]
+                      pad_seconds_0: cleanData[0].statuses.statuses.pad_seconds[0],
+                      pad_seconds_1: cleanData[0].statuses.statuses.pad_seconds[1],
+                      pad_seconds_2: cleanData[0].statuses.statuses.pad_seconds[2],
+                      pad_seconds_3: cleanData[0].statuses.statuses.pad_seconds[3]
                     }
                 
                     addPadSeconds(current)
