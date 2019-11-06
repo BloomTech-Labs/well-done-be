@@ -15,10 +15,10 @@ const find = () => {
 const findById = id => {
   try {
     return db("history as h")
-    .join("pad_seconds as s", "s.history_id", "h.id")
-    .join("pad_counts as c", "c.history_id", "h.id")
+    // .join("pad_seconds as s", "s.history_id", "h.id")
+    // .join("pad_counts as c", "c.history_id", "h.id")
       .where({ id })
-      // .first();
+      .first();
   } catch (err) {
     console.log(err.message);
   }
