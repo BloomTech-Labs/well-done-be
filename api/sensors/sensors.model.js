@@ -88,12 +88,58 @@ function getSensorNPumpNHistory() {
 function findSensorsAndHistories () {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
+  .select([
+    "s.id as sensor_index",
+    "s.physical_id",
+    "s.kind",
+    "s.type",
+    "s.cellular",
+    "s.bluetooth",
+    "s.training",
+    "s.remark",
+    "s.data_finished",
+    "s.depth",
+    "s.yield",
+    "s.static",
+    "s.quality",
+    "h.id as history_index",
+    "h.date",
+    "h.count",
+    "h.total",
+    "h.status",
+    "h.sensor_id",
+    "h.reported_percent"
+
+  ])
 }
 
 function findSensorsAndHistoriesBySensorId (id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
   .where({sensor_id: id})
+  .select([
+    "s.id as sensor_index",
+    "s.physical_id",
+    "s.kind",
+    "s.type",
+    "s.cellular",
+    "s.bluetooth",
+    "s.training",
+    "s.remark",
+    "s.data_finished",
+    "s.depth",
+    "s.yield",
+    "s.static",
+    "s.quality",
+    "h.id as history_index",
+    "h.date",
+    "h.count",
+    "h.total",
+    "h.status",
+    "h.sensor_id",
+    "h.reported_percent"
+
+  ])
 }
 
 module.exports = {
