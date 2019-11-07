@@ -8,34 +8,34 @@ function addSensor(sensor) {
     .returning("id");
 }
 
-function getSensors() {
-  return db("sensors")
-    .join("pumps", "pumps.id", "sensors.pump_id")
-    .join("organizations", "pumps.org_id", "organizations.id")
-    .select(
-      "sensors.id",
-      "sensors.pump_id as pump_id",
-      "sensors.physical_id",
-      "sensors.kind",
-      "sensors.type",
-      "sensors.cellular",
-      "sensors.bluetooth",
-      "sensors.training",
-      "sensors.remark",
-      "sensors.data_finished",
-      "sensors.depth",
-      "sensors.yield",
-      "sensors.static",
-      "sensors.quality",
-      "pumps.country_name",
-      "pumps.province_name",
-      "pumps.commune_name",
-      "pumps.district_name",
-      "organizations.id as org_id",
-      "organizations.org_name",
-      "organizations.headquarter_city"
-    );
-}
+// function getSensors() {
+//   return db("sensors")
+//     .join("pumps", "pumps.id", "sensors.pump_id")
+//     .join("organizations", "pumps.org_id", "organizations.id")
+//     .select(
+//       "sensors.id",
+//       "sensors.pump_id as pump_id",
+//       "sensors.physical_id",
+//       "sensors.kind",
+//       "sensors.type",
+//       "sensors.cellular",
+//       "sensors.bluetooth",
+//       "sensors.training",
+//       "sensors.remark",
+//       "sensors.data_finished",
+//       "sensors.depth",
+//       "sensors.yield",
+//       "sensors.static",
+//       "sensors.quality",
+//       "pumps.country_name",
+//       "pumps.province_name",
+//       "pumps.commune_name",
+//       "pumps.district_name",
+//       "organizations.id as org_id",
+//       "organizations.org_name",
+//       "organizations.headquarter_city"
+//     );
+// }
 
 function findSensors() {
   return db("sensors");
@@ -85,9 +85,20 @@ function getSensorNPumpNHistory() {
     .join("history as h", "h.sensor_id", "s.physical_id")
 }
 
+function findSensorsAndHistories () {
+  return db("sensors as s")
+  .join("history as h", "s.physical_id", "h.sensor_id")
+}
+
+function findSensorsAndHistoriesBySensorId (id) {
+  return db("sensors as s")
+  .join("history as h", "s.physical_id", "h.sensor_id")
+  .where({sensor_id: id})
+}
+
 module.exports = {
   addSensor,
-  getSensors,
+  // getSensors,
   findSensors,
   getSensorById,
   updateSensor,
@@ -95,7 +106,9 @@ module.exports = {
   getSensorByOrgId,
   getSensorNPump,
   getSensorNPumpNHistory,
-  getSensorBySensorId
+  getSensorBySensorId,
+  findSensorsAndHistories,
+  findSensorsAndHistoriesBySensorId
 }
 
 
