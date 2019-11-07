@@ -32,7 +32,7 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 // POST to api/orgs
-router.post("/", authenticate, validateOrg, async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   try {
     const org = req.body;
     console.log("org", org);

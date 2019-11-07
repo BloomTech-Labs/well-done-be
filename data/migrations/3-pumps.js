@@ -1,7 +1,8 @@
 exports.up = function(knex) {
   return knex.schema.createTable("pumps", column => {
     column.increments();
-    column.integer("sensor_pid")
+    column.integer("org_id");
+    column.integer("sensor_pid");
     column.string("country_name");
     column.string("province_name");
     column.string("district_name");
