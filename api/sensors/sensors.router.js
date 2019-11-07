@@ -39,10 +39,11 @@ router.get("/histories", authenticate, async (req, res) => {
   }
 });
 
+ //get sensor histories by sensors physical id
 router.get("/histories/:id", authenticate, async (req, res) => {
   const {id} = req.params
   try {
-    const sensors = await Sensors.findSensorsAndHistoriesBySensorId(id);
+    const sensors = await Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id);
     res.status(200).json(sensors);
   } catch (err) {
     console.log(err.message);

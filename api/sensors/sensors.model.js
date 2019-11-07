@@ -49,7 +49,7 @@ function getSensorById(id) {
 
 function getSensorBySensorId(id) {
   return db("sensors as s")
-  .join("history as h", "s.physical_id", "h.sensor_id")
+  // .join("history as h", "s.physical_id", "h.sensor_id")
   .where({ physical_id: id })
 
 }
@@ -113,10 +113,10 @@ function findSensorsAndHistories () {
   ])
 }
 
-function findSensorsAndHistoriesBySensorId (id) {
+function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
-  .where({sensor_id: id})
+  .where({physical_id: id})
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -154,7 +154,7 @@ module.exports = {
   getSensorNPumpNHistory,
   getSensorBySensorId,
   findSensorsAndHistories,
-  findSensorsAndHistoriesBySensorId
+  findSensorsAndHistoriesBySensorsPhysicalId
 }
 
 
