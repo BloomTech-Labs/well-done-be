@@ -83,11 +83,14 @@ function getSensorNPumpNHistory() {
     return db("sensors as s")
     .join("pumps as p", "p.sensor_pid", "s.physical_id")
     .join("history as h", "h.sensor_id", "s.physical_id")
+  
 }
 
 function findSensorsAndHistories () {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
+  .join("pad_counts as pc", "pc.history_id", "h.id")
+  .join("pad_seconds as ps", "ps.history_id", "h.id")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -108,7 +111,15 @@ function findSensorsAndHistories () {
     "h.total",
     "h.status",
     "h.sensor_id",
-    "h.reported_percent"
+    "h.reported_percent",
+    "pc.pad_count_0",
+    "pc.pad_count_1",
+    "pc.pad_count_2",
+    "pc.pad_count_3",
+    "ps.pad_seconds_0",
+    "ps.pad_seconds_1",
+    "ps.pad_seconds_2",
+    "ps.pad_seconds_3"
 
   ])
 }
@@ -116,6 +127,8 @@ function findSensorsAndHistories () {
 function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
+  .join("pad_counts as pc", "pc.history_id", "h.id")
+  .join("pad_seconds as ps", "ps.history_id", "h.id")
   .where({physical_id: id})
   .select([
     "s.id as sensor_index",
@@ -137,7 +150,15 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
     "h.total",
     "h.status",
     "h.sensor_id",
-    "h.reported_percent"
+    "h.reported_percent",
+    "pc.pad_count_0",
+    "pc.pad_count_1",
+    "pc.pad_count_2",
+    "pc.pad_count_3",
+    "ps.pad_seconds_0",
+    "ps.pad_seconds_1",
+    "ps.pad_seconds_2",
+    "ps.pad_seconds_3"
 
   ])
 }

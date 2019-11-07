@@ -303,6 +303,7 @@ const getUpdatedHistory = () => {
               addLastFetch(Data.lastFetch)
               getLastFetchTable()
             .then(res => { 
+              console.log(res, "this is 306")
           const prevFetch = res[1].created_at.split('').slice(0,10).join('')
           const recentFetch = res[0].created_at.split('').slice(0,10).join('')
           const prevFetchLAST = res[1].last

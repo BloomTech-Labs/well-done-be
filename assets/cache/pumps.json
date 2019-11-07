@@ -1,5 +1,5 @@
 {
-    "lastFetch": 1572919759,
+    "lastFetch": 1573149925,
     "pumps": [
         {
             "id": "4715",
@@ -16,10 +16,10 @@
             "yield": null,
             "static": 3,
             "level_dynamic": 24,
-            "status": 2,
+            "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -54,8 +54,28 @@
             "yield": 4,
             "static": 12,
             "level_dynamic": 24,
-            "status": 1,
-            "statuses": {}
+            "status": 2,
+            "statuses": {
+                "statuses": {
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 20459263536,
+                    "status": 2,
+                    "pad_counts": [
+                        169,
+                        69,
+                        62,
+                        35
+                    ],
+                    "pad_seconds": [
+                        46125,
+                        10204,
+                        3685,
+                        1404
+                    ],
+                    "reported_percent": 1
+                }
+            }
         },
         {
             "id": "4717",
@@ -75,7 +95,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -113,7 +133,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -151,7 +171,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -207,7 +227,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -263,7 +283,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -352,8 +372,28 @@
             "yield": 2,
             "static": 18,
             "level_dynamic": 21,
-            "status": 1,
-            "statuses": {}
+            "status": 2,
+            "statuses": {
+                "statuses": {
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 38779587639,
+                    "status": 2,
+                    "pad_counts": [
+                        154,
+                        75,
+                        75,
+                        64
+                    ],
+                    "pad_seconds": [
+                        44634,
+                        6882,
+                        5191,
+                        2666
+                    ],
+                    "reported_percent": 1
+                }
+            }
         },
         {
             "id": "4736",
@@ -388,10 +428,10 @@
             "yield": 1.5,
             "static": 15,
             "level_dynamic": 25,
-            "status": 0,
+            "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -429,23 +469,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 8,
-                    "total": 17179869176,
-                    "status": 2,
+                    "date": "Wed Nov 06 2019",
+                    "count": 0,
+                    "total": 0,
+                    "status": 1,
                     "pad_counts": [
-                        8,
-                        8,
-                        8,
-                        8
+                        0,
+                        0,
+                        0,
+                        0
                     ],
                     "pad_seconds": [
-                        2400,
-                        2400,
-                        2400,
-                        1192
+                        0,
+                        0,
+                        0,
+                        0
                     ],
-                    "reported_percent": 0.027777777777777776
+                    "reported_percent": 0
                 }
             }
         },
@@ -467,23 +507,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 281,
-                    "total": 2041753180,
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 1890553407,
                     "status": 2,
                     "pad_counts": [
-                        51,
-                        49,
-                        28,
-                        3
+                        74,
+                        70,
+                        44,
+                        5
                     ],
                     "pad_seconds": [
-                        5505,
-                        2568,
-                        491,
-                        140
+                        8777,
+                        3412,
+                        476,
+                        128
                     ],
-                    "reported_percent": 0.9756944444444444
+                    "reported_percent": 1
                 }
             }
         },
@@ -502,8 +542,28 @@
             "yield": 1.5,
             "static": 30,
             "level_dynamic": 45,
-            "status": 1,
-            "statuses": {}
+            "status": 2,
+            "statuses": {
+                "statuses": {
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 3548533288,
+                    "status": 2,
+                    "pad_counts": [
+                        104,
+                        98,
+                        18,
+                        4
+                    ],
+                    "pad_seconds": [
+                        15967,
+                        6010,
+                        426,
+                        246
+                    ],
+                    "reported_percent": 1
+                }
+            }
         },
         {
             "id": "4743",
@@ -520,8 +580,28 @@
             "yield": 1.5,
             "static": 26,
             "level_dynamic": 32,
-            "status": 1,
-            "statuses": {}
+            "status": 2,
+            "statuses": {
+                "statuses": {
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 21800285782,
+                    "status": 2,
+                    "pad_counts": [
+                        138,
+                        54,
+                        48,
+                        38
+                    ],
+                    "pad_seconds": [
+                        37738,
+                        5538,
+                        3088,
+                        1499
+                    ],
+                    "reported_percent": 1
+                }
+            }
         },
         {
             "id": "4746",
@@ -541,23 +621,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 286,
-                    "total": 1852323609,
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 4082025930,
                     "status": 2,
                     "pad_counts": [
+                        126,
+                        44,
                         38,
-                        33,
-                        30,
-                        15
+                        23
                     ],
                     "pad_seconds": [
-                        5134,
-                        2136,
-                        705,
-                        121
+                        34261,
+                        3088,
+                        967,
+                        272
                     ],
-                    "reported_percent": 0.9930555555555556
+                    "reported_percent": 1
                 }
             }
         },
@@ -633,10 +713,10 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 9,
+                    "date": "Wed Nov 06 2019",
+                    "count": 0,
                     "total": 0,
-                    "status": 0,
+                    "status": 1,
                     "pad_counts": [
                         0,
                         0,
@@ -649,7 +729,7 @@
                         0,
                         0
                     ],
-                    "reported_percent": 0.03125
+                    "reported_percent": 0
                 }
             }
         },
@@ -707,7 +787,7 @@
             "status": 0,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
+                    "date": "Wed Nov 06 2019",
                     "count": 0,
                     "total": 0,
                     "status": 1,
@@ -745,23 +825,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 23,
-                    "total": 2651995372,
+                    "date": "Wed Nov 06 2019",
+                    "count": 288,
+                    "total": 8992120697,
                     "status": 2,
                     "pad_counts": [
-                        8,
-                        8,
-                        4,
-                        3
+                        195,
+                        78,
+                        70,
+                        37
                     ],
                     "pad_seconds": [
-                        1178,
-                        666,
-                        318,
-                        183
+                        58269,
+                        6323,
+                        2946,
+                        604
                     ],
-                    "reported_percent": 0.0798611111111111
+                    "reported_percent": 1
                 }
             }
         },
@@ -783,23 +863,23 @@
             "status": 2,
             "statuses": {
                 "statuses": {
-                    "date": "Mon Nov 04 2019",
-                    "count": 96,
-                    "total": 2526202,
+                    "date": "Wed Nov 06 2019",
+                    "count": 57,
+                    "total": 2919392,
                     "status": 2,
                     "pad_counts": [
-                        11,
-                        9,
-                        7,
+                        5,
+                        5,
+                        3,
                         0
                     ],
                     "pad_seconds": [
-                        590,
-                        459,
-                        41,
+                        260,
+                        162,
+                        51,
                         0
                     ],
-                    "reported_percent": 0.3333333333333333
+                    "reported_percent": 0.19791666666666666
                 }
             }
         },
