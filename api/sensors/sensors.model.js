@@ -91,6 +91,7 @@ function findSensorsAndHistories () {
   .join("history as h", "s.physical_id", "h.sensor_id")
   .join("pad_counts as pc", "pc.history_id", "h.id")
   .join("pad_seconds as ps", "ps.history_id", "h.id")
+  .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -105,6 +106,15 @@ function findSensorsAndHistories () {
     "s.yield",
     "s.static",
     "s.quality",
+    "p.id as pump_index",
+    "p.sensor_pid",
+    "p.org_id",
+    "p.country_name",
+    "p.district_name",
+    "p.province_name",
+    "p.commune_name",
+    "p.latitude",
+    "p.longitude",
     "h.id as history_index",
     "h.date",
     "h.count",
@@ -129,6 +139,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .join("history as h", "s.physical_id", "h.sensor_id")
   .join("pad_counts as pc", "pc.history_id", "h.id")
   .join("pad_seconds as ps", "ps.history_id", "h.id")
+  .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .where({physical_id: id})
   .select([
     "s.id as sensor_index",
@@ -144,6 +155,15 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
     "s.yield",
     "s.static",
     "s.quality",
+    "p.id as pump_index",
+    "p.sensor_pid",
+    "p.org_id",
+    "p.country_name",
+    "p.district_name",
+    "p.province_name",
+    "p.commune_name",
+    "p.latitude",
+    "p.longitude",
     "h.id as history_index",
     "h.date",
     "h.count",
