@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Accounts = require("./accounts.model.js");
 const { authenticate } = require("../middleware/middleware");
 const { generateToken } = require("../auth/auth.helpers");
-const { validateAccount } = require("../middleware/middleware");
+const { validateAccount, validateUpdate } = require("../middleware/middleware");
 
 // GET to /api/accounts
 // ! supposed to be only for superusers
@@ -52,7 +52,7 @@ router.post("/", validateAccount, async (req, res) => {
 });
 
 // PUT to /api/accounts/3
-router.put("/:account_id", authenticate, validateAccount, async (req, res) => {
+router.put("/:account_id", authenticate, validateUpdate, async (req, res) => {
   try {
     const { account_id } = req.params;
     const changes = req.body;

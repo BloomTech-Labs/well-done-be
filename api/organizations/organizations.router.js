@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { authenticate } = require("../middleware/middleware");
 const Organizations = require("./organizations.model");
-const { validateOrg } = require("../middleware/middleware");
+const { validateOrg, validateOrgUpdate } = require("../middleware/middleware");
 
 // GET to /api/orgs
 router.get("/", authenticate, async (req, res) => {
@@ -32,7 +32,7 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 // POST to api/orgs
-router.post("/", authenticate, async (req, res) => {
+router.post("/", authenticate, validateOrg, async (req, res) => {
   try {
     const org = req.body;
     console.log("org", org);
@@ -45,7 +45,7 @@ router.post("/", authenticate, async (req, res) => {
 });
 
 // PUT to /api/orgs/1
-router.put("/:id", authenticate, validateOrg, async (req, res) => {
+router.put("/:id", authenticate, validateOrgUpdate, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;

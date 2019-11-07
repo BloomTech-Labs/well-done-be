@@ -153,15 +153,15 @@ const getUpdatedSensors = () => {
                 id,
                 finish_construction,
                 well_depth,
-                yield,
-                static,
               } = data;
+              const getYield = data.yield
+              const getStatic = data.static
               const sensor = {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: yield,
-                static: static
+                yield: getYield,
+                static: getStatic
               };
               console.log(sensor)
               addSensor(sensor);
@@ -183,15 +183,16 @@ const getUpdatedSensors = () => {
                 id,
                 finish_construction,
                 well_depth,
-                yield,
-                static,
+               
               } = data;
+              const getYield = data.yield
+              const getStatic = data.static
               const sensor = {
                 physical_id: id,
                 data_finished: finish_construction,
                 depth: well_depth,
-                yield: yield,
-                static: static
+                yield: getYield,
+                static: getStatic
               };
              
               addSensor(sensor);

@@ -27,6 +27,16 @@ function validateOrg(request, response, next) {
     response.status(400).json({ message: "org data is required" });
   } else if (!request.body.org_name) {
     response.status(400).json({ message: "org name is required" });
+   
+  } else {
+    next();
+  }
+}
+
+function validateOrgUpdate(request, response, next) {
+  if (Object.keys(request.body).length === 0) {
+    response.status(400).json({ message: "org data is required" });
+  } else {
     next();
   }
 }
@@ -51,6 +61,14 @@ function validateAccount(request, response, next) {
     response.status(400).json({ message: "org admin is required" });
   }
   next();
+}
+
+function validateUpdate(request, response, next) {
+  if (Object.keys(request.body).length === 0) {
+    response.status(400).json({ message: "please provide update data" })
+  } else {
+    next()
+  }
 }
 // Pumps
 function validatePump(request, response, next) {
@@ -88,6 +106,18 @@ function validateSms(request, response, next) {
   next();
 }
 
+function validateLogin(request, response, next) {
+  if (Object.keys(request.body).length === 0) {
+    response.status(400).json({ message: "email/username and password is required" });
+  }  else if (!request.body.email_address) {
+    response.status(400).json({ message: "email/username is required" });
+  } else if (!request.body.password) {
+    response.status(400).json({ message: "password is required" });
+    next();
+  }
+
+}
+
 module.exports = {
   authenticate,
   validateOrg,
@@ -95,5 +125,9 @@ module.exports = {
   validatePump,
   validateSensor,
   validateHistory,
-  validateSms
+  validateSms,
+  validateUpdate,
+  validateLogin,
+  validateOrgUpdate
+  
 };
