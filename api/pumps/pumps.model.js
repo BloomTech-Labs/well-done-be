@@ -83,6 +83,11 @@ const updatePump = (changes, id) => {
   }
 };
 
+const getPumpsByCountryName = (filter) => {
+  return db("pumps")
+  .where(filter)
+}
+
 module.exports = {
     addPumps,
     addPump,
@@ -91,6 +96,7 @@ module.exports = {
     getPumpsByOrgId,
     getPumpById,
     deletePump,
-    updatePump
+    updatePump,
+    getPumpsByCountryName
 }
 

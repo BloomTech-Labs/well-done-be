@@ -85,4 +85,17 @@ router.get("/org/:id", authenticate, (req, res) => {
     });
 });
 
+router.post("/country_name", authenticate, (req, res) => {
+  let { country_name } = req.body;
+  console.log(country_name, "this is the country name")
+  Pumps.getPumpsByCountryName({country_name}).first()
+    .then(pumps => {
+      console.log("pumps", pumps);
+      res.status(200).json(pumps);
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Fail to retrieve orgs" });
+    });
+});
+
 module.exports = router;
