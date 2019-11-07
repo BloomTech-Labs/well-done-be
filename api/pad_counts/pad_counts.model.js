@@ -3,6 +3,11 @@ const db = require("../../data/dbConfig.js");
 function find() {
     return db("pad_counts as p")
 }
+function findById(id) {
+   return db("pad_counts")
+   .where({history_id: id})
+
+}
 
 function add(count) {
     return db("pad_counts")
@@ -21,5 +26,6 @@ function updatePadCounts(current, id) {
 module.exports = {
     find,
     add,
-    updatePadCounts
+    updatePadCounts,
+    findById
 }
