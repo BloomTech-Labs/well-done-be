@@ -4,9 +4,10 @@ const jwt = require("jsonwebtoken");
 const Auth = require("./auth.model.js");
 const secrets = require("../../config/secrets");
 const { generateToken } = require("../auth/auth.helpers.js");
+const { validateLogin } = require("../middleware/middleware")
 
 // POST to /api/auth/login
-router.post("/login", async (req, res) => {
+router.post("/login", validateLogin, async (req, res) => {
   try {
     let { email_address, password } = req.body;
     const account = await Auth.findBy({ email_address }).first();
