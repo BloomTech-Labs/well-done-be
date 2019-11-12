@@ -24,11 +24,10 @@ async function dataUpdate () {
    
     let results = []
      await asyncForEach((sensors), async (sensor, index) => {
-      // await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
         console.log(`${index + 1}/${sensor.physical_id}`)
         const resMomo = await axios.get(`${url}${sensor.physical_id}`)
-        console.log(resMomo.data, "*****RESMO")
+        // console.log(resMomo.data, "*****RESMO")
         let newData = {}
        resMomo.data
           ? resMomo.data.dates.forEach(async (date, index) => {
@@ -52,79 +51,109 @@ async function dataUpdate () {
           status: resMomo.data.status,
           statuses: newData,
         })
-      console.log(results, "******RESULTS")
+      // console.log(results, "******RESULTS")
       } catch (err) {
         console.log(`Error on sensor #${sensor.physical_id}`)
         console.log(err.message, "this is the err")
 
         results.push({ id: sensor, ...sensor[sensor], status: 0, error: "500" })
       }
+      
      })
+     
+    //  showResults(results)
+    //  getUpdatedHistoryTWO(results)
+     return { lastFetch: moment().unix(), sensor: results }
     } catch (err) {console.log(err.message)}
   }
  getTable()
  }
 
-// async function dataUpdate () {
-//   const getTable = async () => {
-//     sensorsTable ()
-//     .then(res => {
-//     let results = []
-//      res.forEach(async (sensor, idx) => {
-//       try {
-//         console.log(`${idx + 1}/${sensor.physical_id}`)
-//         const resMomo = await axios.get(`${url}${sensor.physical_id}`)
-//         console.log(resMomo.data, "RESMOMO ********")
-//         console.log(sensor.physical_id, "PHYSICAL ID")
-//         let newData = {}
-//         await resMomo.data
-//           ? await resMomo.data.dates.forEach(async (date, index) => {
-//             // console.log(date)
-//             // console.log(resMomo.data)
-//               newData = {
-//                 ...newData,
-//                 statuses: {
-//                   date: date,
-//                   count: resMomo.data.statuses[index].count,
-//                   total: resMomo.data.statuses[index].total,
-//                   status: resMomo.data.statuses[index].status,
-//                   pad_counts: resMomo.data.statuses[index].padCounts,
-//                   pad_seconds:resMomo.data.statuses[index].padSeconds,
-//                   reported_percent:resMomo.data.statuses[index].reportedPercent
-//                 },
-//               }
-//             })
-//           : {}
-//         results.push({
-//           id: sensor.physical_id,
-//           ...sensor[sensor],
-//           status: resMomo.data.status,
-//           statuses: newData,
-//         })
-//       console.log(results, "******RESULTS")
-//       } catch (err) {
-//         console.log(`Error on sensor #${sensor.physical_id}`)
-//         console.log(err.message, "this is the err")
 
-//         // results.push({ id: sensor, ...sensors[sensor], status: 0, error: "500" })
-//       }
-//      })
+ function showResults (sensor) {
+   sensor ?
+   sensor.forEach(item => console.log(item), "RESULTS ARRAY ITEMS") :
+   console.log("help")
+ }
+
+ showResults()
+
+//  const getUpdatedHistoryTWO = (results) => {
+  
+//   const updateHistory = () => {
+//         console.log("this is line 305")
+//         getLastFetchTable()
+//           .then(res => {    
+//             if (Data.lastFetch !== res[0].last) {
+//               addLastFetch(Data.lastFetch)
+//               getLastFetchTable()
+//             .then(res => { 
+//               console.log(res, "this is 306")
+//           const prevFetch = res[1].created_at.split('').slice(0,10).join('')
+//           const recentFetch = res[0].created_at.split('').slice(0,10).join('')
+//           const prevFetchLAST = res[1].last
+//           const recentFetchLAST = res[0].last
+//                   console.log(prevFetch, "this is prevFetch")
+//                   console.log(recentFetch, "this is recentFetch")
+//                   console.log(prevFetchLAST, "this is prevFetch")
+//                   console.log(recentFetchLAST, "this is recentFetch")
+//           //if prev fetch date is not the same day as the most recent fetch add the new history and pad/seconds
+//           if (prevFetch !== recentFetch) {
+//           Data.pumps.forEach((data, idx) => {
+//           if (data.statuses) {
+//             let history = {
+//               sensor_id: data.id,
+//               count: data.statuses.statuses ? data.statuses.statuses.count : null,
+//               total: data.statuses.statuses ? data.statuses.statuses.total : null,
+//               status: data.statuses.statuses ? data.statuses.statuses.status : null,
+//               date: data.statuses.statuses ? data.statuses.statuses.date : null,
+//               reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
+//             }  
+//             getHistoryStatuses(history)
+//         } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
+//       } else {console.log("history is current")}
 //     })
-//     // console.log(newData, 'this is the new data')
-//     // console.log(results, "THIS IS RESULTS")
-//     // return { lastFetch: moment().unix(), sensors: results }
+//    }
+//   })  
 //  }
-//  getTable()
-//  }
+//  updateHistory()
+// }
 
+// function getHistoryStatusesTWO (history){	  
+//   return db("history").insert(history, "id")
+//     .then(([id]) => {	         
+//           const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)
+       
+//                 const getPadCounts = () => {
+//                     let current = {
+//                       history_id: id,
+//                       pad_count_0: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[0] : null,
+//                       pad_count_1: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[1] : null,
+//                       pad_count_2: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[2] : null,
+//                       pad_count_3: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[3] : null
+//                     }
+                    
+//                     addPadCounts(current)
+              
+//                     }	
+//                 const getPadSeconds = () => {
+//                     let current = {
+//                       history_id: id,
+//                       pad_seconds_0: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[0] : null,
+//                       pad_seconds_1: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[1] : null,
+//                       pad_seconds_2: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[2] : null,
+//                       pad_seconds_3: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[3] : null
+//                     }
+                
+//                     addPadSeconds(current)
+//           } 
+//           getPadSeconds()
+//           getPadCounts()
+//         }
+      
+//   )
+// }
 
-
-
-//push each result into a result array
-
-// map through the results arr and add histories where date is new
-
-//this is relagates any new sensors and pumps getting added on the front end 
 
 
 function addPump(pump) {
