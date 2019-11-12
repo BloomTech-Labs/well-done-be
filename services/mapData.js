@@ -3,9 +3,6 @@ const db = require("../data/dbConfig");
 const moment = require("moment");
 const axios = require("axios")
 
-
-
-
 // const getPumps = Data.pumps.map(pump => console.log("getPumps", pump))
 
 // gets current list of sensor ids
@@ -13,23 +10,28 @@ const url =
   "https://dashboard.welldone.org/.netlify/functions/get_momo_status?id="
 //get call the to the url appending each of the sensor ids
 
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array)
+  }
+}
+
+
 async function dataUpdate () {
   const getTable = async () => {
     try {
-    const table = await sensorsTable ()
+    const sensors = await sensorsTable ()
    
     let results = []
-     await table.forEach(async (sensor, idx) => {
+     await asyncForEach((sensors), async (sensor, index) => {
+      // await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
-        console.log(`${idx + 1}/${sensor.physical_id}`)
+        console.log(`${index + 1}/${sensor.physical_id}`)
         const resMomo = await axios.get(`${url}${sensor.physical_id}`)
-        // console.log(resMomo.data, "RESMOMO ********")
-        // console.log(sensor.physical_id, "PHYSICAL ID")
+        console.log(resMomo.data, "*****RESMO")
         let newData = {}
-        await resMomo.data
-          ? await resMomo.data.dates.forEach(async (date, index) => {
-            // console.log(date)
-            // console.log(resMomo.data)
+       resMomo.data
+          ? resMomo.data.dates.forEach(async (date, index) => {
               newData = {
                 ...newData,
                 statuses: {
@@ -55,15 +57,11 @@ async function dataUpdate () {
         console.log(`Error on sensor #${sensor.physical_id}`)
         console.log(err.message, "this is the err")
 
-        // results.push({ id: sensor, ...sensors[sensor], status: 0, error: "500" })
+        results.push({ id: sensor, ...sensor[sensor], status: 0, error: "500" })
       }
      })
-    // 
-    // console.log(newData, 'this is the new data')
-    // console.log(results, "THIS IS RESULTS")
-    // return { lastFetch: moment().unix(), sensors: results }
     } catch (err) {console.log(err.message)}
- }
+  }
  getTable()
  }
 
