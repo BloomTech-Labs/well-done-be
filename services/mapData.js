@@ -15,18 +15,19 @@ const url =
 
 async function dataUpdate () {
   const getTable = async () => {
-    sensorsTable ()
-    .then(res => {
+    try {
+    const table = await sensorsTable ()
+   
     let results = []
-     res.forEach(async (sensor, idx) => {
+     await table.forEach(async (sensor, idx) => {
       try {
         console.log(`${idx + 1}/${sensor.physical_id}`)
         const resMomo = await axios.get(`${url}${sensor.physical_id}`)
-        console.log(resMomo.data, "RESMOMO ********")
-        console.log(sensor.physical_id, "PHYSICAL ID")
+        // console.log(resMomo.data, "RESMOMO ********")
+        // console.log(sensor.physical_id, "PHYSICAL ID")
         let newData = {}
         await resMomo.data
-          ? await resMomo.data.dates.forEach((date, index) => {
+          ? await resMomo.data.dates.forEach(async (date, index) => {
             // console.log(date)
             // console.log(resMomo.data)
               newData = {
@@ -49,7 +50,7 @@ async function dataUpdate () {
           status: resMomo.data.status,
           statuses: newData,
         })
-      console.log(results[0], "******RESULTS")
+      console.log(results, "******RESULTS")
       } catch (err) {
         console.log(`Error on sensor #${sensor.physical_id}`)
         console.log(err.message, "this is the err")
@@ -57,13 +58,66 @@ async function dataUpdate () {
         // results.push({ id: sensor, ...sensors[sensor], status: 0, error: "500" })
       }
      })
-    })
+    // 
     // console.log(newData, 'this is the new data')
     // console.log(results, "THIS IS RESULTS")
     // return { lastFetch: moment().unix(), sensors: results }
+    } catch (err) {console.log(err.message)}
  }
  getTable()
  }
+
+// async function dataUpdate () {
+//   const getTable = async () => {
+//     sensorsTable ()
+//     .then(res => {
+//     let results = []
+//      res.forEach(async (sensor, idx) => {
+//       try {
+//         console.log(`${idx + 1}/${sensor.physical_id}`)
+//         const resMomo = await axios.get(`${url}${sensor.physical_id}`)
+//         console.log(resMomo.data, "RESMOMO ********")
+//         console.log(sensor.physical_id, "PHYSICAL ID")
+//         let newData = {}
+//         await resMomo.data
+//           ? await resMomo.data.dates.forEach(async (date, index) => {
+//             // console.log(date)
+//             // console.log(resMomo.data)
+//               newData = {
+//                 ...newData,
+//                 statuses: {
+//                   date: date,
+//                   count: resMomo.data.statuses[index].count,
+//                   total: resMomo.data.statuses[index].total,
+//                   status: resMomo.data.statuses[index].status,
+//                   pad_counts: resMomo.data.statuses[index].padCounts,
+//                   pad_seconds:resMomo.data.statuses[index].padSeconds,
+//                   reported_percent:resMomo.data.statuses[index].reportedPercent
+//                 },
+//               }
+//             })
+//           : {}
+//         results.push({
+//           id: sensor.physical_id,
+//           ...sensor[sensor],
+//           status: resMomo.data.status,
+//           statuses: newData,
+//         })
+//       console.log(results, "******RESULTS")
+//       } catch (err) {
+//         console.log(`Error on sensor #${sensor.physical_id}`)
+//         console.log(err.message, "this is the err")
+
+//         // results.push({ id: sensor, ...sensors[sensor], status: 0, error: "500" })
+//       }
+//      })
+//     })
+//     // console.log(newData, 'this is the new data')
+//     // console.log(results, "THIS IS RESULTS")
+//     // return { lastFetch: moment().unix(), sensors: results }
+//  }
+//  getTable()
+//  }
 
 
 
