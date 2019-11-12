@@ -113,8 +113,9 @@ function validateLogin(request, response, next) {
     response.status(400).json({ message: "email/username is required" });
   } else if (!request.body.password) {
     response.status(400).json({ message: "password is required" });
-    next();
+    
   }
+  next();
 
 }
 
