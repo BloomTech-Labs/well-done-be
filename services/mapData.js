@@ -25,33 +25,33 @@ async function dataUpdate () {
         console.log(resMomo.data, "RESMOMO ********")
         console.log(sensor.physical_id, "PHYSICAL ID")
         let newData = {}
-        resMomo.data
-          ? resMomo.data.dates.forEach((date, index) => {
-            console.log(date)
-            console.log(resMomo.data)
+        await resMomo.data
+          ? await resMomo.data.dates.forEach((date, index) => {
+            // console.log(date)
+            // console.log(resMomo.data)
               newData = {
                 ...newData,
                 statuses: {
                   date: date,
-                  count: res.data.statuses[index].count,
-                  total: res.data.statuses[index].total,
-                  status: res.data.statuses[index].status,
-                  pad_counts: res.data.statuses[index].padCounts,
-                  pad_seconds:res.data.statuses[index].padSeconds,
-                  reported_percent:res.data.statuses[index].reportedPercent
+                  count: resMomo.data.statuses[index].count,
+                  total: resMomo.data.statuses[index].total,
+                  status: resMomo.data.statuses[index].status,
+                  pad_counts: resMomo.data.statuses[index].padCounts,
+                  pad_seconds:resMomo.data.statuses[index].padSeconds,
+                  reported_percent:resMomo.data.statuses[index].reportedPercent
                 },
               }
             })
           : {}
         results.push({
           id: sensor.physical_id,
-          ...sensors[sensor],
-          status: res.data.status,
+          ...sensor[sensor],
+          status: resMomo.data.status,
           statuses: newData,
         })
-      console.log(results, "******RESULTS")
+      console.log(results[0], "******RESULTS")
       } catch (err) {
-        console.log(`Error on sensor #${sensor}`)
+        console.log(`Error on sensor #${sensor.physical_id}`)
         console.log(err.message, "this is the err")
 
         // results.push({ id: sensor, ...sensors[sensor], status: 0, error: "500" })
