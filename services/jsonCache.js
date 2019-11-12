@@ -6,6 +6,7 @@ const moment = require("moment");
 // const mapData = require('./mapData')
 // const schedule = require('node-schedule');
 
+
 async function cacheResource(resourceName, resourceLoader) {
   const resource = await resourceLoader()
   const json = JSON.stringify(resource)
@@ -67,7 +68,7 @@ async function getPumps() {
       }
     })
 
-    let results = []
+    // let results = []
     await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
