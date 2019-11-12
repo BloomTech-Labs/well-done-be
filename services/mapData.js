@@ -63,20 +63,25 @@ async function dataUpdate () {
      
     //  showResults(results)
     //  getUpdatedHistoryTWO(results)
-     return { lastFetch: moment().unix(), sensor: results }
+     return { lastFetch: moment().unix(), sensor: results }, showResults(sensor)
     } catch (err) {console.log(err.message)}
   }
  getTable()
  }
 
 
- function showResults (sensor) {
-   sensor ?
-   sensor.forEach(item => console.log(item), "RESULTS ARRAY ITEMS") :
-   console.log("help")
+ async function showResults (sensor) {
+    try {
+      const sensors = await sensor
+      sensor.forEach(item => console.log(item), "RESULTS ARRAY ITEMS") 
+      console.log("help")
+    } catch (err) {
+      console.log(err, "this is line 79 show results")
+    }
+  
  }
 
- showResults()
+//  showResults()
 
 //  const getUpdatedHistoryTWO = (results) => {
   
