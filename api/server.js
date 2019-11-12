@@ -1,6 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
-// const cors = require("cors");
+const cors = require("cors");
 const secrets = require("../config/secrets.js");
 
 console.log("environment:", secrets.environment);
@@ -25,6 +25,14 @@ const padCountsRouter = require("./pad_counts/pad_counts.router")
 server.use(express.json());
 server.use(helmet());
 // server.use(cors());
+server.use(cors({ credentials: true, origin: `http://localhost:3000`})); 
+server.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
 server.use("/api/pumps", pumpsRouter);
