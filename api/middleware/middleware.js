@@ -78,8 +78,9 @@ function validatePump(request, response, next) {
     response.status(400).json({ message: "latitude is required" });
   } else if (!request.body.longitude) {
     response.status(400).json({ message: "longitude is required" });
-    next();
+    
   }
+  next();
 }
 
 // Sensors
