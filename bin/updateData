@@ -1,4 +1,4 @@
-#! /app/.heroku/node/bin/node
+#! /app/bin/node
 
 const update = require("./services/mapData")
 
