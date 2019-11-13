@@ -68,7 +68,7 @@ async function getPumps() {
       }
     })
 
-    // let results = []
+    let results = []
     await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)

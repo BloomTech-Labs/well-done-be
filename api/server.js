@@ -2,6 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
 const secrets = require("../config/secrets.js");
+const request = require('request')
 
 console.log("environment:", secrets.environment);
 const server = express();
@@ -32,7 +33,15 @@ server.use(cors());
 //   next();
 // });
 
+//https://welldone-db.herokuapp.com/
+var reqTimer = setTimeout(function wakeUp() {
+  request("https://welldone-db.herokuapp.com/", function() {
+     console.log("WAKE UP DYNO");
+  });
+  return reqTimer = setTimeout(wakeUp, 5000);
+}, 5000);
 
+server.use(() => reqTimer())
 server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
 server.use("/api/pumps", pumpsRouter);
