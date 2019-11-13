@@ -41,7 +41,12 @@ var reqTimer = setTimeout(function wakeUp() {
   return reqTimer = setTimeout(wakeUp, 5000);
 }, 5000);
 
-server.use(() => reqTimer())
+
+
+reqTimer
+
+// server.use(reqTimer)
+// server.use(() => reqTimer())
 server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
 server.use("/api/pumps", pumpsRouter);
