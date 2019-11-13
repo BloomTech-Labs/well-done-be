@@ -38,15 +38,11 @@ var reqTimer = setTimeout(function wakeUp() {
   request("https://welldone-db.herokuapp.com/", function() {
      console.log("WAKE UP DYNO");
   });
-  return reqTimer = setTimeout(wakeUp, 5000);
-}, 5000);
-
-
+  return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
 
 reqTimer
 
-// server.use(reqTimer)
-// server.use(() => reqTimer())
 server.use("/api/auth", authRouter);
 server.use("/api/orgs", orgRouter);
 server.use("/api/pumps", pumpsRouter);
