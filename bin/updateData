@@ -1,0 +1,10 @@
+#! /app/.heroku/node/bin/node
+
+const update = require("./services/mapData")
+
+function plsWork() {
+    update.getUpdated
+    console.log("works!")
+}
+
+plsWork()
