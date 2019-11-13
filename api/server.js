@@ -19,7 +19,16 @@ const smsNotificationsRouter = require("./sms_notifications/sms_notifications.ro
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
 const padSecondsRouter = require("./pad_seconds/pad_seconds.router")     
-const padCountsRouter = require("./pad_counts/pad_counts.router")     
+const padCountsRouter = require("./pad_counts/pad_counts.router")   
+
+var reqTimer = setTimeout(function wakeUp() {
+  request("https://welldone-db.herokuapp.com/", function() {
+     console.log("WAKE UP DYNO");
+  });
+  return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
+
+reqTimer
 
 
 server.use(express.json());
