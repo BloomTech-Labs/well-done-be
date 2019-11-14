@@ -35,7 +35,7 @@ server.use(cors());
 
 //https://welldone-db.herokuapp.com/
 var reqTimer = setTimeout(function wakeUp() {
-  request("https://welldone-db.herokuapp.com/", function() {
+  request("https://welldone-db.herokuapp.com/api/auth/login", function() {
      console.log("WAKE UP DYNO");
   });
   return reqTimer = setTimeout(wakeUp, 1200000);
