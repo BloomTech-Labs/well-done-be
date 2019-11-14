@@ -21,4 +21,16 @@ router.post("/login", validateLogin, async (req, res) => {
   }
 });
 
+// router.get("/login", (req, res) => {
+//   try {
+//     res.status(200).json({message: "Please login to access this site"})
+//   } catch (err) {
+//     res.status(500).json({message: "request failed"})
+//   }
+// })
+
+router.get("/login", (req, res) => {
+  res.status(200).json(`Welcome to the Jungle`);
+});
+
 module.exports = router;
