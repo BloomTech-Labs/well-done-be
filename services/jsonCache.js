@@ -50,25 +50,34 @@ async function getPumps() {
     console.log("Fetching Pumps Init")
     let pumps = {}
     const prismicPumps = await prismic.getDocs("pump")
+    console.log(prismicPumps.results, "this is prismic results")
     await asyncForEach(prismicPumps.results, async pump => {
       let village = null
+      let organizations = null
+      console.log(pump.data, "this is pump.data.organizations.id")
       if (pump.data && pump.data.village.id && !pump.data.village.isBroken) {
         village = await prismic.getVillage(pump.data.village.id)
       }
+      if (pump.data && pump.data.organizations.id && !pump.data.organizations.isBroken) {
+        organizations = await prismic.getOrganizations(pump.data.organizations.id)
+      }
+
       if (pump.data && pump.data.latitude && pump.data.longitude) {
         pumps = {
           ...pumps,
           [pump.uid]: {
             ...pump.data,
             village,
+            organizations,
           },
         }
+        console.log(pumps, "this is pumps")
       } else {
         console.log(`Missing data on pump #${pump.uid}`)
       }
     })
 
-    // let results = []
+    let results = []
     await asyncForEach(Object.keys(pumps), async (pump, index) => {
       try {
         console.log(`${index + 1}/${Object.keys(pumps).length}`)
