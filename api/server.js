@@ -24,7 +24,7 @@ const padSecondsRouter = require("./pad_seconds/pad_seconds.router")
 const padCountsRouter = require("./pad_counts/pad_counts.router")   
 
 var reqTimer = setTimeout(function wakeUp() {
-  request("https://welldone-db.herokuapp.com/", function() {
+  request("https://welldone-db.herokuapp.com/api/auth/login", function() {
      console.log("WAKE UP DYNO");
   });
   return reqTimer = setTimeout(wakeUp, 1200000);
