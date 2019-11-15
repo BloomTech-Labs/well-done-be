@@ -250,7 +250,7 @@ const getUpdatedPumps = (orgResults) => {
      
       console.log(res.length, "this is orgs length")
       if (res.length === 0) {
-        console.log(orgResults, "this is orgResults line 253")
+        // console.log(orgResults, "this is orgResults line 253")
         orgResults ? orgResults.forEach((org, idx) => {
           const { organizations, headquarter_city} = org
                          
@@ -263,12 +263,14 @@ const getUpdatedPumps = (orgResults) => {
             pumpsTable()
               .then(res => {
                 console.log(res, "this is the pumps table line 264")
-                if (res.length === 0) {
+                // if (res.length === 0) {
                   Data.pumps.forEach((data, idx) => {
                     // find org id by name, return id, add id to pump under org_id
-                    const orgName = data.organizations
+                    const orgName = data.organizations.organizations
+                    console.log(orgName, "this is the orgName line 270")
                     getOrgIdByName(orgName)
                       .then(res => {
+                        console.log(res, "this is line 272")
                         const pump = {
                           org_id: res.id,
                           sensor_pid: data.id,
@@ -279,10 +281,11 @@ const getUpdatedPumps = (orgResults) => {
                           district_name: data.village.district,
                           province_name: data.village.province
                         }
+                        console.log(pump, "this is the pump")
                         addPump(pump)
                       })
                     })
-                  }
+                  // }
                 })
               })
             }) : {}
@@ -329,7 +332,7 @@ const getUpdatedPumps = (orgResults) => {
 
                   newPumps.forEach((data, idx) => {
                     // find org id by name, return id, add id to pump under org_id
-                    const orgName = data.organizations
+                    const orgName = data.organizations.organizations
                     getOrgIdByName(orgName)
                       .then(res => {
                         const pump = {
@@ -356,7 +359,7 @@ const getUpdatedPumps = (orgResults) => {
 function newOrgsPumpUpdate () {
 pumpsTable()
   .then(res => {
-    console.log(res, "this is the pumps table line 358")
+    // console.log(res, "this is the pumps table line 358")
 
     const currentPumps = res.map(item => item.sensor_pid)
     const incomingPumps = Data.pumps.map(item => Number(item.id))
@@ -370,7 +373,7 @@ pumpsTable()
 
     newPumps.forEach((data, idx) => {
       // find org id by name, return id, add id to pump under org_id
-      const orgName = data.organizations
+      const orgName = data.organizations.organizations
       getOrgIdByName(orgName)
         .then(res => {
           const pump = {
