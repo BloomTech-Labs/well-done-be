@@ -134,6 +134,13 @@ function findSensorsAndHistories () {
   ])
 }
 
+function getSensorNHistoryByPhysicalId (id) {
+  return db("sensors as s")
+  .join("pumps as p", "s.physical_id", "p.sensor_pid")
+  .where({physical_id: id})
+}
+
+
 function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   return db("sensors as s")
   .join("history as h", "s.physical_id", "h.sensor_id")
@@ -195,6 +202,7 @@ module.exports = {
   getSensorNPumpNHistory,
   getSensorBySensorId,
   findSensorsAndHistories,
+  getSensorNHistoryByPhysicalId,
   findSensorsAndHistoriesBySensorsPhysicalId
 }
 

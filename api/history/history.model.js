@@ -46,6 +46,13 @@ function getHistoryById(id) {
   );
 }
 
+function getHistoryBySensorId(id) {
+  return db("history as h")
+  .join("pad_seconds as s", "s.history_id", "h.id")
+  .join("pad_counts as c", "c.history_id", "h.id")
+  .where({sensor_id: id})
+}
+
 const insert = async historical => {
   try {
     await db("history").insert(historical);
@@ -92,5 +99,6 @@ module.exports = {
   insert,
   update,
   remove,
-  getHistoryById
+  getHistoryById,
+  getHistoryBySensorId
 };
