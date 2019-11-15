@@ -147,6 +147,19 @@ function getLastFetchTable() {
   .orderBy("created_at", "desc")
 }
 
+function getOrgs () {
+  return db("organizations")
+}
+
+function addOrgs (organization) {
+  return db("organizations")
+  .insert(organization)
+  .returning("id")
+  .then(res => {
+    res
+  })
+}
+
 const getUpdatedSensors = () => {
   const sensorCheck = () => {
     sensorsTable()
@@ -180,36 +193,124 @@ const getUpdatedSensors = () => {
 sensorCheck() 
 }
 
+// const getUpdatedOrgs = async () => {
+//   getOrgs()
+//     .then(res => {
+//       if (res.length === 0) {
+//         Data.pumps.forEach((data, idx) => {
+//           const {
+//             organizations: { id, organizations, headquarter_city} = data
+//             }
+//           const organization = {
+//             sensor_id: id,
+//             org_name: organizations,
+//             headquarter_city: headquarter_city
+//           }
+//           addOrg(organization)
+//         })
+//       }
+//     })
+// }
+      
+    
+// const getOrg = (organization) => {
+//   function getOrgs (organization){	  
+//     return db("organizations").insert(organization, "id")
+//       .then(([id]) => {	
+
+//     })
+//   }
+// }
+
 const getUpdatedPumps = () => {
-  const pumpCheck = () => {
-    pumpsTable()
+  const orgCheck = () => {
+    getOrgs()
     .then(res => {
       if (res.length === 0) {
         Data.pumps.forEach((data, idx) => {
-          const {
-            id,
-            latitude,
-            longitude,
-            village: { village, commune, district, province }
-          } = data;
-          const pump = {
-            sensor_pid: id,
-            latitude: latitude,
-            longitude: longitude,
-            country_name: village,
-            commune_name: commune,
-            district_name: district,
-            province_name: province
-          };
-          addPump(pump);
+          const { id, organizations, headquarter_city}  = data
+                         
+          const organization = {
+            sensor_id: id,
+            org_name: organizations,
+            headquarter_city: headquarter_city
+          }
+          addOrg(organization)
+             .then(res => {
+               console.log(res, "this is the addOrg returns on line 240")
+         
+              const {
+                id,
+                latitude,
+                longitude,
+                village: { village, commune, district, province }
+              
+            } = data;
+            const pump = {
+              org_id: res.id,
+              sensor_pid: id,
+              latitude: latitude,
+              longitude: longitude,
+              village_name: village,
+              commune_name: commune,
+              district_name: district,
+              province_name: province
+            }
+         
+            addPump(pump)
+          })
         })
       } else {
         console.log("pumps.json pumps already in database")
       }  
    }) 
   }
-pumpCheck() 
+orgCheck() 
 }
+
+// const getUpdatedPumps = () => {
+//   const pumpCheck = () => {
+//     pumpsTable()
+//     .then(res => {
+//       if (res.length === 0) {
+//         Data.pumps.forEach((data, idx) => {
+//           const {
+//             id,
+//             latitude,
+//             longitude,
+//             village: { village, commune, district, province }
+           
+//           } = data;
+//           const pump = {
+//             // org_id: this will be the org id returned from an org helper method,
+//             sensor_pid: id,
+//             latitude: latitude,
+//             longitude: longitude,
+//             village_name: village,
+//             commune_name: commune,
+//             district_name: district,
+//             province_name: province
+//           }
+//           addPump(pump)
+//           .then(res => {
+//             const { id, organizations, headquarter_city}  = data
+                        
+//             const organization = {
+//               sensor_id: id,
+//               org_name: organizations,
+//               headquarter_city: headquarter_city
+//             }
+//             addOrg(organization)
+
+//           })
+//         })
+//       } else {
+//         console.log("pumps.json pumps already in database")
+//       }  
+//    }) 
+//   }
+// pumpCheck() 
+// }
 
 async function dataUpdate () {
   const getTable = async () => {

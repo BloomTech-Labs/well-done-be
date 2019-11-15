@@ -23,9 +23,16 @@ async function getVillage(village) {
   return doc.data
 }
 
+async function getOrganizations(organizations) {
+  const api = await Prismic.api(API_ENDPOINT)
+  const doc = await api.getByID(organizations)
+  return doc.data
+}
+
 module.exports = {
   API_ENDPOINT,
   getDoc,
   getDocs,
   getVillage,
+  getOrganizations
 }
