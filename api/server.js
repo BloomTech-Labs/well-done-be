@@ -20,7 +20,9 @@ const smsNotificationsRouter = require("./sms_notifications/sms_notifications.ro
 const sensorsRouter = require("./sensors/sensors.router");
 const historyRouter = require("./history/history.router");
 const padSecondsRouter = require("./pad_seconds/pad_seconds.router")     
-const padCountsRouter = require("./pad_counts/pad_counts.router")     
+const padCountsRouter = require("./pad_counts/pad_counts.router")   
+const lastFetchRouter = require("./lastFetch/lastFetch.router")
+   
 
 
 server.use(express.json());
@@ -52,6 +54,7 @@ server.use("/api/sms_notifications", smsNotificationsRouter);
 server.use("/api/history", historyRouter);
 server.use("/api/pad_counts", padCountsRouter);
 server.use("/api/pad_seconds", padSecondsRouter)
+server.use("/api/last_fetch", lastFetchRouter)
 
 //update database functions
 server.use(mapData.getUpdated)
