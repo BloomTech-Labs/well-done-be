@@ -32,6 +32,23 @@ router.get("/:id", authenticate, (req, res) => {
     });
 });
 
+router.get("/sensor_id/:id", authenticate, (req, res) => {
+  const { id } = req.params;
+  History.getHistoryBySensorId(id)
+    .then(history => {
+      if (history) {
+        res.json(history);
+      } else {
+        res
+          .status(404)
+          .json({ message: "Could not find history with given id." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ message: "Failed to get history" });
+    });
+});
+
 // POST to /api/history
 router.post("/", authenticate, validateHistory, (req, res) => {
   const historyData = req.body;

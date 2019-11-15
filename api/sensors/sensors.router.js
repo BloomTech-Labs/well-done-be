@@ -18,9 +18,19 @@ router.post("/", authenticate, (req, res) => {
     });
 });
 
+// router.get("/", authenticate, async (req, res) => {
+//   try {
+//     const sensors = await Sensors.findSensorsAndHistories();
+//     res.status(200).json(sensors);
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(400).json(err.message);
+//   }
+// });
+
 router.get("/", authenticate, async (req, res) => {
   try {
-    const sensors = await Sensors.findSensorsAndHistories();
+    const sensors = await Sensors.getSensorNPump();
     res.status(200).json(sensors);
   } catch (err) {
     console.log(err.message);
@@ -86,10 +96,11 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 //get sensor by physical_id
+
 router.get("/sensor_id/:id", authenticate, (req, res) => {
   const { id } = req.params;
   console.log(req.params);
-  Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
+  Sensors.getSensorNHistoryByPhysicalId(id)
     .then(sensor => {
       if (sensor) {
         res.status(200).json(sensor);
@@ -97,6 +108,17 @@ router.get("/sensor_id/:id", authenticate, (req, res) => {
     })
     .catch(err => res.status(500).json(err.message));
 });
+// router.get("/sensor_id/:id", authenticate, (req, res) => {
+//   const { id } = req.params;
+//   console.log(req.params);
+//   Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
+//     .then(sensor => {
+//       if (sensor) {
+//         res.status(200).json(sensor);
+//       } else res.status(404).json({ message: "sensor does not exist" });
+//     })
+//     .catch(err => res.status(500).json(err.message));
+// });
 
 //GET a sensor by org_id
 router.get("/org/:id", authenticate, (req, res) => {
