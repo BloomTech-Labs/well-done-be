@@ -165,67 +165,101 @@ function getOrgIdByName (filter) {
 }
 
 const getUpdatedSensors = () => {
-  const sensorCheck = () => {
+  
+  const sensorCheck = () => {	    
     sensorsTable()
-    .then(res => {
-      console.log(res, " this is the sensors table res")
-      if (res.length === 0) {
-        Data.pumps.forEach((data, idx) => {
-            const {
-              id,
-              finish_construction,
-              well_depth,
-            } = data;
-            const getYield = data.yield
-            const getStatic = data.static
-            const sensor = {
-              physical_id: id,
-              data_finished: finish_construction,
-              depth: well_depth,
-              yield: getYield,
-              static: getStatic
-            };
-            console.log(sensor)
-            addSensor(sensor);
-        })
-        dataUpdate()
-      } else if (res.length > 0) {
+      .then(res => {
+        if (res.length === 0) {
+          Data.pumps.forEach((data, idx) => {
+              const {
+                id,
+                finish_construction,
+                well_depth,
+              } = data;
+              const getYield = data.yield
+              const getStatic = data.static
+              const sensor = {
+                physical_id: id,
+                data_finished: finish_construction,
+                depth: well_depth,
+                yield: getYield,
+                static: getStatic
+              };
+              console.log(sensor)
+              addSensor(sensor);
+          })
+          dataUpdate()
+        } else {
+          console.log("pumps.json sensors already in database")
+          dataUpdate()
+      }
+    }) 
+   }
+  sensorCheck() 
+  }
+
+// const getUpdatedSensors = () => {
+//   const sensorCheck = () => {
+//     sensorsTable()
+//     .then(res => {
+//       console.log(res, " this is the sensors table res")
+//       if (res.length === 0) {
+//         Data.pumps.forEach((data, idx) => {
+//             const {
+//               id,
+//               finish_construction,
+//               well_depth,
+//             } = data;
+//             const getYield = data.yield
+//             const getStatic = data.static
+//             const sensor = {
+//               physical_id: id,
+//               data_finished: finish_construction,
+//               depth: well_depth,
+//               yield: getYield,
+//               static: getStatic
+//             };
+//             console.log(sensor)
+//             addSensor(sensor);
+//         })
+//         dataUpdate()
+//       } else if (res.length > 0) {
         
-        const current = res.map(item => item.physical_id)
-        const incoming = Data.pumps.map(item => Number(item.id))
+//         const current = res.map(item => item.physical_id)
+//         const incoming = Data.pumps.map(item => Number(item.id))
 
-        let filtered = incoming.filter(item => !current.includes(item))
-        console.log(filtered.length, "this is the filtered length")
-        console.log(filtered.map(item => item), "this is what is in filtered")
+//         let filtered = incoming.filter(item => !current.includes(item))
+//         console.log(filtered.length, "this is the filtered length")
+//         console.log(filtered.map(item => item), "this is what is in filtered")
 
-        const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-        console.log(newSensors, "this is new sensors")
+//         const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+//         console.log(newSensors, "this is new sensors")
 
-          newSensors.map(data => {
-            const {
-              id,
-              finish_construction,
-              well_depth,
+//           newSensors.map(data => {
+//             const {
+//               id,
+//               finish_construction,
+//               well_depth,
              
-            } = data;
-            const getYield = data.yield
-            const getStatic = data.static
-            const sensor = {
-              physical_id: id,
-              data_finished: finish_construction,
-              depth: well_depth,
-              yield: getYield,
-              static: getStatic
-            };
+//             } = data;
+//             const getYield = data.yield
+//             const getStatic = data.static
+//             const sensor = {
+//               physical_id: id,
+//               data_finished: finish_construction,
+//               depth: well_depth,
+//               yield: getYield,
+//               static: getStatic
+//             };
            
-            addSensor(sensor);
-      })
-      dataUpdate()
-    }
-  }) 
- }
-sensorCheck() 
-}
+//             addSensor(sensor);
+//       })
+//       dataUpdate()
+//     }
+//   }) 
+//  }
+// sensorCheck() 
+// }
 
 // this function checks prismic pumps and adds to welldone db
 //then once complete, get pumps gets the id for each org
@@ -244,6 +278,8 @@ console.log(getPrismicOrgs())
 
 
 const getUpdatedPumps = (orgResults) => {
+  pumpsTable()
+    .then(res => console.log(res, "this is the pumps tables 248"))
   const orgCheck = () => {
     getOrgs()
     .then(res => {
@@ -271,6 +307,7 @@ const getUpdatedPumps = (orgResults) => {
                     getOrgIdByName(orgName)
                       .then(res => {
                         console.log(res, "this is line 272")
+                        
                         const pump = {
                           org_id: res.id,
                           sensor_pid: data.id,
@@ -283,6 +320,7 @@ const getUpdatedPumps = (orgResults) => {
                         }
                         console.log(pump, "this is the pump")
                         addPump(pump)
+                        
                       })
                     })
                   // }
