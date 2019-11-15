@@ -18,9 +18,19 @@ router.post("/", authenticate, (req, res) => {
     });
 });
 
-router.get("/", authenticate, async (req, res) => {
+router.get("/recent", authenticate, async (req, res) => {
   try {
     const sensors = await Sensors.findSensorsAndHistories();
+    res.status(200).json(sensors);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  }
+});
+
+router.get("/", authenticate, async (req, res) => {
+  try {
+    const sensors = await Sensors.getSensorNPump();
     res.status(200).json(sensors);
   } catch (err) {
     console.log(err.message);
@@ -97,7 +107,7 @@ router.get("/:id", authenticate, (req, res) => {
 
 //get sensor by physical_id
 
-router.get("/sensor_id/:id", authenticate, (req, res) => {
+router.get("/recent/sensor_id/:id", authenticate, (req, res) => {
   const { id } = req.params;
   console.log(req.params);
   Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
