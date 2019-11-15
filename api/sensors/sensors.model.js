@@ -132,6 +132,19 @@ function findSensorsAndHistories () {
     "ps.pad_seconds_3"
 
   ])
+  .then(res => {
+    let compare = []
+    let filtered = []
+
+    for (let i = res.length - 1; i >= 0; i--) {
+      if (!compare.includes(res[i].physical_id)) {
+        compare.push(res[i].physical_id)
+        filtered.push(res[i])
+      }
+    }
+    console.log(filtered, "this is filtered 204")
+    return filtered
+  })
 }
 
 function getSensorNHistoryByPhysicalId (id) {
@@ -148,6 +161,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .join("pad_seconds as ps", "ps.history_id", "h.id")
   .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .where({physical_id: id})
+  // .orderBy("h.date", "desc")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -188,7 +202,25 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
     "ps.pad_seconds_3"
 
   ])
+  .then(res => {
+    let compare = []
+    let filtered = []
+
+    for (let i = res.length - 1; i >= 0; i--) {
+      if (!compare.includes(res[i].physical_id)) {
+        compare.push(res[i].physical_id)
+        filtered.push(res[i])
+      }
+    }
+    console.log(filtered, "this is filtered 204")
+    return filtered
+  })
 }
+
+// const current = res.map(item => item.sensor_pid)
+//         const incoming = Data.pumps.map(item => Number(item.id))
+
+//         let filtered = incoming.filter(item => !current.includes(item))
 
 module.exports = {
   addSensor,
