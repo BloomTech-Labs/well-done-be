@@ -136,13 +136,13 @@ function findSensorsAndHistories () {
     let compare = []
     let filtered = []
 
-    for (let i = res.length - 1; i >= 0; i--) {
+      for (let i = 0; i < res.length; i++) {
+    // for (let i = res.length - 1; i >= 0; i--) {
       if (!compare.includes(res[i].physical_id)) {
         compare.push(res[i].physical_id)
         filtered.push(res[i])
       }
     }
-    console.log(filtered, "this is filtered 204")
     return filtered
   })
 }
@@ -161,7 +161,6 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .join("pad_seconds as ps", "ps.history_id", "h.id")
   .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .where({physical_id: id})
-  // .orderBy("h.date", "desc")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -212,7 +211,6 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
         filtered.push(res[i])
       }
     }
-    console.log(filtered, "this is filtered 204")
     return filtered
   })
 }
