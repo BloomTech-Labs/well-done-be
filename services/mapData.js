@@ -226,91 +226,80 @@ const getUpdatedPumps = () => {
   const orgCheck = () => {
     getOrgs()
     .then(res => {
+      console.log(res.length, "this is orgs length")
       if (res.length === 0) {
         Data.pumps.forEach((data, idx) => {
-          const { id, organizations, headquarter_city}  = data
+          const { id, 
+            organizations: {organizations, headquarter_city}} = data
                          
           const organization = {
             sensor_id: id,
             org_name: organizations,
             headquarter_city: headquarter_city
           }
-          addOrg(organization)
-             .then(res => {
-               console.log(res, "this is the addOrg returns on line 240")
-         
-              const {
-                id,
-                latitude,
-                longitude,
-                village: { village, commune, district, province }
-              
-            } = data;
+          return db("organizations").insert(organization, "id")
+          .then(([id]) => {
             const pump = {
-              org_id: res.id,
-              sensor_pid: id,
-              latitude: latitude,
-              longitude: longitude,
-              village_name: village,
-              commune_name: commune,
-              district_name: district,
-              province_name: province
+              org_id: id,
+              sensor_pid: data.id,
+              latitude: data.latitude,
+              longitude: data.longitude,
+              village_name: data.village.village,
+              commune_name: data.village.commune,
+              district_name: data.village.district,
+              province_name: data.village.province
             }
          
             addPump(pump)
           })
         })
-      } else {
-        console.log("pumps.json pumps already in database")
-      }  
-   }) 
+      } else if (res.length > 0) {
+        pumpsTable()
+          .then(res => {
+        
+                  const currentPumps = res.map(item => item.sensor_pid)
+                  const incomingPumps = Data.pumps.map(item => Number(item.id))
+          
+                  let filtered = incomingPumps.filter(item => !currentPumps.includes(item))
+                  console.log(filtered.length, "this is the filtered length")
+                  console.log(filtered.map(item => item), "this is what is in filtered")
+          
+                  const newPumps = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+                  console.log(newPumps, "these are the new pumps")
+
+                  newPumps.forEach((data, idx) => {
+                    const { id, 
+                      organizations: {organizations, headquarter_city}} = data
+                                   
+                    const organization = {
+                      sensor_id: id,
+                      org_name: organizations,
+                      headquarter_city: headquarter_city
+                    }
+                    return db("organizations").insert(organization, "id")
+                    .then(([id]) => {
+                      const pump = {
+                        org_id: id,
+                        sensor_pid: data.id,
+                        latitude: data.latitude,
+                        longitude: data.longitude,
+                        village_name: data.village.village,
+                        commune_name: data.village.commune,
+                        district_name: data.village.district,
+                        province_name: data.village.province
+                      }
+                   
+                      addPump(pump)
+                    })
+
+            })
+          })  
+        }
+    })
+
   }
-orgCheck() 
+  orgCheck() 
 }
-
-// const getUpdatedPumps = () => {
-//   const pumpCheck = () => {
-//     pumpsTable()
-//     .then(res => {
-//       if (res.length === 0) {
-//         Data.pumps.forEach((data, idx) => {
-//           const {
-//             id,
-//             latitude,
-//             longitude,
-//             village: { village, commune, district, province }
-           
-//           } = data;
-//           const pump = {
-//             // org_id: this will be the org id returned from an org helper method,
-//             sensor_pid: id,
-//             latitude: latitude,
-//             longitude: longitude,
-//             village_name: village,
-//             commune_name: commune,
-//             district_name: district,
-//             province_name: province
-//           }
-//           addPump(pump)
-//           .then(res => {
-//             const { id, organizations, headquarter_city}  = data
-                        
-//             const organization = {
-//               sensor_id: id,
-//               org_name: organizations,
-//               headquarter_city: headquarter_city
-//             }
-//             addOrg(organization)
-
-//           })
-//         })
-//       } else {
-//         console.log("pumps.json pumps already in database")
-//       }  
-//    }) 
-//   }
-// pumpCheck() 
-// }
 
 async function dataUpdate () {
   const getTable = async () => {

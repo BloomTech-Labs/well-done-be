@@ -19,7 +19,8 @@ function addPumps(pumpsArr){
 }
 
 function findPumps() {
-  return db("pumps");
+  return db("pumps as p")
+  .join("organizations as o", "o.id", "p.org_id")
 }
 
 function getPumps() {
@@ -83,7 +84,7 @@ const updatePump = (changes, id) => {
   }
 };
 
-const getPumpsByCountryName = (filter) => {
+const getPumpsByVillageName = (filter) => {
   return db("pumps")
   .where(filter)
 }
@@ -97,6 +98,6 @@ module.exports = {
     getPumpById,
     deletePump,
     updatePump,
-    getPumpsByCountryName
+    getPumpsByVillageName
 }
 
