@@ -1,7 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable("organizations", column => {
     column.increments();
-    column.integer("sensor_id");
     column.string("org_name");
     column.string("headquarter_city");
   });

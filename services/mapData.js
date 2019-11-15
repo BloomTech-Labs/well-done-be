@@ -2,6 +2,7 @@ const Data = require("../assets/cache/pumps.json");
 const db = require("../data/dbConfig");
 const moment = require("moment");
 const axios = require("axios")
+const prismic = require("./prismicData")
 
 // const getPumps = Data.pumps.map(pump => console.log("getPumps", pump))
 
@@ -155,15 +156,19 @@ function addOrgs (organization) {
   return db("organizations")
   .insert(organization)
   .returning("id")
-  .then(res => {
-    res
-  })
+}
+
+function getOrgIdByName (filter) {
+  return db("organizations")
+  .where({org_name: filter})
+  
 }
 
 const getUpdatedSensors = () => {
   const sensorCheck = () => {
     sensorsTable()
     .then(res => {
+      console.log(res, " this is the sensors table res")
       if (res.length === 0) {
         Data.pumps.forEach((data, idx) => {
             const {
@@ -222,40 +227,95 @@ const getUpdatedSensors = () => {
 sensorCheck() 
 }
 
-const getUpdatedPumps = () => {
+// this function checks prismic pumps and adds to welldone db
+//then once complete, get pumps gets the id for each org
+async function getPrismicOrgs() {
+  let orgResults = []
+  const prismicOrgs = await prismic.getDocs("organizations")
+  await prismicOrgs.results.forEach(item => {
+    orgResults.push(item.data)
+  })
+  console.log(orgResults)
+  // return orgResults;
+  getUpdatedPumps(orgResults)
+}
+
+console.log(getPrismicOrgs())
+
+
+const getUpdatedPumps = (orgResults) => {
   const orgCheck = () => {
     getOrgs()
     .then(res => {
+     
       console.log(res.length, "this is orgs length")
       if (res.length === 0) {
-        Data.pumps.forEach((data, idx) => {
-          const { id, 
-            organizations: {organizations, headquarter_city}} = data
+        console.log(orgResults, "this is orgResults line 253")
+        orgResults ? orgResults.forEach((org, idx) => {
+          const { organizations, headquarter_city} = org
                          
           const organization = {
-            sensor_id: id,
             org_name: organizations,
             headquarter_city: headquarter_city
           }
           return db("organizations").insert(organization, "id")
-          .then(([id]) => {
-            const pump = {
-              org_id: id,
-              sensor_pid: data.id,
-              latitude: data.latitude,
-              longitude: data.longitude,
-              village_name: data.village.village,
-              commune_name: data.village.commune,
-              district_name: data.village.district,
-              province_name: data.village.province
-            }
-         
-            addPump(pump)
-          })
-        })
+          .then(() => {
+            pumpsTable()
+              .then(res => {
+                console.log(res, "this is the pumps table line 264")
+                if (res.length === 0) {
+                  Data.pumps.forEach((data, idx) => {
+                    // find org id by name, return id, add id to pump under org_id
+                    const orgName = data.organizations
+                    getOrgIdByName(orgName)
+                      .then(res => {
+                        const pump = {
+                          org_id: res.id,
+                          sensor_pid: data.id,
+                          latitude: data.latitude,
+                          longitude: data.longitude,
+                          village_name: data.village.village,
+                          commune_name: data.village.commune,
+                          district_name: data.village.district,
+                          province_name: data.village.province
+                        }
+                        addPump(pump)
+                      })
+                    })
+                  }
+                })
+              })
+            }) : {}
+        // CONTINUE FROM HERE TO FINISH
       } else if (res.length > 0) {
+        //get current orgs
+        const currentOrgs = res.map(item => item.org_name)
+        console.log(currentOrgs)
+        //get array of org names off incoming data
+        const incomingOrgs = Data.pumps.map(item => item.organizations.organizations)
+        console.log(incomingOrgs)
+        //compare incoming org names to current
+        let filteredOrgs = incomingOrgs.filter(item => !currentOrgs.includes(item))
+        console.log(filteredOrgs)
+        //add any current org name and headquarters into orgs table
+        if (filteredOrgs !== 0) {
+          filteredOrgs.forEach(org => {
+        const { organizations, headquarter_city} = org
+                         
+        const organization = {
+          org_name: organizations,
+          headquarter_city: headquarter_city
+        }
+        return db("organizations").insert(organization, "id")
+          
+          // ADD UPDATING PUMPS HERE
+        })
+        newOrgsPumpUpdate()
+      } else {
+        //then do below, but add in step of getting org id by name 
         pumpsTable()
           .then(res => {
+            console.log(res, "this is the pumps table line 317")
         
                   const currentPumps = res.map(item => item.sensor_pid)
                   const incomingPumps = Data.pumps.map(item => Number(item.id))
@@ -268,38 +328,145 @@ const getUpdatedPumps = () => {
                   console.log(newPumps, "these are the new pumps")
 
                   newPumps.forEach((data, idx) => {
-                    const { id, 
-                      organizations: {organizations, headquarter_city}} = data
-                                   
-                    const organization = {
-                      sensor_id: id,
-                      org_name: organizations,
-                      headquarter_city: headquarter_city
-                    }
-                    return db("organizations").insert(organization, "id")
-                    .then(([id]) => {
-                      const pump = {
-                        org_id: id,
-                        sensor_pid: data.id,
-                        latitude: data.latitude,
-                        longitude: data.longitude,
-                        village_name: data.village.village,
-                        commune_name: data.village.commune,
-                        district_name: data.village.district,
-                        province_name: data.village.province
-                      }
-                   
-                      addPump(pump)
+                    // find org id by name, return id, add id to pump under org_id
+                    const orgName = data.organizations
+                    getOrgIdByName(orgName)
+                      .then(res => {
+                        const pump = {
+                          org_id: res.id,
+                          sensor_pid: data.id,
+                          latitude: data.latitude,
+                          longitude: data.longitude,
+                          village_name: data.village.village,
+                          commune_name: data.village.commune,
+                          district_name: data.village.district,
+                          province_name: data.village.province
+                        }
+                        addPump(pump)
+                      })
                     })
-
+                  })
+                }
+              }
             })
-          })  
-        }
-    })
-
-  }
+          }
   orgCheck() 
 }
+
+function newOrgsPumpUpdate () {
+pumpsTable()
+  .then(res => {
+    console.log(res, "this is the pumps table line 358")
+
+    const currentPumps = res.map(item => item.sensor_pid)
+    const incomingPumps = Data.pumps.map(item => Number(item.id))
+
+    let filtered = incomingPumps.filter(item => !currentPumps.includes(item))
+    console.log(filtered.length, "this is the filtered length")
+    console.log(filtered.map(item => item), "this is what is in filtered")
+
+    const newPumps = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+    console.log(newPumps, "these are the new pumps")
+
+    newPumps.forEach((data, idx) => {
+      // find org id by name, return id, add id to pump under org_id
+      const orgName = data.organizations
+      getOrgIdByName(orgName)
+        .then(res => {
+          const pump = {
+            org_id: res.id,
+            sensor_pid: data.id,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            village_name: data.village.village,
+            commune_name: data.village.commune,
+            district_name: data.village.district,
+            province_name: data.village.province
+          }
+          addPump(pump)
+        })
+      })
+    })
+}
+
+// const getUpdatedPumps = () => {
+//   const orgCheck = () => {
+//     getOrgs()
+//     .then(res => {
+//       console.log(res.length, "this is orgs length")
+//       if (res.length === 0) {
+//         Data.pumps.forEach((data, idx) => {
+//           const { id, 
+//             organizations: {organizations, headquarter_city}} = data
+                         
+//           const organization = {
+//             sensor_id: id,
+//             org_name: organizations,
+//             headquarter_city: headquarter_city
+//           }
+//           return db("organizations").insert(organization, "id")
+//           .then(([id]) => {
+//             const pump = {
+//               org_id: id,
+//               sensor_pid: data.id,
+//               latitude: data.latitude,
+//               longitude: data.longitude,
+//               village_name: data.village.village,
+//               commune_name: data.village.commune,
+//               district_name: data.village.district,
+//               province_name: data.village.province
+//             }
+         
+//             addPump(pump)
+//           })
+//         })
+//       } else if (res.length > 0) {
+//         pumpsTable()
+//           .then(res => {
+        
+//                   const currentPumps = res.map(item => item.sensor_pid)
+//                   const incomingPumps = Data.pumps.map(item => Number(item.id))
+          
+//                   let filtered = incomingPumps.filter(item => !currentPumps.includes(item))
+//                   console.log(filtered.length, "this is the filtered length")
+//                   console.log(filtered.map(item => item), "this is what is in filtered")
+          
+//                   const newPumps = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+//                   console.log(newPumps, "these are the new pumps")
+
+//                   newPumps.forEach((data, idx) => {
+//                     const { id, 
+//                       organizations: {organizations, headquarter_city}} = data
+                                   
+//                     const organization = {
+//                       sensor_id: id,
+//                       org_name: organizations,
+//                       headquarter_city: headquarter_city
+//                     }
+//                     return db("organizations").insert(organization, "id")
+//                     .then(([id]) => {
+//                       const pump = {
+//                         org_id: id,
+//                         sensor_pid: data.id,
+//                         latitude: data.latitude,
+//                         longitude: data.longitude,
+//                         village_name: data.village.village,
+//                         commune_name: data.village.commune,
+//                         district_name: data.village.district,
+//                         province_name: data.village.province
+//                       }
+                   
+//                       addPump(pump)
+//                     })
+
+//             })
+//           })  
+//         }
+//     })
+
+//   }
+//   orgCheck() 
+// }
 
 async function dataUpdate () {
   const getTable = async () => {
@@ -464,6 +631,17 @@ function getStatuses (history){
   )
 }
 
+getUpdatedPumps()
+getUpdatedSensors()
+
+module.exports = {getUpdated: function () {
+  // dataUpdate,
+  getUpdatedPumps,
+  getUpdatedSensors
+
+  }
+}
+
 
 
 
@@ -489,17 +667,8 @@ function getStatuses (history){
 // console.log(getCurrentPumpDate)
 
 
-// dataUpdate()
-getUpdatedPumps()
-getUpdatedSensors()
-// setLastFetchTable()
-module.exports = {getUpdated: function () {
-  // dataUpdate,
-  getUpdatedPumps,
-  getUpdatedSensors
-  // setLastFetchTable
-  }
-}
+
+
 // const setLastFetchTable = () => {
 //   console.log("line 273")
 //   const fetchCheck = () => {
