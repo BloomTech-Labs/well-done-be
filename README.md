@@ -31,4 +31,13 @@ Dynos:
 $ node index.js
 $ node services/jsonCache.js
 
+# Prismic
+
+# TODO
+
+fix bug that enters multiple organizations of the same name
+test mapData on heroku
+add fetch scheduler
+confirm heroku is able to update and utilize pumps.json
+
 
