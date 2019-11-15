@@ -18,25 +18,25 @@ router.post("/", authenticate, (req, res) => {
     });
 });
 
-// router.get("/", authenticate, async (req, res) => {
-//   try {
-//     const sensors = await Sensors.findSensorsAndHistories();
-//     res.status(200).json(sensors);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
 router.get("/", authenticate, async (req, res) => {
   try {
-    const sensors = await Sensors.getSensorNPump();
+    const sensors = await Sensors.findSensorsAndHistories();
     res.status(200).json(sensors);
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);
   }
 });
+
+// router.get("/", authenticate, async (req, res) => {
+//   try {
+//     const sensors = await Sensors.getSensorNPump();
+//     res.status(200).json(sensors);
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(400).json(err.message);
+//   }
+// });
 
 //get sensor and histories
 // router.get("/histories", authenticate, async (req, res) => {
@@ -100,7 +100,7 @@ router.get("/:id", authenticate, (req, res) => {
 router.get("/sensor_id/:id", authenticate, (req, res) => {
   const { id } = req.params;
   console.log(req.params);
-  Sensors.getSensorNHistoryByPhysicalId(id)
+  Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
     .then(sensor => {
       if (sensor) {
         res.status(200).json(sensor);
