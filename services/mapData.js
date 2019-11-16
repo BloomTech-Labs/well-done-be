@@ -161,115 +161,82 @@ function addOrgs (organization) {
 function getOrgIdByName (filter) {
   return db("organizations")
   .where({org_name: filter})
+  .first()
   
 }
 
 const getUpdatedSensors = () => {
-  
-  const sensorCheck = () => {	    
+  const sensorCheck = () => {
     sensorsTable()
-      .then(res => {
-        if (res.length === 0) {
-          Data.pumps.forEach((data, idx) => {
-              const {
-                id,
-                finish_construction,
-                well_depth,
-              } = data;
-              const getYield = data.yield
-              const getStatic = data.static
-              const sensor = {
-                physical_id: id,
-                data_finished: finish_construction,
-                depth: well_depth,
-                yield: getYield,
-                static: getStatic
-              };
-              console.log(sensor)
-              addSensor(sensor);
-          })
-          dataUpdate()
-        } else {
-          console.log("pumps.json sensors already in database")
-          dataUpdate()
-      }
-    }) 
-   }
-  sensorCheck() 
-  }
-
-// const getUpdatedSensors = () => {
-//   const sensorCheck = () => {
-//     sensorsTable()
-//     .then(res => {
-//       console.log(res, " this is the sensors table res")
-//       if (res.length === 0) {
-//         Data.pumps.forEach((data, idx) => {
-//             const {
-//               id,
-//               finish_construction,
-//               well_depth,
-//             } = data;
-//             const getYield = data.yield
-//             const getStatic = data.static
-//             const sensor = {
-//               physical_id: id,
-//               data_finished: finish_construction,
-//               depth: well_depth,
-//               yield: getYield,
-//               static: getStatic
-//             };
-//             console.log(sensor)
-//             addSensor(sensor);
-//         })
-//         dataUpdate()
-//       } else if (res.length > 0) {
+    .then(res => {
+      console.log(res, " this is the sensors table res")
+      if (res.length === 0) {
+        Data.pumps.forEach((data, idx) => {
+            const {
+              id,
+              finish_construction,
+              well_depth,
+            } = data;
+            const getYield = data.yield
+            const getStatic = data.static
+            const sensor = {
+              physical_id: id,
+              data_finished: finish_construction,
+              depth: well_depth,
+              yield: getYield,
+              static: getStatic
+            };
+            console.log(sensor)
+            addSensor(sensor);
+        })
+        dataUpdate()
+      } else if (res.length > 0) {
         
-//         const current = res.map(item => item.physical_id)
-//         const incoming = Data.pumps.map(item => Number(item.id))
+        const current = res.map(item => item.physical_id)
+        const incoming = Data.pumps.map(item => Number(item.id))
 
-//         let filtered = incoming.filter(item => !current.includes(item))
-//         console.log(filtered.length, "this is the filtered length")
-//         console.log(filtered.map(item => item), "this is what is in filtered")
+        let filtered = incoming.filter(item => !current.includes(item))
+        console.log(filtered.length, "this is the filtered length")
+        console.log(filtered.map(item => item), "this is what is in filtered")
 
-//         const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-//         console.log(newSensors, "this is new sensors")
+        const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
+        console.log(newSensors, "this is new sensors")
 
-//           newSensors.map(data => {
-//             const {
-//               id,
-//               finish_construction,
-//               well_depth,
+          newSensors.map(data => {
+            const {
+              id,
+              finish_construction,
+              well_depth,
              
-//             } = data;
-//             const getYield = data.yield
-//             const getStatic = data.static
-//             const sensor = {
-//               physical_id: id,
-//               data_finished: finish_construction,
-//               depth: well_depth,
-//               yield: getYield,
-//               static: getStatic
-//             };
+            } = data;
+            const getYield = data.yield
+            const getStatic = data.static
+            const sensor = {
+              physical_id: id,
+              data_finished: finish_construction,
+              depth: well_depth,
+              yield: getYield,
+              static: getStatic
+            };
            
-//             addSensor(sensor);
-//       })
-//       dataUpdate()
-//     }
-//   }) 
-//  }
-// sensorCheck() 
-// }
+            addSensor(sensor);
+      })
+      dataUpdate()
+    }
+  }) 
+ }
+sensorCheck() 
+}
 
 // this function checks prismic pumps and adds to welldone db
-//then once complete, get pumps gets the id for each org
+// then once complete, get pumps gets the id for each org
 async function getPrismicOrgs() {
   let orgResults = []
   const prismicOrgs = await prismic.getDocs("organizations")
   await prismicOrgs.results.forEach(item => {
     orgResults.push(item.data)
   })
-  console.log(orgResults)
+  // console.log(orgResults)
   // return orgResults;
   getUpdatedPumps(orgResults)
 }
@@ -284,7 +251,7 @@ const getUpdatedPumps = (orgResults) => {
     getOrgs()
     .then(res => {
      
-      console.log(res.length, "this is orgs length")
+      // console.log(res.length, "this is orgs length")
       if (res.length === 0) {
         // console.log(orgResults, "this is orgResults line 253")
         orgResults ? orgResults.forEach((org, idx) => {
@@ -306,8 +273,6 @@ const getUpdatedPumps = (orgResults) => {
                     console.log(orgName, "this is the orgName line 270")
                     getOrgIdByName(orgName)
                       .then(res => {
-                        console.log(res, "this is line 272")
-                        
                         const pump = {
                           org_id: res.id,
                           sensor_pid: data.id,
@@ -430,6 +395,7 @@ pumpsTable()
     })
 }
 
+//old version
 // const getUpdatedPumps = () => {
 //   const orgCheck = () => {
 //     getOrgs()
@@ -672,12 +638,12 @@ function getStatuses (history){
   )
 }
 
-getUpdatedPumps()
+// getUpdatedPumps()
 getUpdatedSensors()
 
 module.exports = {getUpdated: function () {
   // dataUpdate,
-  getUpdatedPumps,
+  // getUpdatedPumps,
   getUpdatedSensors
 
   }
