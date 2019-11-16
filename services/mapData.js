@@ -191,12 +191,8 @@ const getUpdatedSensors = () => {
         const incoming = Data.pumps.map(item => Number(item.id))
 
         let filtered = incoming.filter(item => !current.includes(item))
-        // console.log(filtered.length, "this is the filtered length")
-        // console.log(filtered.map(item => item), "this is what is in filtered")
-
         const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-        // console.log(newSensors, "this is new sensors")
-
+    
           newSensors.map(data => {
             const {
               id,
@@ -453,21 +449,12 @@ async function dataUpdate () {
             if (fetch.lastFetch !== res[0].last) {
               addLastFetch(fetch.lastFetch)
               getLastFetchTable()
-<<<<<<< HEAD
-            .then(res => { 
-              console.log(res, "this is 306")
-          const prevFetch = res[1].created_at.toString().split('').slice(0,10).join('')
-          const recentFetch = res[0].created_at.toString().split('').slice(0,10).join('')
-          const prevFetchLAST = res[1].last
-          const recentFetchLAST = res[0].last
-=======
                .then(res => { 
                   const prevFetch = res[1].created_at.toString().split('').slice(0,10).join('')
                   const recentFetch = res[0].created_at.toString().split('').slice(0,10).join('')
                   const prevFetchLAST = res[1].last
                   const recentFetchLAST = res[0].last
                   console.log(res[1].created_at, "this is created_at result")
->>>>>>> 8321b925d1ade9237b13d4d5da7a6c84a2af52c8
                   console.log(prevFetch, "this is prevFetch")
                   console.log(recentFetch, "this is recentFetch")
                   console.log(prevFetchLAST, "this is prevFetch")
@@ -544,205 +531,3 @@ module.exports = {getUpdated: function () {
   }
 }
 
-
-
-
-// dataUpdate()
-// getUpdatedPumps()
-// getUpdatedSensors()
-// // setLastFetchTable()
-// module.exports = {getUpdated: function () {
-//   dataUpdate,
-//   getUpdatedPumps,
-//   getUpdatedSensors
-//   // setLastFetchTable
-//   }
-// }
-
-// ########### Code below line used to make first upload of data that is currently available into
-// the sensors, pumps, history, pad_counts and pad_seconds tables, would only be used
-// in the case development table migrations are rolled back.... 
-
-
-//gets current date
-// const getCurrentPumpDate = Data.pumps.filter(item => item.statuses != undefined).filter(item => item.statuses.statuses)[0].statuses.statuses.date
-// console.log(getCurrentPumpDate)
-
-
-
-
-// const setLastFetchTable = () => {
-//   console.log("line 273")
-//   const fetchCheck = () => {
-//     getLastFetchTable()
-//     .then(res => {
-//       if (res.length === 0) {
-//         addLastFetch(Data.lastFetch)
-//         Data.pumps.forEach((data, idx) => {
-//           if (data.statuses) {
-//             let history = {
-//               sensor_id: data.id,
-//               count: data.statuses.statuses ? data.statuses.statuses.count : null,
-//               total: data.statuses.statuses ? data.statuses.statuses.total : null,
-//               status: data.statuses.statuses ? data.statuses.statuses.status : null,
-//               date: data.statuses.statuses ? data.statuses.statuses.date : null,
-//               reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
-//             }  
-//             getHistoryStatuses(history)
-//         } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}
-//       })
-     
-
-//       } else {
-//         getUpdatedHistory()
-//       }
-//     })
-//  }
-//  fetchCheck()
-// }
-
-// const getUpdatedHistory = () => {
-  
-//   const updateHistory = () => {
-//         console.log("this is line 305")
-//         getLastFetchTable()
-//           .then(res => {    
-//             if (Data.lastFetch !== res[0].last) {
-//               addLastFetch(Data.lastFetch)
-//               getLastFetchTable()
-//             .then(res => { 
-//               console.log(res, "this is 306")
-//           const prevFetch = res[1].created_at.split('').slice(0,10).join('')
-//           const recentFetch = res[0].created_at.split('').slice(0,10).join('')
-//           const prevFetchLAST = res[1].last
-//           const recentFetchLAST = res[0].last
-//                   console.log(prevFetch, "this is prevFetch")
-//                   console.log(recentFetch, "this is recentFetch")
-//                   console.log(prevFetchLAST, "this is prevFetch")
-//                   console.log(recentFetchLAST, "this is recentFetch")
-//           //if prev fetch date is not the same day as the most recent fetch add the new history and pad/seconds
-//           if (prevFetch !== recentFetch) {
-//           Data.pumps.forEach((data, idx) => {
-//           if (data.statuses) {
-//             let history = {
-//               sensor_id: data.id,
-//               count: data.statuses.statuses ? data.statuses.statuses.count : null,
-//               total: data.statuses.statuses ? data.statuses.statuses.total : null,
-//               status: data.statuses.statuses ? data.statuses.statuses.status : null,
-//               date: data.statuses.statuses ? data.statuses.statuses.date : null,
-//               reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
-//             }  
-//             getHistoryStatuses(history)
-//         } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
-//       } else {console.log("history is current")}
-//     })
-//    }
-//   })  
-//  }
-//  updateHistory()
-// }
-
-// function getHistoryStatuses (history){	  
-//   return db("history").insert(history, "id")
-//     .then(([id]) => {	         
-//           const cleanData = Data.pumps.filter(item => item.id === history.sensor_id)
-       
-//                 const getPadCounts = () => {
-//                     let current = {
-//                       history_id: id,
-//                       pad_count_0: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[0] : null,
-//                       pad_count_1: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[1] : null,
-//                       pad_count_2: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[2] : null,
-//                       pad_count_3: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_counts[3] : null
-//                     }
-                    
-//                     addPadCounts(current)
-              
-//                     }	
-//                 const getPadSeconds = () => {
-//                     let current = {
-//                       history_id: id,
-//                       pad_seconds_0: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[0] : null,
-//                       pad_seconds_1: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[1] : null,
-//                       pad_seconds_2: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[2] : null,
-//                       pad_seconds_3: cleanData[0].statuses.statuses ? cleanData[0].statuses.statuses.pad_seconds[3] : null
-//                     }
-                
-//                     addPadSeconds(current)
-//           } 
-//           getPadSeconds()
-//           getPadCounts()
-//         }
-      
-//   )
-// }
-
-// getUpdatedSensors()
-// getUpdatedPumps()
-// setLastFetchTable()
-
-// module.exports = {getUpdated: function () {
-//   getUpdatedSensors,
-//   getUpdatedPumps,
-//   setLastFetchTable
-//   }
-// }
-
-// const getUpdatedPumps = () => {
-//   const pumpCheck = () => {
-//     pumpsTable()
-//     .then(res => {
-//       if (res.length === 0) {
-//         Data.pumps.forEach((data, idx) => {
-//           const {
-//             id,
-//             latitude,
-//             longitude,
-//             village: { village, commune, district, province }
-//           } = data;
-//           const pump = {
-//             sensor_pid: id,
-//             latitude: latitude,
-//             longitude: longitude,
-//             country_name: village,
-//             commune_name: commune,
-//             district_name: district,
-//             province_name: province
-//           };
-//           addPump(pump);
-//         })
-//       } else if (res.length > 0) {
-        
-//         const current = res.map(item => item.sensor_pid)
-//         const incoming = Data.pumps.map(item => Number(item.id))
-
-//         let filtered = incoming.filter(item => !current.includes(item))
-//         console.log(filtered.length, "this is the filtered length")
-//         console.log(filtered.map(item => item), "this is what is in filtered")
-
-//         const newPumps = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-//         console.log(newPumps, "these are the new pumps")
-
-//           newPumps.map(data => {
-//             const {
-//               id,
-//               latitude,
-//               longitude,
-//               village: { village, commune, district, province }
-//             } = data;
-//             const pump = {
-//               sensor_pid: id,
-//               latitude: latitude,
-//               longitude: longitude,
-//               country_name: village,
-//               commune_name: commune,
-//               district_name: district,
-//               province_name: province
-//             };
-//             addPump(pump);
-//       })
-//     }
-//    }) 
-//   }
-// pumpCheck() 
-// }
