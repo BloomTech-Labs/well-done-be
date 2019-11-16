@@ -85,7 +85,7 @@ router.get("/org/:id", authenticate, (req, res) => {
     });
 });
 
-router.post("/country_name", authenticate, (req, res) => {
+router.post("/village_name", authenticate, (req, res) => {
   let { village_name } = req.body;
   console.log(village_name, "this is the village name")
   Pumps.getPumpsByVillageName({village_name})
