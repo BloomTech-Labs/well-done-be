@@ -195,7 +195,7 @@ const getUpdatedSensors = () => {
         const incoming = Data.pumps.map(item => Number(item.id))
         let filtered = incoming.filter(item => !current.includes(item))
         const newSensors = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-       
+       if (newSensors.length > 0) {
           newSensors.map(data => {
             const {
               id,
@@ -216,7 +216,10 @@ const getUpdatedSensors = () => {
             addSensor(sensor);
       })
       dataUpdate()
+    } else {
+      console.log("no new sensor data")
     }
+   }
   }) 
  }
 sensorCheck() 
@@ -230,22 +233,24 @@ async function getPrismicOrgs() {
   await prismicOrgs.results.forEach(item => {
     orgResults.push(item.data)
   })
+ 
   getUpdatedPumps(orgResults)
 }
 
 getPrismicOrgs()
 
 
-const getUpdatedPumps = (orgResults) => {
+const getUpdatedPumps = async (orgResults) => {
     // initially this function gets all available pump data from pumps.json in an instance
   //the DB has been rolled back and remigrated and is empty, else it gets any new pump data
   // and updates the Welldone DB
-  const orgCheck = () => {
+  const orgCheck = async () => {
     getOrgs()
     .then(res => {
       if (res.length === 0) {
-        orgResults.forEach((org, idx) => {
-          console.log("org results line 246")
+        // console.log(res.length, "this is the orgs length on 248")
+        orgResults ? orgResults.forEach((org, idx) => {
+          // console.log(orgResults, "this is the org results")
           const { organizations, headquarter_city} = org
                          
           const organization = {
@@ -280,7 +285,7 @@ const getUpdatedPumps = (orgResults) => {
                   }
                 })
               })
-            }) 
+            }) : {}
           } else {
             newOrgAndPumpUpdate(orgResults)
           }
@@ -294,11 +299,15 @@ const newOrgAndPumpUpdate = (orgResults) => {
   const orgCheck = () => {
     getOrgs()
     .then(res => {
+      // console.log(res.length, "this is the result length line 300")
       //check for new organizations in prismic and add into Welldone DB
      const currentOrgs = res.map(item => item.org_name)
+    //  console.log(currentOrgs, "these are current orgs line 304")
      // these are the incoming organizations from prismic
      const incomingOrgs = orgResults.map(item => item.organizations)
+    //  console.log(incomingOrgs, "these are the incoming Orgs line 307")
      let filteredOrgs = incomingOrgs.filter(item => !currentOrgs.includes(item))
+    //  console.log(filteredOrgs, "these are the filtered orgs line 309")
       if (filteredOrgs.length !== 0) {
        filteredOrgs.forEach(org => {
         const { organizations, headquarter_city} = org                 
@@ -307,7 +316,7 @@ const newOrgAndPumpUpdate = (orgResults) => {
             headquarter_city: headquarter_city
           }
           return db("organizations").insert(organization, "id")
-          })
+          // })
           .then(() => {
             pumpsTable()
               .then(res => {
@@ -343,17 +352,21 @@ const newOrgAndPumpUpdate = (orgResults) => {
                     }
                   })
                 }) 
+              })
           } else {
             // prismic returned no new organizations, check to see if there are any new pumps
             //returned from prismic cached in pumps.json after recent npm run fetch
             pumpsTable()
             .then(res => {
-              console.log("this is 348")
+              // console.log("this is 348")
                 const currentPumps = res.map(item => item.sensor_pid)
+                // console.log(currentPumps, "these are the current pumps line 358")
                 const incomingPumps = Data.pumps.map(item => Number(item.id))
+                // console.log(incomingPumps, "these are the incoming Pumps line 360")
                 let filtered = incomingPumps.filter(item => !currentPumps.includes(item))
+                // console.log(filtered, "this is the filtered results line 362")
                 const newPumps = Data.pumps.filter(item => filtered.includes(Number(item.id)))
-                console.log(newPumps, "these are the new pumps")
+                // console.log(newPumps, "these are the new pumps")
               if (newPumps.length !== 0) {
                 newPumps.forEach((data, idx) => {
                   const orgName = data.organizations.organizations
@@ -543,13 +556,10 @@ function getStatuses (history){
   )
 }
 
-getPrismicOrgs()
 getUpdatedSensors()
-
 module.exports = {getUpdated: function () {
-  
   getPrismicOrgs,
   getUpdatedSensors
-
   }
 }
+
