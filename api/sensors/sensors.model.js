@@ -139,8 +139,8 @@ function findSensorsAndHistories () {
     let compare = []
     let filtered = []
 
-      for (let i = 0; i < res.length; i++) {
-    // for (let i = res.length - 1; i >= 0; i--) {
+      // for (let i = 0; i < res.length; i++) {
+    for (let i = res.length - 1; i >= 0; i--) {
       if (!compare.includes(res[i].physical_id)) {
         compare.push(res[i].physical_id)
         filtered.push(res[i])
