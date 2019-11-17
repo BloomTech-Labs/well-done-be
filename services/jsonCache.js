@@ -71,11 +71,7 @@ async function getPumps() {
             organizations,
           },
         }
-<<<<<<< HEAD
-        console.log(pumps, "this is pumps")
-=======
         // console.log(pumps, "this is pumps")
->>>>>>> 8321b925d1ade9237b13d4d5da7a6c84a2af52c8
       } else {
         console.log(`Missing data on pump #${pump.uid}`)
       }
