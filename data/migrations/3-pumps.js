@@ -3,7 +3,7 @@ exports.up = function(knex) {
     column.increments();
     column.integer("org_id");
     column.integer("sensor_pid");
-    column.string("village_name");
+    column.string("country_name");
     column.string("province_name");
     column.string("district_name");
     column.string("commune_name");

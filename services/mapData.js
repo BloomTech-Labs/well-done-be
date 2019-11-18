@@ -272,7 +272,7 @@ const getUpdatedPumps = async (orgResults) => {
                           sensor_pid: data.id,
                           latitude: data.latitude,
                           longitude: data.longitude,
-                          village_name: data.village.village,
+                          country_name: data.village.village,
                           commune_name: data.village.commune,
                           district_name: data.village.district,
                           province_name: data.village.province
@@ -339,7 +339,7 @@ const newOrgAndPumpUpdate = (orgResults) => {
                           sensor_pid: data.id,
                           latitude: data.latitude,
                           longitude: data.longitude,
-                          village_name: data.village.village,
+                          country_name: data.village.village,
                           commune_name: data.village.commune,
                           district_name: data.village.district,
                           province_name: data.village.province
@@ -377,7 +377,7 @@ const newOrgAndPumpUpdate = (orgResults) => {
                         sensor_pid: data.id,
                         latitude: data.latitude,
                         longitude: data.longitude,
-                        village_name: data.village.village,
+                        country_name: data.village.village,
                         commune_name: data.village.commune,
                         district_name: data.village.district,
                         province_name: data.village.province

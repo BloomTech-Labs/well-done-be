@@ -38,39 +38,6 @@ router.get("/", authenticate, async (req, res) => {
   }
 });
 
-// router.get("/", authenticate, async (req, res) => {
-//   try {
-//     const sensors = await Sensors.getSensorNPump();
-//     res.status(200).json(sensors);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
-//get sensor and histories
-// router.get("/histories", authenticate, async (req, res) => {
-//   try {
-//     const sensors = await Sensors.findSensorsAndHistories();
-//     res.status(200).json(sensors);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
- //get sensor histories by sensors physical id
-// router.get("/histories/:id", authenticate, async (req, res) => {
-//   const {id} = req.params
-//   try {
-//     const sensors = await Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id);
-//     res.status(200).json(sensors);
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   }
-// });
-
 //gets sensor and pump
 router.get("/pumps", authenticate, async (req, res) => {
   try {
@@ -118,17 +85,6 @@ router.get("/recent/sensor_id/:id", authenticate, (req, res) => {
     })
     .catch(err => res.status(500).json(err.message));
 });
-// router.get("/sensor_id/:id", authenticate, (req, res) => {
-//   const { id } = req.params;
-//   console.log(req.params);
-//   Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
-//     .then(sensor => {
-//       if (sensor) {
-//         res.status(200).json(sensor);
-//       } else res.status(404).json({ message: "sensor does not exist" });
-//     })
-//     .catch(err => res.status(500).json(err.message));
-// });
 
 //GET a sensor by org_id
 router.get("/org/:id", authenticate, (req, res) => {
@@ -143,53 +99,6 @@ router.get("/org/:id", authenticate, (req, res) => {
       res.status(500).json(err.message);
     });
 });
-
-// GET to /api/sensors
-// router.get("/", authenticate, (req, res) => {
-//   Sensors.getSensors()
-//     .then(sensors => {
-//       console.log("sensors", sensors);
-//       const listSensors = [];
-//       sensors.map(eachSensor => {
-//         const sensorsInfo = {
-//           sensor: {
-//             sensor_id: eachSensor.id,
-//             physical_id: eachSensor.physical_id,
-//             kind: eachSensor.kind,
-//             type: eachSensor.type,
-//             cellular: eachSensor.cellular,
-//             bluetooth: eachSensor.bluetooth,
-//             training: eachSensor.training,
-//             remark: eachSensor.remark,
-//             data_finished: eachSensor.data_finished,
-//             depth: eachSensor.depth,
-//             yield: eachSensor.yield,
-//             static: eachSensor.static,
-//             quality: eachSensor.quality,
-//             level_dynamic: eachSensor.level_dynamic,
-//             pump: {
-//               pump_id: eachSensor.pump_id,
-//               country_name: eachSensor.country_name,
-//               province_name: eachSensor.province_name,
-//               commune_name: eachSensor.commune_name,
-//               district_name: eachSensor.district_name,
-//               organization: {
-//                 org_name: eachSensor.org_name,
-//                 headquarter_city: eachSensor.headquarter_city
-//               }
-//             }
-//           }
-//         };
-//         console.log("sensorInfo", sensorsInfo);
-//         return listSensors.push(sensorsInfo);
-//       });
-//       console.log("listSensors", listSensors);
-//       res.status(200).json(listSensors);
-//     })
-//     .catch(err => {
-//       res.status(500).json(err.message);
-//     });
-// });
 
 // GET to /api/sensors/2
 router.get("/:id", authenticate, (req, res) => {

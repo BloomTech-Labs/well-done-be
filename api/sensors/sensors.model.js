@@ -54,10 +54,38 @@ function getSensorBySensorId(id) {
 
 }
 
+
 function getSensorByOrgId(org_id) {
   return db("sensors")
     .join("pumps", "sensors.pump_id", "pumps.id")
     .where("pumps.org_id", org_id)
+    .join("organizations as o", "o.id", "p.org_id")
+    .select([
+      "s.id as sensor_index",
+      "s.physical_id",
+      "s.kind",
+      "s.type",
+      "s.cellular",
+      "s.bluetooth",
+      "s.training",
+      "s.remark",
+      "s.data_finished",
+      "s.depth",
+      "s.yield",
+      "s.static",
+      "s.quality",
+      "p.id as pump_index",
+      "p.sensor_pid",
+      "p.org_id",
+      "o.org_name",
+      "o.headquarter_city",
+      "p.country_name as village_name",
+      "p.district_name",
+      "p.province_name",
+      "p.commune_name",
+      "p.latitude",
+      "p.longitude",
+    ])
     .then(sensors => sensors[0]);
 }
 
@@ -76,6 +104,33 @@ function deleteSensor(id) {
 function getSensorNPump() {
     return db("sensors as s")
     .join("pumps as p", "p.sensor_pid", "s.physical_id")
+    .join("organizations as o", "o.id", "p.org_id")
+    .select([
+      "s.id as sensor_index",
+      "s.physical_id",
+      "s.kind",
+      "s.type",
+      "s.cellular",
+      "s.bluetooth",
+      "s.training",
+      "s.remark",
+      "s.data_finished",
+      "s.depth",
+      "s.yield",
+      "s.static",
+      "s.quality",
+      "p.id as pump_index",
+      "p.sensor_pid",
+      "p.org_id",
+      "o.org_name",
+      "o.headquarter_city",
+      "p.country_name as village_name",
+      "p.district_name",
+      "p.province_name",
+      "p.commune_name",
+      "p.latitude",
+      "p.longitude",
+    ])
 }
 
 //convert this to promises to return entire object
@@ -112,7 +167,7 @@ function findSensorsAndHistories () {
     "p.org_id",
     "o.org_name",
     "o.headquarter_city",
-    "p.village_name",
+    "p.country_name as village_name",
     "p.district_name",
     "p.province_name",
     "p.commune_name",
@@ -184,7 +239,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
     "p.org_id",
     "o.org_name",
     "o.headquarter_city",
-    "p.village_name",
+    "p.country_name as village_name",
     "p.district_name",
     "p.province_name",
     "p.commune_name",

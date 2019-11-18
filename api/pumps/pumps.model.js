@@ -24,7 +24,7 @@ function findPumps() {
   .select(
     "p.id",
     "p.org_id",
-    "p.village_name",
+    "p.country_name as village_name",
     "p.province_name",
     "p.commune_name",
     "p.district_name",
@@ -63,7 +63,35 @@ function findPumps() {
 function getPumpsByOrgId(id) {
   return db("pumps as p")
     .join("organizations as o", "o.id", "p.org_id")
-    .where({ org_id: id });
+    .join("sensors as s", "s.physical_id", "p.sensor_pid")
+    .where({ org_id:id })
+    .select([
+      "s.id as sensor_index",
+      "s.physical_id",
+      "s.kind",
+      "s.type",
+      "s.cellular",
+      "s.bluetooth",
+      "s.training",
+      "s.remark",
+      "s.data_finished",
+      "s.depth",
+      "s.yield",
+      "s.static",
+      "s.quality",
+      "p.id as pump_index",
+      "p.sensor_pid",
+      "p.org_id",
+      "o.org_name",
+      "o.headquarter_city",
+      "p.country_name as village_name",
+      "p.district_name",
+      "p.province_name",
+      "p.commune_name",
+      "p.latitude",
+      "p.longitude",
+    ])
+    
 }
 
 function findById(id) {
