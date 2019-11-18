@@ -237,7 +237,7 @@ async function getPrismicOrgs() {
   getUpdatedPumps(orgResults)
 }
 
-getPrismicOrgs()
+// getPrismicOrgs()
 
 
 const getUpdatedPumps = async (orgResults) => {
@@ -557,9 +557,10 @@ function getStatuses (history){
 }
 
 getUpdatedSensors()
-module.exports = {getUpdated: function () {
-  getPrismicOrgs,
-  getUpdatedSensors
-  }
-}
+getPrismicOrgs()
+// module.exports = {getUpdated: function () {
+//   getPrismicOrgs,
+//   getUpdatedSensors
+//   }
+// }
 
