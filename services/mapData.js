@@ -218,6 +218,7 @@ const getUpdatedSensors = () => {
       dataUpdate()
     } else {
       console.log("no new sensor data")
+      dataUpdate()
     }
    }
   }) 
