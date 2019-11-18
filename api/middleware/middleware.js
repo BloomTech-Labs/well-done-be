@@ -41,6 +41,14 @@ function validateOrgUpdate(request, response, next) {
   }
 }
 
+function validatePumpUpdate(request, response, next) {
+  if (Object.keys(request.body).length === 0) {
+    response.status(400).json({ message: "pump data is required" });
+  } else {
+    next();
+  }
+}
+
 // Accounts
 function validateAccount(request, response, next) {
   if (Object.keys(request.body).length === 0) {
@@ -130,6 +138,7 @@ module.exports = {
   validateSms,
   validateUpdate,
   validateLogin,
-  validateOrgUpdate
+  validateOrgUpdate,
+  validatePumpUpdate
   
 };

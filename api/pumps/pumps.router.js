@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Pumps = require("./pumps.model");
-const { validatePump } = require("../middleware/middleware");
+const { validatePump, validatePumpUpdate } = require("../middleware/middleware");
 const { authenticate } = require("../middleware/middleware");
 
 //POST to /api/pumps
@@ -39,7 +39,7 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 // PUT to /api/pumps/1
-router.put("/:id", validatePump, authenticate, async (req, res) => {
+router.put("/:id", validatePumpUpdate, authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;
