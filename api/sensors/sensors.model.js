@@ -220,6 +220,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .join("organizations as o", "o.id", "p.org_id")
   .where({physical_id: id})
+  // .orderBy("sensor_pid", "asc")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -265,7 +266,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .then(res => {
     let compare = []
     let filtered = []
-
+    // for (let i = 0; i < res.length; i++) {
     for (let i = res.length - 1; i >= 0; i--) {
       if (!compare.includes(res[i].physical_id)) {
         compare.push(res[i].physical_id)
