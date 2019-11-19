@@ -63,6 +63,22 @@ router.put("/:account_id", authenticate, validateUpdate, async (req, res) => {
     res.status(400).json(err.message);
   }
 });
+// TEST SECTION
+router.put("/email/:account_id", authenticate, validateUpdate, async (req, res) => {
+  try {
+    const { account_id } = req.params;
+    const changes = req.body;
+    const hash = bcrypt.hashSync(changes.password, 10); // 2 ^ n
+    changes.password = hash;
+    await Accounts.update(account_id, changes);
+    res.status(200).json({ message: "Account edited successfully." });
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message, "account not found");
+  }
+});
+
+//end test section
 
 // DELETE to /api/accounts/4
 router.delete("/:account_id", authenticate, async (req, res) => {

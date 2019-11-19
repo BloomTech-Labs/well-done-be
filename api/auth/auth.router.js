@@ -15,9 +15,11 @@ router.post("/login", validateLogin, async (req, res) => {
       const token = generateToken(account);
       const id = account.id;
       res.status(200).json({ token, id });
+    } else {
+      res.status(401).json({ message: "Invalid Credentials" })
     }
   } catch (err) {
-    res.status(401).json({ message: "Invalid Credentials" });
+    res.status(500).json({ message: "Error logging in" });
   }
 });
 
