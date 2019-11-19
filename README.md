@@ -19,6 +19,10 @@ $ npm run dev / npm run start / node index.js
     - checks to confirm the returned histories are for a new date than the last fetch
     - adds new histories and pad_counts & pad_seconds into Welldone-db
 
+# Prismic
+
+Pumps, Sensors and Organizations are aggregated from the Prismic API into pumps.json via "node run fetch" or "node services/jsonCache.js", mapData.js functions check the new data for new pumps and organizations adding them into the Welldone database.
+
 
 # Heroku scheduler 
 
@@ -31,13 +35,15 @@ Dynos:
 $ node index.js
 $ node services/jsonCache.js
 
-# Prismic
 
-# TODO
+#Notes
 
-fix bug that enters multiple organizations of the same name
-test mapData on heroku
-add fetch scheduler
-confirm heroku is able to update and utilize pumps.json
+longStore.json - is from previous iteration of Welldone and is not in active use in this current DB
 
+#TODO
+
+Move superuser dashboard out of primic and create a new built in admin dashboard in the Welldone frontend app. This would entail:
+-  persisting the current postres database deployed on Heroku 
+- removing the calls to the prismic api in this backend - and instead 
+- pumps, organizations etc static detail would be manually entered in the frontend superuser dashboard which would then update the tables in the backend. 
 
