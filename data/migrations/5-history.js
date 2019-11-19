@@ -1,6 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable("history", column => {
     column.increments();
+    column.timestamp("created_at").defaultTo(knex.fn.now())
     column.string("date").nullable();
     column.integer("count").nullable();
     column.bigInteger("total").nullable();
