@@ -10,6 +10,7 @@ const { validateLogin } = require("../middleware/middleware")
 router.post("/login", validateLogin, async (req, res) => {
   try {
     let { email_address, password } = req.body;
+    console.log(req.body)
     const account = await Auth.findBy({ email_address }).first();
     if (account && bcrypt.compareSync(password, account.password)) {
       const token = generateToken(account);

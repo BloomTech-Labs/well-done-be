@@ -148,7 +148,7 @@ function findSensorsAndHistories () {
   .join("pad_seconds as ps", "ps.history_id", "h.id")
   .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .join("organizations as o", "o.id", "p.org_id")
-  .orderBy("h.created_at", "desc")
+  .orderBy("h.created_at", "asc")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
@@ -222,7 +222,7 @@ function findSensorsAndHistoriesBySensorsPhysicalId (id) {
   .join("pumps as p", "s.physical_id", "p.sensor_pid")
   .join("organizations as o", "o.id", "p.org_id")
   .where({physical_id: id})
-  .orderBy("h.created_at", "desc")
+  .orderBy("h.created_at", "asc")
   .select([
     "s.id as sensor_index",
     "s.physical_id",
