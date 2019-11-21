@@ -124,8 +124,36 @@ const updatePump = (changes, id) => {
 };
 
 const getPumpsByVillageName = (filter) => {
-  return db("pumps")
+  return db("pumps as p")
+  .join("organizations as o", "o.id", "p.org_id")
+  .join("sensors as s", "s.physical_id", "p.sensor_pid")
   .where(filter)
+  .select([
+    "p.id as pump_index",
+    "p.org_id",
+    "p.sensor_pid",
+    "p.country_name as village_name",
+    "p.province_name",
+    "p.district_name",
+    "p.commune_name",
+    "p.latitude",
+    "p.longitude",
+    "o.org_name",
+    "o.headquarter_city",
+    "s.id as sensor_index",
+    "s.physical_id",
+    "s.kind",
+    "s.type",
+    "s.cellular",
+    "s.bluetooth",
+    "s.training",
+    "s.remark",
+    "s.data_finished",
+    "s.depth",
+    "s.yield",
+    "s.static",
+    "s.quality",
+  ])
 }
 
 module.exports = {
