@@ -433,7 +433,7 @@ async function dataUpdate () {
           status: resMomo.data.status,
           statuses: newData,
         })
-      // console.log(results, "******RESULTS")
+      // console.log(results.forEach(item => console.log(item.statuses)), "******RESULTS")
       } catch (err) {
         console.log(`Error on sensor #${sensor.physical_id}`)
         console.log(err.message, "this is the err")
@@ -442,7 +442,8 @@ async function dataUpdate () {
       }
       
      })
-     
+     console.log(results.forEach(item => console.log(item.statuses)), "******RESULTS")
+     console.log(results, "this is results")
     fetch = { lastFetch: moment().unix(), sensor: results }
     setLastFetchTable(fetch)
     } catch (err) {console.log(err.message)}
@@ -552,9 +553,9 @@ function getStatuses (history){
           } 
           getPadSeconds()
           getPadCounts()
-        }
+        })
       
-  )
+  
 }
 
 getUpdatedSensors()
@@ -562,6 +563,13 @@ getPrismicOrgs()
 // module.exports = {getUpdated: function () {
 //   getPrismicOrgs,
 //   getUpdatedSensors
+//   }
+// }
+
+
+// module.exports = {getUpdated: function () {
+//   getUpdatedSensors,
+//   getPrismicOrgs
 //   }
 // }
 

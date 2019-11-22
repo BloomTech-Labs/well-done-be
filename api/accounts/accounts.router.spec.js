@@ -1,11 +1,39 @@
 const request = require("supertest");
 const server = require("../server");
+const bcrypt = require("bcryptjs");
+const db = require("../../data/dbConfig");
 // ALL TESTS PASSING :))
 describe("accounts.router.js", () => {
+  afterAll(async () => {
+    await db("accounts").truncate();
+  });
+  beforeAll(async () => {
+    await db("accounts").truncate();
+  });
+  let token;
+  beforeAll((done) => {
+    request(server)
+      .post('/api/accounts')
+      .send({
+        first_name: "firstName",
+        last_name: "lastName",
+        email_address: "email",
+        password: bcrypt.hashSync('password', 2), 
+        super_user: true,
+        org_admin: false,
+        org_user: false
+      })
+      .end((err, response) => {
+        token = response.body.token; // save the token!
+        done();
+      });
+  });
   describe("GET /api/accounts", () => {
     it("should return 200 OK status", () => {
       return request(server)
         .get("/api/accounts")
+        .set("Accept", "application/json")
+        .set("Authorization", `${token}`)
         .then(res => {
           expect(res.status).toEqual(200);
         });
@@ -17,12 +45,10 @@ describe("accounts.router.js", () => {
     //Test POST an account
     describe("POST /api/accounts", function() {
       let account = {
-        id: "6",
-        org_id: "2",
         first_name: "Smith",
         last_name: "McGee2",
         email_address: "abc@email.comunique",
-        password: "test",
+        password: bcrypt.hashSync('password', 2),
         mobile_number: "1-888-888-88889777766",
         super_user: 0,
         org_user: 1,
@@ -33,6 +59,7 @@ describe("accounts.router.js", () => {
           .post("/api/accounts")
           .send(account)
           .set("Accept", "application/json")
+          .set("Authorization", `${token}`)
           .expect("Content-Type", /json/)
           .expect(200)
           .end(err => {
@@ -47,6 +74,7 @@ describe("accounts.router.js", () => {
         request(server)
           .get("/api/accounts")
           .set("Accept", "application/json")
+          .set("Authorization", `${token}`)
           .expect("Content-Type", /json/)
           .expect(200, done);
       });
@@ -57,13 +85,15 @@ describe("accounts.router.js", () => {
         request(server)
           .get("/api/accounts/1")
           .set("Accept", "application/json")
+          .set("Authorization", `${token}`)
           .expect("Content-Type", /json/)
           .expect(200, done);
       });
-      it("respond with json org not found", function(done) {
+      it("respond with json account not found", function(done) {
         request(server)
           .get("/api/accounts/notaproperid")
           .set("Accept", "application/json")
+          .set("Authorization", `${token}`)
           .expect("Content-Type", /json/)
           .expect(404)
           .end(err => {

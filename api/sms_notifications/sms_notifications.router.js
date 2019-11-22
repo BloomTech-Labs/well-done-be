@@ -27,11 +27,12 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 //* [create] - create sms notifications
-router.post("/", authenticate, validateSms, async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   try {
     const sms_notification = req.body;
-    await SMS_Notification.create(sms_notification);
-    res.status(200).json(sms_notification);
+    const notification = await SMS_Notification.create(sms_notification)
+    console.log(notification)
+    res.status(200).json(notification);
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);

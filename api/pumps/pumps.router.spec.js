@@ -1,9 +1,38 @@
 const request = require("supertest");
 const server = require("../server");
+const bcrypt = require("bcryptjs");
+const db = require("../../data/dbConfig");
+
 describe("pumps router", () => {
   it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
+});
+
+afterAll(async () => {
+  await db("pumps").truncate();
+});
+afterAll(async () => {
+  await db("accounts").truncate();
+});
+
+let token;
+beforeAll((done) => {
+  request(server)
+    .post('/api/accounts')
+    .send({
+      first_name: "firstName",
+      last_name: "lastName",
+      email_address: "email",
+      password: bcrypt.hashSync('password', 2), 
+      super_user: true,
+      org_admin: false,
+      org_user: false
+    })
+    .end((err, response) => {
+      token = response.body.token; // save the token!
+      done();
+    });
 });
 //Test POST a pump
 describe("POST /api/pumps", function() {
@@ -21,6 +50,7 @@ describe("POST /api/pumps", function() {
       .post("/api/pumps")
       .send(pump)
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(201)
       .end(err => {
@@ -35,6 +65,7 @@ describe("GET /api/pumps", function() {
     request(server)
       .get("/api/pumps")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -45,6 +76,7 @@ describe("GET /api/pumps/:id", function() {
     request(server)
       .get("/api/pumps/1")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -52,6 +84,7 @@ describe("GET /api/pumps/:id", function() {
     request(server)
       .get("/api/pumps/notaproperid")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(404)
       .end(err => {

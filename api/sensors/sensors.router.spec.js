@@ -1,15 +1,41 @@
 const request = require("supertest");
 const server = require("../server");
+const bcrypt = require("bcryptjs");
+const db = require("../../data/dbConfig");
 // ALL TESTS PASSING :) 
 describe("sensors router", () => {
   it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 });
+beforeAll(async () => {
+  await db("accounts").truncate();
+});
+
+afterAll(async () => {
+  await db("accounts").truncate();
+});
+let token;
+beforeAll((done) => {
+  request(server)
+    .post('/api/accounts')
+    .send({
+      first_name: "firstName",
+      last_name: "lastName",
+      email_address: "email",
+      password: bcrypt.hashSync('password', 2), 
+      super_user: true,
+      org_admin: false,
+      org_user: false
+    })
+    .end((err, response) => {
+      token = response.body.token; // save the token!
+      done();
+    });
+});
 //Test POST a sensor
 describe("POST /api/sensors", function() {
   let sensor = {
-    pump_id: 1,
     physical_id: 12325,
     kind: "B",
     type: "A",
@@ -28,6 +54,7 @@ describe("POST /api/sensors", function() {
       .post("/api/sensors")
       .send(sensor)
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(201)
       .end(err => {
@@ -42,6 +69,7 @@ describe("GET /api/sensors", function() {
     request(server)
       .get("/api/sensors")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -52,6 +80,7 @@ describe("GET /api/sensors/:id", function() {
     request(server)
       .get("/api/sensors/1")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -59,6 +88,7 @@ describe("GET /api/sensors/:id", function() {
     request(server)
       .get("/api/sensors/notaproperid")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(404)
       .end(err => {

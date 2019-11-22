@@ -1,19 +1,48 @@
 const request = require("supertest");
 const server = require("../server");
 const db = require("../../data/dbConfig");
+const bcrypt = require("bcryptjs");
+
 // ALL TESTS PASSING :)
-describe("organizations router", () => {
-  beforeEach(async () => {
-    await db("organizations").truncate();
-  });
+describe("organizations router", () => { 
   it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 });
+
+afterAll(async () => {
+  await db("accounts").truncate();
+});
+beforeAll(async () => {
+  await db("accounts").truncate();
+});
+beforeAll(async () => {
+  await db("organizations").truncate();
+});
+afterAll(async () => {
+  await db("organizations").truncate();
+});
+let token;
+beforeAll((done) => {
+  request(server)
+    .post('/api/accounts')
+    .send({
+      first_name: "firstName",
+      last_name: "lastName",
+      email_address: "email",
+      password: bcrypt.hashSync('password', 2), 
+      super_user: true,
+      org_admin: false,
+      org_user: false
+    })
+    .end((err, response) => {
+      token = response.body.token; // save the token!
+      done();
+    });
+});
 //Test POST an org
 describe("POST /api/orgs", function() {
   let org = {
-    id: "1",
     org_name: "ABC",
     headquarter_city: "DEF"
   };
@@ -22,6 +51,7 @@ describe("POST /api/orgs", function() {
       .post("/api/orgs")
       .send(org)
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200)
       .end(err => {
@@ -36,6 +66,7 @@ describe("GET /api/orgs", function() {
     request(server)
       .get("/api/orgs")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -46,6 +77,7 @@ describe("GET /api/orgs/:id", function() {
     request(server)
       .get("/api/orgs/1")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -53,6 +85,7 @@ describe("GET /api/orgs/:id", function() {
     request(server)
       .get("/api/orgs/notaproperid")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(404)
       .end(err => {
