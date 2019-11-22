@@ -29,7 +29,7 @@ beforeAll((done) => {
 });
 //Test POST a sensor
 describe("POST /api/sensors", function() {
-  jest.setTimeout(60000)
+ 
   let sensor = {
     physical_id: 12325,
     kind: "B",

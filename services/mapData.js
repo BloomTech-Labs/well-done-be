@@ -567,9 +567,3 @@ getPrismicOrgs()
 // }
 
 
-// module.exports = {getUpdated: function () {
-//   getUpdatedSensors,
-//   getPrismicOrgs
-//   }
-// }
-

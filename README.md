@@ -49,8 +49,12 @@ Move superuser dashboard out of primic and create a new built in admin dashboard
 
 # JEST 
 
-Note - tests must run sequentially due to each test creating an account to retrieve the JWT and apply the token:
+Note - tests must be run in order:
 
-$npm test --runInBand
+SCRIPTS
+"setup": "cross-env DB_ENV=test jest setup.test.js --watch",
+"integration": "cross-env DB_ENV=test jest '(/*.*\\.spec)\\.js$' --runInBand --watch",
 
-Tests persist in inconsistent errors when running at once, running individually they pass.
+$npm run setup
+$npm run integration
+

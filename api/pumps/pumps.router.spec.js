@@ -11,16 +11,6 @@ describe("pumps router", () => {
 beforeAll(async () => {
   await db("pumps").truncate();
 });
-<<<<<<< HEAD
-afterAll(async () => {
-  await db("accounts").truncate();
-});
-// afterEach(() => {
-//   delete global.__mobxInstanceCount; // prevent warnings
-// })
-=======
-
->>>>>>> 303a06ae9ffbd8a099b56676c1c7efad917e6320
 let token;
 beforeAll((done) => {
   request(server)

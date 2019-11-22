@@ -4,15 +4,6 @@ const bcrypt = require("bcryptjs");
 const db = require("../../data/dbConfig");
 // ALL TESTS PASSING :))
 describe("accounts.router.js", () => {
-<<<<<<< HEAD
-  afterAll(async () => {
-    await db("accounts").truncate();
-  });
-  // beforeAll(async () => {
-  //   await db("accounts").truncate();
-  // });
-=======
->>>>>>> 303a06ae9ffbd8a099b56676c1c7efad917e6320
   let token;
   beforeAll((done) => {
     request(server)
