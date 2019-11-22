@@ -14,8 +14,6 @@ describe('history model', ()=> {
                 total: 7894566,
                 status: 1,
                 sensor_id: 1,
-                pad_seconds: 40002,
-                pad_counts: 152,
                 reported_percent: 34
             })
 
@@ -25,8 +23,6 @@ describe('history model', ()=> {
                 total: 78945622,
                 status: 2,
                 sensor_id: 1,
-                pad_seconds: 40003,
-                pad_counts: 153,
                 reported_percent: 55
             })
 
