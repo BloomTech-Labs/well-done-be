@@ -47,3 +47,10 @@ Move superuser dashboard out of primic and create a new built in admin dashboard
 - removing the calls to the prismic api in this backend - and instead 
 - pumps, organizations etc static detail would be manually entered in the frontend superuser dashboard which would then update the tables in the backend. 
 
+# JEST 
+
+Note - tests must run sequentially due to each test creating an account to retrieve the JWT and apply the token:
+
+$npm test --runInBand
+
+Tests persist in inconsistent errors when running at once, running individually they pass.

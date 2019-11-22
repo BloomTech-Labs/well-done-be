@@ -46,7 +46,7 @@ router.post("/", validateAccount, async (req, res) => {
     if (isUniqueEmail === 0) {
       await Accounts.insert(account);
       const token = generateToken(account);
-      res.status(200).json(token);
+      res.status(200).json({ token });
     } else {
       res.status(404).json({message: "Email address already taken, please enter a unique email"})
     }
@@ -61,12 +61,9 @@ router.put("/:account_id", authenticate, validateUpdate, async (req, res) => {
   try {
     const { account_id } = req.params;
     const changes = req.body;
-    // const updatedAccount = await Accounts.update(account_id, changes);
-    // console.log(updatedAccount)
-    await Accounts.update(account_id, changes)
-    res.status(200).json({ message: "Account edited successfully.",
-                          //  res: updatedAccount
-                        });
+    const updatedAccount = await Accounts.update(account_id, changes);
+    console.log(updatedAccount)
+    res.status(200).json({ message: "Account edited successfully."})
   } catch (err) {
     console.log(err.message);
     res.status(400).json(err.message);
