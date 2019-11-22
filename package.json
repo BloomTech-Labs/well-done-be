@@ -7,7 +7,7 @@
     "dev": "nodemon index.js",
     "dev-test": "node services/jsonCache.js && nodemon index.js",
     "fetch": "node services/jsonCache.js",
-    "test": "cross-env DB_ENV=test jest --watch",
+    "test": "cross-env DB_ENV=test jest --runInBand --watch",
     "start": "node index.js"
   },
   "jest": {

@@ -6,6 +6,9 @@ describe("pumps model", () => {
   beforeEach(async () => {
     await db("pumps").truncate();
   });
+  afterEach(() => {
+    delete global.__mobxInstanceCount; // prevent warnings
+  })
   describe("insert()", () => {
     it("should insert the provided pumps into the db", async () => {
       await Pumps.addPump({

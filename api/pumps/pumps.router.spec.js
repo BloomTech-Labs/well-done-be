@@ -15,7 +15,9 @@ afterAll(async () => {
 afterAll(async () => {
   await db("accounts").truncate();
 });
-
+// afterEach(() => {
+//   delete global.__mobxInstanceCount; // prevent warnings
+// })
 let token;
 beforeAll((done) => {
   request(server)
