@@ -7,24 +7,17 @@ const bcrypt = require("bcryptjs");
 
 // ALL TESTS PASSING :)
 describe("history router", () => {
-  beforeEach(async () => {
-    await db("accounts").truncate();
-  });
   beforeAll(async () => {
-    await db("accounts").truncate();
+    await db("history").truncate();
   });
+
   let token;
   beforeAll((done) => {
     request(server)
-      .post('/api/accounts')
+      .post('/api/auth/login')
       .send({
-        first_name: "firstName",
-        last_name: "lastName",
-        email_address: "email",
-        password: bcrypt.hashSync('password', 2), 
-        super_user: true,
-        org_admin: false,
-        org_user: false
+        email_address: "email@email",
+        password: "pw", 
       })
       .end((err, response) => {
         token = response.body.token; // save the token!
@@ -36,6 +29,7 @@ describe("history router", () => {
   });
   //Test POST a history
   describe("POST /api/history", function() {
+    jest.setTimeout(60000)
     let history = {
       date: "2019-05-22",
       count: 2,
@@ -52,9 +46,9 @@ describe("history router", () => {
         .set("Authorization", `${token}`)
         .expect("Content-Type", /json/)
         .expect(201)
-        .end(err => {
-          if (err) return done(err);
-          done();
+        .end((err, response) => {
+          if (err) {return done(err)} else {
+          done()};
         });
     });
   });

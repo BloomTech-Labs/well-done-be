@@ -10,30 +10,17 @@ describe("organizations router", () => {
   });
 });
 
-afterAll(async () => {
-  await db("accounts").truncate();
-});
-beforeAll(async () => {
-  await db("accounts").truncate();
-});
 beforeAll(async () => {
   await db("organizations").truncate();
 });
-afterAll(async () => {
-  await db("organizations").truncate();
-});
+
 let token;
 beforeAll((done) => {
   request(server)
-    .post('/api/accounts')
+    .post('/api/auth/login')
     .send({
-      first_name: "firstName",
-      last_name: "lastName",
-      email_address: "email",
-      password: bcrypt.hashSync('password', 2), 
-      super_user: true,
-      org_admin: false,
-      org_user: false
+      email_address: "email@email",
+      password: "pw", 
     })
     .end((err, response) => {
       token = response.body.token; // save the token!
@@ -92,5 +79,8 @@ describe("GET /api/orgs/:id", function() {
         if (err) return done(err);
         done();
       });
+  });
+  afterAll(async () => {
+    await db("organizations").truncate();
   });
 });

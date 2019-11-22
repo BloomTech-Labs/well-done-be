@@ -11,22 +11,17 @@ describe("sms router", () => {
   });
 });
 
-afterAll(async () => {
+beforeAll(async () => {
   await db("sms_notifications").truncate();
 });
 let token;
 beforeAll((done) => {
   request(server)
-    .post('/api/accounts')
-    .send({
-      first_name: "firstName",
-      last_name: "lastName",
-      email_address: "email",
-      password: bcrypt.hashSync('password', 2), 
-      super_user: true,
-      org_admin: false,
-      org_user: false
-    })
+  .post('/api/auth/login')
+  .send({
+    email_address: "email@email",
+    password: "pw", 
+  })
     .end((err, response) => {
       token = response.body.token; // save the token!
       done();

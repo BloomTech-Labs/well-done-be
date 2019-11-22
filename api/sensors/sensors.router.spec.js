@@ -8,26 +8,20 @@ describe("sensors router", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 });
+
 beforeAll(async () => {
-  await db("accounts").truncate();
+  await db("sensors").truncate();
 });
 
-afterAll(async () => {
-  await db("accounts").truncate();
-});
+
 let token;
 beforeAll((done) => {
   request(server)
-    .post('/api/accounts')
-    .send({
-      first_name: "firstName",
-      last_name: "lastName",
-      email_address: "email",
-      password: bcrypt.hashSync('password', 2), 
-      super_user: true,
-      org_admin: false,
-      org_user: false
-    })
+  .post('/api/auth/login')
+  .send({
+    email_address: "email@email",
+    password: "pw", 
+  })
     .end((err, response) => {
       token = response.body.token; // save the token!
       done();
@@ -35,6 +29,7 @@ beforeAll((done) => {
 });
 //Test POST a sensor
 describe("POST /api/sensors", function() {
+  jest.setTimeout(60000)
   let sensor = {
     physical_id: 12325,
     kind: "B",
@@ -76,6 +71,7 @@ describe("GET /api/sensors", function() {
 });
 //Test GET sensor by id
 describe("GET /api/sensors/:id", function() {
+  jest.setTimeout(60000)
   it("respond with json containing a single pump", function(done) {
     request(server)
       .get("/api/sensors/1")
