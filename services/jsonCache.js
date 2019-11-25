@@ -71,7 +71,7 @@ async function getPumps() {
             organizations,
           },
         }
-        console.log(pumps, "this is pumps")
+        // console.log(pumps, "this is pumps")
       } else {
         console.log(`Missing data on pump #${pump.uid}`)
       }

@@ -1,15 +1,36 @@
 const request = require("supertest");
 const server = require("../server");
+const bcrypt = require("bcryptjs");
+const db = require("../../data/dbConfig");
 // ALL TESTS PASSING :) 
 describe("sensors router", () => {
   it("should set environment to testing", () => {
     expect(process.env.DB_ENV).toBe("test");
   });
 });
+
+beforeAll(async () => {
+  await db("sensors").truncate();
+});
+
+
+let token;
+beforeAll((done) => {
+  request(server)
+  .post('/api/auth/login')
+  .send({
+    email_address: "email@email",
+    password: "pw", 
+  })
+    .end((err, response) => {
+      token = response.body.token; // save the token!
+      done();
+    });
+});
 //Test POST a sensor
 describe("POST /api/sensors", function() {
+ 
   let sensor = {
-    pump_id: 1,
     physical_id: 12325,
     kind: "B",
     type: "A",
@@ -28,6 +49,7 @@ describe("POST /api/sensors", function() {
       .post("/api/sensors")
       .send(sensor)
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(201)
       .end(err => {
@@ -42,16 +64,19 @@ describe("GET /api/sensors", function() {
     request(server)
       .get("/api/sensors")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
 });
 //Test GET sensor by id
 describe("GET /api/sensors/:id", function() {
+  jest.setTimeout(60000)
   it("respond with json containing a single pump", function(done) {
     request(server)
       .get("/api/sensors/1")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(200, done);
   });
@@ -59,6 +84,7 @@ describe("GET /api/sensors/:id", function() {
     request(server)
       .get("/api/sensors/notaproperid")
       .set("Accept", "application/json")
+      .set("Authorization", `${token}`)
       .expect("Content-Type", /json/)
       .expect(404)
       .end(err => {

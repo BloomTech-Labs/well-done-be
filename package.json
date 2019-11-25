@@ -8,8 +8,9 @@
     "dev-test": "node services/jsonCache.js && nodemon index.js",
     "fetch": "node services/jsonCache.js",
     "test": "cross-env DB_ENV=test jest --watch",
+    "setup": "cross-env DB_ENV=test jest setup.test.js --watch",
+    "integration": "cross-env DB_ENV=test jest '(/*.*\\.spec)\\.js$' --runInBand --watch",
     "start": "node index.js"
-
   },
   "jest": {
     "testEnvironment": "node",
@@ -35,6 +36,7 @@
     "express-router": "0.0.1",
     "express-validator": "^6.2.0",
     "helmet": "^3.21.1",
+    "jest-cli": "^24.9.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.19.5",
     "knex-cleaner": "^1.3.0",
@@ -46,6 +48,7 @@
     "postgraphile": "^4.4.4",
     "prismic-javascript": "^2.1.1",
     "prismic-reactjs": "^1.1.1",
+    "request": "^2.88.0",
     "sequel": "^0.3.10",
     "sequelize": "^5.19.8",
     "sequelize-cli": "^5.5.1",
@@ -57,7 +60,6 @@
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
     "supertest": "^4.0.2"
-   
   },
   "engines": {
     "node": "12.x"

@@ -57,7 +57,7 @@ server.use("/api/pad_seconds", padSecondsRouter)
 server.use("/api/last_fetch", lastFetchRouter)
 
 //update database functions
-server.use(mapData.getUpdated)
+// server.use(mapData.getUpdated)
 
 
 

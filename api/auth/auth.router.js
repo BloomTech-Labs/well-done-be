@@ -10,14 +10,17 @@ const { validateLogin } = require("../middleware/middleware")
 router.post("/login", validateLogin, async (req, res) => {
   try {
     let { email_address, password } = req.body;
+    console.log(req.body)
     const account = await Auth.findBy({ email_address }).first();
     if (account && bcrypt.compareSync(password, account.password)) {
       const token = generateToken(account);
       const id = account.id;
       res.status(200).json({ token, id });
+    } else {
+      res.status(401).json({ message: "Invalid Credentials" })
     }
   } catch (err) {
-    res.status(401).json({ message: "Invalid Credentials" });
+    res.status(500).json({ message: "Error logging in" });
   }
 });
 

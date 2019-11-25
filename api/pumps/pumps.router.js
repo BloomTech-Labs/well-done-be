@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Pumps = require("./pumps.model");
-const { validatePump } = require("../middleware/middleware");
+const { validatePump, validatePumpUpdate } = require("../middleware/middleware");
 const { authenticate } = require("../middleware/middleware");
 
 //POST to /api/pumps
@@ -39,7 +39,7 @@ router.get("/:id", authenticate, (req, res) => {
 });
 
 // PUT to /api/pumps/1
-router.put("/:id", validatePump, authenticate, async (req, res) => {
+router.put("/:id", validatePumpUpdate, authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const changes = req.body;
@@ -85,10 +85,10 @@ router.get("/org/:id", authenticate, (req, res) => {
     });
 });
 
-router.post("/country_name", authenticate, (req, res) => {
-  let { country_name } = req.body;
-  console.log(country_name, "this is the country name")
-  Pumps.getPumpsByCountryName({country_name})
+router.post("/village_name", authenticate, (req, res) => {
+  let { village_name } = req.body;
+  console.log(village_name, "this is the village name")
+  Pumps.getPumpsByVillageName({country_name: village_name})
     .then(pumps => {
       console.log("pumps", pumps);
       res.status(200).json(pumps);

@@ -6,6 +6,7 @@ describe("pumps model", () => {
   beforeEach(async () => {
     await db("pumps").truncate();
   });
+
   describe("insert()", () => {
     it("should insert the provided pumps into the db", async () => {
       await Pumps.addPump({

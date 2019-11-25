@@ -7,10 +7,10 @@ describe("sensors model", () => {
   beforeEach(async () => {
     await db("sensors").truncate();
   });
+  
   describe("insert()", () => {
     it("should insert the provided pumps into the db", async () => {
       await Sensors.addSensor({
-        pump_id: 2,
         physical_id: 222444,
         kind: "kkkk",
         type: "kkkk",
@@ -25,7 +25,6 @@ describe("sensors model", () => {
         quality: "gooddd"
       });
       await Sensors.addSensor({
-        pump_id: 1,
         physical_id: 33334,
         kind: "kind",
         type: "type",
