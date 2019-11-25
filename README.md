@@ -1,5 +1,12 @@
 # backend
 
+# Log in credentials: 
+
+{
+	"email_address": "admin@email.com",
+	"password": "admin"
+}
+
 $ npm run fetch / node services/jsonCache.js
     - gets all pumps from prismic
     - caches pumps into pumps.json
@@ -40,6 +47,9 @@ $ node services/jsonCache.js
 
 longStore.json - is from previous iteration of Welldone and is not in active use in this current DB
 
+# IMPORTANT NOTE ON HEROKU/PG DATABASE *****************
+    Do not reset the production database on heroku, this will result in a loss of all historical data store in the database
+
 #TODO
 
 Move superuser dashboard out of primic and create a new built in admin dashboard in the Welldone frontend app. This would entail:
@@ -57,4 +67,8 @@ SCRIPTS
 
 $npm run setup
 $npm run integration
+
+the "npm run test" script runs all tests ending in .test and .spec and will break the tests
+
+
 
