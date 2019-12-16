@@ -15,7 +15,7 @@ router.post("/login", validateLogin, async (req, res) => {
     if (account && bcrypt.compareSync(password, account.password)) {
       const token = generateToken(account);
       const id = account.id;
-      let user = account.super_user
+      let user 
       if (account.super_user === 1){
         user = "super_user"
       } else if(account.org_user === 1){
