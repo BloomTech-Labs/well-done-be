@@ -15,7 +15,15 @@ router.post("/login", validateLogin, async (req, res) => {
     if (account && bcrypt.compareSync(password, account.password)) {
       const token = generateToken(account);
       const id = account.id;
-      res.status(200).json({ token, id });
+      let user 
+      if (account.super_user === 1){
+        user = "super_user"
+      } else if(account.org_user === 1){
+        user = "org_user"
+      } else if(account.org_adm === 1){
+        user = "org_adm"
+      }
+      res.status(200).json({ token, id, user });
     } else {
       res.status(401).json({ message: "Invalid Credentials" })
     }
