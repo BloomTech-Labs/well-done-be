@@ -23,7 +23,7 @@ router.post("/login", validateLogin, async (req, res) => {
       } else if(account.org_adm === 1){
         user = "org_adm"
       }
-      res.status(200).json({ token, id, user });
+      res.status(200).json({ token, account, user });
     } else {
       res.status(401).json({ message: "Invalid Credentials" })
     }
