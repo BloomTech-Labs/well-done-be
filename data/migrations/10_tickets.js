@@ -9,7 +9,7 @@ exports.up = function(knex) {
 		column
 			.integer('sensor_id')
 			.unsigned()
-			.references('physical_id')
+			.references('id')
 			.inTable('sensors')
 			.onDelete('RESTRICT')
 			.onUpdate('RESTRICT');
