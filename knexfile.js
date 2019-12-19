@@ -1,5 +1,5 @@
 // Update with your config settings.
-// require('dotenv').config();
+require('dotenv').config();
 // dotenv.config({ path: "./env" });
 
 module.exports = {
