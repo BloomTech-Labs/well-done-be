@@ -9,17 +9,10 @@ exports.up = function(knex) {
 		column
 			.integer('sensor_id')
 			.unsigned()
-			.references('sensor_id')
-			.inTable('history')
-			.onDelete('CASCADE')
-			.onUpdate('CASCADE');
-		column
-			.integer('status')
-			.unsigned()
-			.references('status')
-			.inTable('history')
-			.onDelete('CASCADE')
-			.onUpdate('CASCADE');
+			.references('id')
+			.inTable('sensors')
+			.onDelete('RESTRICT')
+			.onUpdate('RESTRICT');
 	});
 };
 
