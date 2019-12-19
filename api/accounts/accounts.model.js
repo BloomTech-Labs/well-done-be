@@ -5,8 +5,9 @@ const db = require("../../data/dbConfig.js");
 //* get all accounts
 const find = () => {
   try {
-    return db("accounts")
-    .select(["id", "first_name", "last_name", "email_address", "mobile_number", "super_user", "org_user", "org_admin"])
+    return db("accounts as a")
+    .join("organizations as o", "o.id", "a.org_id")
+    .select(["a.id", "o.org_name","a.first_name", "a.last_name", "a.email_address", "a.mobile_number", "a.super_user", "a.org_user", "a.org_admin"])
   } catch (err) {
     console.log(err.message);
   }
