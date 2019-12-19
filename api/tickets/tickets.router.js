@@ -6,6 +6,6 @@ const { authenticate } = require('../middleware/middleware');
 
 router.get('/', authenticate, async (req, res) => {
 	Tickets.find()
-		.then(res => console.log(res))
-		.catch(err => console.log(err));
+		.then(response => res.status(200).json(response))
+		.catch(err => res.status(500).json({ message: 'Failed to get tickets' }));
 });
