@@ -34,13 +34,16 @@ var reqTimer = setTimeout(function wakeUp() {
 reqTimer;
 
 server.use(express.json());
-server.use(helmet());
 server.use(cors());
-// server.use(cors({ credentials: true, origin: `http://localhost:3000/`}));
+server.use(helmet());
+// server.use(cors({ credentials: true, origin: `http://localhost:8888/` }));
 // server.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-//   next();
+// 	res.header('Access-Control-Allow-Origin', '*');
+// 	res.header(
+// 		'Access-Control-Allow-Headers',
+// 		'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+// 	);
+// 	next();
 // });
 
 server.use('/api/auth', authRouter);
