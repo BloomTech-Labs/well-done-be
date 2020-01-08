@@ -48,11 +48,9 @@ router.post('/', validateAccount, async (req, res) => {
 			const token = generateToken(account);
 			res.status(200).json({ token });
 		} else {
-			res
-				.status(404)
-				.json({
-					message: 'Email address already taken, please enter a unique email'
-				});
+			res.status(404).json({
+				message: 'Email address already taken, please enter a unique email'
+			});
 		}
 	} catch (err) {
 		console.log(err.message);
@@ -67,7 +65,7 @@ router.put('/:account_id', authenticate, validateUpdate, async (req, res) => {
 		const changes = req.body;
 		const updatedAccount = await Accounts.update(account_id, changes);
 		console.log(updatedAccount);
-		res.status(200).json(changes);
+		res.status(200).json(updatedAccount);
 	} catch (err) {
 		console.log(err.message);
 		res.status(400).json(err.message);
