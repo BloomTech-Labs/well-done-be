@@ -63,7 +63,8 @@ router.put('/:account_id', authenticate, validateUpdate, async (req, res) => {
 	try {
 		const { account_id } = req.params;
 		const changes = req.body;
-		const updatedAccount = await Accounts.update(account_id, changes);
+		await Accounts.update(account_id, changes);
+		const updatedAccount = await Accounts.findById(account_id);
 		console.log(updatedAccount);
 		res.status(200).json(updatedAccount);
 	} catch (err) {
