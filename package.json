@@ -10,8 +10,7 @@
 		"test": "cross-env DB_ENV=test jest --watch",
 		"setup": "cross-env DB_ENV=test jest setup.test.js --watch",
 		"integration": "cross-env DB_ENV=test jest '(/*.*\\.spec)\\.js$' --runInBand --watch",
-		"start": "node index.js",
-		"fire": "node firebase.js"
+		"start": "node index.js"
 	},
 	"jest": {
 		"testEnvironment": "node",
