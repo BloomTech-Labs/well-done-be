@@ -25,7 +25,7 @@ const padCountsRouter = require('./pad_counts/pad_counts.router');
 const lastFetchRouter = require('./lastFetch/lastFetch.router');
 
 var reqTimer = setTimeout(function wakeUp() {
-	request('process.env.API_URL/api/auth/login', function() {
+	request(`${process.env.API_URL}/api/auth/login`, function() {
 		console.log('WAKE UP DYNO');
 	});
 	return (reqTimer = setTimeout(wakeUp, 1200000));
