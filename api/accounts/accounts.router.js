@@ -46,7 +46,9 @@ router.post('/', validateAccount, async (req, res) => {
 		if (isUniqueEmail === 0) {
 			await Accounts.insert(account);
 			const token = generateToken(account);
-			res.status(200).json({ token, first_name, last_name, mobile_number });
+			res
+				.status(200)
+				.json({ token, first_name, last_name, mobile_number, email_address });
 		} else {
 			res.status(404).json({
 				message: 'Email address already taken, please enter a unique email'
