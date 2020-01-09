@@ -23,7 +23,6 @@ const historyRouter = require('./history/history.router');
 const padSecondsRouter = require('./pad_seconds/pad_seconds.router');
 const padCountsRouter = require('./pad_counts/pad_counts.router');
 const lastFetchRouter = require('./lastFetch/lastFetch.router');
-const ticketsRouter = require('./tickets/tickets.router');
 
 var reqTimer = setTimeout(function wakeUp() {
 	request('process.env.API_URL/api/auth/login', function() {
@@ -48,7 +47,6 @@ server.use('/api/history', historyRouter);
 server.use('/api/pad_counts', padCountsRouter);
 server.use('/api/pad_seconds', padSecondsRouter);
 server.use('/api/last_fetch', lastFetchRouter);
-server.use('/api/tickets', ticketsRouter);
 
 //update database functions
 // server.use(mapData.getUpdated)
