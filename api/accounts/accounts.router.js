@@ -103,8 +103,9 @@ router.put(
 router.delete('/:account_id', authenticate, async (req, res) => {
 	try {
 		const { account_id } = req.params;
-		const removedAccount = await Accounts.remove(account_id);
-		res.status(200).json({ message: 'Account deleted!' });
+		const removedAccount = await Accounts.findById(account_id);
+		await Accounts.remove(account_id);
+		res.status(200).json(removedAccount);
 	} catch (err) {
 		console.log(err.message);
 		res.status(500).json(err.message);
