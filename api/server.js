@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const secrets = require('../config/secrets.js');
 const request = require('request');
+require('dotenv').config();
 
 console.log('environment:', secrets.environment);
 const server = express();
@@ -25,7 +26,7 @@ const lastFetchRouter = require('./lastFetch/lastFetch.router');
 const ticketsRouter = require('./tickets/tickets.router');
 
 var reqTimer = setTimeout(function wakeUp() {
-	request('https://welldone-db.herokuapp.com/api/auth/login', function() {
+	request('process.env.API_URL/api/auth/login', function() {
 		console.log('WAKE UP DYNO');
 	});
 	return (reqTimer = setTimeout(wakeUp, 1200000));
@@ -36,15 +37,6 @@ reqTimer;
 server.use(express.json());
 server.use(cors());
 server.use(helmet());
-// server.use(cors({ credentials: true, origin: `http://localhost:8888/` }));
-// server.use(function(req, res, next) {
-// 	res.header('Access-Control-Allow-Origin', '*');
-// 	res.header(
-// 		'Access-Control-Allow-Headers',
-// 		'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-// 	);
-// 	next();
-// });
 
 server.use('/api/auth', authRouter);
 server.use('/api/orgs', orgRouter);
