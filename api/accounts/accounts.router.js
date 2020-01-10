@@ -39,7 +39,7 @@ router.get('/:account_id', authenticate, (req, res) => {
 router.post('/', validateAccount, async (req, res) => {
 	try {
 		const account = req.body;
-		const { email_address, first_name, last_name, mobile_number } = req.body;
+		const { email_address, first_name, last_name, mobile_number, role } = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
 		const isUniqueEmail = await Accounts.findBy({ email_address });
@@ -48,7 +48,7 @@ router.post('/', validateAccount, async (req, res) => {
 			const token = generateToken(account);
 			res
 				.status(200)
-				.json({ token, first_name, last_name, mobile_number, email_address });
+				.json({ token, first_name, last_name, mobile_number, email_address, role });
 		} else {
 			res.status(404).json({
 				message: 'Email address already taken, please enter a unique email'
