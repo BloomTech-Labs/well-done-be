@@ -10,7 +10,7 @@ router.post('/', authenticate, (req, res) => {
 	Sensors.addSensor(sensorData)
 		.then(sensor => {
 			console.log(sensor);
-			res.status(201).json(sensor);
+			res.status(201).json(sensorData);
 		})
 		.catch(err => {
 			res.status(500).json(err.message);
