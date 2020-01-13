@@ -9,8 +9,9 @@ router.post('/', authenticate, (req, res) => {
 	console.log('sensorData', sensorData);
 	Sensors.addSensor(sensorData)
 		.then(sensor => {
-			console.log(sensor);
-			res.status(201).json(sensorData);
+			Sensors.getSensorById(Number(sensor)).then(found => {
+				res.status(201).json(found);
+			});
 		})
 		.catch(err => {
 			res.status(500).json(err.message);
