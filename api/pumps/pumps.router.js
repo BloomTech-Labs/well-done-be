@@ -7,7 +7,7 @@ const {
 const { authenticate } = require('../middleware/middleware');
 
 //POST to /api/pumps
-router.post('/', authenticate, validatePump, (req, res) => {
+router.post('/', authenticate, (req, res) => {
 	const pumpData = req.body;
 	console.log('pumpData', pumpData);
 	Pumps.addPump(pumpData)

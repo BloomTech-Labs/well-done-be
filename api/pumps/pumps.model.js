@@ -2,7 +2,10 @@ const knex = require('knex');
 const config = require('../../knexfile');
 const db = require('../../data/dbConfig.js');
 
-function addPump(pump) {
+async function addPump(pump) {
+	let pumpData = await db('pumps');
+	pumpData = pumpData.length + 1;
+	pump = { id: pumpData, ...pump };
 	return db('pumps')
 		.insert(pump)
 		.returning('id');
