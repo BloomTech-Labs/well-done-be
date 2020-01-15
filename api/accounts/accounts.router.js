@@ -34,21 +34,49 @@ router.get('/:account_id', authenticate, (req, res) => {
 		});
 });
 
+// GET by org_id
+router.get('/org/:orgId', authenticate, (req, res) => {
+	const { orgId } = req.params;
+	console.log(orgId);
+	Accounts.findByOrgId(orgId)
+		.then(org => {
+			if (org) {
+				res.status(200).json(org);
+			} else {
+				res.status(404).json({ message: 'Could not find org with given id.' });
+			}
+		})
+		.catch(err => {
+			res.status(500).json(err.message);
+		});
+});
+
 // POST to /api/accounts
 // ! supposed to be only for superusers (for now)
 router.post('/', validateAccount, async (req, res) => {
 	try {
 		const account = req.body;
-		const { email_address, first_name, last_name, mobile_number, role } = req.body;
+		const {
+			email_address,
+			first_name,
+			last_name,
+			mobile_number,
+			role
+		} = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
 		const isUniqueEmail = await Accounts.findBy({ email_address });
 		if (isUniqueEmail === 0) {
 			await Accounts.insert(account);
 			const token = generateToken(account);
-			res
-				.status(200)
-				.json({ token, first_name, last_name, mobile_number, email_address, role });
+			res.status(200).json({
+				token,
+				first_name,
+				last_name,
+				mobile_number,
+				email_address,
+				role
+			});
 		} else {
 			res.status(404).json({
 				message: 'Email address already taken, please enter a unique email'
