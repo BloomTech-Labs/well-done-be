@@ -39,14 +39,16 @@ router.get('/:account_id', authenticate, (req, res) => {
 router.post('/', validateAccount, async (req, res) => {
 	try {
 		const account = req.body;
-		const { email_address } = req.body;
+		const { email_address, first_name, last_name, mobile_number, role } = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
 		const isUniqueEmail = await Accounts.findBy({ email_address });
 		if (isUniqueEmail === 0) {
 			await Accounts.insert(account);
 			const token = generateToken(account);
-			res.status(200).json({ token });
+			res
+				.status(200)
+				.json({ token, first_name, last_name, mobile_number, email_address, role });
 		} else {
 			res.status(404).json({
 				message: 'Email address already taken, please enter a unique email'
@@ -103,8 +105,9 @@ router.put(
 router.delete('/:account_id', authenticate, async (req, res) => {
 	try {
 		const { account_id } = req.params;
-		const removedAccount = await Accounts.remove(account_id);
-		res.status(200).json({ message: 'Account deleted!' });
+		const removedAccount = await Accounts.findById(account_id);
+		await Accounts.remove(account_id);
+		res.status(200).json(removedAccount);
 	} catch (err) {
 		console.log(err.message);
 		res.status(500).json(err.message);
