@@ -86,6 +86,9 @@ router.get('/recent/sensor_id/:id', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+
+router.get('/recent/org_id')
+
 //GET a sensor by org_id
 router.get('/org/:id', authenticate, (req, res) => {
 	const { org_id } = req.params;
