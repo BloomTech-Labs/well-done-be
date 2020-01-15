@@ -46,7 +46,7 @@ const findByOrgId = org_id => {
 	return db('accounts')
 		.join('organizations', 'accounts.org_id', 'organizations.id')
 		.select([
-			'id',
+			'accounts.id',
 			'first_name',
 			'last_name',
 			'email_address',
