@@ -44,13 +44,16 @@ const findById = id => {
 
 const findByOrgId = org_id => {
 	return db('accounts')
+		.join('organizations', 'accounts.org_id', 'organizations.id')
 		.select([
 			'id',
 			'first_name',
 			'last_name',
 			'email_address',
 			'mobile_number',
-			'role'
+			'role',
+			'org_id',
+			'org_name'
 		])
 		.where({ org_id });
 };
