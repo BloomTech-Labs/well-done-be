@@ -88,7 +88,7 @@ router.get('/recent/sensor_id/:id', authenticate, (req, res) => {
 });
 
 
-router.get('/recent/org_id', authenticate, (req, res) => {
+router.get('/recent/:org_id', authenticate, (req, res) => {
 	const {org_id} = req.params
 	Sensors.findSensorsAndHistoriesByOrgId(org_id)
 		.then(sensor => {
