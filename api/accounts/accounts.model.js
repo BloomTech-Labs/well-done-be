@@ -42,6 +42,19 @@ const findById = id => {
 	}
 };
 
+const findByOrgId = org_id => {
+	return db('accounts')
+		.select([
+			'id',
+			'first_name',
+			'last_name',
+			'email_address',
+			'mobile_number',
+			'role'
+		])
+		.where({ org_id });
+};
+
 //* create account
 const insert = async account => {
 	try {
@@ -82,5 +95,6 @@ module.exports = {
 	findById,
 	insert,
 	update,
-	remove
+	remove,
+	findByOrgId
 };
