@@ -28,6 +28,7 @@ router.get('/recent', authenticate, async (req, res) => {
 	}
 });
 
+
 router.get('/', authenticate, async (req, res) => {
 	try {
 		const sensors = await Sensors.getSensorNPump();
@@ -87,7 +88,14 @@ router.get('/recent/sensor_id/:id', authenticate, (req, res) => {
 });
 
 
-router.get('/recent/org_id')
+router.get('/recent/org_id', authenticate, (req, res) => {
+	const {org_id} = req.params
+	Sensors.findSensorsAndHistoriesByOrgId(org_id)
+		.then(sensor => {
+			res.status(200).json(sensor)
+		})
+		.catch(err => res.status(500).json(err.message))
+})
 
 //GET a sensor by org_id
 router.get('/org/:id', authenticate, (req, res) => {
