@@ -8,6 +8,21 @@ function addSensor(sensor) {
 		.returning('id');
 }
 
+async function addSensorNPump(sensor, pump) {
+	// let insertSensor = await db('sensors')
+	// 	.insert(sensor)
+	// 	.returning('id');
+	// let pumpData = await db('pumps');
+	// pumpData = pumpData.length + 1;
+	// pump = { id: pumpData, ...pump };
+	// let insertPump = db('pumps')
+	// 	.insert(pump)
+	// 	.returning('id');
+	// console.log(insertSensor, insertPump, 'after insert');
+	// console.log(insertPump, insertSensor);
+	// return [insertSensor, insertPump];
+}
+
 // function getSensors() {
 //   return db("sensors")
 //     .join("pumps", "pumps.id", "sensors.pump_id")
@@ -205,7 +220,6 @@ function findSensorsAndHistories() {
 		});
 }
 
-
 function findSensorsAndHistoriesByOrgId(org_id) {
 	return db('sensors as s')
 		.join('history as h', 's.physical_id', 'h.sensor_id')
@@ -256,7 +270,7 @@ function findSensorsAndHistoriesByOrgId(org_id) {
 			'ps.pad_seconds_2',
 			'ps.pad_seconds_3'
 		])
-		.where({org_id})
+		.where({ org_id })
 		.then(res => {
 			let compare = [];
 			let filtered = [];
@@ -271,8 +285,6 @@ function findSensorsAndHistoriesByOrgId(org_id) {
 			return filtered;
 		});
 }
-
-
 
 function getSensorNHistoryByPhysicalId(id) {
 	return db('sensors as s')
@@ -364,5 +376,6 @@ module.exports = {
 	findSensorsAndHistories,
 	findSensorsAndHistoriesByOrgId,
 	getSensorNHistoryByPhysicalId,
-	findSensorsAndHistoriesBySensorsPhysicalId
+	findSensorsAndHistoriesBySensorsPhysicalId,
+	addSensorNPump
 };

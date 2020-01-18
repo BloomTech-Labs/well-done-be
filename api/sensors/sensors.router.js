@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const Sensors = require('./sensors.model');
+const Pumps = require('../pumps/pumps.model');
+const Organizations = require('../organizations/organizations.model');
 const { validateSensor } = require('../middleware/middleware');
 const { authenticate } = require('../middleware/middleware');
 
@@ -16,6 +18,31 @@ router.post('/', authenticate, (req, res) => {
 		.catch(err => {
 			res.status(500).json(err.message);
 		});
+});
+
+router.post('/SensorNPump', (req, res) => {
+	// Sensors.addSensorNPump(req.body[0], req.body[1]);
+	Sensors.addSensor(req.body[0])
+		.then(sensor => {
+			Pumps.addPump(req.body[1]).then(pump => {
+				Pumps.getPumpById(Number(pump)).then(foundPump => {
+					Sensors.getSensorById(Number(sensor)).then(foundSensor => {
+						Organizations.findById(foundPump.org_id).then(foundOrg => {
+							res
+								.status(201)
+								.json({ ...foundPump, ...foundSensor, ...foundOrg });
+						});
+					});
+				});
+			});
+		})
+		.catch(err => {
+			res.status(500).json(err.message);
+		});
+
+	// .catch(err => {
+	// 	res.status(500).json(err.message);
+	// });
 });
 
 router.get('/recent', authenticate, async (req, res) => {
