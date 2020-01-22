@@ -10,8 +10,9 @@ exports.up = function(knex) {
 			column.increments();
 			column.string('first_name');
 			column.string('last_name');
-			column.string('email');
-			column.string('phone_number');
+			column.string('email_address').unique();
+			column.string('mobile_number').unique();
+			column.string('password').notNullable();
 		})
 		.createTable('sensor_logs', function(column) {
 			column.increments();

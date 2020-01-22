@@ -66,6 +66,21 @@ function validateAccount(request, response, next) {
 	next();
 }
 
+function validateOperatorAccount(request, response, next) {
+	if (Object.keys(request.body).length === 0) {
+		response.status(400).json({ message: 'account data is required' });
+	} else if (!request.body.first_name) {
+		response.status(400).json({ message: 'first name is required' });
+	} else if (!request.body.last_name) {
+		response.status(400).json({ message: 'last name is required' });
+	} else if (!request.body.email_address) {
+		response.status(400).json({ message: 'email address is required' });
+	} else if (!request.body.password) {
+		response.status(400).json({ message: 'password is required' });
+	}
+	next();
+}
+
 function validateUpdate(request, response, next) {
 	if (Object.keys(request.body).length === 0) {
 		response.status(400).json({ message: 'please provide update data' });
@@ -133,5 +148,6 @@ module.exports = {
 	validateUpdate,
 	validateLogin,
 	validateOrgUpdate,
-	validatePumpUpdate
+	validatePumpUpdate,
+	validateOperatorAccount
 };
