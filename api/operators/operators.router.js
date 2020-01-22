@@ -6,7 +6,7 @@ const { validateOperatorAccount } = require('../middleware/middleware');
 const Operators = require('./operators.model');
 
 router.get('/', authenticate, (req, res) => {
-	Operators.getAll()
+	Operators.getOperators()
 		.then(operator => {
 			res.status(200).json(operator);
 		})
@@ -21,7 +21,7 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 		account.password = hash;
 		const isUniqueEmail = await Operators.findBy({ email_address });
 		const isUniqueMobile = await Operators.findBy({ mobile_number });
-		if (isUniqueEmail === 0 || isUniqueMobile === 0) {
+		if (isUniqueEmail === 0 && isUniqueMobile === 0) {
 			await Operators.insert(account);
 			const token = generateToken(account);
 			res.status(200).json({

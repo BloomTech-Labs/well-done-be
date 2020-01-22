@@ -2,8 +2,8 @@ const knex = require('knex');
 const config = require('../../knexfile');
 const db = require('../../data/dbConfig.js');
 
-function find() {
-	return db('sensors_and_operators');
+function getOperators() {
+	return db('operators');
 }
 
 function findBy(filter) {
@@ -23,7 +23,7 @@ function insert(operator) {
 }
 
 module.exports = {
-	find,
+	getOperators,
 	findBy,
 	insert
 };
