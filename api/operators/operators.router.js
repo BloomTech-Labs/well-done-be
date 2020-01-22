@@ -16,7 +16,7 @@ router.get('/', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
-//fetch all operators and their assign sensors
+//fetch all operators and their assigned sensors
 router.get('/assign', authenticate, (req, res) => {
 	Operators.getAssignedSensors()
 		.then(assigned => {
@@ -25,7 +25,7 @@ router.get('/assign', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
-//fetch all operators and their sensors by id
+//fetch all operators and their sensors by operator id
 router.get('/assign/:id', authenticate, (req, res) => {
 	Operators.getAssignedSensorsByOperatorId(req.params.id)
 		.then(assigned => {
