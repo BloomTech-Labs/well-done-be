@@ -10,10 +10,24 @@ function getOperatorById(id) {
 	return db('operators').where({ id });
 }
 
-async function getAssignedSensors() {
+function getAssignedSensors() {
 	return db('sensors_and_operators as so')
 		.join('sensors as s', 's.physical_id', 'so.sensor_id')
 		.join('operators as o', 'o.id', 'so.operator_id')
+		.select([
+			'so.sensor_id',
+			'so.operator_id',
+			'o.first_name',
+			'o.last_name',
+			'o.mobile_number'
+		]);
+}
+
+function getAssignedSensorsByOperatorId(id) {
+	return db('sensors_and_operators as so')
+		.join('sensors as s', 's.physical_id', 'so.sensor_id')
+		.join('operators as o', 'o.id', 'so.operator_id')
+		.where('o.id', id)
 		.select([
 			'so.sensor_id',
 			'so.operator_id',
@@ -47,6 +61,7 @@ module.exports = {
 	getOperators,
 	getOperatorById,
 	getAssignedSensors,
+	getAssignedSensorsByOperatorId,
 	findBy,
 	insert,
 	assignOperator

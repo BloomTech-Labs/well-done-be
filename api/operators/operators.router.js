@@ -16,10 +16,24 @@ router.get('/', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+//fetch all operators and their assign sensors
 router.get('/assign', authenticate, (req, res) => {
 	Operators.getAssignedSensors()
 		.then(assigned => {
 			res.status(200).json(assigned);
+		})
+		.catch(err => res.status(500).json(err.message));
+});
+
+//fetch all operators and their sensors by id
+router.get('/assign/:id', authenticate, (req, res) => {
+	Operators.getAssignedSensorsByOperatorId(req.params.id)
+		.then(assigned => {
+			if (assigned.length === 0) {
+				res.status(200).json({ message: 'invalid operator id' });
+			} else {
+				res.status(200).json(assigned);
+			}
 		})
 		.catch(err => res.status(500).json(err.message));
 });
