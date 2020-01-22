@@ -6,6 +6,23 @@ function getOperators() {
 	return db('operators');
 }
 
+function getOperatorById(id) {
+	return db('operators').where({ id });
+}
+
+async function getAssignedSensors() {
+	return db('sensors_and_operators as so')
+		.join('sensors as s', 's.physical_id', 'so.sensor_id')
+		.join('operators as o', 'o.id', 'so.operator_id')
+		.select([
+			'so.sensor_id',
+			'so.operator_id',
+			'o.first_name',
+			'o.last_name',
+			'o.mobile_number'
+		]);
+}
+
 function findBy(filter) {
 	return db('operators')
 		.where(filter)
@@ -22,8 +39,15 @@ function insert(operator) {
 	return db('operators').insert(operator);
 }
 
+function assignOperator(body) {
+	return db('sensors_and_operators').insert(body);
+}
+
 module.exports = {
 	getOperators,
+	getOperatorById,
+	getAssignedSensors,
 	findBy,
-	insert
+	insert,
+	assignOperator
 };
