@@ -76,7 +76,6 @@ router.post('/assign', authenticate, async (req, res) => {
 
 	const isValidSensorId = await Sensors.getSensorBySensorId(sensorId);
 	const isValidOperatorId = await Operators.getOperatorById(operatorId);
-	console.log(isValidSensorId, isValidOperatorId);
 	if (isValidSensorId.length > 0 && isValidOperatorId.length > 0) {
 		Operators.assignOperator(req.body)
 			.then(operator => {
