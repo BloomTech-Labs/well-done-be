@@ -28,6 +28,7 @@ function getAssignedSensorsByOperatorId(id) {
 		.join('sensors as s', 's.physical_id', 'so.sensor_id')
 		.join('operators as o', 'o.id', 'so.operator_id')
 		.where('o.id', id)
+		.orderBy('s.physical_id', 'asc')
 		.select([
 			'so.sensor_id',
 			'so.operator_id',
