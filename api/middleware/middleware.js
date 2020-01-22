@@ -77,6 +77,8 @@ function validateOperatorAccount(request, response, next) {
 		response.status(400).json({ message: 'email address is required' });
 	} else if (!request.body.password) {
 		response.status(400).json({ message: 'password is required' });
+	} else if (!request.body.org_id) {
+		response.status(400).json({ message: 'org_id is required' });
 	}
 	next();
 }

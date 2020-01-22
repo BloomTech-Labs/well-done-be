@@ -13,6 +13,14 @@ exports.up = function(knex) {
 			column.string('email_address').unique();
 			column.string('mobile_number').unique();
 			column.string('password').notNullable();
+			column
+				.integer('org_id')
+				.unsigned()
+				.references('id')
+				.inTable('organizations')
+				.onDelete('CASCADE')
+				.onUpdate('CASCADE')
+				.notNullable();
 		})
 		.createTable('sensor_logs', function(column) {
 			column.increments();

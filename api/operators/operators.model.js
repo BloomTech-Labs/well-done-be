@@ -7,7 +7,15 @@ function getOperators() {
 }
 
 function getOperatorById(id) {
-	return db('operators').where({ id });
+	return db('operators')
+		.where({ id })
+		.select([
+			'id',
+			'first_name',
+			'last_name',
+			'email_address',
+			'mobile_number'
+		]);
 }
 
 function getAssignedSensors() {

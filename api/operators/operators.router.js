@@ -16,6 +16,15 @@ router.get('/', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+//fetch all accounts in the operators table
+router.get('/:id', authenticate, (req, res) => {
+	Operators.getOperatorById(req.params.id)
+		.then(operator => {
+			res.status(200).json(operator);
+		})
+		.catch(err => res.status(500).json(err.message));
+});
+
 //fetch all operators and their assigned sensors
 router.get('/assign', authenticate, (req, res) => {
 	Operators.getAssignedSensors()
@@ -42,7 +51,13 @@ router.get('/assign/:id', authenticate, (req, res) => {
 router.post('/', validateOperatorAccount, async (req, res) => {
 	try {
 		const account = req.body;
-		const { email_address, first_name, last_name, mobile_number } = req.body;
+		const {
+			email_address,
+			first_name,
+			last_name,
+			mobile_number,
+			org_id
+		} = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
 		const isUniqueEmail = await Operators.findBy({ email_address });
@@ -55,7 +70,8 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 				first_name,
 				last_name,
 				mobile_number,
-				email_address
+				email_address,
+				org_id
 			});
 		} else {
 			res.status(404).json({
@@ -76,6 +92,7 @@ router.post('/assign', authenticate, async (req, res) => {
 
 	const isValidSensorId = await Sensors.getSensorBySensorId(sensorId);
 	const isValidOperatorId = await Operators.getOperatorById(operatorId);
+
 	if (isValidSensorId.length > 0 && isValidOperatorId.length > 0) {
 		Operators.assignOperator(req.body)
 			.then(operator => {
