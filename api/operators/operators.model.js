@@ -37,7 +37,7 @@ async function getAssignedSensorsByOperatorId(id) {
 	let operator_id = id;
 
 	let today = new Date();
-	today = moment(today).format('ddd MMM D YYYY');
+	today = moment(today).format('MM/DD/YYYY');
 
 	//getting all sensors associated with the id of the operator and their info
 	let getSensorsInfo = await db('sensors_and_operators as so')
@@ -72,7 +72,7 @@ async function getAssignedSensorsByOperatorId(id) {
 		return getSensors.find(sensor => {
 			if (
 				history.sensor_id === sensor.sensor_id &&
-				(history.date === today || history.date === null)
+				moment(history.created_at).format('MM/DD/YYYY') === today
 			) {
 				return history;
 			}
