@@ -20,7 +20,7 @@ router.get("/", authenticate, async (req, res) => {
 // GET to /api/accounts/1
 router.get("/:account_id", authenticate, (req, res) => {
   const { account_id } = req.params;
-  Accounts.findByEmail(account_id)
+  Accounts.findById(account_id)
     .then(acc => {
       console.log("acc", acc);
       if (acc) {
@@ -142,37 +142,24 @@ router.delete("/:account_id", authenticate, async (req, res) => {
   }
 });
 
-// GET to /api/accounts/email/1
-router.get("/email", authenticate, async (req, res) => {
-  try {
-    const { email_address } = req.params;
-    const user = await Accounts.findBy({ email_address });
-    if (user) {
-      res.status(200).json(user);
-    }
-  } catch (err) {
-    console.log(err.message);
-    res.status(500).json(err.message);
-  }
-});
 
-// GET to /api/accounts/email/1
-// router.get("/email/:email", authenticate, (req, res) => {
-	
-// 	  const { email_address } = req.params;
-// 	   Accounts.findById( {email_address} )
-// 	  .then(acc => {
-// 		   if (acc) {
-// 		res.status(200).json(acc);
-// 	} else {
-//         res.status(404).json({ message: "Could not find acc with given id." });
-//       }
-//     })
-//     .catch(err => {
-//       res.status(500).json(err.message);
-//     });
-//   });
-  
+
+  // GET to /api/accounts/theemail/1 
+router.get("/theemail/:email_address", (req, res) => {
+	const { email_address } = req.params;
+	Accounts.findByTheEmail(email_address)
+	  .then(acc => {
+		if (acc) {
+		  res.status(200).json(acc);
+		} else {
+		  res.status(404).json({ message: "Could not find acc with given email." });
+		}
+	  })
+	  .catch(err => {
+		res.status(500).json(err.message);
+	  });
+  });
+
 
 
 

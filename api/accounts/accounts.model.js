@@ -93,16 +93,21 @@ const remove = async id => {
 };
 
 
-//* get account by id email
-const findByEmail = id => {
+
+// get by email
+const findByTheEmail = email_address => {
 	try {
 		return db('accounts')
 			.select([
-			
+				'id',
+				'first_name',
+				'last_name',
 				'email_address',
+				'mobile_number',
+				'role',
 				
 			])
-			.where({ id })
+			.where({ email_address })
 			.first();
 	} catch (err) {
 		console.log(err.message);
@@ -117,5 +122,5 @@ module.exports = {
 	update,
 	remove,
 	findByOrgId,
-	findByEmail
+	findByTheEmail
 };
