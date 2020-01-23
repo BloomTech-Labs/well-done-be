@@ -20,13 +20,17 @@ router.get('/', authenticate, (req, res) => {
 router.get('/:id', authenticate, (req, res) => {
 	Operators.getOperatorById(req.params.id)
 		.then(operator => {
-			res.status(200).json(operator);
+			if (operator.length === 0) {
+				res.status(200).json({ message: 'Invalid ID' });
+			} else {
+				res.status(200).json(operator);
+			}
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
 //fetch all operators and their assigned sensors
-router.get('/assign', authenticate, (req, res) => {
+router.get('/assigned/sensor', authenticate, (req, res) => {
 	Operators.getAssignedSensors()
 		.then(assigned => {
 			res.status(200).json(assigned);
@@ -34,8 +38,8 @@ router.get('/assign', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
-//fetch all operators and their sensors by operator id
-router.get('/assign/:id', authenticate, (req, res) => {
+//fetch sensors by operator id
+router.get('/assigned/operator/:id', authenticate, (req, res) => {
 	Operators.getAssignedSensorsByOperatorId(req.params.id)
 		.then(assigned => {
 			if (assigned.length === 0) {
@@ -80,13 +84,12 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 			});
 		}
 	} catch (err) {
-		console.log(err.message);
 		res.status(500).json(err.message, 'Error creating account');
 	}
 });
 
 //assign an operator to a sensor
-router.post('/assign', authenticate, async (req, res) => {
+router.post('/assigned/operator', authenticate, async (req, res) => {
 	const sensorId = req.body.sensor_id;
 	const operatorId = req.body.operator_id;
 

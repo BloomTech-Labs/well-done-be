@@ -39,6 +39,7 @@ exports.up = function(knex) {
 		})
 		.createTable('sensors_and_operators', function(column) {
 			column.increments();
+			column.unique(['sensor_id', 'operator_id']);
 			column
 				.integer('sensor_id')
 				.unsigned()
