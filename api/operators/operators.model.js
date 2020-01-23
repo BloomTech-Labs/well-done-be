@@ -97,19 +97,7 @@ async function getAssignedSensorsByOperatorId(id) {
 }
 
 function findBy(filter) {
-	return db('operators')
-		.where(filter)
-		.then(res => {
-			if (res.length === 0) {
-				return 0;
-			} else {
-				return 1;
-			}
-		});
-}
-
-function findByEmail(email_address) {
-	return db('operators').where({ email_address });
+	return db('operators').where(filter);
 }
 
 function insert(operator) {
@@ -129,7 +117,6 @@ module.exports = {
 	getAssignedSensors,
 	getAssignedSensorsByOperatorId,
 	findBy,
-	findByEmail,
 	insert,
 	assignOperator
 };

@@ -1,8 +1,11 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const { authenticate } = require('../middleware/middleware');
-const { generateToken } = require('../auth/auth.helpers');
-const { validateOperatorAccount } = require('../middleware/middleware');
+const { generateTokenForOperator } = require('../auth/auth.helpers');
+const {
+	validateOperatorAccount,
+	validateLogin
+} = require('../middleware/middleware');
 
 const Operators = require('./operators.model');
 const Sensors = require('../sensors/sensors.model');
@@ -55,27 +58,17 @@ router.get('/assigned/operator/:id', authenticate, (req, res) => {
 router.post('/', validateOperatorAccount, async (req, res) => {
 	try {
 		const account = req.body;
-		const {
-			email_address,
-			first_name,
-			last_name,
-			mobile_number,
-			org_id
-		} = req.body;
+		const { email_address, mobile_number } = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
-		const isUniqueEmail = await Operators.findBy({ email_address });
 		const isUniqueMobile = await Operators.findBy({ mobile_number });
-		if (isUniqueEmail === 0 && isUniqueMobile === 0) {
+		console.log(isUniqueMobile);
+		if (isUniqueMobile.length === 0) {
 			await Operators.insert(account);
-			const token = generateToken(account);
+			let [op] = await Operators.findBy({ email_address });
+			const token = generateTokenForOperator(op);
 			res.status(200).json({
-				token,
-				first_name,
-				last_name,
-				mobile_number,
-				email_address,
-				org_id
+				token
 			});
 		} else {
 			res.status(404).json({
@@ -85,6 +78,22 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 		}
 	} catch (err) {
 		res.status(500).json(err.message, 'Error creating account');
+	}
+});
+
+//login for operators
+router.post('/login', validateLogin, async (req, res) => {
+	try {
+		let { email_address, password } = req.body;
+		const account = await Operators.findBy({ email_address }).first();
+		if (account && bcrypt.compareSync(password, account.password)) {
+			const token = generateTokenForOperator(account);
+			res.status(200).json({ token });
+		} else {
+			res.status(401).json({ message: 'Invalid Credentials' });
+		}
+	} catch (err) {
+		res.status(500).json({ message: 'Error logging in' });
 	}
 });
 
