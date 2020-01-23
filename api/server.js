@@ -24,6 +24,7 @@ const padSecondsRouter = require('./pad_seconds/pad_seconds.router');
 const padCountsRouter = require('./pad_counts/pad_counts.router');
 const lastFetchRouter = require('./lastFetch/lastFetch.router');
 const operatorsRouter = require('./operators/operators.router');
+const logsRouter = require('./operator_logs/operator_logs.router');
 
 var reqTimer = setTimeout(function wakeUp() {
 	request(`${process.env.API_URL}/api/auth/login`, function() {
@@ -49,6 +50,7 @@ server.use('/api/pad_counts', padCountsRouter);
 server.use('/api/pad_seconds', padSecondsRouter);
 server.use('/api/last_fetch', lastFetchRouter);
 server.use('/api/operators', operatorsRouter);
+server.use('/api/logs', logsRouter);
 
 //update database functions
 // server.use(mapData.getUpdated)

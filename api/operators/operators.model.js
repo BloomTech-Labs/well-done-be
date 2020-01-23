@@ -108,6 +108,10 @@ function findBy(filter) {
 		});
 }
 
+function findByEmail(email_address) {
+	return db('operators').where({ email_address });
+}
+
 function insert(operator) {
 	return db('operators').insert(operator);
 }
@@ -125,6 +129,7 @@ module.exports = {
 	getAssignedSensors,
 	getAssignedSensorsByOperatorId,
 	findBy,
+	findByEmail,
 	insert,
 	assignOperator
 };

@@ -10,7 +10,10 @@ exports.up = function(knex) {
 			column.increments();
 			column.string('first_name');
 			column.string('last_name');
-			column.string('email_address').unique();
+			column
+				.string('email_address')
+				.unique()
+				.notNullable();
 			column.string('mobile_number').unique();
 			column.string('password').notNullable();
 			column
@@ -24,18 +27,27 @@ exports.up = function(knex) {
 		})
 		.createTable('sensor_logs', function(column) {
 			column.increments();
-			column.timestamp('created_at').defaultTo(knex.fn.now());
-			column.string('updated_at');
+			column.timestamp('date_filed').defaultTo(knex.fn.now());
+			column.string('last_modified');
 			column.integer('status');
-			column.string('comment');
-			column.string('pictures');
+			column.string('comment', [1000]);
+			column.string('pictures', [1000]);
 			column
 				.integer('operator_id')
 				.unsigned()
 				.references('id')
 				.inTable('operators')
 				.onDelete('CASCADE')
-				.onUpdate('CASCADE');
+				.onUpdate('CASCADE')
+				.notNullable();
+			column
+				.integer('sensor_id')
+				.unsigned()
+				.references('physical_id')
+				.inTable('sensors')
+				.onDelete('CASCADE')
+				.onUpdate('CASCADE')
+				.notNullable();
 		})
 		.createTable('sensors_and_operators', function(column) {
 			column.increments();

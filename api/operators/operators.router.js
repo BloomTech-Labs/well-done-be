@@ -16,7 +16,7 @@ router.get('/', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
-//fetch all accounts in the operators table
+//fetch account by id in the operators table
 router.get('/:id', authenticate, (req, res) => {
 	Operators.getOperatorById(req.params.id)
 		.then(operator => {
