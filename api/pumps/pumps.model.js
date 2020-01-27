@@ -31,7 +31,8 @@ function findPumps() {
 			'p.latitude',
 			'p.longitude',
 			'o.org_name',
-			'o.headquarter_city'
+			'o.headquarter_city',
+			'p.sensor_pid'
 		);
 }
 
