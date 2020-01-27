@@ -29,6 +29,7 @@ function remove(id) {
 		.where({ id }, 'id')
 		.del();
 }
+
 module.exports = {
 	getLogs,
 	getLogsByOperatorId,

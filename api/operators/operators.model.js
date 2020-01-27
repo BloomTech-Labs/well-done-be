@@ -112,6 +112,34 @@ async function assignOperator(body) {
 	return db('sensors_and_operators').insert(body, 'id');
 }
 
+async function updateOp(id, body) {
+	await db('operators')
+		.update(body)
+		.where({ id });
+
+	let foundOp = await db('operators')
+		.join('organizations as org', 'org.id', 'operators.org_id')
+		.where('operators.id', id)
+		.select([
+			'first_name',
+			'last_name',
+			'email_address',
+			'mobile_number',
+			'org_id',
+			'org_name'
+		])
+
+		.first();
+
+	return foundOp;
+}
+
+function removeOp(id) {
+	return db('operators')
+		.where({ id }, 'id')
+		.del();
+}
+
 module.exports = {
 	getOperators,
 	getOperatorById,
@@ -119,5 +147,7 @@ module.exports = {
 	getAssignedSensorsByOperatorId,
 	findBy,
 	insert,
-	assignOperator
+	assignOperator,
+	updateOp,
+	removeOp
 };
