@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const { authenticate } = require('../middleware/middleware');
-const { generateTokenForOperator } = require('../auth/auth.helpers');
+const { generateToken } = require('../auth/auth.helpers');
 const {
 	validateOperatorAccount,
 	validateLogin
@@ -45,6 +45,7 @@ router.get('/assigned/sensor', authenticate, (req, res) => {
 router.get('/assigned/operator/:id', authenticate, (req, res) => {
 	Operators.getAssignedSensorsByOperatorId(req.params.id)
 		.then(assigned => {
+			console.log(assigned);
 			if (assigned.length === 0) {
 				res.status(200).json({ message: 'invalid operator id' });
 			} else {
@@ -66,7 +67,7 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 		if (isUniqueMobile.length === 0) {
 			await Operators.insert(account);
 			let [op] = await Operators.findBy({ email_address });
-			const token = generateTokenForOperator(op);
+			const token = generateToken(op);
 			res.status(200).json({
 				token
 			});
@@ -87,7 +88,7 @@ router.post('/login', validateLogin, async (req, res) => {
 		let { email_address, password } = req.body;
 		const account = await Operators.findBy({ email_address }).first();
 		if (account && bcrypt.compareSync(password, account.password)) {
-			const token = generateTokenForOperator(account);
+			const token = generateToken(account);
 			res.status(200).json({ token });
 		} else {
 			res.status(401).json({ message: 'Invalid Credentials' });

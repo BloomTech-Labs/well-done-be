@@ -5,7 +5,18 @@ const db = require('../../data/dbConfig.js');
 //* get all accounts
 const find = () => {
 	try {
-		return db('accounts').select('*');
+		return db('accounts')
+			.join('organizations', 'accounts.org_id', 'organizations.id')
+			.select([
+				'accounts.id',
+				'first_name',
+				'last_name',
+				'email_address',
+				'mobile_number',
+				'role',
+				'org_id',
+				'org_name'
+			]);
 	} catch (err) {
 		console.log(err.message);
 	}
@@ -58,6 +69,24 @@ const findByOrgId = org_id => {
 		.where({ org_id });
 };
 
+const findOrgByEmail = email_address => {
+	console.log(email_address);
+	return db('accounts')
+		.join('organizations', 'accounts.org_id', 'organizations.id')
+		.select([
+			'accounts.id',
+			'first_name',
+			'last_name',
+			'email_address',
+			'mobile_number',
+			'role',
+			'org_id',
+			'org_name'
+		])
+		.where({ email_address })
+		.first();
+};
+
 //* create account
 const insert = async account => {
 	try {
@@ -99,5 +128,6 @@ module.exports = {
 	insert,
 	update,
 	remove,
-	findByOrgId
+	findByOrgId,
+	findOrgByEmail
 };

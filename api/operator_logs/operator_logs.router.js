@@ -63,6 +63,7 @@ router.post('/', authenticate, async (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+//update a log
 router.put('/:id', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);

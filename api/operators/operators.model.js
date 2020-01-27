@@ -37,6 +37,7 @@ async function getAssignedSensorsByOperatorId(id) {
 	let operator_id = id;
 
 	let today = new Date();
+
 	today = moment(today).format('MM/DD/YYYY');
 
 	//getting all sensors associated with the id of the operator and their info
