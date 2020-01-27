@@ -41,10 +41,7 @@ router.get('/op/info', authenticate, (req, res) => {
 
 	Operators.getOperatorById(decoded.id)
 		.then(operator => {
-			let { first_name, last_name, email_address, mobile_number } = operator;
-			res
-				.status(200)
-				.json({ first_name, last_name, email_address, mobile_number });
+			res.status(200).json(operator);
 		})
 		.catch(err => res.status(500).json(err.message));
 });
