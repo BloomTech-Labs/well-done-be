@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 const { authenticate } = require('../middleware/middleware');
 const { generateToken } = require('../auth/auth.helpers');
 const {
@@ -32,8 +34,23 @@ router.get('/:id', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+//fetch account by id in the operators table for android app
+router.get('/op/info', authenticate, (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
+
+	Operators.getOperatorById(decoded.id)
+		.then(operator => {
+			let { first_name, last_name, email_address, mobile_number } = operator;
+			res
+				.status(200)
+				.json({ first_name, last_name, email_address, mobile_number });
+		})
+		.catch(err => res.status(500).json(err.message));
+});
+
 //fetch all operators and their assigned sensors
-router.get('/assigned/sensor', authenticate, (req, res) => {
+router.get('/assigned/opsensor', authenticate, (req, res) => {
 	Operators.getAssignedSensors()
 		.then(assigned => {
 			res.status(200).json(assigned);
@@ -41,16 +58,14 @@ router.get('/assigned/sensor', authenticate, (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
-//fetch sensors by operator id
-router.get('/assigned/operator/:id', authenticate, (req, res) => {
-	Operators.getAssignedSensorsByOperatorId(req.params.id)
+//fetch sensors by operator id for android app
+router.get('/assigned/sensors', authenticate, (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
+
+	Operators.getAssignedSensorsByOperatorId(decoded.id)
 		.then(assigned => {
-			console.log(assigned);
-			if (assigned.length === 0) {
-				res.status(200).json({ message: 'invalid operator id' });
-			} else {
-				res.status(200).json(assigned);
-			}
+			res.status(200).json(assigned);
 		})
 		.catch(err => res.status(500).json(err.message));
 });
@@ -90,6 +105,20 @@ router.put('/:id', authenticate, async (req, res) => {
 		let operator = await Operators.updateOp(id, req.body);
 
 		res.status(200).json(operator);
+	} catch {
+		res.status(500).json({ message: 'error when updating account' });
+	}
+});
+
+//update operator's accounts for android app
+router.put('/op/info', authenticate, async (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
+
+	try {
+		await Operators.updateOp(decoded.id, req.body);
+
+		res.status(200).json({ message: 'successfully updated account' });
 	} catch {
 		res.status(500).json({ message: 'error when updating account' });
 	}

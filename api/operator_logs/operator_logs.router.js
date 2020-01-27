@@ -22,6 +22,8 @@ router.get('/operator', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
 
+	console.log(decoded);
+
 	Logs.getLogsByOperatorId(decoded.id)
 		.then(logs => {
 			res.status(200).json(logs);
