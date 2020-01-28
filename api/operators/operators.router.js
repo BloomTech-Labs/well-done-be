@@ -81,7 +81,7 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 			let [op] = await Operators.findBy({ email_address });
 			const token = generateToken(op);
 			res.status(200).json({
-				token
+				token, op
 			});
 		} else {
 			res.status(404).json({

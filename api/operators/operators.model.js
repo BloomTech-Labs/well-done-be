@@ -8,24 +8,11 @@ function getOperators() {
 }
 
 function getOperatorById(id) {
-<<<<<<< HEAD
-  console.log(id);
-  return db("operators")
-    .where({ id })
-    .select([
-      "id",
-      "first_name",
-      "last_name",
-      "email_address",
-      "mobile_number"
-    ]);
-=======
 	console.log(id);
 	return db('operators')
 		.where({ id })
 		.select(['id', 'first_name', 'last_name', 'email_address', 'mobile_number'])
 		.first();
->>>>>>> fe5f65bb42e5e791320684d746d72b6fcee1e868
 }
 
 function getAssignedSensors() {
