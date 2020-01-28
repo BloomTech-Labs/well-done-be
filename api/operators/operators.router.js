@@ -103,7 +103,7 @@ router.put('/:id', authenticate, async (req, res) => {
 		let operator = await Operators.updateOp(id, req.body);
 
 		res.status(200).json(operator);
-	} catch {
+	} catch (err) {
 		res.status(500).json({ message: 'error when updating account' });
 	}
 });
@@ -117,7 +117,7 @@ router.put('/op/info', authenticate, async (req, res) => {
 		await Operators.updateOp(decoded.id, req.body);
 
 		res.status(200).json({ message: 'successfully updated account' });
-	} catch {
+	} catch (err) {
 		res.status(500).json({ message: 'error when updating account' });
 	}
 });
@@ -132,7 +132,7 @@ router.delete('/:id', authenticate, async (req, res) => {
 		await Operators.removeOp(id);
 
 		res.status(200).json(deletedOp);
-	} catch {
+	} catch (err) {
 		res.status(500).json({ message: 'error when deleting operator account' });
 	}
 });

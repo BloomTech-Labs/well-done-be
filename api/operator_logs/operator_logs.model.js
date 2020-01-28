@@ -11,7 +11,9 @@ function getLogsByOperatorId(operator_id) {
 }
 
 function addLog(info) {
-	return db('sensor_logs').insert(info);
+	return db('sensor_logs')
+		.insert(info)
+		.returning('*');
 }
 
 function findById(id) {
@@ -31,9 +33,8 @@ function remove(id) {
 }
 
 function addImage(image) {
-	return db('image_logs')
-		.insert(image)
-		.returning('*');
+	console.log(image);
+	return db('logs_images').insert(image);
 }
 module.exports = {
 	getLogs,

@@ -53,15 +53,15 @@ router.post('/', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
 
-	// const { sensor_id } = req.body;
+	const { sensor_id } = req.body;
 
-	// if (!sensor_id)
-	// 	res.status(400).json({ errorMessage: 'Please provide a sensor id.' });
+	if (!sensor_id)
+		res.status(400).json({ errorMessage: 'Please provide a sensor id.' });
 
-	// const isValidSensorId = await Sensors.getSensorBySensorId(sensor_id);
+	const isValidSensorId = await Sensors.getSensorBySensorId(sensor_id);
 
-	// if (isValidSensorId.length === 0)
-	// 	res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
+	if (isValidSensorId.length === 0)
+		res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
 
 	upload(req, res, async function(err) {
 		if (req.files.length === 1) {
@@ -94,7 +94,6 @@ router.post('/', authenticate, async (req, res) => {
 					if (error) {
 						return error;
 					} else {
-						// results.push(result.secure_url);
 						results.urls.push(result.secure_url);
 					}
 				});
@@ -111,43 +110,23 @@ router.post('/', authenticate, async (req, res) => {
 			};
 
 			try {
-				await Logs.addLog(results.metaData);
+				let [newLog] = await Logs.addLog(results.metaData);
 
-				for (let i = 0; i < results.urls; i++) {
-					await Logs.addImage(results.urls[i]);
+				for (let i = 0; i < results.urls.length; i++) {
+					await Logs.addImage({
+						image_url: results.urls[i],
+						log_id: newLog.id
+					});
 				}
 
 				res
 					.status(201)
 					.json({ message: 'Successfully posted log', ...results });
-			} catch {
-				res.status(500).json(err.message);
+			} catch (err) {
+				res.status(500).json(err);
 			}
-
-			console.log(results);
-			// results = [
-			// 	...results,
-			// 	{
-			// operator_id: decoded.id,
-			// last_modified: new Date(),
-			// ...JSON.parse(req.body.metaData)
-			// 	}
-			// ];
-			// console.log(results[results.length - 1]);
 		}
 	});
-
-	// req.body = {
-	// 	...req.body,
-	// 	operator_id: decoded.id,
-	// 	last_modified: new Date()
-	// };
-
-	// Logs.addLog(req.body)
-	// 	.then(logs => {
-	// 		res.status(201).json(req.body);
-	// 	})
-	// 	.catch(err => res.status(500).json(err.message));
 });
 
 //update a log
