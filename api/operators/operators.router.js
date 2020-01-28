@@ -75,13 +75,14 @@ router.post('/', validateOperatorAccount, async (req, res) => {
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
 		account.password = hash;
 		const isUniqueMobile = await Operators.findBy({ mobile_number });
-		console.log(isUniqueMobile);
 		if (isUniqueMobile.length === 0) {
 			await Operators.insert(account);
 			let [op] = await Operators.findBy({ email_address });
 			const token = generateToken(op);
+			delete op.password;
 			res.status(200).json({
-				token, op
+				token,
+				...op
 			});
 		} else {
 			res.status(404).json({
@@ -141,6 +142,7 @@ router.post('/login', validateLogin, async (req, res) => {
 	try {
 		let { email_address, password } = req.body;
 		const account = await Operators.findBy({ email_address }).first();
+		console.log(account);
 		if (account && bcrypt.compareSync(password, account.password)) {
 			const token = generateToken(account);
 			res.status(200).json({ token });

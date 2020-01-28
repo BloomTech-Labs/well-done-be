@@ -1,10 +1,10 @@
-const knex = require("knex");
-const config = require("../../knexfile");
-const db = require("../../data/dbConfig.js");
-const moment = require("moment");
+const knex = require('knex');
+const config = require('../../knexfile');
+const db = require('../../data/dbConfig.js');
+const moment = require('moment');
 
 function getOperators() {
-  return db("operators");
+	return db('operators');
 }
 
 function getOperatorById(id) {
@@ -16,16 +16,16 @@ function getOperatorById(id) {
 }
 
 function getAssignedSensors() {
-  return db("sensors_and_operators as so")
-    .join("sensors as s", "s.physical_id", "so.sensor_id")
-    .join("operators as o", "o.id", "so.operator_id")
-    .select([
-      "so.sensor_id",
-      "so.operator_id",
-      "o.first_name",
-      "o.last_name",
-      "o.mobile_number"
-    ]);
+	return db('sensors_and_operators as so')
+		.join('sensors as s', 's.physical_id', 'so.sensor_id')
+		.join('operators as o', 'o.id', 'so.operator_id')
+		.select([
+			'so.sensor_id',
+			'so.operator_id',
+			'o.first_name',
+			'o.last_name',
+			'o.mobile_number'
+		]);
 }
 
 async function getAssignedSensorsByOperatorId(id) {
@@ -112,65 +112,56 @@ async function getAssignedSensorsByOperatorId(id) {
 }
 
 function findBy(filter) {
-  return db("operators")
-    .where(filter)
-    .select([
-      "id",
-      "first_name",
-      "last_name",
-      "email_address",
-	  "mobile_number",
-	  "org_id"
-    ]);
+	return db('operators').where(filter);
 }
 
 function insert(operator) {
-  return db("operators").insert(operator);
+	return db('operators').insert(operator);
 }
 
 async function assignOperator(body) {
-  let tableLength = await db("sensors_and_operators");
-  tableLength = tableLength.length + 1;
-  body = { id: tableLength, ...body };
-  return db("sensors_and_operators").insert(body, "id");
+	let tableLength = await db('sensors_and_operators');
+	tableLength = tableLength.length + 1;
+	body = { id: tableLength, ...body };
+	return db('sensors_and_operators').insert(body, 'id');
 }
 
 async function updateOp(id, body) {
-  await db("operators")
-    .update(body)
-    .where({ id });
+	await db('operators')
+		.update(body)
+		.where({ id });
 
-  let foundOp = await db("operators")
-    .join("organizations as org", "org.id", "operators.org_id")
-    .where("operators.id", id)
-    .select([
-      "first_name",
-      "last_name",
-      "email_address",
-      "mobile_number",
-      "org_id",
-      "org_name"
-    ])
+	let foundOp = await db('operators')
+		.join('organizations as org', 'org.id', 'operators.org_id')
+		.where('operators.id', id)
+		.select([
+			'first_name',
+			'last_name',
+			'email_address',
+			'mobile_number',
+			'org_id',
+			'org_name'
+		])
 
-    .first();
+		.first();
 
-  return foundOp;
+	return foundOp;
 }
 
 function removeOp(id) {
-  return db("operators")
-    .where({ id }, "id")
-    .del();
+	return db('operators')
+		.where({ id }, 'id')
+		.del();
 }
 
 module.exports = {
-  getOperators,
-  getOperatorById,
-  getAssignedSensors,
-  getAssignedSensorsByOperatorId,
-  findBy,
-  insert,
-  assignOperator,
-  updateOp,
-  removeOp
+	getOperators,
+	getOperatorById,
+	getAssignedSensors,
+	getAssignedSensorsByOperatorId,
+	findBy,
+	insert,
+	assignOperator,
+	updateOp,
+	removeOp
 };
