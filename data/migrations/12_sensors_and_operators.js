@@ -69,6 +69,7 @@ exports.up = function(knex) {
 		.createTable('logs_images', function(column) {
 			column.increments();
 			column.text('image_url');
+			column.text('caption');
 			column
 				.integer('log_id')
 				.unsigned()

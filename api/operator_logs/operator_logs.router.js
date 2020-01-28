@@ -63,70 +63,17 @@ router.post('/', authenticate, async (req, res) => {
 	if (isValidSensorId.length === 0)
 		res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
 
-	upload(req, res, async function(err) {
-		if (req.files.length === 1) {
-			let formatted = dUri.format(
-				path.extname(req.files[0].originalname).toString(),
-				req.files[0].buffer
-			);
-			cloudinary.uploader.upload(formatted.content, function(error, result) {
-				if (error) {
-					return error;
-				} else {
-					return result;
-				}
-			});
-		} else {
-			let results = {
-				urls: [],
-				metaData: {}
-			};
+	req.body = {
+		...req.body,
+		operator_id: decoded.id,
+		last_modified: new Date()
+	};
 
-			for (let i = 0; i < req.files.length; i++) {
-				let formatted = dUri.format(
-					path.extname(req.files[i].originalname).toString(),
-					req.files[i].buffer
-				);
-				await cloudinary.uploader.upload(formatted.content, function(
-					error,
-					result
-				) {
-					if (error) {
-						return error;
-					} else {
-						results.urls.push(result.secure_url);
-					}
-				});
-			}
-
-			results = {
-				...results,
-				metaData: {
-					operator_id: decoded.id,
-					last_modified: new Date(),
-					date_filed: new Date(),
-					...JSON.parse(req.body.metaData)
-				}
-			};
-
-			try {
-				let [newLog] = await Logs.addLog(results.metaData);
-
-				for (let i = 0; i < results.urls.length; i++) {
-					await Logs.addImage({
-						image_url: results.urls[i],
-						log_id: newLog.id
-					});
-				}
-
-				res
-					.status(201)
-					.json({ message: 'Successfully posted log', ...results });
-			} catch (err) {
-				res.status(500).json(err);
-			}
-		}
-	});
+	Logs.addLog(req.body)
+		.then(logs => {
+			res.status(201).json(req.body);
+		})
+		.catch(err => res.status(500).json(err.message));
 });
 
 //update a log
@@ -176,6 +123,90 @@ router.delete('/:id', authenticate, async (req, res) => {
 			});
 	} else {
 		res.status(401).json({ message: 'You are not allowed to delete this log' });
+	}
+});
+
+//add a picture to its associated log
+router.post('/images', authenticate, (req, res) => {
+	upload(req, res, async function(err) {
+		if (req.files.length === 1) {
+			let formatted = dUri.format(
+				path.extname(req.files[0].originalname).toString(),
+				req.files[0].buffer
+			);
+			cloudinary.uploader.upload(formatted.content, async function(
+				error,
+				result
+			) {
+				if (error) {
+					return error;
+				} else {
+					let results = await Logs.addImage({
+						image_url: result,
+						...JSON.parse(req.body.metaData)
+					});
+					res
+						.status(201)
+						.json({ message: 'Successfully posted log', ...results });
+				}
+			});
+		} else {
+			let results = {
+				urls: [],
+				metaData: {}
+			};
+
+			for (let i = 0; i < req.files.length; i++) {
+				let formatted = dUri.format(
+					path.extname(req.files[i].originalname).toString(),
+					req.files[i].buffer
+				);
+				await cloudinary.uploader.upload(formatted.content, function(
+					error,
+					result
+				) {
+					if (error) {
+						return error;
+					} else {
+						results.urls.push(result.secure_url);
+					}
+				});
+			}
+
+			results = {
+				...results,
+				metaData: {
+					...JSON.parse(req.body.metaData)
+				}
+			};
+
+			console.log(results);
+
+			try {
+				for (let i = 0; i < results.urls.length; i++) {
+					await Logs.addImage({
+						image_url: results.urls[i],
+						log_id: results.metaData.log_id,
+						caption: results.metaData.caption
+					});
+				}
+
+				res
+					.status(201)
+					.json({ message: 'Successfully posted log', ...results });
+			} catch (err) {
+				res.status(500).json(err);
+			}
+		}
+	});
+});
+
+router.get('/images', authenticate, async (req, res) => {
+	try {
+		let images = await Logs.getImages();
+		res.status(200).json(images);
+	} catch (err) {
+		res.status(500).json(err);
 	}
 });
 

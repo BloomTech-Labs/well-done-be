@@ -6,6 +6,10 @@ function getLogs() {
 	return db('sensor_logs');
 }
 
+function getImages() {
+	return db('logs_images');
+}
+
 function getLogsByOperatorId(operator_id) {
 	return db('sensor_logs').where({ operator_id });
 }
@@ -43,5 +47,6 @@ module.exports = {
 	update,
 	findById,
 	remove,
-	addImage
+	addImage,
+	getImages
 };
