@@ -8,6 +8,7 @@ function getOperators() {
 }
 
 function getOperatorById(id) {
+<<<<<<< HEAD
   console.log(id);
   return db("operators")
     .where({ id })
@@ -18,6 +19,13 @@ function getOperatorById(id) {
       "email_address",
       "mobile_number"
     ]);
+=======
+	console.log(id);
+	return db('operators')
+		.where({ id })
+		.select(['id', 'first_name', 'last_name', 'email_address', 'mobile_number'])
+		.first();
+>>>>>>> fe5f65bb42e5e791320684d746d72b6fcee1e868
 }
 
 function getAssignedSensors() {
@@ -34,67 +42,86 @@ function getAssignedSensors() {
 }
 
 async function getAssignedSensorsByOperatorId(id) {
-  let operator_id = id;
+	let operator_id = id;
 
-  let today = new Date();
+	let today = new Date();
+	let yesterday = moment()
+		.subtract(1, 'day')
+		.toDate();
 
-  today = moment(today).format("MM/DD/YYYY");
+	today = moment(today).format('MM/DD/YYYY');
+	yesterday = moment(yesterday).format('MM/DD/YYYY');
 
-  //getting all sensors associated with the id of the operator and their info
-  let getSensorsInfo = await db("sensors_and_operators as so")
-    .join("sensors as s", "s.physical_id", "so.sensor_id")
-    .join("operators as o", "o.id", "so.operator_id")
-    .where("o.id", id)
-    .join("pumps as p", "s.physical_id", "p.sensor_pid")
-    .orderBy("s.physical_id", "asc")
-    .select([
-      "so.sensor_id",
-      "so.operator_id",
-      "s.data_finished",
-      "s.depth",
-      "p.district_name",
-      "p.commune_name",
-      "p.province_name",
-      "p.country_name",
-      "p.latitude",
-      "p.longitude"
-    ]);
+	//getting all sensors associated with the id of the operator and their info
+	let getSensorsInfo = await db('sensors_and_operators as so')
+		.join('sensors as s', 's.physical_id', 'so.sensor_id')
+		.join('operators as o', 'o.id', 'so.operator_id')
+		.where('o.id', id)
+		.join('pumps as p', 's.physical_id', 'p.sensor_pid')
+		.orderBy('s.physical_id', 'asc')
+		.select([
+			'so.sensor_id',
+			'so.operator_id',
+			's.data_finished',
+			's.depth',
+			'p.district_name',
+			'p.commune_name',
+			'p.province_name',
+			'p.country_name',
+			'p.latitude',
+			'p.longitude'
+		]);
 
-  //getting just the sensor id
-  let getSensors = await db("sensors_and_operators as so")
-    .where({ operator_id })
-    .select(["so.sensor_id"]);
+	//getting just the sensor id
+	let getSensors = await db('sensors_and_operators as so')
+		.where({ operator_id })
+		.select(['so.sensor_id']);
 
-  //getting history
-  let recentHistory = await db("history");
+	//getting history
+	let history = await db('history');
 
-  //filtering out all entries not associated with the sensors assigned to the operator or the current date
-  recentHistory = recentHistory.filter(history => {
-    return getSensors.find(sensor => {
-      if (
-        history.sensor_id === sensor.sensor_id &&
-        moment(history.created_at).format("MM/DD/YYYY") === today
-      ) {
-        return history;
-      }
-    });
-  });
+	//filtering out all entries not associated with the sensors assigned to the operator or the current date
+	let recentHistory = history.filter(history => {
+		return getSensors.find(sensor => {
+			if (
+				history.sensor_id === sensor.sensor_id &&
+				moment(history.created_at).format('MM/DD/YYYY') === today
+			) {
+				return history;
+			}
+		});
+	});
 
-  let sensorHistoryAndInfo = [];
+	console.log(recentHistory, 'not here');
 
-  //creating a new object with both relevant information and recent information
-  getSensorsInfo.forEach(sensorInfo => {
-    recentHistory.forEach(history => {
-      if (history.sensor_id === sensorInfo.sensor_id) {
-        sensorHistoryAndInfo = [
-          ...sensorHistoryAndInfo,
-          { ...history, ...sensorInfo }
-        ];
-      }
-    });
-  });
+	if (recentHistory.length === 0) {
+		recentHistory = history.filter(history => {
+			return getSensors.find(sensor => {
+				if (
+					history.sensor_id === sensor.sensor_id &&
+					moment(history.created_at).format('MM/DD/YYYY') === yesterday
+				) {
+					return history;
+				}
+			});
+		});
+	}
 
-  return sensorHistoryAndInfo;
+	let sensorHistoryAndInfo = [];
+
+	//creating a new object with both relevant information and recent information
+	getSensorsInfo.forEach(sensorInfo => {
+		recentHistory.forEach(history => {
+			if (history.sensor_id === sensorInfo.sensor_id) {
+				sensorHistoryAndInfo = [
+					...sensorHistoryAndInfo,
+					{ ...history, ...sensorInfo }
+				];
+			}
+		});
+	});
+
+	return sensorHistoryAndInfo;
 }
 
 function findBy(filter) {

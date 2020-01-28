@@ -22,7 +22,9 @@ router.get('/operator', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
 
-	Logs.getLogsByOperatorId(decoded.subject)
+	console.log(decoded);
+
+	Logs.getLogsByOperatorId(decoded.id)
 		.then(logs => {
 			res.status(200).json(logs);
 		})
@@ -40,7 +42,7 @@ router.post('/', authenticate, async (req, res) => {
 		res.status(400).json({ errorMessage: 'Please provide a sensor id.' });
 
 	const isValidSensorId = await Sensors.getSensorBySensorId(sensor_id);
-	const isValidOperatorId = await Operators.getOperatorById(decoded.subject);
+	const isValidOperatorId = await Operators.getOperatorById(decoded.id);
 
 	if (isValidSensorId.length === 0)
 		res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
@@ -52,7 +54,7 @@ router.post('/', authenticate, async (req, res) => {
 
 	req.body = {
 		...req.body,
-		operator_id: decoded.subject,
+		operator_id: decoded.id,
 		last_modified: new Date()
 	};
 
@@ -73,7 +75,7 @@ router.put('/:id', authenticate, async (req, res) => {
 
 	let [getLog] = await Logs.findById(id);
 
-	if (getLog.operator_id === decoded.subject) {
+	if (getLog.operator_id === decoded.id) {
 		info = { ...info, last_modified: new Date() };
 
 		Logs.update(id, info)
@@ -98,7 +100,7 @@ router.delete('/:id', authenticate, async (req, res) => {
 
 	let [getLog] = await Logs.findById(id);
 
-	if (getLog.operator_id === decoded.subject) {
+	if (getLog.operator_id === decoded.id) {
 		Logs.remove(id)
 			.then(logs => {
 				res.status(200).json({ message: 'Successfully deleted log' });
