@@ -30,11 +30,17 @@ function remove(id) {
 		.del();
 }
 
+function addImage(image) {
+	return db('image_logs')
+		.insert(image)
+		.returning('*');
+}
 module.exports = {
 	getLogs,
 	getLogsByOperatorId,
 	addLog,
 	update,
 	findById,
-	remove
+	remove,
+	addImage
 };

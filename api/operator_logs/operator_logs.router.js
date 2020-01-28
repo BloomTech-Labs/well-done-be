@@ -1,12 +1,29 @@
 require('dotenv').config();
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
+const cloudinary = require('cloudinary').v2;
+const datauri = require('datauri');
+const path = require('path');
+const multer = require('multer');
 
 const { authenticate } = require('../middleware/middleware');
 
 const Logs = require('./operator_logs.model');
 const Operators = require('../operators/operators.model');
 const Sensors = require('../sensors/sensors.model');
+
+cloudinary.config({
+	cloud_name: process.env.CLOUD_NAME,
+	api_key: process.env.API_KEY,
+	api_secret: process.env.API_SECRET
+});
+
+const storage = multer.memoryStorage();
+const upload = multer({ storage }).any();
+
+const dUri = new datauri();
+
+router.post('/upload', (req, res) => {});
 
 //get all logs
 router.get('/', authenticate, (req, res) => {
@@ -36,33 +53,101 @@ router.post('/', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
 
-	const { sensor_id } = req.body;
+	// const { sensor_id } = req.body;
 
-	if (!sensor_id)
-		res.status(400).json({ errorMessage: 'Please provide a sensor id.' });
+	// if (!sensor_id)
+	// 	res.status(400).json({ errorMessage: 'Please provide a sensor id.' });
 
-	const isValidSensorId = await Sensors.getSensorBySensorId(sensor_id);
-	const isValidOperatorId = await Operators.getOperatorById(decoded.id);
+	// const isValidSensorId = await Sensors.getSensorBySensorId(sensor_id);
 
-	if (isValidSensorId.length === 0)
-		res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
+	// if (isValidSensorId.length === 0)
+	// 	res.status(400).json({ errorMessage: 'Please provide a valid sensor id.' });
 
-	if (isValidOperatorId.length === 0)
-		res
-			.status(400)
-			.json({ errorMessage: 'Please provide a valid operator id.' });
+	upload(req, res, async function(err) {
+		if (req.files.length === 1) {
+			let formatted = dUri.format(
+				path.extname(req.files[0].originalname).toString(),
+				req.files[0].buffer
+			);
+			cloudinary.uploader.upload(formatted.content, function(error, result) {
+				if (error) {
+					return error;
+				} else {
+					return result;
+				}
+			});
+		} else {
+			let results = {
+				urls: [],
+				metaData: {}
+			};
 
-	req.body = {
-		...req.body,
-		operator_id: decoded.id,
-		last_modified: new Date()
-	};
+			for (let i = 0; i < req.files.length; i++) {
+				let formatted = dUri.format(
+					path.extname(req.files[i].originalname).toString(),
+					req.files[i].buffer
+				);
+				await cloudinary.uploader.upload(formatted.content, function(
+					error,
+					result
+				) {
+					if (error) {
+						return error;
+					} else {
+						// results.push(result.secure_url);
+						results.urls.push(result.secure_url);
+					}
+				});
+			}
 
-	Logs.addLog(req.body)
-		.then(logs => {
-			res.status(201).json(req.body);
-		})
-		.catch(err => res.status(500).json(err.message));
+			results = {
+				...results,
+				metaData: {
+					operator_id: decoded.id,
+					last_modified: new Date(),
+					date_filed: new Date(),
+					...JSON.parse(req.body.metaData)
+				}
+			};
+
+			try {
+				await Logs.addLog(results.metaData);
+
+				for (let i = 0; i < results.urls; i++) {
+					await Logs.addImage(results.urls[i]);
+				}
+
+				res
+					.status(201)
+					.json({ message: 'Successfully posted log', ...results });
+			} catch {
+				res.status(500).json(err.message);
+			}
+
+			console.log(results);
+			// results = [
+			// 	...results,
+			// 	{
+			// operator_id: decoded.id,
+			// last_modified: new Date(),
+			// ...JSON.parse(req.body.metaData)
+			// 	}
+			// ];
+			// console.log(results[results.length - 1]);
+		}
+	});
+
+	// req.body = {
+	// 	...req.body,
+	// 	operator_id: decoded.id,
+	// 	last_modified: new Date()
+	// };
+
+	// Logs.addLog(req.body)
+	// 	.then(logs => {
+	// 		res.status(201).json(req.body);
+	// 	})
+	// 	.catch(err => res.status(500).json(err.message));
 });
 
 //update a log

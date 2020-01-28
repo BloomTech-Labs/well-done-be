@@ -31,7 +31,6 @@ exports.up = function(knex) {
 			column.string('last_modified');
 			column.integer('status');
 			column.string('comment', [1000]);
-			column.string('pictures', [1000]);
 			column
 				.integer('operator_id')
 				.unsigned()
@@ -66,11 +65,23 @@ exports.up = function(knex) {
 				.inTable('operators')
 				.onDelete('CASCADE')
 				.onUpdate('CASCADE');
+		})
+		.createTable('logs_images', function(column) {
+			column.increments();
+			column.text('image_url');
+			column
+				.integer('log_id')
+				.unsigned()
+				.references('id')
+				.inTable('sensor_logs')
+				.onDelete('CASCADE')
+				.onUpdate('CASCADE');
 		});
 };
 
 exports.down = function(knex) {
 	return knex.schema
+		.dropTableIfExists('logs_images')
 		.dropTableIfExists('sensors_and_operators')
 		.dropTableIfExists('sensor_logs')
 		.dropTableIfExists('operators')
