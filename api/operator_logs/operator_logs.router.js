@@ -9,7 +9,6 @@ const multer = require('multer');
 const { authenticate } = require('../middleware/middleware');
 
 const Logs = require('./operator_logs.model');
-const Operators = require('../operators/operators.model');
 const Sensors = require('../sensors/sensors.model');
 
 cloudinary.config({
@@ -23,11 +22,9 @@ const upload = multer({ storage }).any();
 
 const dUri = new datauri();
 
-router.post('/upload', (req, res) => {});
-
 //get all logs
 router.get('/', authenticate, (req, res) => {
-	Logs.getLogs()
+	Logs.getAllLogs()
 		.then(logs => {
 			res.status(200).json(logs);
 		})
@@ -38,8 +35,6 @@ router.get('/', authenticate, (req, res) => {
 router.get('/operator', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
-
-	console.log(decoded);
 
 	Logs.getLogsByOperatorId(decoded.id)
 		.then(logs => {
@@ -86,20 +81,26 @@ router.put('/:id', authenticate, async (req, res) => {
 
 	let [getLog] = await Logs.findById(id);
 
-	if (getLog.operator_id === decoded.id) {
-		info = { ...info, last_modified: new Date() };
+	if (getLog) {
+		if (getLog.operator_id === decoded.id) {
+			info = { ...info, last_modified: new Date() };
 
-		Logs.update(id, info)
-			.then(logs => {
-				res.status(200).json({ message: 'Successfully updated log' });
-			})
-			.catch(error => {
-				res.status(500).json({
-					error: 'Error when updating log.'
+			Logs.update(id, info)
+				.then(logs => {
+					res.status(200).json({ message: 'Successfully updated log' });
+				})
+				.catch(error => {
+					res.status(500).json({
+						error: 'Error when updating log.'
+					});
 				});
-			});
+		} else {
+			res
+				.status(401)
+				.json({ message: 'You are not allowed to update this log' });
+		}
 	} else {
-		res.status(401).json({ message: 'You are not allowed to update this log' });
+		res.status(404).json({ message: 'Id of log not found' });
 	}
 });
 
@@ -111,18 +112,24 @@ router.delete('/:id', authenticate, async (req, res) => {
 
 	let [getLog] = await Logs.findById(id);
 
-	if (getLog.operator_id === decoded.id) {
-		Logs.remove(id)
-			.then(logs => {
-				res.status(200).json({ message: 'Successfully deleted log' });
-			})
-			.catch(error => {
-				res.status(500).json({
-					error: 'Error when deleting log.'
+	if (getLog) {
+		if (getLog.operator_id === decoded.id) {
+			Logs.remove(id)
+				.then(logs => {
+					res.status(200).json({ message: 'Successfully deleted log' });
+				})
+				.catch(error => {
+					res.status(500).json({
+						error: 'Error when deleting log.'
+					});
 				});
-			});
+		} else {
+			res
+				.status(401)
+				.json({ message: 'You are not allowed to delete this log' });
+		}
 	} else {
-		res.status(401).json({ message: 'You are not allowed to delete this log' });
+		res.status(404).json({ message: 'Id of log not found' });
 	}
 });
 
@@ -180,8 +187,6 @@ router.post('/images', authenticate, (req, res) => {
 				}
 			};
 
-			console.log(results);
-
 			try {
 				for (let i = 0; i < results.urls.length; i++) {
 					await Logs.addImage({
@@ -199,6 +204,79 @@ router.post('/images', authenticate, (req, res) => {
 			}
 		}
 	});
+});
+
+//update a picture to its associated log
+router.put('/images/:id', authenticate, async (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
+
+	const id = req.params.id;
+
+	let [getLog] = await Logs.findByImageLogById(id);
+
+	if (getLog) {
+		if (getLog.operator_id === decoded.id) {
+			upload(req, res, async function(err) {
+				let formatted = dUri.format(
+					path.extname(req.files[0].originalname).toString(),
+					req.files[0].buffer
+				);
+				cloudinary.uploader.upload(formatted.content, async function(
+					error,
+					result
+				) {
+					if (error) {
+						return error;
+					} else {
+						let results = await Logs.updateImage(id, {
+							image_url: result.secure_url,
+							...JSON.parse(req.body.metaData)
+						});
+						res
+							.status(201)
+							.json({ message: 'Successfully updated image', ...results });
+					}
+				});
+			});
+		} else {
+			res
+				.status(401)
+				.json({ message: 'You are not allowed to update this image' });
+		}
+	} else {
+		res.status(404).json({ message: 'Id of image log not found' });
+	}
+});
+
+//delete an image from its associated log
+router.delete('/images/:id', authenticate, async (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
+
+	const id = req.params.id;
+
+	let [getLog] = await Logs.findByImageLogById(id);
+
+	if (getLog) {
+		if (getLog.operator_id === decoded.id) {
+			try {
+				await Logs.removeImage(id);
+
+				res.status(200).json({ message: 'Successfully deleted image' });
+			} catch (err) {
+				res.status(500).json({
+					error: 'Error when deleting log.'
+				});
+			}
+		} else {
+			res
+				.status(401)
+				.json({ message: 'You are not allowed to delete this image' });
+		}
+	} else {
+		res.status(404).json({ message: 'Id of image log not found' });
+	}
 });
 
 router.get('/images', authenticate, async (req, res) => {
