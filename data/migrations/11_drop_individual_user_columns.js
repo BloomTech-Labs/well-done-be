@@ -16,8 +16,8 @@ exports.down = function(knex) {
 			column.dropColumn('role');
 		})
 		.table('accounts', function(column) {
-			column.boolean('org_admin').notNullable();
-			column.boolean('org_user').notNullable();
-			column.boolean('super_user').notNullable();
+			column.boolean('org_admin');
+			column.boolean('org_user');
+			column.boolean('super_user');
 		});
 };
