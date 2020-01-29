@@ -156,24 +156,58 @@ router.post('/login', validateLogin, async (req, res) => {
 
 //assign an operator to a sensor
 router.post('/assigned/operator', authenticate, async (req, res) => {
-	const sensorId = req.body.sensor_id;
-	const operatorId = req.body.operator_id;
+	let sensorId;
+	let operatorId;
 
-	const isValidSensorId = await Sensors.getSensorBySensorId(sensorId);
-	const isValidOperatorId = await Operators.getOperatorById(operatorId);
+	let ids = [];
 
-	if (isValidSensorId.length > 0 && isValidOperatorId.length > 0) {
-		Operators.assignOperator(req.body)
-			.then(operator => {
-				res.status(200).json(req.body);
-			})
-			.catch(err => res.status(500).json(err.message));
-	} else {
-		res.status(404).json({
-			message:
-				'Invalid sensor or operator id, please enter a valid sensor or operator id'
-		});
+	//validating operator and sensor ids
+	for (let i = 0; i < req.body.length; i++) {
+		operatorId = req.body[i].operator_id;
+		sensorId = req.body[i].sensor_pid;
+
+		const isValidSensorId = await Sensors.getSensorBySensorId(sensorId);
+		const isValidOperatorId = await Operators.getOperatorById(operatorId);
+
+		if (isValidSensorId.length > 0 && isValidOperatorId.hasOwnProperty('id')) {
+			ids.push({
+				operator_id: isValidOperatorId.id,
+				sensor_id: isValidSensorId[0].physical_id
+			});
+		}
 	}
+
+	if (ids.length === 0) {
+		res.status(404).json({ message: 'no matching ids' });
+	}
+
+	let response = [];
+
+	//inserting into table, if duplicate, will catch an error
+	for (let i = 0; i < ids.length; i++) {
+		try {
+			await Operators.assignOperator(ids[i]);
+
+			response.push(ids[i]);
+		} catch (err) {
+			response.push(err);
+		}
+	}
+
+	res.status(404).json(response);
+
+	// if (isValidSensorId.length > 0 && isValidOperatorId.length > 0) {
+	// Operators.assignOperator(req.body)
+	// 	.then(operator => {
+	// 		res.status(200).json(req.body);
+	// 	})
+	// 	.catch(err => res.status(500).json(err.message));
+	// } else {
+	// 	res.status(404).json({
+	// 		message:
+	// 			'Invalid sensor or operator id, please enter a valid sensor or operator id'
+	// 	});
+	// }
 });
 
 module.exports = router;
