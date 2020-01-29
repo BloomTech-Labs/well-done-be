@@ -23,11 +23,9 @@ const upload = multer({ storage }).any();
 
 const dUri = new datauri();
 
-router.post('/upload', (req, res) => {});
-
 //get all logs
 router.get('/', authenticate, (req, res) => {
-	Logs.getLogs()
+	Logs.getAllLogs()
 		.then(logs => {
 			res.status(200).json(logs);
 		})
@@ -180,8 +178,6 @@ router.post('/images', authenticate, (req, res) => {
 				}
 			};
 
-			console.log(results);
-
 			try {
 				for (let i = 0; i < results.urls.length; i++) {
 					await Logs.addImage({
@@ -199,6 +195,11 @@ router.post('/images', authenticate, (req, res) => {
 			}
 		}
 	});
+});
+
+router.put('/images/:id', authenticate, (req, res) => {
+	let token = req.headers.authorization.split(' ');
+	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
 });
 
 router.get('/images', authenticate, async (req, res) => {
