@@ -194,20 +194,7 @@ router.post('/assigned/operator', authenticate, async (req, res) => {
 		}
 	}
 
-	res.status(404).json(response);
-
-	// if (isValidSensorId.length > 0 && isValidOperatorId.length > 0) {
-	// Operators.assignOperator(req.body)
-	// 	.then(operator => {
-	// 		res.status(200).json(req.body);
-	// 	})
-	// 	.catch(err => res.status(500).json(err.message));
-	// } else {
-	// 	res.status(404).json({
-	// 		message:
-	// 			'Invalid sensor or operator id, please enter a valid sensor or operator id'
-	// 	});
-	// }
+	res.json(response);
 });
 
 module.exports = router;
