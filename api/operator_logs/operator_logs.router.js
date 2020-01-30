@@ -135,6 +135,9 @@ router.delete('/:id', authenticate, async (req, res) => {
 
 //add a picture to its associated log
 router.post('/images', authenticate, (req, res) => {
+	if (!req.body.metaData.log_id)
+		res.status().json({ message: 'provide a log_id associated with image' });
+
 	upload(req, res, async function(err) {
 		if (req.files.length === 1) {
 			let formatted = dUri.format(
