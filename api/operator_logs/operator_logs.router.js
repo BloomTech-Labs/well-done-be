@@ -135,10 +135,14 @@ router.delete('/:id', authenticate, async (req, res) => {
 
 //add a picture to its associated log
 router.post('/images', authenticate, (req, res) => {
-	if (!req.body.metaData.log_id)
-		res.status().json({ message: 'provide a log_id associated with image' });
-
 	upload(req, res, async function(err) {
+		let data = JSON.parse(req.body.metaData);
+		console.log(data);
+		if (!data.log_id)
+			res
+				.status(500)
+				.json({ message: 'provide a log_id associated with image' });
+
 		if (req.files.length === 1) {
 			let formatted = dUri.format(
 				path.extname(req.files[0].originalname).toString(),
@@ -151,13 +155,17 @@ router.post('/images', authenticate, (req, res) => {
 				if (error) {
 					return error;
 				} else {
-					let results = await Logs.addImage({
-						image_url: result,
+					await Logs.addImage({
+						image_url: result.secure_url,
 						...JSON.parse(req.body.metaData)
 					});
 					res
 						.status(201)
-						.json({ message: 'Successfully posted log', ...results });
+						.json({
+							message: 'Successfully posted log',
+							secure_url: result.secure_url,
+							...JSON.parse(req.body.metaData)
+						});
 				}
 			});
 		} else {
