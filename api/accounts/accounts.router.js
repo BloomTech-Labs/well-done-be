@@ -86,7 +86,6 @@ router.put("/:account_id", authenticate, validateUpdate, async (req, res) => {
     const changes = req.body;
     await Accounts.update(account_id, changes);
     const updatedAccount = await Accounts.findById(account_id);
-
     console.log(updatedAccount);
     res.status(200).json(updatedAccount);
   } catch (err) {
@@ -132,6 +131,24 @@ router.delete("/:account_id", authenticate, async (req, res) => {
     console.log(err.message);
     res.status(500).json(err.message);
   }
+});
+
+// GET to /api/accounts/theemail/1
+router.get("/theemail/:email_address", (req, res) => {
+  const { email_address } = req.params;
+  Accounts.findByTheEmail(email_address)
+    .then(acc => {
+      if (acc) {
+        res.status(200).json(acc);
+      } else {
+        res
+          .status(404)
+          .json({ message: "Could not find acc with given email." });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err.message);
+    });
 });
 
 module.exports = router;
