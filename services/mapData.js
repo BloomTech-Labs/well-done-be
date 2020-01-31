@@ -442,8 +442,8 @@ async function dataUpdate () {
       }
       
      })
-     console.log(results.forEach(item => console.log(item.statuses)), "******RESULTS")
-     console.log(results, "this is results")
+     console.log("******RESULTS", results.forEach(item => console.log(item.statuses)))
+     console.log("this is results", results)
     fetch = { lastFetch: moment().unix(), sensor: results }
     setLastFetchTable(fetch)
     } catch (err) {console.log(err.message)}
@@ -458,6 +458,7 @@ async function dataUpdate () {
       if (res.length === 0) {
         addLastFetch(fetch.lastFetch)
         fetch.sensor.forEach((data, idx) => {
+          console.log('data HERE!!', data, data.statuses)
           if (data.statuses) {
             let history = {
               sensor_id: data.id,
@@ -514,13 +515,32 @@ async function dataUpdate () {
               reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
             }  
             getStatuses(history)
-        } else {console.log(`error in sensor_id: ${data.id}, no statuses property`)}})
-      } else {console.log("history is current")}
+        } else {console.log(`error in sensor_id: ${data.id}, no statuses property`), console.log(data)}
+      })
+      } else {fetch.sensor.forEach(data => {
+        if (data.statuses) {
+          let history = {
+            sensor_id: data.id,
+            count: data.statuses.statuses ? data.statuses.statuses.count : null,
+            total: data.statuses.statuses ? data.statuses.statuses.total : null,
+            status: data.statuses.statuses ? data.statuses.statuses.status : null,
+            date: data.statuses.statuses ? data.statuses.statuses.date : null,
+            reported_percent: data.statuses.statuses ? data.statuses.statuses.reported_percent : null
+          }  
+          checkLastFetchTest(history).then(response => {
+            console.log(response)
+          }).catch(err => console.log(err))
+      }
+      })}
     })
    }
   })  
  }
  updateHistory()
+}
+
+function checkLastFetchTest (history) {
+  return db('check_fetch').insert(history, 'id')
 }
 
 function getStatuses (history){	  

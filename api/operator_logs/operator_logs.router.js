@@ -137,7 +137,6 @@ router.delete('/:id', authenticate, async (req, res) => {
 router.post('/images', authenticate, (req, res) => {
 	upload(req, res, async function(err) {
 		let data = JSON.parse(req.body.metaData);
-		console.log(data);
 		if (!data.log_id)
 			res
 				.status(500)
@@ -159,13 +158,11 @@ router.post('/images', authenticate, (req, res) => {
 						image_url: result.secure_url,
 						...JSON.parse(req.body.metaData)
 					});
-					res
-						.status(201)
-						.json({
-							message: 'Successfully posted log',
-							secure_url: result.secure_url,
-							...JSON.parse(req.body.metaData)
-						});
+					res.status(201).json({
+						message: 'Successfully posted log',
+						secure_url: result.secure_url,
+						...JSON.parse(req.body.metaData)
+					});
 				}
 			});
 		} else {
