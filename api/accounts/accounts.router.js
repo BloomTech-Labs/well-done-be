@@ -63,7 +63,7 @@ router.post("/", validateAccount, async (req, res) => {
     if (isUniqueEmail === 0) {
       await Accounts.insert(account);
       const foundAccount = await Accounts.findOrgByEmail(email_address);
-      const token = generateToken(foundAccount);
+      const token = await generateToken(foundAccount);
       res.status(200).json({
         token,
         ...foundAccount
