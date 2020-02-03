@@ -14,6 +14,13 @@ function getOperatorById(id) {
 		.select(['id', 'first_name', 'last_name', 'email_address', 'mobile_number'])
 		.first();
 }
+function getOperatorByEmail(email_address) {
+	return db('operators')
+	.where({email_address})
+	.select(['id', 'first_name', 'last_name', 'email_address', 'mobile_number'])
+		.first();
+
+}
 
 function getAssignedSensors() {
 	return db('sensors_and_operators as so')
@@ -161,5 +168,6 @@ module.exports = {
 	insert,
 	assignOperator,
 	updateOp,
-	removeOp
+	removeOp,
+	getOperatorByEmail
 };

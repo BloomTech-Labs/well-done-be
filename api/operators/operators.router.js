@@ -60,8 +60,7 @@ router.get('/assigned/opsensor', authenticate, (req, res) => {
 router.get('/assigned/sensors', authenticate, (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
-
-	Operators.getAssignedSensorsByOperatorId(decoded.id)
+	Operators.getAssignedSensorsByOperatorId(decoded.operator_id)
 		.then(assigned => {
 			res.status(200).json(assigned);
 		})
