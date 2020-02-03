@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const secrets = require('../config/secrets.js');
 const request = require('request');
+const morgan = require('morgan');
 require('dotenv').config();
 
 console.log('environment:', secrets.environment);
@@ -38,6 +39,7 @@ reqTimer;
 server.use(express.json());
 server.use(cors());
 server.use(helmet());
+server.use(morgan("dev"));
 
 server.use('/api/auth', authRouter);
 server.use('/api/orgs', orgRouter);
