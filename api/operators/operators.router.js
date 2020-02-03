@@ -60,7 +60,7 @@ router.get('/assigned/opsensor', authenticate, (req, res) => {
 router.get('/assigned/sensors', authenticate, (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
-	Operators.getAssignedSensorsByOperatorId(decoded.operator_id)
+	Operators.getAssignedSensorsByOperatorId(decoded.id)
 		.then(assigned => {
 			res.status(200).json(assigned);
 		})
@@ -143,7 +143,7 @@ router.post('/login', validateLogin, async (req, res) => {
 		let { email_address, password } = req.body;
 		const account = await Operators.findBy({ email_address }).first();
 		if (account && bcrypt.compareSync(password, account.password)) {
-			 const token = await generateToken(account);
+			 const token = await generateToken(account, true);
 			res.status(200).json({ token });
 		} else {
 			res.status(401).json({ message: 'Invalid Credentials' });
