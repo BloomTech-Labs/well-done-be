@@ -143,7 +143,7 @@ router.post('/login', validateLogin, async (req, res) => {
 		let { email_address, password } = req.body;
 		const account = await Operators.findBy({ email_address }).first();
 		if (account && bcrypt.compareSync(password, account.password)) {
-			const token = generateToken(account);
+			 const token = await generateToken(account);
 			res.status(200).json({ token });
 		} else {
 			res.status(401).json({ message: 'Invalid Credentials' });
