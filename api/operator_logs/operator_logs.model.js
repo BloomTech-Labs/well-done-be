@@ -19,8 +19,16 @@ function getAllLogs() {
 		]);
 }
 
+function getLogsBySensorId(sensor_id) {
+	return db('sensor_logs').where({ sensor_id });
+}
+
 function getImages() {
 	return db('logs_images');
+}
+
+function getByLogIdImages(log_id) {
+	return db('logs_images').where({ log_id });
 }
 
 function getLogsByOperatorId(operator_id) {
@@ -84,5 +92,7 @@ module.exports = {
 	getImages,
 	updateImage,
 	removeImage,
-	findByImageLogById
+	findByImageLogById,
+	getByLogIdImages,
+	getImages
 };

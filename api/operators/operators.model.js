@@ -79,8 +79,6 @@ async function getAssignedSensorsByOperatorId(id) {
 		});
 	});
 
-	console.log(recentHistory, 'not here');
-
 	if (recentHistory.length === 0) {
 		recentHistory = history.filter(history => {
 			return getSensors.find(sensor => {

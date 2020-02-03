@@ -43,6 +43,15 @@ router.get('/operator', authenticate, async (req, res) => {
 		.catch(err => res.status(500).json(err.message));
 });
 
+//get logs by sensor id
+router.get('/sensor/:id', authenticate, async (req, res) => {
+	Logs.getLogsBySensorId(req.params.id)
+		.then(logs => {
+			res.status(200).json(logs);
+		})
+		.catch(err => res.status(500).json(err.message));
+});
+
 //add a log to the sensor_logs table
 router.post('/', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
@@ -290,6 +299,17 @@ router.delete('/images/:id', authenticate, async (req, res) => {
 router.get('/images', authenticate, async (req, res) => {
 	try {
 		let images = await Logs.getImages();
+		res.status(200).json(images);
+	} catch (err) {
+		res.status(500).json(err);
+	}
+});
+
+//get images by log id
+router.get('/images/image/:id', authenticate, async (req, res) => {
+	console.log('here');
+	try {
+		let images = await Logs.getByLogIdImages(req.params.id);
 		res.status(200).json(images);
 	} catch (err) {
 		res.status(500).json(err);
