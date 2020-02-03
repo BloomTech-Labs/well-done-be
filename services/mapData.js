@@ -23,7 +23,7 @@ function addPump(pump) {
     .insert(pump)
     .returning("id")
     .then(res => {
-      console.log(res);
+      // console.log(res);
     });
 }
 
@@ -32,7 +32,7 @@ function addSensor(sensor) {
       .insert(sensor)
       .returning("id")
       .then(res => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
@@ -41,7 +41,7 @@ function addSensor(sensor) {
       .insert(history)
       .returning("id")
       .then(res => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
@@ -71,7 +71,7 @@ function addSensor(sensor) {
     .where(filter)
     .first()
     } catch (err) {
-      console.log(err.message)
+      // console.log(err.message)
 
     }
   }
@@ -81,7 +81,7 @@ function addSensor(sensor) {
       .insert(counts)
       .returning("id")
       .then(res => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
@@ -90,7 +90,7 @@ function addSensor(sensor) {
       .insert(seconds)
       .returning("id")
       .then(res => {
-        console.log(res);
+        // console.log(res);
       });
   }
 
@@ -184,7 +184,7 @@ const getUpdatedSensors = () => {
               yield: getYield,
               static: getStatic
             };
-            console.log(sensor)
+            // console.log(sensor)
             addSensor(sensor);
         })
         dataUpdate()
