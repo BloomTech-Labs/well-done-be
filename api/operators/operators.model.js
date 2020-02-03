@@ -53,6 +53,7 @@ async function getAssignedSensorsByOperatorId(id) {
 		.where('o.id', id)
 		.join('pumps as p', 's.physical_id', 'p.sensor_pid')
 		.orderBy('s.physical_id', 'asc')
+		.distinct('s.physical_id')
 		.select([
 			'so.sensor_id',
 			'so.operator_id',
