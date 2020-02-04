@@ -58,7 +58,9 @@ function remove(id) {
 }
 
 function addImage(image) {
-	return db('logs_images').insert(image);
+	return db('logs_images')
+		.insert(image)
+		.returning('id');
 }
 
 function findByImageLogById(id) {

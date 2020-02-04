@@ -164,14 +164,15 @@ router.post('/images', authenticate, (req, res) => {
 				if (error) {
 					return error;
 				} else {
-					await Logs.addImage({
+					let [id] = await Logs.addImage({
 						image_url: result.secure_url,
 						...JSON.parse(req.body.metaData)
 					});
 					res.status(201).json({
 						message: 'Successfully posted log',
 						secure_url: result.secure_url,
-						...JSON.parse(req.body.metaData)
+						...JSON.parse(req.body.metaData),
+						id
 					});
 				}
 			});
@@ -206,17 +207,20 @@ router.post('/images', authenticate, (req, res) => {
 			};
 
 			try {
+				let ids = [];
 				for (let i = 0; i < results.urls.length; i++) {
-					await Logs.addImage({
+					let [id] = await Logs.addImage({
 						image_url: results.urls[i],
 						log_id: results.metaData.log_id,
 						caption: results.metaData.caption
 					});
+
+					ids = [...ids, id];
 				}
 
 				res
 					.status(201)
-					.json({ message: 'Successfully posted log', ...results });
+					.json({ message: 'Successfully posted log', ...results, ids: ids });
 			} catch (err) {
 				res.status(500).json(err);
 			}
