@@ -240,26 +240,40 @@ router.put('/images/:id', authenticate, async (req, res) => {
 	if (getLog) {
 		if (getLog.operator_id === decoded.id) {
 			upload(req, res, async function(err) {
-				let formatted = dUri.format(
-					path.extname(req.files[0].originalname).toString(),
-					req.files[0].buffer
-				);
-				cloudinary.uploader.upload(formatted.content, async function(
-					error,
-					result
-				) {
-					if (error) {
-						return error;
-					} else {
-						let results = await Logs.updateImage(id, {
-							image_url: result.secure_url,
-							...JSON.parse(req.body.metaData)
-						});
-						res
-							.status(201)
-							.json({ message: 'Successfully updated image', ...results });
-					}
-				});
+				console.log(req.files);
+				if (req.files.length > 0) {
+					let formatted = dUri.format(
+						path.extname(req.files[0].originalname).toString(),
+						req.files[0].buffer
+					);
+					cloudinary.uploader.upload(formatted.content, async function(
+						error,
+						result
+					) {
+						if (error) {
+							return error;
+						} else {
+							let results = await Logs.updateImage(id, {
+								image_url: result.secure_url,
+								...JSON.parse(req.body.metaData)
+							});
+							res
+								.status(201)
+								.json({
+									message: 'Successfully updated image',
+									...results,
+									id
+								});
+						}
+					});
+				} else {
+					let results = await Logs.updateImage(id, {
+						...JSON.parse(req.body.metaData)
+					});
+					res
+						.status(201)
+						.json({ message: 'Successfully updated image', ...results, id });
+				}
 			});
 		} else {
 			res
