@@ -8,50 +8,6 @@ function addSensor(sensor) {
 		.returning('id');
 }
 
-async function addSensorNPump(sensor, pump) {
-	// let insertSensor = await db('sensors')
-	// 	.insert(sensor)
-	// 	.returning('id');
-	// let pumpData = await db('pumps');
-	// pumpData = pumpData.length + 1;
-	// pump = { id: pumpData, ...pump };
-	// let insertPump = db('pumps')
-	// 	.insert(pump)
-	// 	.returning('id');
-	// console.log(insertSensor, insertPump, 'after insert');
-	// console.log(insertPump, insertSensor);
-	// return [insertSensor, insertPump];
-}
-
-// function getSensors() {
-//   return db("sensors")
-//     .join("pumps", "pumps.id", "sensors.pump_id")
-//     .join("organizations", "pumps.org_id", "organizations.id")
-//     .select(
-//       "sensors.id",
-//       "sensors.pump_id as pump_id",
-//       "sensors.physical_id",
-//       "sensors.kind",
-//       "sensors.type",
-//       "sensors.cellular",
-//       "sensors.bluetooth",
-//       "sensors.training",
-//       "sensors.remark",
-//       "sensors.data_finished",
-//       "sensors.depth",
-//       "sensors.yield",
-//       "sensors.static",
-//       "sensors.quality",
-//       "pumps.country_name",
-//       "pumps.province_name",
-//       "pumps.commune_name",
-//       "pumps.district_name",
-//       "organizations.id as org_id",
-//       "organizations.org_name",
-//       "organizations.headquarter_city"
-//     );
-// }
-
 function findSensors() {
 	return db('sensors');
 }
@@ -357,14 +313,8 @@ function findSensorsAndHistoriesBySensorsPhysicalId(id) {
 		});
 }
 
-// const current = res.map(item => item.sensor_pid)
-//         const incoming = Data.pumps.map(item => Number(item.id))
-
-//         let filtered = incoming.filter(item => !current.includes(item))
-
 module.exports = {
 	addSensor,
-	// getSensors,
 	findSensors,
 	getSensorById,
 	updateSensor,
@@ -376,6 +326,5 @@ module.exports = {
 	findSensorsAndHistories,
 	findSensorsAndHistoriesByOrgId,
 	getSensorNHistoryByPhysicalId,
-	findSensorsAndHistoriesBySensorsPhysicalId,
-	addSensorNPump
+	findSensorsAndHistoriesBySensorsPhysicalId
 };

@@ -22,6 +22,10 @@ const upload = multer({ storage }).any();
 
 const dUri = new datauri();
 
+router.get('/test/test', authenticate, (req, res) => {
+	console.log(req.params);
+});
+
 //get all logs
 router.get('/', authenticate, (req, res) => {
 	Logs.getAllLogs()
@@ -113,6 +117,7 @@ router.put('/:id', authenticate, async (req, res) => {
 	}
 });
 
+//delete a log
 router.delete('/:id', authenticate, async (req, res) => {
 	let token = req.headers.authorization.split(' ');
 	const decoded = jwt.verify(token[0], process.env.JWT_SECRET);
@@ -296,6 +301,7 @@ router.delete('/images/:id', authenticate, async (req, res) => {
 	}
 });
 
+//get all images
 router.get('/images', authenticate, async (req, res) => {
 	try {
 		let images = await Logs.getImages();
