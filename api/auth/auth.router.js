@@ -13,7 +13,7 @@ router.post('/login', validateLogin, async (req, res) => {
 		console.log(req.body);
 		const account = await Auth.findBy({ email_address }).first();
 		if (account && bcrypt.compareSync(password, account.password)) {
-			const token = generateToken(account);
+			const token = await generateToken(account);
 			const id = account.id;
 			const user = account.user
 			const role = account.role

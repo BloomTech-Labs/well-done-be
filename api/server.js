@@ -3,6 +3,7 @@ const helmet = require('helmet');
 const cors = require('cors');
 const secrets = require('../config/secrets.js');
 const request = require('request');
+const morgan = require('morgan');
 require('dotenv').config();
 
 console.log('environment:', secrets.environment);
@@ -23,6 +24,8 @@ const historyRouter = require('./history/history.router');
 const padSecondsRouter = require('./pad_seconds/pad_seconds.router');
 const padCountsRouter = require('./pad_counts/pad_counts.router');
 const lastFetchRouter = require('./lastFetch/lastFetch.router');
+const operatorsRouter = require('./operators/operators.router');
+const logsRouter = require('./operator_logs/operator_logs.router');
 
 var reqTimer = setTimeout(function wakeUp() {
 	request(`${process.env.API_URL}/api/auth/login`, function() {
@@ -36,6 +39,7 @@ reqTimer;
 server.use(express.json());
 server.use(cors());
 server.use(helmet());
+server.use(morgan("dev"));
 
 server.use('/api/auth', authRouter);
 server.use('/api/orgs', orgRouter);
@@ -47,6 +51,8 @@ server.use('/api/history', historyRouter);
 server.use('/api/pad_counts', padCountsRouter);
 server.use('/api/pad_seconds', padSecondsRouter);
 server.use('/api/last_fetch', lastFetchRouter);
+server.use('/api/operators', operatorsRouter);
+server.use('/api/logs', logsRouter);
 
 //update database functions
 // server.use(mapData.getUpdated)
