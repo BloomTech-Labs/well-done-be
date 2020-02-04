@@ -237,6 +237,8 @@ router.put('/images/:id', authenticate, async (req, res) => {
 
 	let [getLog] = await Logs.findByImageLogById(id);
 
+	console.log(getLog, decoded);
+
 	if (getLog) {
 		if (getLog.operator_id === decoded.id) {
 			upload(req, res, async function(err) {
