@@ -75,8 +75,7 @@ router.post("/", authenticate, async (req, res) => {
 
   Logs.addLog(req.body)
     .then(logs => {
-      console.log("testing MY LOGS POSTS RESPONSE", logs);
-      res.status(201).json({ ...req.body, logs });
+      res.status(201).json(logs[0]);
     })
     .catch(err => res.status(500).json(err.message));
 });
