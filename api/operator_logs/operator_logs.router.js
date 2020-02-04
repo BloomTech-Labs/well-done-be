@@ -22,10 +22,6 @@ const upload = multer({ storage }).any();
 
 const dUri = new datauri();
 
-router.get('/test/test', authenticate, (req, res) => {
-	console.log(req.params);
-});
-
 //get all logs
 router.get('/', authenticate, (req, res) => {
 	Logs.getAllLogs()
