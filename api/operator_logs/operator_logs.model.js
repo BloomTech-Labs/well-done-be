@@ -94,5 +94,6 @@ module.exports = {
 	removeImage,
 	findByImageLogById,
 	getByLogIdImages,
-	getImages
+	getImages,
+	getLogsBySensorId
 };
