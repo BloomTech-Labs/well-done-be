@@ -75,7 +75,7 @@ router.post('/', authenticate, async (req, res) => {
 
 	Logs.addLog(req.body)
 		.then(logs => {
-			res.status(201).json(req.body);
+			res.status(201).json(...logs);
 		})
 		.catch(err => res.status(500).json(err.message));
 });
@@ -257,13 +257,11 @@ router.put('/images/:id', authenticate, async (req, res) => {
 								image_url: result.secure_url,
 								...JSON.parse(req.body.metaData)
 							});
-							res
-								.status(201)
-								.json({
-									message: 'Successfully updated image',
-									...results,
-									id
-								});
+							res.status(201).json({
+								message: 'Successfully updated image',
+								...results,
+								id
+							});
 						}
 					});
 				} else {

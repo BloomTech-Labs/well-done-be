@@ -35,9 +35,12 @@ function getLogsByOperatorId(operator_id) {
 	return db('sensor_logs').where({ operator_id });
 }
 
-function addLog(info) {
+async function addLog(body) {
+	let tableLength = await db('sensor_logs');
+	tableLength = tableLength.length + 1;
+	body = { id: tableLength, ...body };
 	return db('sensor_logs')
-		.insert(info)
+		.insert(body)
 		.returning('*');
 }
 
