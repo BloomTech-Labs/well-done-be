@@ -69,8 +69,7 @@ router.post("/", authenticate, async (req, res) => {
 
   req.body = {
     ...req.body,
-    operator_id: decoded.id,
-    last_modified: new Date()
+    operator_id: decoded.id
   };
 
   Logs.addLog(req.body)
