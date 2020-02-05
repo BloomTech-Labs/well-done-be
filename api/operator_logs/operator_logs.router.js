@@ -73,7 +73,7 @@ router.post("/", authenticate, async (req, res) => {
   req.body = {
     ...req.body,
     operator_id: decoded.id,
-    id: logsArr.length
+    id: logsArr.length + 5
   };
 
   Logs.addLog(req.body)
