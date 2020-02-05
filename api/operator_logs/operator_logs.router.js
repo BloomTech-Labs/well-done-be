@@ -67,9 +67,13 @@ router.post("/", authenticate, async (req, res) => {
   if (isValidSensorId.length === 0)
     res.status(400).json({ errorMessage: "Please provide a valid sensor id." });
 
+  const logsArr = await getAllExistingLogs();
+  console.log(logsArr.length, "WHATS MY SWEET OLD LENGTH");
+
   req.body = {
     ...req.body,
-    operator_id: decoded.id
+    operator_id: decoded.id,
+    id: logsArr.length
   };
 
   Logs.addLog(req.body)
