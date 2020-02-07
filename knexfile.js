@@ -41,7 +41,6 @@ module.exports = {
     migrations: {
       directory: "./data/migrations"
     },
-    debug: true,
     seeds: { directory: "./data/seeds" }
   },
   ssl: true
