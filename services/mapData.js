@@ -565,7 +565,7 @@ const getHistoryUpdates = fetch => {
                 };
                 checkLastFetchTest(history)
                   .then(response => {
-                    console.log(response);
+                    console.log(response, "568 🛴🛴");
                   })
                   .catch(err => console.log(err));
               }
@@ -580,13 +580,17 @@ const getHistoryUpdates = fetch => {
 
 async function checkLastFetchTest(history) {
   const historyTbl = await db("history");
-  let adder = 10;
-  const historyWithId = historyTbl.map((obj, i) => {
-    adder += 1;
-    return { ...obj, id: historyTbl.length + adder };
+  let adder = 1;
+
+  console.log("history with ID obj🚎🚎🚎🚎", {
+    ...history,
+    id: historyTbl.length + adder
   });
-  console.log("history with ID🚎🚎🚎🚎", historyWithId);
-  return db("history").insert(historyWithId, "id");
+
+  return db("history").insert(
+    { ...history, id: historyTbl.length + adder },
+    "id"
+  );
 }
 
 async function getStatuses(history) {
