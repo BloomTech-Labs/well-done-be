@@ -6,6 +6,7 @@ module.exports = {
   development: {
     client: "pg",
     useNullAsDefault: true,
+    debug: true,
     connection: process.env.DB_LOCAL_URL || {
       database: process.env.DB_LOCAL,
 
@@ -40,6 +41,7 @@ module.exports = {
     migrations: {
       directory: "./data/migrations"
     },
+    debug: true,
     seeds: { directory: "./data/seeds" }
   },
   ssl: true
