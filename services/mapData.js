@@ -585,7 +585,12 @@ async function checkLastFetchTest(history) {
     historyTbl.length,
     historyTbl
   );
-  return db("check_fetch").insert(history, "id");
+  let adder = 1;
+  const historyWithId = history.map((obj, i) => {
+    adder += 1;
+    return { ...obj, id: historyTbl.length + adder };
+  });
+  return db("check_fetch").insert(historyWithId, "id");
 }
 
 async function getStatuses(history) {
