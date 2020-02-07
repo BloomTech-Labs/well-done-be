@@ -586,7 +586,7 @@ async function checkLastFetchTest(history) {
     historyTbl
   );
   let adder = 1;
-  const historyWithId = history.map((obj, i) => {
+  const historyWithId = historyTbl.map((obj, i) => {
     adder += 1;
     return { ...obj, id: historyTbl.length + adder };
   });
