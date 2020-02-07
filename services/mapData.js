@@ -578,7 +578,13 @@ const getHistoryUpdates = fetch => {
   updateHistory();
 };
 
-function checkLastFetchTest(history) {
+async function checkLastFetchTest(history) {
+  const historyTbl = await db("history");
+  console.log(
+    "inside of checkLastFetchTest 🚖🚖🚖🚖🚖",
+    historyTbl.length,
+    historyTbl
+  );
   return db("check_fetch").insert(history, "id");
 }
 
