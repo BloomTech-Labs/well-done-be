@@ -55,7 +55,6 @@ router.get('/org/:orgId', authenticate, (req, res) => {
 // ! supposed to be only for superusers (for now)
 router.post('/', validateAccount, async (req, res) => {
 	try {
-		console.log(req.body);
 		const account = req.body;
 		const { email_address } = req.body;
 		const hash = bcrypt.hashSync(account.password, 10); // 2 ^ n
@@ -73,6 +72,7 @@ router.post('/', validateAccount, async (req, res) => {
 				message: 'Email address already taken, please enter a unique email'
 			});
 		}
+		ß;
 	} catch (err) {
 		console.log(err.message);
 		res
