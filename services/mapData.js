@@ -1,4 +1,4 @@
-const Data = require("../assets/cache/pumps.json");
+const Data = require("../assets/cache/pumps");
 const db = require("../data/dbConfig");
 const moment = require("moment");
 const axios = require("axios");
@@ -21,7 +21,7 @@ function addPump(pump) {
   return db("pumps")
     .insert(pump)
     .returning("id")
-    .then(res => {
+    .then((res) => {
       // console.log(res);
     });
 }
@@ -30,7 +30,7 @@ function addSensor(sensor) {
   return db("sensors")
     .insert(sensor)
     .returning("id")
-    .then(res => {
+    .then((res) => {
       // console.log(res);
     });
 }
@@ -39,21 +39,17 @@ function addHistory(history) {
   return db("history")
     .insert(history)
     .returning("id")
-    .then(res => {
+    .then((res) => {
       // console.log(res);
     });
 }
 
 function addCounts(counts) {
-  return db("counts")
-    .returning("id")
-    .insert(counts);
+  return db("counts").returning("id").insert(counts);
 }
 
 function addSeconds(seconds) {
-  return db("pad_seconds")
-    .returning("id")
-    .insert(seconds);
+  return db("pad_seconds").returning("id").insert(seconds);
 }
 
 function getHistoryFilter(filter) {
@@ -62,10 +58,7 @@ function getHistoryFilter(filter) {
 
 function addStatusTest(filter) {
   try {
-    return db("history")
-      .returning("id")
-      .where(filter)
-      .first();
+    return db("history").returning("id").where(filter).first();
   } catch (err) {
     // console.log(err.message)
   }
@@ -75,7 +68,7 @@ function addPadCounts(counts) {
   return db("pad_counts")
     .insert(counts)
     .returning("id")
-    .then(res => {
+    .then((res) => {
       // console.log(res);
     });
 }
@@ -84,35 +77,31 @@ function addPadSeconds(seconds) {
   return db("pad_seconds")
     .insert(seconds)
     .returning("id")
-    .then(res => {
+    .then((res) => {
       // console.log(res);
     });
 }
 
 function padCountById(id) {
-  return db("pad_counts")
-    .where({ id })
-    .first();
+  return db("pad_counts").where({ id }).first();
 }
 
 function getPadCountHistory(id) {
-  return db("pad_counts")
-    .where({ history_id: id })
-    .first();
+  return db("pad_counts").where({ history_id: id }).first();
 }
 
 function updatePadCounts(current, id) {
   return db("pad_counts")
     .where({ history_id: id })
     .update(current)
-    .then(res => res);
+    .then((res) => res);
 }
 
 function updatePadSeconds(current, id) {
   return db("pad_seconds")
     .where({ history_id: id })
     .update(current)
-    .then(res => res);
+    .then((res) => res);
 }
 
 function pumpsTable() {
@@ -127,7 +116,7 @@ function addLastFetch(current) {
   return db("last_fetch")
     .insert({ last: current })
     .returning("id")
-    .then(res => console.log(current, "****line 140"));
+    .then((res) => console.log(current, "****line 140"));
 }
 
 function getLastFetchTable() {
@@ -141,15 +130,11 @@ function getOrgs() {
 }
 
 function addOrgs(organization) {
-  return db("organizations")
-    .insert(organization)
-    .returning("id");
+  return db("organizations").insert(organization).returning("id");
 }
 
 function getOrgIdByName(filter) {
-  return db("organizations")
-    .where({ org_name: filter })
-    .first();
+  return db("organizations").where({ org_name: filter }).first();
 }
 
 const getUpdatedSensors = () => {
@@ -157,7 +142,7 @@ const getUpdatedSensors = () => {
   //the DB has been rolled back and remigrated and is empty, else it gets any new pump sensor data
   // and updates the Welldone DB
   const sensorCheck = () => {
-    sensorsTable().then(res => {
+    sensorsTable().then((res) => {
       if (res.length === 0) {
         Data.pumps.forEach((data, idx) => {
           const { id, finish_construction, well_depth } = data;
@@ -168,7 +153,7 @@ const getUpdatedSensors = () => {
             data_finished: finish_construction,
             depth: well_depth,
             yield: getYield,
-            static: getStatic
+            static: getStatic,
           };
           // console.log(sensor)
           addSensor(sensor);
@@ -177,14 +162,14 @@ const getUpdatedSensors = () => {
       } else if (res.length > 0) {
         // after performing a npm run fetch, there could be new pumps with sensor data -
         //check to see if there is any new pumps with sensor data coming from primic cached in pumps.json
-        const current = res.map(item => item.physical_id);
-        const incoming = Data.pumps.map(item => Number(item.id));
-        let filtered = incoming.filter(item => !current.includes(item));
-        const newSensors = Data.pumps.filter(item =>
+        const current = res.map((item) => item.physical_id);
+        const incoming = Data.pumps.map((item) => Number(item.id));
+        let filtered = incoming.filter((item) => !current.includes(item));
+        const newSensors = Data.pumps.filter((item) =>
           filtered.includes(Number(item.id))
         );
         if (newSensors.length > 0) {
-          newSensors.map(data => {
+          newSensors.map((data) => {
             const { id, finish_construction, well_depth } = data;
             const getYield = data.yield;
             const getStatic = data.static;
@@ -193,7 +178,7 @@ const getUpdatedSensors = () => {
               data_finished: finish_construction,
               depth: well_depth,
               yield: getYield,
-              static: getStatic
+              static: getStatic,
             };
 
             addSensor(sensor);
@@ -214,7 +199,7 @@ const getUpdatedSensors = () => {
 async function getPrismicOrgs() {
   let orgResults = [];
   const prismicOrgs = await prismic.getDocs("organizations");
-  await prismicOrgs.results.forEach(item => {
+  await prismicOrgs.results.forEach((item) => {
     orgResults.push(item.data);
   });
 
@@ -223,12 +208,12 @@ async function getPrismicOrgs() {
 
 // getPrismicOrgs()
 
-const getUpdatedPumps = async orgResults => {
+const getUpdatedPumps = async (orgResults) => {
   // initially this function gets all available pump data from pumps.json in an instance
   //the DB has been rolled back and remigrated and is empty, else it gets any new pump data
   // and updates the Welldone DB
   const orgCheck = async () => {
-    getOrgs().then(res => {
+    getOrgs().then((res) => {
       if (res.length === 0) {
         // console.log(res.length, "this is the orgs length on 248")
         orgResults
@@ -238,17 +223,17 @@ const getUpdatedPumps = async orgResults => {
 
               const organization = {
                 org_name: organizations,
-                headquarter_city: headquarter_city
+                headquarter_city: headquarter_city,
               };
               return db("organizations")
                 .insert(organization, "id")
                 .then(() => {
-                  pumpsTable().then(res => {
+                  pumpsTable().then((res) => {
                     if (res.length === 0) {
                       Data.pumps.forEach((data, idx) => {
                         // find org id by name, return id, add id to pump under org_id
                         const orgName = data.organizations.organizations;
-                        getOrgIdByName(orgName).then(res => {
+                        getOrgIdByName(orgName).then((res) => {
                           const pump = {
                             org_id: res.id,
                             sensor_pid: data.id,
@@ -257,7 +242,7 @@ const getUpdatedPumps = async orgResults => {
                             country_name: data.village.village,
                             commune_name: data.village.commune,
                             district_name: data.village.district,
-                            province_name: data.village.province
+                            province_name: data.village.province,
                           };
 
                           addPump(pump);
@@ -276,49 +261,51 @@ const getUpdatedPumps = async orgResults => {
   orgCheck();
 };
 
-const newOrgAndPumpUpdate = orgResults => {
+const newOrgAndPumpUpdate = (orgResults) => {
   const orgCheck = () => {
-    getOrgs().then(res => {
+    getOrgs().then((res) => {
       // console.log(res.length, "this is the result length line 300")
       //check for new organizations in prismic and add into Welldone DB
-      const currentOrgs = res.map(item => item.org_name);
+      const currentOrgs = res.map((item) => item.org_name);
       //  console.log(currentOrgs, "these are current orgs line 304")
       // these are the incoming organizations from prismic
-      const incomingOrgs = orgResults.map(item => item.organizations);
+      const incomingOrgs = orgResults.map((item) => item.organizations);
       //  console.log(incomingOrgs, "these are the incoming Orgs line 307")
       let filteredOrgs = incomingOrgs.filter(
-        item => !currentOrgs.includes(item)
+        (item) => !currentOrgs.includes(item)
       );
       //  console.log(filteredOrgs, "these are the filtered orgs line 309")
       if (filteredOrgs.length !== 0) {
-        filteredOrgs.forEach(org => {
+        filteredOrgs.forEach((org) => {
           const { organizations, headquarter_city } = org;
           const organization = {
             org_name: organizations,
-            headquarter_city: headquarter_city
+            headquarter_city: headquarter_city,
           };
           return (
             db("organizations")
               .insert(organization, "id")
               // })
               .then(() => {
-                pumpsTable().then(res => {
+                pumpsTable().then((res) => {
                   console.log("this is 311");
                   // after performing a npm run fetch, there could be new pumps -
                   //check to see if there are any new pumps coming from primic cached in pumps.json
-                  const currentPumps = res.map(item => item.sensor_pid);
-                  const incomingPumps = Data.pumps.map(item => Number(item.id));
-                  let filtered = incomingPumps.filter(
-                    item => !currentPumps.includes(item)
+                  const currentPumps = res.map((item) => item.sensor_pid);
+                  const incomingPumps = Data.pumps.map((item) =>
+                    Number(item.id)
                   );
-                  const newPumps = Data.pumps.filter(item =>
+                  let filtered = incomingPumps.filter(
+                    (item) => !currentPumps.includes(item)
+                  );
+                  const newPumps = Data.pumps.filter((item) =>
                     filtered.includes(Number(item.id))
                   );
                   //add any new pumps
                   if (newPumps.length !== 0) {
                     newPumps.forEach((data, idx) => {
                       const orgName = data.organizations.organizations;
-                      getOrgIdByName(orgName).then(res => {
+                      getOrgIdByName(orgName).then((res) => {
                         const pump = {
                           org_id: res.id,
                           sensor_pid: data.id,
@@ -327,7 +314,7 @@ const newOrgAndPumpUpdate = orgResults => {
                           country_name: data.village.village,
                           commune_name: data.village.commune,
                           district_name: data.village.district,
-                          province_name: data.village.province
+                          province_name: data.village.province,
                         };
                         addPump(pump);
                       });
@@ -342,24 +329,24 @@ const newOrgAndPumpUpdate = orgResults => {
       } else {
         // prismic returned no new organizations, check to see if there are any new pumps
         //returned from prismic cached in pumps.json after recent npm run fetch
-        pumpsTable().then(res => {
+        pumpsTable().then((res) => {
           // console.log("this is 348")
-          const currentPumps = res.map(item => item.sensor_pid);
+          const currentPumps = res.map((item) => item.sensor_pid);
           // console.log(currentPumps, "these are the current pumps line 358")
-          const incomingPumps = Data.pumps.map(item => Number(item.id));
+          const incomingPumps = Data.pumps.map((item) => Number(item.id));
           // console.log(incomingPumps, "these are the incoming Pumps line 360")
           let filtered = incomingPumps.filter(
-            item => !currentPumps.includes(item)
+            (item) => !currentPumps.includes(item)
           );
           // console.log(filtered, "this is the filtered results line 362")
-          const newPumps = Data.pumps.filter(item =>
+          const newPumps = Data.pumps.filter((item) =>
             filtered.includes(Number(item.id))
           );
           // console.log(newPumps, "these are the new pumps")
           if (newPumps.length !== 0) {
             newPumps.forEach((data, idx) => {
               const orgName = data.organizations.organizations;
-              getOrgIdByName(orgName).then(res => {
+              getOrgIdByName(orgName).then((res) => {
                 const pump = {
                   org_id: res.id,
                   sensor_pid: data.id,
@@ -368,7 +355,7 @@ const newOrgAndPumpUpdate = orgResults => {
                   country_name: data.village.village,
                   commune_name: data.village.commune,
                   district_name: data.village.district,
-                  province_name: data.village.province
+                  province_name: data.village.province,
                 };
                 addPump(pump);
               });
@@ -410,8 +397,8 @@ async function dataUpdate() {
                     pad_counts: resMomo.data.statuses[index].padCounts,
                     pad_seconds: resMomo.data.statuses[index].padSeconds,
                     reported_percent:
-                      resMomo.data.statuses[index].reportedPercent
-                  }
+                      resMomo.data.statuses[index].reportedPercent,
+                  },
                 };
               })
             : {};
@@ -419,7 +406,7 @@ async function dataUpdate() {
             id: sensor.physical_id,
             ...sensor[sensor],
             status: resMomo.data.status,
-            statuses: newData
+            statuses: newData,
           });
           // console.log(results.forEach(item => console.log(item.statuses)), "******RESULTS")
         } catch (err) {
@@ -430,13 +417,13 @@ async function dataUpdate() {
             id: sensor,
             ...sensor[sensor],
             status: 0,
-            error: "500"
+            error: "500",
           });
         }
       });
       console.log(
         "******RESULTS",
-        results.forEach(item => console.log(item.statuses))
+        results.forEach((item) => console.log(item.statuses))
       );
       console.log("this is results", results);
       fetch = { lastFetch: moment().unix(), sensor: results };
@@ -448,9 +435,9 @@ async function dataUpdate() {
   getTable();
 }
 
-const setLastFetchTable = fetch => {
+const setLastFetchTable = (fetch) => {
   const fetchCheck = () => {
-    getLastFetchTable().then(res => {
+    getLastFetchTable().then((res) => {
       if (res.length === 0) {
         addLastFetch(fetch.lastFetch);
         fetch.sensor.forEach((data, idx) => {
@@ -470,7 +457,7 @@ const setLastFetchTable = fetch => {
               date: data.statuses.statuses ? data.statuses.statuses.date : null,
               reported_percent: data.statuses.statuses
                 ? data.statuses.statuses.reported_percent
-                : null
+                : null,
             };
             getStatuses(history);
           } else {
@@ -485,12 +472,12 @@ const setLastFetchTable = fetch => {
   fetchCheck();
 };
 
-const getHistoryUpdates = fetch => {
+const getHistoryUpdates = (fetch) => {
   const updateHistory = () => {
-    getLastFetchTable().then(res => {
+    getLastFetchTable().then((res) => {
       if (fetch.lastFetch !== res[0].last) {
         addLastFetch(fetch.lastFetch);
-        getLastFetchTable().then(res => {
+        getLastFetchTable().then((res) => {
           const prevFetch = res[1].created_at
             .toString()
             .split("")
@@ -532,7 +519,7 @@ const getHistoryUpdates = fetch => {
                     : null,
                   reported_percent: data.statuses.statuses
                     ? data.statuses.statuses.reported_percent
-                    : null
+                    : null,
                 };
                 getStatuses(history);
               } else {
@@ -543,7 +530,7 @@ const getHistoryUpdates = fetch => {
               }
             });
           } else {
-            fetch.sensor.forEach(data => {
+            fetch.sensor.forEach((data) => {
               if (data.statuses) {
                 let history = {
                   sensor_id: data.id,
@@ -561,13 +548,13 @@ const getHistoryUpdates = fetch => {
                     : null,
                   reported_percent: data.statuses.statuses
                     ? data.statuses.statuses.reported_percent
-                    : null
+                    : null,
                 };
                 checkLastFetchTest(history)
-                  .then(response => {
+                  .then((response) => {
                     console.log(response, "568 🛴🛴");
                   })
-                  .catch(err => console.log(err));
+                  .catch((err) => console.log(err));
               }
             });
           }
@@ -584,7 +571,7 @@ async function checkLastFetchTest(history) {
 
   console.log("history with ID obj🚎🚎🚎🚎", {
     ...history,
-    id: historyTbl.length + adder
+    id: historyTbl.length + adder,
   });
 
   return db("history").insert(
@@ -605,7 +592,7 @@ async function getStatuses(history) {
     .insert({ ...history, id }, "id")
     .then(([id]) => {
       const cleanData = fetch.sensor.filter(
-        item => item.id === history.sensor_id
+        (item) => item.id === history.sensor_id
       );
 
       const getPadCounts = () => {
@@ -622,7 +609,7 @@ async function getStatuses(history) {
             : null,
           pad_count_3: cleanData[0].statuses.statuses
             ? cleanData[0].statuses.statuses.pad_counts[3]
-            : null
+            : null,
         };
 
         addPadCounts(current);
@@ -641,7 +628,7 @@ async function getStatuses(history) {
             : null,
           pad_seconds_3: cleanData[0].statuses.statuses
             ? cleanData[0].statuses.statuses.pad_seconds[3]
-            : null
+            : null,
         };
 
         addPadSeconds(current);
@@ -653,8 +640,8 @@ async function getStatuses(history) {
 
 getUpdatedSensors();
 getPrismicOrgs();
-module.exports = {getUpdated: function () {
-  getPrismicOrgs,
-  getUpdatedSensors
-  }
-}
+module.exports = {
+  getUpdated: function () {
+    getPrismicOrgs, getUpdatedSensors;
+  },
+};
