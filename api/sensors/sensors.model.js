@@ -134,6 +134,7 @@ function findSensorsAndHistories() {
 			"s.yield",
 			"s.static",
 			"s.quality",
+			"s.cord_email",
 			"p.id as pump_index",
 			"p.sensor_pid",
 			"p.org_id",
