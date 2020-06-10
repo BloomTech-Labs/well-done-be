@@ -20,7 +20,7 @@ router.post("/", authenticate, (req, res) => {
 		});
 });
 
-router.post("/SensorNPump", (req, res) => {
+router.post("/SensorNPump", authenticate, (req, res) => {
 	// Sensors.addSensorNPump(req.body[0], req.body[1]);
 	Sensors.addSensor(req.body[0])
 		.then(sensor => {
