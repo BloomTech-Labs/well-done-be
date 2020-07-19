@@ -1,14 +1,14 @@
-const router = require('express').Router();
-const Sensors = require('./sensors.model');
-const Pumps = require('../pumps/pumps.model');
-const Organizations = require('../organizations/organizations.model');
-const { validateSensor } = require('../middleware/middleware');
-const { authenticate } = require('../middleware/middleware');
+const router = require("express").Router();
+const Sensors = require("./sensors.model");
+const Pumps = require("../pumps/pumps.model");
+const Organizations = require("../organizations/organizations.model");
+const { validateSensor } = require("../middleware/middleware");
+const { authenticate } = require("../middleware/middleware");
 
 //POST a sensor
-router.post('/', authenticate, (req, res) => {
+router.post("/", authenticate, (req, res) => {
 	const sensorData = req.body;
-	console.log('sensorData', sensorData);
+	console.log("sensorData", sensorData);
 	Sensors.addSensor(sensorData)
 		.then(sensor => {
 			Sensors.getSensorById(Number(sensor)).then(found => {
@@ -20,7 +20,7 @@ router.post('/', authenticate, (req, res) => {
 		});
 });
 
-router.post('/SensorNPump', (req, res) => {
+router.post("/SensorNPump", authenticate, (req, res) => {
 	// Sensors.addSensorNPump(req.body[0], req.body[1]);
 	Sensors.addSensor(req.body[0])
 		.then(sensor => {
@@ -45,7 +45,7 @@ router.post('/SensorNPump', (req, res) => {
 	// });
 });
 
-router.get('/recent', authenticate, async (req, res) => {
+router.get("/recent", authenticate, async (req, res) => {
 	try {
 		const sensors = await Sensors.findSensorsAndHistories();
 		res.status(200).json(sensors);
@@ -55,7 +55,7 @@ router.get('/recent', authenticate, async (req, res) => {
 	}
 });
 
-router.get('/', authenticate, async (req, res) => {
+router.get("/", authenticate, async (req, res) => {
 	try {
 		const sensors = await Sensors.getSensorNPump();
 		res.status(200).json(sensors);
@@ -66,7 +66,7 @@ router.get('/', authenticate, async (req, res) => {
 });
 
 //gets sensor and pump
-router.get('/pumps', authenticate, async (req, res) => {
+router.get("/pumps", authenticate, async (req, res) => {
 	try {
 		const sensors = await Sensors.getSensorNPump();
 		res.status(200).json(sensors);
@@ -76,7 +76,7 @@ router.get('/pumps', authenticate, async (req, res) => {
 	}
 });
 // gets sensor and pump
-router.get('/details', authenticate, async (req, res) => {
+router.get("/details", authenticate, async (req, res) => {
 	try {
 		const sensors = await Sensors.getSensorNPumpNHistory();
 		res.status(200).json(sensors);
@@ -87,33 +87,33 @@ router.get('/details', authenticate, async (req, res) => {
 });
 
 //GET a sensor by sensor_id
-router.get('/:id', authenticate, (req, res) => {
+router.get("/:id", authenticate, (req, res) => {
 	const { id } = req.params;
 	console.log(req.params);
 	Sensors.getSensorById(id)
 		.then(sensor => {
 			if (sensor) {
 				res.status(200).json(sensor);
-			} else res.status(404).json({ message: 'sensor does not exist' });
+			} else res.status(404).json({ message: "sensor does not exist" });
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
 //get sensor by physical_id
 
-router.get('/recent/sensor_id/:id', authenticate, (req, res) => {
+router.get("/recent/sensor_id/:id", authenticate, (req, res) => {
 	const { id } = req.params;
 	console.log(req.params);
 	Sensors.findSensorsAndHistoriesBySensorsPhysicalId(id)
 		.then(sensor => {
 			if (sensor) {
 				res.status(200).json(sensor);
-			} else res.status(404).json({ message: 'sensor does not exist' });
+			} else res.status(404).json({ message: "sensor does not exist" });
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
-router.get('/recent/:org_id', authenticate, (req, res) => {
+router.get("/recent/:org_id", authenticate, (req, res) => {
 	const { org_id } = req.params;
 	Sensors.findSensorsAndHistoriesByOrgId(org_id)
 		.then(sensor => {
@@ -123,7 +123,7 @@ router.get('/recent/:org_id', authenticate, (req, res) => {
 });
 
 //GET a sensor by org_id
-router.get('/org/:id', authenticate, (req, res) => {
+router.get("/org/:id", authenticate, (req, res) => {
 	const { org_id } = req.params;
 	console.log(org_id);
 	Sensors.getSensorByOrgId(org_id)
@@ -137,33 +137,33 @@ router.get('/org/:id', authenticate, (req, res) => {
 });
 
 // GET to /api/sensors/2
-router.get('/:id', authenticate, (req, res) => {
+router.get("/:id", authenticate, (req, res) => {
 	const { id } = req.params;
 	console.log(req.params);
 	Sensors.getSensorById(id)
 		.then(sensor => {
 			if (sensor) {
 				res.status(200).json(sensor);
-			} else res.status(404).json({ message: 'sensor does not exist' });
+			} else res.status(404).json({ message: "sensor does not exist" });
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
 // GET to /api/sensors/org/2
-router.get('/org/:id', authenticate, (req, res) => {
+router.get("/org/:id", authenticate, (req, res) => {
 	const { org_id } = req.params;
 	console.log(org_id);
 	Sensors.getSensorByOrgId(org_id)
 		.then(sensor => {
 			if (sensor) {
 				res.status(200).json(sensor);
-			} else res.status(404).json({ message: 'sensor does not exist' });
+			} else res.status(404).json({ message: "sensor does not exist" });
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
 // PATCH to /api/sensors/4
-router.patch('/:id', authenticate, validateSensor, (req, res) => {
+router.patch("/:id", authenticate, validateSensor, (req, res) => {
 	const change = req.body;
 	const { id } = req.params;
 	Sensors.getSensorById(id)
@@ -175,14 +175,14 @@ router.patch('/:id', authenticate, validateSensor, (req, res) => {
 					})
 					.catch(err => res.status(500).json(err));
 			} else {
-				res.status(404).json({ message: 'sensor does not exist' });
+				res.status(404).json({ message: "sensor does not exist" });
 			}
 		})
 		.catch(err => res.status(500).json(err.message));
 });
 
 // DELETE to /api/sensors/5
-router.delete('/:id', authenticate, (req, res) => {
+router.delete("/:id", authenticate, (req, res) => {
 	const { id } = req.params;
 	Sensors.getSensorById(id)
 		.then(sensor => {
@@ -193,7 +193,7 @@ router.delete('/:id', authenticate, (req, res) => {
 					})
 					.catch(err => res.status(500).json(err));
 			} else {
-				res.status(404).json({ message: 'sensor does not exist' });
+				res.status(404).json({ message: "sensor does not exist" });
 			}
 		})
 		.catch(err => res.status(500).json(err.message));

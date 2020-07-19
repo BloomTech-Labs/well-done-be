@@ -15,7 +15,7 @@ router.get("/", authenticate, (req, res) => {
 });
 
 // GET recent history /api/history/recent
-router.get("/recent", async (req, res) => {
+router.get("/recent", authenticate, async (req, res) => {
 	try {
 		let recentHistory = await History.findRecent();
 		res.status(200).json(recentHistory);
